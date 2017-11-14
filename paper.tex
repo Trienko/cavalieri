@@ -24,7 +24,7 @@
 It is desirable to have geometric interpretations for difficult mathematical ideas. In this paper we present an intuitive geometric interpretation of the Riemann-Stieltjes integral. It can be 
 summarized as follows: the Riemann-Stieltjes integral can be interpreted as an infinite sum of infinitesimally small non-rectangular 
 integration strips. This interpretation is surprisingly similar to the geometric interpretation of the ordinary Riemann integral. 
-It is therefore likely that students, who are encountering the Riemann-Stieltjes integral for the first time, would find this new alternative geometric interpretation useful for mastering it.
+It is therefore likely that students, who are encountering the Riemann-Stieltjes integral for the first time, would find this new alternative geometric framework a useful visualization tool.
 \end{abstract}
 
 \noindent
@@ -49,9 +49,9 @@ teach simpler integral definitions (which are easier to grasp) before introducin
 students will find it useful to first understand the simpler Cavalieri integral before they are exposed to the more abstract Riemann-Stieltjes integral.\\
 
 \noindent
-We first present the formal definition of the Riemann-Stieltjes and Cavalieri integrals \cite{bartle1976,ackermann2012}.
-We then present the geometric interpretation proposed by G.~Bullock \cite{bullock1988}, which is followed by our alternative interpretation. We end 
-the paper with some examples which aim to help the reader grasp the new alternative interpretation.
+We first present the formal definitions of the Riemann-Stieltjes and Cavalieri integrals \cite{bartle1976,ackermann2012}.
+We then present the geometric interpretation proposed by G.~Bullock \cite{bullock1988}, which is followed up by the new alternative interpretation. We end 
+the paper with some examples which aim to help the reader better understand and visualize the new alternative interpretation.
 
 \section{Riemann-Stieltjes integral}
 Let $f$ and $g$ denote real-valued functions defined on a closed interval $[a',b']$ of the real line. We shall suppose that 
@@ -256,7 +256,7 @@ of $R$:
 The partition points $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}.
 The above sum can be interpreted as summing together the areas associated with $n$ non-rectangular integration strips.
 The left panel of Fig.~\ref{fig:caval2} depicts the scenario in which we made use of three integration strips.  
-The right panel of Fig.~\ref{fig:caval2} illustrates that the larger $n$ becomes the better Eq.~\eqref{eq:cav_sum} approximates the area of $R$. In the limit Eq.~\eqref{eq:cav_sum} approaches the Cavalieri integral \cite{ackermann2012}:
+The right panel of Fig.~\ref{fig:caval2} illustrates that the larger $n$ becomes the better Eq.~\eqref{eq:cav_sum} approximates the area of $R$. In the limit Eq.~\eqref{eq:cav_sum} approaches the Cavalieri integral:
 \begin{equation}
 \label{eq:caval1}
 \int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
@@ -339,7 +339,7 @@ examples.
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=1.0\textwidth]{3D_plot-crop.pdf}
+\includegraphics[width=1.0\textwidth]{3D_final-crop.pdf}
 \caption{An example of using G.~Bullocks' geometric framework to interpret the Riemann-Stieltjes integral. In this example 
 $f(x)$ is represented by the blue sheet, $g(x)$ is represented by the red sheet. Moreover, $f(x)=x^2$ and $g(x)=x$. The green sheet, simply known as the ``fence'', is formed 
 by chopping of any part of the $g$-sheet which protrudes above the $f$-sheet and below the $gx$-plane. Projecting the ``fence''
@@ -352,7 +352,7 @@ $\int_{0}^{3} f(x) dg(x)$.}
 \begin{figure}[htb]
 \centering
 \includegraphics[width=1\textwidth]{fig13_change}
-\caption{A non-rectangular sum-based geometric interpretation of the Riemann-Stieltjes integral. Moreover, the figure depicts the region $R$ (also see Fig.~). The integrator $g$ maps points 
+\caption{A non-rectangular sum-based geometric interpretation of the Riemann-Stieltjes integral. Moreover, the figure depicts the region $R$ (also see Fig.~\ref{fig:ex1}). The integrator $g$ maps points 
 in $[a',b']$ (depicted in blue) to points in $[a,b]$ (depicted in green). The function $h$ performs the reverse operation. Moreover, $g$ maps the $x$-coordinates at which
 translations of $a(y)$ (depicted in red) intersect with $f(x)$ to the $x$-intercepts of the translated functions. This observation enables us to interpret the Riemann-Stieltjes integral as an infinite sum of infinitesimally small non-rectangular integration 
 strips.}
@@ -389,8 +389,7 @@ To improve our understanding of $g$ lets investigate a specific example of the R
 \begin{equation}
 R = \int_{\frac{1}{2}}^1 x~d2x. 
 \end{equation}
-The reader is encouraged to, at this point, also inspect Fig.~\ref{fig:2d_geo} which graphically depicts $R$. 
-In this example $g$ maps $[\frac{1}{2},2]$ to $[1,4]$. The mapping between these two intervals is also 
+$R$ is depicted in Fig.~\ref{fig:2d_geo}. In this example $g$ maps $[\frac{1}{2},2]$ to $[1,4]$. The mapping between these two intervals is also 
 depicted in Fig.~\ref{fig:2d_geo}. Moreover, the interval $[\frac{1}{2},2]$ is depicted in blue,
 while the interval $[1,4]$ is depicted in green.\\ 
 
@@ -398,12 +397,12 @@ while the interval $[1,4]$ is depicted in green.\\
 Furthermore, consider $a(y) = 1-y$ (depicted in red in Fig.~\ref{fig:2d_geo}). Interestingly, the integrator $g$ maps the $x$-coordinates where translations of $a(y)$ and $f(x)$ intersect to the $x$-intercepts of the translations of $a(y)$.
 The implications of this observation is the following: 
 \begin{itemize}
- \item $g(x_{i+1}^2)-g(x_{i}^2)$ represents the length of the base of a non-rectangular integration strip. Note, the base lengths are all equal.
+ \item $g(x_{i+1}^2)-g(x_{i}^2)$ represents the length of the base of a non-rectangular integration strip. Note, the base lengths in Fig.~\ref{fig:2d_geo} are all equal.
  \item $f(x_i^2)$ is the height of a non-rectangular integration strip.
  \item $f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)]$ is the area of a non-rectangular integration strip (due to Cavalieri's principle).
  \item The Riemann-Stieltjes sum, i.e. $\sum_{i=0}^{n-1} f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)]$, is equal to the area obtained by summing together the area of multiple 
  integration strips.
- \item In the limit the Riemann-Stieltjes sum approaches the area of $R$. 
+ \item In the limit the Riemann-Stieltjes sum approaches $R$. 
 \end{itemize}
 The Riemann-Stieltjes integral, can therefore, be interpreted as the area which is obtained, by summing together the areas of an infinite number of infinitesimally small non-rectangular integration strips,
 i.e. a Riemann-Stieltjes integral can be converted into an equivalent Cavalieri integral.\\
@@ -578,7 +577,7 @@ $h_5(x)=1-\sqrt{1-2x}$.}
  \begin{figure}[htb]
  \centering
  \includegraphics[width=1.0\textwidth]{EX1-crop.pdf}
- \caption{The non-rectangular sum-based geometric of interpretation of $\int_{1}^3 (2x+8)^3 d[x^2-20]$ (i.e this integral is equal to the 
+ \caption{The non-rectangular sum-based geometric interpretation of $\int_{1}^3 (2x+8)^3 d[x^2-20]$ (i.e this integral is equal to the 
  Cavalieri integral $\int_{a(y)}^{b(y)} (2x+8)^3 dx$).}
  \label{fig:ex1_sec}
  \end{figure}
@@ -736,17 +735,19 @@ D.~Zaskis, C.~Rasmussen, S.~P.~Shen, A Mean-Based Approach for Teaching the Conc
 \end{thebibliography}
 
 \begin{biog}
-\item[Woodrow Wilson] received his Ph.D. in history and political science from Johns Hopkins University. He held visiting positions at Cornell and Wesleyan before joining the faculty at Princeton, where he was eventually appointed president of the university.  Among his proudest accomplishments was the abolition of eating clubs at Princeton on the grounds that they were elitist.
+\item[Trienko Lups Grobler] received his Ph.D. in Engineering at the University of Pretoria in 2013. He was 
+a postdoctoral fellow at Rhodes University from 2013-2017. He is currently a lecturer in the Computer Science Division
+at Stellenbosch University.
 \begin{affil}
-Office of the President, Princeton University, Princeton NJ 08544\\
-twoodwilson@princeton.edu
+Dept of Mathematical Sciences, Computer Science Division, Stellenbosch University, Private Bag X1, 7602 Matieland, South Africa\\
+tlgrobler@sun.ac.za
 \end{affil}
 
-\item[Herbert Hoover] entered Stanford University in 1891, after failing all of the entrance exams except mathematics.  He received his B.S. degree in geology in 1895, spent time as a mining engineer, then was appointed by his co-author to the U.S. Food Administration and the Supreme Economic Council, where he orchestrated the greatest famine relief efforts of all time.
-\begin{affil}
-Hoover Institution, Stanford University, Stanford CA 94305\\
-herbhoover@stanford.edu
-\end{affil}
+%\item[Herbert Hoover] entered Stanford University in 1891, after failing all of the entrance exams except mathematics.  He received his B.S. degree in geology in 1895, spent time as a mining engineer, then was appointed by his co-author to the U.S. Food Administration and the Supreme Economic Council, where he orchestrated the greatest famine relief efforts of all time.
+%\begin{affil}
+%Hoover Institution, Stanford University, Stanford CA 94305\\
+%herbhoover@stanford.edu
+%\end{affil}
 \end{biog}
 \vfill\eject
 
