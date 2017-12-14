@@ -21,14 +21,14 @@
 \maketitle
 
 \begin{abstract}
-It is desirable to have geometric interpretations for difficult mathematical ideas. In this paper we present an intuitive geometric interpretation of the Riemann-Stieltjes integral. It can be 
+It is desirable to have geometric interpretations of difficult mathematical concepts. In this paper we present an intuitive geometric interpretation of the Riemann-Stieltjes integral. It can be 
 summarized as follows: the Riemann-Stieltjes integral can be interpreted as an infinite sum of infinitesimally small non-rectangular 
 integration strips. This interpretation is surprisingly similar to the geometric interpretation of the ordinary Riemann integral. 
-It is therefore likely that students, who are encountering the Riemann-Stieltjes integral for the first time, would find this new alternative geometric framework a useful visualization tool.
+It is therefore likely that students, encountering the Riemann-Stieltjes integral for the first time, would find this new alternative geometric framework a useful visualization tool.
 \end{abstract}
 
 \noindent
-Providing a geometrical interpretation for a mathematical concept can greatly improve ones understanding of it. The Riemann-Stieltjes 
+Providing a geometrical interpretation for a mathematical concept can greatly improve one's understanding of it. The Riemann-Stieltjes 
 integral is no exception. G.~Bullock proposed a projection-based geometric framework with which one can interpret the Riemann-Stieltjes 
 integral \cite{bullock1988}. Furthermore, I.~Podlubny proposed to interpret the Riemann-Stieltjes integral as the real distance covered by a moving object, whose speed was 
 correctly recorded but at incorrect times \cite{podlubny2002}. In this paper we present an alternative, more initiative, geometric interpretation of the Riemann-Stieltjes integral.\\
@@ -36,16 +36,15 @@ correctly recorded but at incorrect times \cite{podlubny2002}. In this paper we 
 \noindent
 Ackermann et al. utilized the idea of using non-rectangular integration strips to perform integration
 and in doing so developed the Cavalieri integral \cite{ackermann2012}. The area of a non-rectangular integration strip is computed via 
-Cavalieri's principle \cite{andersen1985,eves1991, malik1984, wildberger2002, young1985}. They also showed that a Cavalieri integral can easily be converted to a Riemann-Stieltjes integral. The 
-reverse operation was however not described in \cite{ackermann2012}. In this paper we address this shortcoming. This 
+Cavalieri's principle \cite{andersen1985,eves1991, malik1984, wildberger2002, young1985}. They also showed that a Cavalieri integral can easily be converted to a Riemann-Stieltjes integral. 
+However, the reverse operation was not described in \cite{ackermann2012}. In this paper we address this shortcoming. This 
 reverse operation actually allows us to contrive a novel geometric interpretation of the Riemann-Stieltjes integral.
 This geometric interpretation is: the Riemann-Stieltjes integral can be interpreted as an infinite sum of infinitesimally small
-non-rectangular integration strips. Interestingly enough, this interpretation of the Riemann-Stieltjes integral is very similar 
-to the geometric interpretation of the Riemann integral. The difference being: in the case of the Riemann integral we employ 
-rectangular instead of non-rectangular integration strips. This rectangular geometric interpretation has been quite useful while 
-teaching the ordinary Riemann integral to undergraduate students \cite{jones2015,sealey2014}. It, therefore, seems likely that undergraduate students would find the non-rectangular geometric interpretation
-of the Riemann-Stieltjes integral just as useful. It is also interesting to mention, that there are a few papers in the literature that propose to first 
-teach simpler integral definitions (which are easier to grasp) before introducing students to the Riemann integral \cite{czarnocha2001,prabhu2008,ruffa2002,zaskis2014}. It therefore also seems plausible that
+non-rectangular integration strips. Interestingly enough, this interpretation is very similar 
+to the geometric interpretation of the Riemann integral. The priciple difference between these interprations is the shape of the ingration strips; non-rectangular in the case of the Riemann-Stieltjies integral and rectangular in the case of the Rieman integral.  
+This rectangular geometric interpretation has been quite useful when 
+teaching the ordinary Riemann integral to undergraduate students \cite{jones2015,sealey2014}. Consquently, it seems likely that undergraduate students would find the non-rectangular geometric interpretation
+of the Riemann-Stieltjes integral just as useful. It is also interesting to mention that there are a few papers in the literature that propose teaching simpler integral definitions (which are easier to grasp) before introducing students to the Riemann integral \cite{czarnocha2001,prabhu2008,ruffa2002,zaskis2014}. It therefore also seems plausible that
 students will find it useful to first understand the simpler Cavalieri integral before they are exposed to the more abstract Riemann-Stieltjes integral.\\
 
 \noindent
@@ -61,7 +60,7 @@ both $f$ and $g$ are bounded on $[a',b']$.
 Define a partition $\mathcal{P}$ of $[a',b']$ to be a set of points $x_0, x_1,\cdots,x_n$, 
 where $a' = x_0 \leq x_1 \leq \cdots \leq x_n = b'$. For each partition 
 $\mathcal{P}$ of $[a',b']$ write $\Delta g_k = g(x_k)-g(x_{k-1})$. Let 
-$M_k = \max\{f(x),x_{k-1}\leq x \leq x_{k}\}$, $m_k = \max\{f(x),x_{k-1}\leq x \leq x_{k}\}$, and set 
+$M_k = \sup\{f(x),x_{k-1}\leq x \leq x_{k}\}$, $m_k = \inf\{f(x),x_{k-1}\leq x \leq x_{k}\}$, and set 
 \begin{equation}
 \label{ref:S_up}
 \mathcal{S}_U(\mathcal{P},f,g) = \sum_{k=1}^n M_k \Delta g_k, 
@@ -172,12 +171,12 @@ $h(x_i^1) :=$ $\{x_i^2 \in [a' ,b'] | a\circ f(x_i^2) + [x_i^1 - a] = x_i^2$ , $
 It can easily be shown that $h(x)$ is a strictly monotone continuous function. It is therefore also bijective. 
 
 \begin{definition}[Inverse Transformation Function]
-The mapping $g:[a′, b′] \rightarrow [a, b]$, which maps $x_i^2 \in [a' , b']$ to $x_i^1\in [a, b]$,
+The mapping $g:[a', b'] \rightarrow [a, b]$, which maps $x_i^2 \in [a' , b']$ to $x_i^1\in [a, b]$,
 is defined as $g(x_i^2) := x_i^2 - a \circ f (x_i^2) + a$.
 \end{definition}
 
 \noindent
-Note, that $g = h^{-1}$ per definition. Moreover $g$ is guaranteed to exists, since $h$ is bijective. 
+Note, that $g = h^{-1}$ per definition. Moreover $g$ is guaranteed to exist, since $h$ is bijective. 
 
 \begin{definition}
 Define a partition $\mathcal{P}_1$ of $[a,b]$ to be a set of points $x_0, x_1,\cdots,x_n$, 
@@ -218,10 +217,11 @@ The following Cavalieri, Riemann and Riemann-Stieltjes integrals are equivalent
 \begin{remark}
 Note that the definition of the Cavalieri integral as presented above imposes much stricter requirements on $f$ and $g$ than the 
 definition of the Riemann-Stieltjes integral does. To ensure consistency, we will assume, from here onwards and unless stated otherwise, that the stricter requirements imposed 
-by the Cavalieri definition is now also binding on the Riemann-Stieltjes integral. Remember the main aim of the paper is to 
+by the Cavalieri definition are now also binding on the Riemann-Stieltjes integral. Recall that the main aim of the paper is to 
 help students develop a geometric intuition for the Riemann-Stieltjes integral that will be valid for most of the 
-Riemann-Stieltjes integral problems that students will encounter during their undergraduate studies and not to present a complete geometric framework 
-that will remain valid for each and every possible Riemann-Stieltjes integral. This is not to say that the geometric interpretation presented here cannot be used to provide 
+Riemann-Stieltjes integral problems that students will encounter during their undergraduate studies.
+While this does not imply that this interpretation cannot provide insight into a broad range of problems, it does mean that the interpretation may not remain valid for each and every Riemann-Stieltjes integral
+and not to present a complete geometric framework. This is not to say that the geometric interpretation presented here cannot be used to provide 
 insight to a broad range of problems. In the example section we show that Cavalieri sums can provide meaningful insights even 
 when we relax some of the strict restrictions imposed by the above definitions.
 \end{remark}
@@ -318,7 +318,7 @@ G.~Bullock proposed one possible geometric interpretation of the Riemann-Stieltj
 The basic idea behind his approach is to represent $f(x)$ and $g(x)$ as three-dimensional sheets. 
 The three dimensional coordinate system which G.~Bullock proposes to realize this representation is depicted in 
 Fig.~\ref{fig:bullock}. The $f$-sheet is constructed by simply extending the curve $f$ which resides in the $fx$-plane 
-along the $g$-direction. The $g$-sheet is constructed similarly. Note that, since $f$ is independent of $g$, the $f$-sheet remains 
+along the $g$-direction. The $g$-sheet is constructed similarly. Note that, as $f$ is independent of $g$, the $f$-sheet remains 
 constant along the $g$-direction. Similarly, the $g$-sheet remains constant along the $f$-direction. 
 A new sheet, known simply as the ``fence'', can be created by chopping off any part of the $g$-sheet that protrudes above the 
 $f$-sheet and below the $gx$-plane. This sheet can now be projected onto the $fg$-plane. The area of the region that is formed 
@@ -332,7 +332,7 @@ obtained by projecting the ``fence'' on to the $fg$-plane is depicted in black.\
 
 \noindent
 \begin{remark}
-It is interesting to note that G.~Bullock follows a similar route than we do in terms of developing his geometrical framework.
+It is interesting to note that G.~Bullock follows route similar to ours when developing his geometrical framework.
 He starts of with quite strict requirements for $f$ ang $g$ and relaxes more and more of these requirements in his latter 
 examples. 
 \end{remark}
@@ -341,8 +341,8 @@ examples.
 \centering
 \includegraphics[width=1.0\textwidth]{3D_final-crop.pdf}
 \caption{An example of using G.~Bullocks' geometric framework to interpret the Riemann-Stieltjes integral. In this example 
-$f(x)$ is represented by the blue sheet, $g(x)$ is represented by the red sheet. Moreover, $f(x)=x^2$ and $g(x)=x$. The green sheet, simply known as the ``fence'', is formed 
-by chopping of any part of the $g$-sheet which protrudes above the $f$-sheet and below the $gx$-plane. Projecting the ``fence''
+$f(x)$ is represented by the blue sheet and $g(x)$ is represented by the red sheet. Moreover, $f(x)=x^2$ and $g(x)=x$. The green sheet, simply known as the ``fence'', is formed 
+by chopping off any part of the $g$-sheet which protrudes above the $f$-sheet and below the $gx$-plane. Projecting the ``fence''
 onto the $fg$-plane produces the visible gray region in the $fg$-plane. The area of this gray region in the $fg$-plane is equal to the Riemann-Stieltjes integral:
 $\int_{0}^{3} f(x) dg(x)$.}
 \label{fig:bullock}
@@ -395,16 +395,16 @@ while the interval $[1,4]$ is depicted in green.\\
 
 \noindent
 Furthermore, consider $a(y) = 1-y$ (depicted in red in Fig.~\ref{fig:2d_geo}). Interestingly, the integrator $g$ maps the $x$-coordinates where translations of $a(y)$ and $f(x)$ intersect to the $x$-intercepts of the translations of $a(y)$.
-The implications of this observation is the following: 
+The implications of this observation are the following: 
 \begin{itemize}
- \item $\Delta x_i^1 = g(x_{i+1}^2)-g(x_{i}^2)$ represents the length of the base of a non-rectangular integration strip. Note, the base lengths in Fig.~\ref{fig:2d_geo} are all equal.
+ \item $g(x_{i+1}^2)-g(x_{i}^2)$ (i.e. $\Delta x_i^1$) represents the length of the base of a non-rectangular integration strip. Note, the base lengths in Fig.~\ref{fig:2d_geo} are all equal.
  \item $f(x_i^2)$ is the height of a non-rectangular integration strip.
  \item $f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)]$ is the area of a non-rectangular integration strip (due to Cavalieri's principle).
  \item The Riemann-Stieltjes sum, i.e. $\sum_{i=0}^{n-1} f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)]$, is equal to the area obtained by summing together the area of multiple 
  integration strips.
  \item In the limit the Riemann-Stieltjes sum approaches $R$. 
 \end{itemize}
-The Riemann-Stieltjes integral, can therefore, be interpreted as the area which is obtained, by summing together the areas of an infinite number of infinitesimally small non-rectangular integration strips,
+The Riemann-Stieltjes integral can therefore be interpreted as the area which is obtained by summing together the areas of an infinite number of infinitesimally small non-rectangular integration strips,
 i.e. a Riemann-Stieltjes integral can be converted into an equivalent Cavalieri integral.\\
 
 %Consider Fig.~\ref{fig:2d_geo}, whilst keeping in mind the definition of the Riemann-Stieltjes integral presented in 
