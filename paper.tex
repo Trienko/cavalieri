@@ -21,10 +21,10 @@
 \maketitle
 
 \begin{abstract}
-It is desirable to have geometric interpretations of difficult mathematical concepts. In this paper we present an intuitive geometric interpretation of the Riemann-Stieltjes integral. It can be 
+It is desirable to have geometric interpretations of difficult mathematical concepts. In this paper we present a new and more intuitive geometric interpretation of the Riemann-Stieltjes integral. It can be 
 summarized as follows: the Riemann-Stieltjes integral can be interpreted as an infinite sum of infinitesimally small non-rectangular 
 integration strips. This interpretation is surprisingly similar to the geometric interpretation of the ordinary Riemann integral. 
-It is therefore likely that students, encountering the Riemann-Stieltjes integral for the first time, would find this new alternative geometric framework a useful visualization tool.
+It is therefore likely that students, when encountering the Riemann-Stieltjes integral for the first time, would find this new alternative geometric framework a useful visualization tool.
 \end{abstract}
 
 \noindent
@@ -41,7 +41,7 @@ However, the reverse operation was not described in \cite{ackermann2012}. In thi
 reverse operation actually allows us to contrive a novel geometric interpretation of the Riemann-Stieltjes integral.
 This geometric interpretation is: the Riemann-Stieltjes integral can be interpreted as an infinite sum of infinitesimally small
 non-rectangular integration strips. Interestingly enough, this interpretation is very similar 
-to the geometric interpretation of the Riemann integral. The priciple difference between these interprations is the shape of the ingration strips; non-rectangular in the case of the Riemann-Stieltjies integral and rectangular in the case of the Rieman integral.  
+to the geometric interpretation of the Riemann integral. The principle difference between these interprations is the shape of the ingration strips; non-rectangular in the case of the Riemann-Stieltjies integral and rectangular in the case of the Rieman integral.  
 This rectangular geometric interpretation has been quite useful when 
 teaching the ordinary Riemann integral to undergraduate students \cite{jones2015,sealey2014}. Consquently, it seems likely that undergraduate students would find the non-rectangular geometric interpretation
 of the Riemann-Stieltjes integral just as useful. It is also interesting to mention that there are a few papers in the literature that propose teaching simpler integral definitions (which are easier to grasp) before introducing students to the Riemann integral \cite{czarnocha2001,prabhu2008,ruffa2002,zaskis2014}. It therefore also seems plausible that
@@ -217,12 +217,12 @@ The following Cavalieri, Riemann and Riemann-Stieltjes integrals are equivalent
 \begin{remark}
 Note that the definition of the Cavalieri integral as presented above imposes much stricter requirements on $f$ and $g$ than the 
 definition of the Riemann-Stieltjes integral does. To ensure consistency, we will assume, from here onwards and unless stated otherwise, that the stricter requirements imposed 
-by the Cavalieri definition are now also binding on the Riemann-Stieltjes integral. Recall that the main aim of the paper is to 
-help students develop a geometric intuition for the Riemann-Stieltjes integral that will be valid for most of the 
-Riemann-Stieltjes integral problems that students will encounter during their undergraduate studies.
-While this does not imply that this interpretation cannot provide insight into a broad range of problems, it does mean that the interpretation may not remain valid for each and every Riemann-Stieltjes integral
-and not to present a complete geometric framework. This is not to say that the geometric interpretation presented here cannot be used to provide 
-insight to a broad range of problems. In the example section we show that Cavalieri sums can provide meaningful insights even 
+by the Cavalieri definition are now also binding on the Riemann-Stieltjes integral. 
+%Recall that the main aim of the paper is to 
+%help students develop a geometric intuition for the Riemann-Stieltjes integral that will be valid for most of the 
+%Riemann-Stieltjes integral problems that students will encounter during their undergraduate studies.
+While this does not imply that this interpretation cannot provide insight into a broad range of problems, it does mean that the interpretation may not remain valid for each and every conceivable Riemann-Stieltjes integral.
+In the example section we show that Cavalieri sums can provide meaningful insights even 
 when we relax some of the strict restrictions imposed by the above definitions.
 \end{remark}
 
@@ -332,7 +332,7 @@ obtained by projecting the ``fence'' on to the $fg$-plane is depicted in black.\
 
 \noindent
 \begin{remark}
-It is interesting to note that G.~Bullock follows route similar to ours when developing his geometrical framework.
+It is interesting to note that G.~Bullock follows a route similar to ours when developing his geometrical framework.
 He starts of with quite strict requirements for $f$ ang $g$ and relaxes more and more of these requirements in his latter 
 examples. 
 \end{remark}
@@ -352,7 +352,8 @@ $\int_{0}^{3} f(x) dg(x)$.}
 \begin{figure}[htb]
 \centering
 \includegraphics[width=1\textwidth]{fig13_change}
-\caption{A non-rectangular sum-based geometric interpretation of the Riemann-Stieltjes integral. Moreover, the figure depicts the region $R$ (also see Fig.~\ref{fig:ex1}). The integrator $g$ maps points 
+\caption{A non-rectangular sum-based geometric interpretation of the Riemann-Stieltjes integral. Moreover, the figure depicts the region $R$ (also see Fig.~\ref{fig:ex1}).
+Its area is denoted by the symbol $A$. The integrator $g$ maps points 
 in $[a',b']$ (depicted in blue) to points in $[a,b]$ (depicted in green). The function $h$ performs the reverse operation. Moreover, $g$ maps the $x$-coordinates at which
 translations of $a(y)$ (depicted in red) intersect with $f(x)$ to the $x$-intercepts of the translated functions. This observation enables us to interpret the Riemann-Stieltjes integral as an infinite sum of infinitesimally small non-rectangular integration 
 strips.}
@@ -374,7 +375,7 @@ strips.}
 %in $[a,b]$ we use the function $g$. The reverse is achieved through $h$. The functions $g$ and $h$ depend soly on $a(y)$ and are also 
 %computed with it.
 Consider the definition of the Riemann-Stieltjes integral and 
-Eq.~\eqref{eq:g_int}. For the sake of continiuty we repeat Eq.~\eqref{eq:g_int} below:
+Eq.~\eqref{eq:g_int}. For the sake of continuity we repeat Eq.~\eqref{eq:g_int} below:
 \begin{equation}
 \label{eq:g_int2}
 \int_{a'}^{b'} f(x) dg(x) =  \lim_{n \rightarrow \infty}\sum_{i=0}^{n-1} f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)], 
@@ -385,11 +386,11 @@ locations on the $x$-axis. When, $g$ is monotone increasing it maps points in th
 with $a = g(a')$ and $b = g(b')$.\\
 
 \noindent
-To improve our understanding of $g$ lets investigate a specific example of the Riemann-Stieltjes integral in more depth: 
+To further improve our understanding of $g$ lets investigate a specific example of the Riemann-Stieltjes integral in more depth: 
 \begin{equation}
-R = \int_{\frac{1}{2}}^1 x~d2x. 
+A =\int_{a'}^{b'} f(x) dg(x)=\int_{\frac{1}{2}}^1 x~d2x, 
 \end{equation}
-$R$ is depicted in Fig.~\ref{fig:2d_geo}. In this example $g$ maps $[\frac{1}{2},2]$ to $[1,4]$. The mapping between these two intervals is also 
+In this example $g$ maps $[\frac{1}{2},2]$ to $[1,4]$. The mapping between these two intervals is also 
 depicted in Fig.~\ref{fig:2d_geo}. Moreover, the interval $[\frac{1}{2},2]$ is depicted in blue,
 while the interval $[1,4]$ is depicted in green.\\ 
 
@@ -402,7 +403,7 @@ The implications of this observation are the following:
  \item $f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)]$ is the area of a non-rectangular integration strip (due to Cavalieri's principle).
  \item The Riemann-Stieltjes sum, i.e. $\sum_{i=0}^{n-1} f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)]$, is equal to the area obtained by summing together the area of multiple 
  integration strips.
- \item In the limit the Riemann-Stieltjes sum approaches $R$. 
+ \item In the limit the Riemann-Stieltjes sum approaches $A$, i.e. the area of the region $R$ (depicted in Fig.~\ref{fig:2d_geo}). 
 \end{itemize}
 The Riemann-Stieltjes integral can therefore be interpreted as the area which is obtained by summing together the areas of an infinite number of infinitesimally small non-rectangular integration strips,
 i.e. a Riemann-Stieltjes integral can be converted into an equivalent Cavalieri integral.\\
@@ -483,7 +484,7 @@ Once we have an expression for $a(y)$ we can trivially compute the following val
 \end{itemize}
 
 \begin{remark}
-Note that the above procedure places an even stricter limitation on $f$, it now also needs to be invertible. Moreover the 
+Note that the above procedure places an even stricter limitation on $f$ as it now also needs to be invertible. Moreover, the 
 above derivation also requires that $a(0)$ exists.
 \end{remark}
 
@@ -504,20 +505,20 @@ thereof is reported in Table~\ref{tab:table2}. The non-rectangular sum-based geo
 
 \noindent
 In Fig.~\ref{fig:ex1_sec} we plot the geometric interpretation of $\int_{1}^3 (2x+8)^3 d[x^2-20]$. This same figure also 
-provides a geometric interpretation of $\int_{1}^3 (2x+8)^3 dx^2$ albeit a less intuitive one. The $a(y)$ function need not 
+provides a geometric interpretation of $\int_{1}^3 (2x+8)^3 dx^2$, albeit a less intuitive one. The $a(y)$ function need not 
 produce a mapping $g$ from $[1,3]$ to $[-19,-11]$. It can also produce a mapping $\widetilde{g}$ from $[1,3]$ to $[1,9]$. In both cases the 
-depiction remains valid, however, in the case of $\widetilde{g}$ the lengths of the bases of the depicted integration strips are not 
+depiction remains valid. However, in the case of $\widetilde{g}$ the lengths of the bases of the depicted integration strips are not 
 computed on the $x$-axis itself, but rather on the line $y=1000$. The fact that the non-rectangular sum-based geometric framework remains useful even if $g(a')\neq a$ is true in general.\\
 
 \noindent
 In Fig.~\ref{fig:ex2_sec} we depict the geometric interpretation of $\int_1^2 \frac{1}{x} d[x^2+C]$. This example is a bit of a special case, since $a(0)$ does not exist. 
-However, the non-rectangular sum-based geometric framework does still produce a meaningful result.\\  
+However, the non-rectangular sum-based geometric framework still produces a meaningful result.\\  
 
 \noindent
 One of the main limitations of the non-rectangular sum-based geometric interpretation we present in this paper is that both $f$ and $g$ need to be invertible.
-Being invertible is however not that big of a limitation if we take the following into account. We can always split a Riemann-Stieltjes
+Being invertible is, however, not a severe limitation if we take the following into account. We can always split a Riemann-Stieltjes
 integral whose integrand and integrator are not invertible over its integration limits into multiple constituent Riemann-Stieltjes integrals whose 
-integrand and integrator are invertible over the integration limits of the constituent integrals. For example, say 
+integrand and integrator are invertible over their associated integration limits. For example, say 
 $f$ and $g$ are not invertible over the interval $[a',b']$, but are invertible over the intervals $[a',c']$ and 
 $[c',b']$ then we may write:
 \begin{equation}
@@ -527,8 +528,8 @@ This allows us to to find a non-rectangular sum-based geometric interpretation o
 which we can then depict in one image to give a single geometric interpretation of $\int_{a'}^{b'}f(x)dg(x)$.
 In Fig.~\ref{fig:ex4_sec} we present just such a scenario. In this example $g(x)$ is not invertible over the interval 
 $[0,2]$. It is however invertible over the interval $[0,1]$ and $[1,2]$. The geometric interpretation which we 
-obtain by considering the intervals $[0,1]$ and $[1,2]$ separately is depicted, respectively, in the 
-right and left panel of Fig.~\ref{fig:ex4_sec}.
+obtain by considering the intervals $[0,1]$ and $[1,2]$ separately is depicted in the 
+right and left panels of Fig.~\ref{fig:ex4_sec}.
 
 %Moreover, Fig to Fig. illustrates that $g:[a',b']\rightarrow[a,b]$ simply maps partition points 
 %between $a'$ and $b'$ to partition points between $a$ and $b$, i.e. $\Delta g$ (differences between partition points between
@@ -585,7 +586,7 @@ $h_5(x)=1-\sqrt{1-2x}$.}
 \begin{figure}[htb]
 \centering
 \includegraphics[width=1.0\textwidth]{EX2-crop.pdf}
-\caption{The non-rectangular sum-based geometric interpretation of $\int_{\frac{-\pi}{2}}^0 \sin{x}~d[\cos{x}-1]$ (i.e this integral integral is equal to the 
+\caption{The non-rectangular sum-based geometric interpretation of $\int_{\frac{-\pi}{2}}^0 \sin{x}~d[\cos{x}-1]$ (i.e this integral is equal to the 
  Cavalieri integral $\int_{a(y)}^{b(y)} \sin{x} dx$).}
 \label{fig:ex2_sec}
 \end{figure}
@@ -593,7 +594,7 @@ $h_5(x)=1-\sqrt{1-2x}$.}
 \begin{figure}[htb]
 \centering
 \includegraphics[width=1.0\textwidth]{EX3-crop.pdf}
-\caption{The non-rectangular sum-based geometric interpretation of $\int_1^2 \frac{1}{x} d[x^2+C]$ (i.e this integral integral is equal to the 
+\caption{The non-rectangular sum-based geometric interpretation of $\int_1^2 \frac{1}{x} d[x^2+C]$ (i.e this integral is equal to the 
  Cavalieri integral $\int_{a(y)}^{b(y)} \frac{1}{x} dx$).}
 \label{fig:ex3_sec}
 \end{figure}
