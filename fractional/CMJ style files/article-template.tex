@@ -43,7 +43,47 @@ Use of other \LaTeX\ packages should be minimized as much as possible. Math nota
 
 Web links can be embedded using the \verb~\url{...}~ command, which will result in something like \url{http://www.maa.org}.  These links will be active and stylized in the online publication.
 
-\section{xxx}
+\section{Riemann-Liouville Fractional Integral}
+Let
+\begin{equation}
+If(x) := \int_0^x f(t) dt.
+\end{equation}
+If we apply the above operator in a repetative manner to $f$ we obtain the $n$th antiderivative of $f$ based at 0:
+\begin{equation}
+\label{eq:n_anti}
+I^nf(x) = \int_0^x\int_0^{x_1}\cdots \int_0^{x_{n-1}}f(x_n)~dx_n\cdots dx_2 dx_1.
+\end{equation}
+Applying Cauchy's formula for repetative integration to the above $n$th antiderivative of $f$ helps us express the above $n$th antiderivative as a single integral. 
+Applying Cauchy's formula to Equation~\ref{eq:n_anti} results in:
+\begin{equation}
+\label{eq:cauchy}
+I^nf(x) = \frac{1}{(n-1)!}\int_0^x (x-t)^{n-1}f(t)~dt.
+\end{equation}
+As an example if $f(x)=x$ and $n=2$ then Equation~\ref{eq:cauchy} reduces to:
+\begin{equation}
+I^3f(x) = \int_0^x (x-t)t~dt = \frac{t^2x}{2} - \frac{t^3}{3} \Bigg |_0^x = \frac{x^3}{3!}.
+\end{equation}
+The definition in Equation~\ref{eq:cauchy} can now be extended to an arbitrary fractional order by replacing $(n-1)!$ with the Gamma function:
+\begin{equation}
+\label{eq:frac_integral}
+I^{\alpha}f(x) = \frac{1}{\Gamma(\alpha)}\int_0^x (x-t)^{\alpha-1}f(t)~dt.
+\end{equation}
+Equation~\ref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$.
+\subsection{Examples}
+If $f(x)=x$ and $n=3$ then Equation~\ref{eq:frac_integral} reduces to:
+\begin{equation}
+I^3f(x) = \frac{1}{2!} \int_0^x (x-t)^2t~dt = \frac{1}{2}\left[\frac{t^4}{4} - \frac{2t^3}{3}+\frac{t^2x^2}{2}\right] \Bigg |_0^x = \frac{x^4}{4!} 
+\end{equation}
+
+
+
+
+
+
+
+
+
+
 The fractional integral is defined as (need to be more explicit here). Need to add how it has come about... Start with a single integral, expand to the general case and then 
 to a general $\alpha$. 
 \begin{equation}
