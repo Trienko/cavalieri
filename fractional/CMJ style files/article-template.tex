@@ -61,28 +61,24 @@ I^nf(x) = \frac{1}{(n-1)!}\int_0^x (x-t)^{n-1}f(t)~dt.
 \end{equation}
 As an example if $f(x)=x$ and $n=2$ then Equation~\ref{eq:cauchy} reduces to:
 \begin{equation}
-I^3f(x) = \int_0^x (x-t)t~dt = \frac{t^2x}{2} - \frac{t^3}{3} \Bigg |_0^x = \frac{x^3}{3!}.
+I^2f(x) = \int_0^x (x-t)t~dt = \frac{t^2x}{2} - \frac{t^3}{3} \Bigg |_0^x = \frac{x^3}{3!}.
 \end{equation}
 The definition in Equation~\ref{eq:cauchy} can now be extended to an arbitrary fractional order by replacing $(n-1)!$ with the Gamma function:
 \begin{equation}
 \label{eq:frac_integral}
 I^{\alpha}f(x) = \frac{1}{\Gamma(\alpha)}\int_0^x (x-t)^{\alpha-1}f(t)~dt.
 \end{equation}
-Equation~\ref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$.
-\subsection{Examples}
-If $f(x)=x$ and $n=3$ then Equation~\ref{eq:frac_integral} reduces to:
+Equation~\ref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$. As an example if $f(x)=x$ and $\alpha=\frac{1}{2}$ then 
+Equation~\ref{eq:frac_integral} reduces to:
 \begin{equation}
-I^3f(x) = \frac{1}{2!} \int_0^x (x-t)^2t~dt = \frac{1}{2}\left[\frac{t^4}{4} - \frac{2t^3}{3}+\frac{t^2x^2}{2}\right] \Bigg |_0^x = \frac{x^4}{4!} 
+I^{\frac{1}{2}}f(x) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^x \frac{t}{\sqrt{x-t}} dt = \frac{1}{\sqrt{\pi}}\left [ -\frac{2}{3}\sqrt{x-t}(t+2x)\right] \Bigg |_0^x=\frac{4}{3\sqrt{\pi}}x^{\frac{3}{2}}. 
+\end{equation}
+Furthermore, it is straightforward to show that the $I$ operator satisfies:
+\begin{equation}
+I^{\alpha}I^{\beta}f(x) = I^{\alpha+\beta}f(x). 
 \end{equation}
 
-
-
-
-
-
-
-
-
+\section{Geometric Interpretation of Fractional Integrals}
 
 The fractional integral is defined as (need to be more explicit here). Need to add how it has come about... Start with a single integral, expand to the general case and then 
 to a general $\alpha$. 
