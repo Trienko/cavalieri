@@ -43,6 +43,118 @@ Use of other \LaTeX\ packages should be minimized as much as possible. Math nota
 
 Web links can be embedded using the \verb~\url{...}~ command, which will result in something like \url{http://www.maa.org}.  These links will be active and stylized in the online publication.
 
+\section{Cavalieri Integral}
+Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=0.3\textwidth]{fig12}
+%\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+%\label{fig:ex1}
+%\end{figure}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{fig13.eps}
+\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The figure also depicts the partition points $x_i^2$ as used in the Cavalieri sum (see Eq.~\ref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+\label{fig:caval2}
+\end{figure}
+
+\noindent
+The area of $R$ can be determined as follows if we employ the classical notion of integration:
+\begin{equation}
+\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
+\end{equation}
+
+There, however, exists a more straightforward way do determine the area of $R$, i.e. we can sum together the area of non-rectangular integration strips inscribing $R$ instead of
+rectangular strips. Moreover, the shape of these non-rectangular integration strips should be determined by the function $a(y)$. We can express this notion more formally as 
+follows, let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$.
+We are now able to construct the following sum (the lower Cavalieri sum):
+\begin{equation}
+\label{eq:cav_sum}
+\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
+\end{equation}
+The partition points $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Note that Equation~\ref{eq:cav_sum} approximates the area of $R$. In the limit Equation~\ref{eq:cav_sum} approaches 
+the Cavalieri integral:
+\begin{equation}
+\label{eq:caval1}
+\int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
+\end{equation}
+It is, however, quite hard to evaluate the above integral directly. Fortunately, it is easy to convert a Cavalieri integral into an equivalent Riemann or Riemann-Stieltjes 
+integral using the transformation functions $h$ and $g$. Expressed mathematically:
+\begin{equation}
+ x
+\end{equation}
+
+
+
+
+\noindent
+Instead of trying to determine the area of $R$ using rectangular integration strips, it seems more natural 
+to use integration strips whose sides are translations of $a(y)$. Cavalieri's principle tells us that the area of an 
+arbitrary shaped integration strip is the product of its height and the length of its base. The area of $R$ 
+can be approximated by summing together multiple non--rectangular integration strips that inscribe $R$. This concept is illustrated in Fig.~\eqref{fig:caval2}. 
+More formally, consider a partition $(x_i^1)_{i=0}^{n}$ on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$.
+%As Fig.~\ref{fig:caval2} illustrates, the partition points $x_i^1$ are chosen to coincide with the $x$-coordinates at which the sides of the 
+%integration strips intersect the $x$-axis. Fig.~\ref{fig:caval2} also shows us that another partition $(x_i^2)_{i=0}^{n}$, on the $x$-axis, such that $a' = x_0^2 < x_1^2 < \cdots < x_n^2 = b'$
+%is automatically created when we make use of non--rectangular integration strips. The partition points $x_i^2$ 
+%coincide with the $x$-coordinates at which the sides of the 
+%integration strips intersect $f(x)$. 
+Let us now construct the following sum (i.e. a lower Cavalieri sum) with which we can approximate the area 
+of $R$:
+\begin{equation}
+\label{eq:cav_sum}
+\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
+\end{equation}
+The partition points $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}.
+The above sum can be interpreted as summing together the areas associated with $n$ non--rectangular integration strips.
+The left panel of Fig.~\ref{fig:caval2} depicts the scenario in which we made use of three integration strips.  
+The right panel of Fig.~\ref{fig:caval2} illustrates that the larger $n$ becomes the better Eq.~\eqref{eq:cav_sum} approximates the area of $R$. In the limit Eq.~\eqref{eq:cav_sum} approaches the Cavalieri integral:
+\begin{equation}
+\label{eq:caval1}
+\int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
+\end{equation}
+
+\noindent
+It is however hard to evaluate Eq.~\eqref{eq:caval1} in its present form. Fortuitously, we can transform the Cavalieri sum given in Eq.~\eqref{eq:caval1} into an ordinary Riemann sum
+if we can determine an expression for $x_i^2$ in terms of the partition points $x_i^1$, for all $i=0,1,\ldots,n$. Consider the collection of functions $\{a(y) + [x_i^1-a] = x_i^2: i=0,1,\ldots,n\}$. To find the partition points $x_i^2$ in terms of $x_i^1$ we substitute the function $f(x_i^2)$ for $y$ to obtain:
+\begin{align*}
+a\circ f (x_i^2)+[x_i^1-1] &= x_i^2\\
+x_i^2 &= \dfrac{x_i^1}{2},
+\end{align*}
+so that we have the general expression $x_i^2=h(x_i^1)$, with $h(x)=x/2$.\\
+
+\noindent
+The function $h$ allows us to rewrite the Cavalieri integral as an equivalent Riemann integral:
+\begin{equation}
+\label{eq:h_int}
+\lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1 =  \lim_{n\to \infty}\sum_{i=0}^{n-1} f \circ h (x_i^1)\Delta x_i^1 = \int_a^b f \circ h (x)\, dx.
+\end{equation}
+
+\noindent
+It is now possible to compute the Cavalieri integral by evaluating its equivalent Riemann integral:
+\begin{equation}
+\int_{a(y)}^{b(y)}f(x)\, dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75.  
+\end{equation}
+
+\noindent
+Interestingly, the function $g=h^{-1}$ allows us to rewrite the Cavalieri integral as an equivalent Riemann--Stieltjes integral:
+\begin{equation}
+\label{eq:g_int}
+\lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1 =  \lim_{n\to \infty} \sum_{i=0}^{n-1} f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)] = \int_{a'}^{b'} f \, dg(x). 
+\end{equation}
+
+\noindent
+We can therefore also compute the Cavalieri integral by evaluating its equivalent Riemann--Stieltjes integral:
+\begin{equation}
+\int_{a(y)}^{b(y)}f(x)\, dx = \int_{a'}^{b'} f \, dg(x) = \int_{\frac{1}{2}}^2x\, d2x = 3.75.  
+\end{equation}
+
+\noindent
+We can quickly verify this to be correct by evaluating the area of $R$ with ordinary Riemann integration:
+\begin{equation}
+\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
+\end{equation}
+
+
 \section{Riemann-Liouville Fractional Integral}
 Let
 \begin{equation}
