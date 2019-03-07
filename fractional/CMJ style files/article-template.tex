@@ -56,7 +56,7 @@ Recall that the Riemann-Stieltjes integral is defined as follows:
 %in $[a,b]$ we use the function $g$. The reverse is achieved through $h$. The functions $g$ and $h$ depend soly on $a(y)$ and are also 
 %computed with it.
 \noindent
-with $(x_i^2)_{i=0}^n$ being arbitrary partition points on the $x$-axis. Eq.~\eqref{eq:g_int2} shows us that the function of the integrator $g$ is to
+\textbf{NEED TO REWRITE SOME OF IT} with $(x_i^2)_{i=0}^n$ being arbitrary partition points on the $x$-axis. Eq.~\eqref{eq:g_int2} shows us that the function of the integrator $g$ is to
 map points in the interval $[a',b']$ to other locations on the $x$-axis. When $g$ is monotone increasing, it maps points in the interval $[a',b']$ to $[a,b]$,
 with $a = g(a')$ and $b = g(b')$. The integral in Equation~\ref{eq:g_int2} is hard to evaluate in its present form. If $g$ is differentiable, however, then it becomes trivial to 
 evaluate a Riemann-Stieltjes integral due to the following identity:
@@ -130,6 +130,14 @@ a(y) = f^{-1}(y) - g\circ f^{-1}(y) + g(a').
 Note the power of Equation~\ref{eq:a_y} it allows us to transform a Riemann-Stieltjes integral into a Cavalieri integral. 
 This transformation allows us to give a geometric interpretation of a Riemann-Stieltjes integral. The interpretation being,
 the sum of an infinite amount of non-rectangular infinitesimals whose shape is determined by $a(y)$.
+
+\section{Gamma Function}
+The gamma function is defined for all real numbers except for the non-negative integers. Moreover, it is a natural extends the factorial of an integer 
+to any real number. The Gamma function is defined as:
+\begin{equation}
+\Gamma(x) = \int_0^{\infty} t^{x-1} e^{-t}\,dt
+\end{equation}
+
 
 \section{Riemann-Liouville Fractional Integral}
 Let
