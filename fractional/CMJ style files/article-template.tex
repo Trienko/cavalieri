@@ -43,6 +43,31 @@ Use of other \LaTeX\ packages should be minimized as much as possible. Math nota
 
 Web links can be embedded using the \verb~\url{...}~ command, which will result in something like \url{http://www.maa.org}.  These links will be active and stylized in the online publication.
 
+\section{Riemann-Stieltjes Integral}
+Recall that the Riemann-Stieltjes integral is defined as follows:
+\begin{equation}
+\label{eq:g_int2}
+\int_{a'}^{b'} f(x) dg(x) =  \lim_{n \rightarrow \infty}\sum_{i=0}^{n-1} f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)], 
+\end{equation}
+%Fig.~\ref{fig:2d_geo} depicts a region whose area can be determined by considering non--rectangular integration strips.
+%. Note that the shape of the integration strips are determined by $a(y)$. 
+%In Fig.~\ref{fig:2d_geo}, the function $a(y)$ is depicted in red. If we translate $a(y)$ along the $x$-axis we actually create two partitions on the $x$-axis, 
+%i.e. $(x_i^1)_{i=0}^{n}$ and $(x_i^2)_{i=0}^{n}$ with $x_i^1\in[a,b]$ and $x_i^2\in[a',b']$.  To map partition points in $[a',b']$ to partition points 
+%in $[a,b]$ we use the function $g$. The reverse is achieved through $h$. The functions $g$ and $h$ depend soly on $a(y)$ and are also 
+%computed with it.
+\noindent
+with $(x_i^2)_{i=0}^n$ being arbitrary partition points on the $x$-axis. Eq.~\eqref{eq:g_int2} shows us that the function of the integrator $g$ is to
+map points in the interval $[a',b']$ to other locations on the $x$-axis. When $g$ is monotone increasing, it maps points in the interval $[a',b']$ to $[a,b]$,
+with $a = g(a')$ and $b = g(b')$. The integral in Equation~\ref{eq:g_int2} is hard to evaluate in its present form. If $g$ is differentiable, however, then it becomes trivial to 
+evaluate a Riemann-Stieltjes integral due to the following identity:
+\begin{equation}
+\int_{a'}^{b'} f(x) dg(x) = \int_{a'}^{b'} f(x)g'(x)~dx.
+\end{equation}
+As an example:
+\begin{equation}
+\int_{\frac{1}{2}}^{2} f(x) dg(x)=\int_{\frac{1}{2}}^2 x~d2x = \int_{\frac{1}{2}}^2 2x~dx = 3.75. 
+\end{equation}
+
 \section{Cavalieri Integral}
 Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
 %\begin{figure}[htb]
