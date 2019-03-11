@@ -119,6 +119,9 @@ def plot_gamma(x):
     plt.show()
 
 def plot_gamma2(x):
+    
+    x = np.linspace(-5,-4,1000)
+    x = x[1:-2]
     y = np.zeros((len(x),))
 
     for k in range(len(x)):
@@ -131,7 +134,90 @@ def plot_gamma2(x):
            # what to do if we get a value error
            y[k] = np.NaN
     
-    plt.plot(x,y) 
+    plt.plot(x,y,"b")
+    plt.hold('on')
+    
+    x = np.linspace(-4,-3,1000)
+    x = x[1:-2]
+    y = np.zeros((len(x),))
+
+    for k in range(len(x)):
+        #print(k)
+        #print(x[k])
+        try:
+           # put the code you want to try here
+           y[k] = math.gamma(x[k])
+        except ValueError:
+           # what to do if we get a value error
+           y[k] = np.NaN
+    
+    plt.plot(x,y,"b")
+     
+    x = np.linspace(-3,-2,1000)
+    x = x[1:-2]
+    y = np.zeros((len(x),))
+
+    for k in range(len(x)):
+        #print(k)
+        #print(x[k])
+        try:
+           # put the code you want to try here
+           y[k] = math.gamma(x[k])
+        except ValueError:
+           # what to do if we get a value error
+           y[k] = np.NaN
+    
+    plt.plot(x,y,"b")
+    
+    x = np.linspace(-2,-1,1000)
+    x = x[1:-2]
+    y = np.zeros((len(x),))
+
+    for k in range(len(x)):
+        #print(k)
+        #print(x[k])
+        try:
+           # put the code you want to try here
+           y[k] = math.gamma(x[k])
+        except ValueError:
+           # what to do if we get a value error
+           y[k] = np.NaN
+    
+    plt.plot(x,y,"b")
+
+    x = np.linspace(-1,0,1000)
+    x = x[1:-2]
+    y = np.zeros((len(x),))
+
+    for k in range(len(x)):
+        #print(k)
+        #print(x[k])
+        try:
+           # put the code you want to try here
+           y[k] = math.gamma(x[k])
+        except ValueError:
+           # what to do if we get a value error
+           y[k] = np.NaN
+    
+    plt.plot(x,y,"b")
+
+    x = np.linspace(0,5,1000)
+    x = x[1:]
+    y = np.zeros((len(x),))
+
+    for k in range(len(x)):
+        #print(k)
+        #print(x[k])
+        try:
+           # put the code you want to try here
+           y[k] = math.gamma(x[k])
+        except ValueError:
+           # what to do if we get a value error
+           y[k] = np.NaN
+    
+    plt.plot(x,y,"b")
+    
+
     plt.ylim([-5,5])      
     plt.show()
  
@@ -139,7 +225,7 @@ def plot_gamma2(x):
 if __name__ == "__main__":
    x = np.linspace(-5,5,2000)
    x = x[1:]
-   plot_gamma(x)
+   plot_gamma2(x)
    '''
    num_points = 5
    t_f = 10
