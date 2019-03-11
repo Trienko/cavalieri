@@ -100,11 +100,47 @@ def plot_area(t_vector,alpha_vector,y_points,f_inv,f):
             if i == 0:
               ax[k,i].set_ylabel("t = "+str(round(t_vector[k],1)))
     plt.show() 
-           
 
+def plot_gamma(x):
+    y = np.zeros((len(x),))
+
+    for k in range(len(x)):
+        #print(k)
+        #print(x[k])
+        try:
+           # put the code you want to try here
+           y[k] = math.gamma(x[k])
+        except ValueError:
+           # what to do if we get a value error
+           y[k] = np.NaN
+    
+    plt.plot(x,y) 
+    plt.ylim([-5,5])      
+    plt.show()
+
+def plot_gamma2(x):
+    y = np.zeros((len(x),))
+
+    for k in range(len(x)):
+        #print(k)
+        #print(x[k])
+        try:
+           # put the code you want to try here
+           y[k] = math.gamma(x[k])
+        except ValueError:
+           # what to do if we get a value error
+           y[k] = np.NaN
+    
+    plt.plot(x,y) 
+    plt.ylim([-5,5])      
+    plt.show()
  
 
 if __name__ == "__main__":
+   x = np.linspace(-5,5,2000)
+   x = x[1:]
+   plot_gamma(x)
+   '''
    num_points = 5
    t_f = 10
    alpha_f = 2    
@@ -124,7 +160,7 @@ if __name__ == "__main__":
    plot_area(t_v,alpha_v,y_points,f1_inv,f1)
    plot_area(t_v,alpha_v,y_points,f2_inv,f2) 
    #plot_a_functions(t_v,alpha_v,y_points,f2_inv,f2)
-
+   '''
    '''
    fig, ax = plt.subplots(10, 10, sharex='all', sharey='all')
 
