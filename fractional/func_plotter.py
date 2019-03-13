@@ -217,7 +217,15 @@ def plot_gamma2(x):
     
     plt.plot(x,y,"b")
     
-
+    plt.axvline(x=-4, color='r', linestyle='--')
+    plt.axvline(x=-3, color='r', linestyle='--')
+    plt.axvline(x=-2, color='r', linestyle='--')
+    plt.axvline(x=-1, color='r', linestyle='--')
+    plt.axvline(x=0, color='k')
+    plt.axhline(y=0, color='k')
+    plt.grid('on')
+    plt.xlabel(r"$x$")
+    plt.ylabel(r"$\Gamma(x)$")
     plt.ylim([-5,5])      
     plt.show()
  
