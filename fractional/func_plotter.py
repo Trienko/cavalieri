@@ -45,18 +45,23 @@ def f2(x):
 def f2_inv(y):
     return y**2
 
-def plt_gh_functions(alpha = np.array([0.25,0.5,0.75,1.0]),t=10,num=100):
+def plt_gh_functions(alpha = np.array([0.125,0.25,0.375,0.5,0.625,0.75,0.875,1.0]),t=10,num=1000):
     tau = np.linspace(0,t,num)
     
+    v = np.linspace(0,1.5,len(alpha))
 
     for k in range(len(alpha)):
-        tau2 = np.linspace(0,(t**alpha[k])/math.gamma(alpha+1),num)
+        tau2 = np.linspace(0,(t**alpha[k])/math.gamma(alpha[k]+1),num)
         y1 = g_func(tau,alpha[k],t)
-        y2 = h_func(tau2,alpha,t)
+        y2 = h_func(tau2,alpha[k],t)
+        col = [v[k]/2,v[k]/2,v[k]/2]    
+        plt.plot(tau,y1,color=col)
+        plt.plot(tau2,y2,color=col,ls = "--")
 
-        plt.plot(tau,y1)
-        plt.plot(tau2,y2)
-
+    plt.xlabel(r"$\tau$")
+    plt.ylabel(r"$y$")
+    plt.xlim([0,10])
+    plt.ylim([0,10])
     plt.show()
 
 
@@ -99,6 +104,41 @@ def plot_a_functions(t_vector,alpha_vector,y_points,f_inv,f):
             if i == 0:
               ax[k,i].set_ylabel("t = "+str(round(t_vector[k],1)))
     plt.show() 
+
+def plot_b_functions(t_vector=np.array([2,4,6,8,10]),alpha_vector=np.array([0.2,0.4,0.6,0.8]),y_points=1000,f_inv=f1_inv,f=f1):
+    #plt.grid('on')
+    fig,ax = plt.subplots(1,len(alpha_vector),sharex='all', sharey='all')
+    #plt.grid('on')
+    v = np.linspace(0,1.5,len(t_vector))
+
+    for i in range(len(alpha_vector)):
+        x = np.linspace(0,t_vector[-1],y_points)
+        
+        ax[i].plot(x,f(x),"k") 
+        if i == 0:
+           ax[i].set_xlabel(r"$\tau$")
+           ax[i].set_ylabel(r"$y$")
+        ax[i].set_title(r"$\alpha = $"+str(alpha_vector[i]))
+        for k in range(len(t_vector)):
+            y = np.linspace(0,f(t_vector[k]),y_points)
+            b = g_func(t_vector[k],alpha_vector[i],t_vector[k])
+            col = [v[k]/2,v[k]/2,v[k]/2]    
+        
+            ax[i].plot(a_func(y,alpha_vector[i],t_vector[k],f_inv)+b,y,color=col) 
+            ax[i].set_xlim([0,t_vector[-1]+0.6])
+            ax[i].set_ylim([0,f(t_vector[-1])]) 
+              
+    plt.show()        
+            
+def scaling(t_vector=np.array([2,4,6,8,10]),alpha=0.8,y_points=1000,f_inv=f1_inv,f=f1):
+    
+    for k in range(2,len(t_vector)):
+            y = np.linspace(0,f(t_vector[k]),y_points)
+            s = a_func(y,alpha,t_vector[k],f_inv)/a_func(y,alpha,t_vector[k-1],f_inv)
+            y = np.linspace(0,f(t_vector[k]),y_points)
+            plt.plot(s)    
+    plt.show()        
+   
 
 def plot_area(t_vector,alpha_vector,y_points,f_inv,f):
     fig, ax = plt.subplots(len(t_vector), len(alpha_vector), sharex='all', sharey='all')
@@ -256,6 +296,8 @@ def plot_g(alpha, t, num):
     
 if __name__ == "__main__":
    plt_gh_functions()
+   plot_b_functions()
+   scaling() 
    #plot_g(1.5,10,1000)
    #x = np.linspace(-5,5,2000)
    #x = x[1:]
