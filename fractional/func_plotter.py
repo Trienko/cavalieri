@@ -45,6 +45,22 @@ def f2(x):
 def f2_inv(y):
     return y**2
 
+def plt_gh_functions(alpha = np.array([0.25,0.5,0.75,1.0]),t=10,num=100):
+    tau = np.linspace(0,t,num)
+    
+
+    for k in range(len(alpha)):
+        tau2 = np.linspace(0,(t**alpha[k])/math.gamma(alpha+1),num)
+        y1 = g_func(tau,alpha[k],t)
+        y2 = h_func(tau2,alpha,t)
+
+        plt.plot(tau,y1)
+        plt.plot(tau2,y2)
+
+    plt.show()
+
+
+
 def plot_g_functions(t_vector,alpha_vector,tau_points):
     fig, ax = plt.subplots(len(t_vector), len(alpha_vector), sharex='all', sharey='all')
     for k in range(0,len(t_vector)):
@@ -228,12 +244,22 @@ def plot_gamma2(x):
     plt.ylabel(r"$\Gamma(x)$")
     plt.ylim([-5,5])      
     plt.show()
- 
 
+def plot_g(alpha, t, num):
+    tau = np.linspace(0,t,num)
+    plt.plot(tau,tau**alpha,"r")
+    plt.plot(tau,(-1*tau)**alpha,"b")
+    plt.plot(tau,(t-tau)**alpha,"m")
+    plt.plot(tau,-1*(t-tau)**alpha,"c")
+    plt.plot(tau,t**alpha-(t-tau)**alpha,"g")
+    plt.show()
+    
 if __name__ == "__main__":
-   x = np.linspace(-5,5,2000)
-   x = x[1:]
-   plot_gamma2(x)
+   plt_gh_functions()
+   #plot_g(1.5,10,1000)
+   #x = np.linspace(-5,5,2000)
+   #x = x[1:]
+   #plot_gamma2(x)
    '''
    num_points = 5
    t_f = 10
