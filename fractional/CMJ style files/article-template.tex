@@ -311,22 +311,22 @@ h_t^{\alpha}(x) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)x}
 
 \begin{table}[h!]
 \centering
- \begin{tabular}{||c c c||} 
+ \begin{tabular}{||c|| c| c||} 
  \hline
- $\alpha$ & $\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau$ & Col2 \\[0.5ex]
+ $\alpha$ & $\frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau$ & $\frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau$ \\[0.5ex]
  \hline\hline
  \rule{0pt}{2.5ex}
- $0$ & $t$ & 87837  \\  
+ $0$ & $t$ & $\sqrt{t}$  \\  
  \rule{0pt}{2.5ex}
- $0.2$ & $\frac{25}{6\Gamma(\frac{1}{5})} t^{\frac{6}{5}}$  & 78  \\ 
+ $0.2$ & $\frac{25}{6\Gamma(\frac{1}{5})} t^{\frac{6}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{17}{10})} t^{\frac{7}{10}}$  \\ 
  \rule{0pt}{2.5ex}
- $0.4$ & $\frac{25}{14\Gamma(\frac{2}{5})} t^{\frac{7}{5}}$  & 778  \\
+ $0.4$ & $\frac{25}{14\Gamma(\frac{2}{5})} t^{\frac{7}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{19}{10})} t^{\frac{9}{10}}$  \\
  \rule{0pt}{2.5ex}
- $0.6$ & $\frac{25}{24\Gamma(\frac{3}{5})} t^{\frac{8}{5}}$  & 18744  \\ 
+ $0.6$ & $\frac{25}{24\Gamma(\frac{3}{5})} t^{\frac{8}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{21}{10})} t^{\frac{11}{10}}$  \\ 
  \rule{0pt}{2.5ex}
- $0.8$ & $\frac{25}{36\Gamma(\frac{4}{5})} t^{\frac{9}{5}}$  & 788  \\ 
+ $0.8$ & $\frac{25}{36\Gamma(\frac{4}{5})} t^{\frac{9}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{23}{10})} t^{\frac{13}{10}}$  \\ 
  \rule{0pt}{2.5ex}
- $1$ & $\frac{1}{2}t^2$  & 788  \\ [1ex]
+ $1$ & $\frac{1}{2}t^2$  & $\frac{2}{3}t^{\frac{3}{2}}$  \\ [1ex]
  \hline
  \end{tabular}
 \end{table}
