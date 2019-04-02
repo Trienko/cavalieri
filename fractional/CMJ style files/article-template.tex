@@ -269,7 +269,7 @@ with
 g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
 \end{equation}
 
-Note that $g_t^{\alpha}(\tau)$ is always invertable, since $\frac{d g_t^{\alpha}}{d \tau} = \frac{\alpha(t-\tau)^{\alpha-1}}{\Gamma(\alpha+1)}>0$ for $\tau\in[0,t]$. 
+Note that $g_t^{\alpha}(\tau)$ is always invertable, since $\frac{d g_t^{\alpha}}{d \tau} = \frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}>0$ for $\tau\in[0,t]$. 
 
 We can now transform Equation~\ref{eq:rs} into an equivalent Cavalieri integral:
 \begin{equation}
@@ -289,6 +289,24 @@ reduces to a normal Riemann integral as the integration strips become rectangula
 \begin{equation}
 h_t^{\alpha}(x) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)x}
 \end{equation}
+
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c || c | c|} 
+ \hline
+ $\alpha$ & $g_{10}^{\alpha}(\tau)$ & $h_{10}^{\alpha}(\tau)$ \\ [0.5ex] 
+ \hline\hline
+ $0$ & 0 & $y=0$ \\ 
+ $0.2$ & $[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-\tau}\right)$ & $10 - \left ( \sqrt[5]{10} -  \Gamma\left (\frac{6}{5} \right ) \tau \right )^5$  \\
+ $0.4$ & $[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-\tau)^2}\right)$ & $10 - \sqrt{\left ( \sqrt[5]{10} -  \Gamma\left (\frac{7}{5} \right ) \tau \right )^5}$ \\
+ $0.6$ & $[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-\tau)^3}\right)$ & $10 - \sqrt[3]{\left ( \sqrt[5]{10} -  \Gamma\left (\frac{8}{5} \right ) \tau \right )^5}$ \\
+ $0.8$ & $[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-\tau)^4}\right)$ & $10 - \sqrt[4]{\left ( \sqrt[5]{10} -  \Gamma\left (\frac{9}{5} \right ) \tau \right )^5}$ \\ [1ex] 
+ $1$ & $\tau$ & $\tau$ \\ [1ex] 
+ \hline
+ \end{tabular}
+\end{table}
+
+
 
 
 
