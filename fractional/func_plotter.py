@@ -380,8 +380,50 @@ def plot_frac_int1():
     
     plt.show()
 
+def plot_frac_int2():
+    t = np.linspace(0,10,1000)
+    from matplotlib.pyplot import figure
+    from matplotlib.ticker import MaxNLocator
+    ax = figure().gca()
+    plt.plot(t,np.sqrt(t),"k",lw=2,label=r"$\alpha=0$")
+    y1 = (np.sqrt(np.pi)/(2*math.gamma(17.0/10.0)))*t**(7.0/10.0)
+    y2 = (np.sqrt(np.pi)/(2*math.gamma(19.0/10.0)))*t**(9.0/10.0)
+    y3 = (np.sqrt(np.pi)/(2*math.gamma(21.0/10.0)))*t**(11.0/10.0)
+    y4 = (np.sqrt(np.pi)/(2*math.gamma(23.0/10.0)))*t**(13.0/10.0)
+    ax.plot(t,y1,"k",dashes=[10, 5, 20, 5],label=r"$\alpha=0.2$")	
+    ax.plot(t,y2,"k",dashes=[4,10],label=r"$\alpha=0.4$")
+    ax.plot(t,y3,"k",ls=":",label=r"$\alpha=0.6$")
+    ax.plot(t,y4,"k",ls="-.",label=r"$\alpha=0.8$")
+    ax.plot(t,2.0/3.0*t**(3.0/2.0),"k",dashes=[5,1],lw=2,label=r"$\alpha=1.0$")
+
+    t_vector = np.array([2,4,6,8,10])
+
+    v = np.linspace(0,1.5,len(t_vector))
+    plt.legend()
+
+    for k in range(len(v)):
+    	y1 = (np.sqrt(np.pi)/(2*math.gamma(17.0/10.0)))*t_vector[k]**(7.0/10.0)
+    	y2 = (np.sqrt(np.pi)/(2*math.gamma(19.0/10.0)))*t_vector[k]**(9.0/10.0)
+    	y3 = (np.sqrt(np.pi)/(2*math.gamma(21.0/10.0)))*t_vector[k]**(11.0/10.0)
+    	y4 = (np.sqrt(np.pi)/(2*math.gamma(23.0/10.0)))*t_vector[k]**(13.0/10.0)
+    
+    	ax.plot(t_vector[k],y1,"o",color=[v[k]/2,v[k]/2,v[k]/2])
+    	ax.plot(t_vector[k],y2,"o",color=[v[k]/2,v[k]/2,v[k]/2])
+    	ax.plot(t_vector[k],y3,"o",color=[v[k]/2,v[k]/2,v[k]/2])
+    	ax.plot(t_vector[k],y4,"o",color=[v[k]/2,v[k]/2,v[k]/2])
+
+    ax.set_xlim([0,10])
+    ax.set_ylim([0,22])
+
+    ax.set_xlabel(r"$t$")
+    ax.set_ylabel(r"$y$")
+    ax.yaxis.set_major_locator(MaxNLocator(integer=True))    
+    plt.show()
+
+
 if __name__ == "__main__":
    plot_frac_int1()
+   plot_frac_int2()
    #plot_y_test()
    #plot_inversepar()
    #plt_gh_functions()
