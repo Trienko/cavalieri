@@ -290,6 +290,12 @@ reduces to a normal Riemann integral as the integration strips become rectangula
 h_t^{\alpha}(x) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)x}
 \end{equation}
 
+By employing $h$ we can transform eq.~\ref{eq:cav} into the following Riemann integral:
+\begin{equation}
+\int_0^{\frac{t^{\alpha}}{\Gamma(\alpha+1)}} f\circ h_{\alpha}^t (\tau) d\tau.  
+\end{equation}
+
+
 \begin{table}[h!]
 \centering
  \begin{tabular}{|c || c | c|} 
@@ -305,9 +311,6 @@ h_t^{\alpha}(x) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)x}
  \hline
  \end{tabular}
 \end{table}
-
-
-
 
 \begin{table}[h!]
 \centering
@@ -331,7 +334,16 @@ h_t^{\alpha}(x) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)x}
  \end{tabular}
 \end{table}
 
+\section{Examples}
+We use the geometric framework we presented in the previous paragraph to provide 
+To make things clear we provide two fully worked examples below of how to geometrically interpret fractional integrals using conversion  presented in the previsous 
+section. The two fractional integrals we will visualize are:\\ 
 
+\noindent
+$\frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau$ and $\frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau$.\\
+
+The steps to visualize the above two integral wer described in the previous paragraph. We first convert the integrals into Riemann-Stieltjes integrals. The 
+Riemann-Stieltjes integrals are then converted to Cavalieri integrals. The graphical  
 
 
 
