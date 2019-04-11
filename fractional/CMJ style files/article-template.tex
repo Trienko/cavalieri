@@ -314,6 +314,25 @@ By employing $h$ we can transform eq.~\ref{eq:cav} into the following Riemann in
 
 \begin{table}[h!]
 \centering
+ \begin{tabular}{|c || c | c|} 
+ \hline
+ & \multicolumn{2}{|c|}{$a_{10}^{\alpha}(\tau)$}\\
+ \hline
+ &$f(\tau) = \tau$ & $f(\tau)=\sqrt{\tau}$ \\ [0.5ex] 
+ \hline\hline
+ $0$ & 0 & $y=0$ \\ 
+ $0.2$ & $y-[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-y}\right)$ & $y^2-[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-y^2}\right)$  \\
+ $0.4$ & $y-[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-y)^2}\right)$ & $y^2-[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-y^2)^2}\right)$ \\
+ $0.6$ & $y-[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-y)^3}\right)$ & $y^2-[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-y^2)^3}\right)$ \\
+ $0.8$ & $y-[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-y)^4}\right)$ & $y^2-[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-y^2)^4}\right)$ \\ [1ex] 
+ $1$ & $\tau$ & $\tau$ \\ [1ex] 
+ \hline
+ \end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
  \begin{tabular}{||c|| c| c||} 
  \hline
  $\alpha$ & $\frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau$ & $\frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau$ \\[0.5ex]
@@ -335,15 +354,27 @@ By employing $h$ we can transform eq.~\ref{eq:cav} into the following Riemann in
 \end{table}
 
 \section{Examples}
-We use the geometric framework we presented in the previous paragraph to provide 
-To make things clear we provide two fully worked examples below of how to geometrically interpret fractional integrals using conversion  presented in the previsous 
-section. The two fractional integrals we will visualize are:\\ 
+In this section we will illustrate the usefulness of the proposed geometric framework at the hand of two examples.
+Consider the two fractional integrals:
+
+\begin{equation}
+\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau 
+\end{equation}
+
+and
+
+\begin{equation}
+\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau.
+\end{equation}
 
 \noindent
 $\frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau$ and $\frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau$.\\
 
-The steps to visualize the above two integral wer described in the previous paragraph. We first convert the integrals into Riemann-Stieltjes integrals. The 
-Riemann-Stieltjes integrals are then converted to Cavalieri integrals. The graphical  
+We can give
+
+The steps to visualize the above two integrals were described in the previous paragraph. We first convert the integrals into Riemann-Stieltjes integrals. The 
+Riemann-Stieltjes integrals are then converted to Cavalieri integrals. We can then simply depict the Cavalieri integrals and in doing so obtain a geometric interpretaion
+of the original fractional integrals. Importantly, for each value of $t$ we obtain a different 
 
 
 
