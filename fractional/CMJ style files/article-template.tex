@@ -378,7 +378,7 @@ Let us first consider the following fractional integral:
 \label{eq:ex1_raw}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau. 
 \end{equation}
-We can assign a geometric interpretation to the above fractional integral by converting it into a Cavalieri integral using two steps. First, we convert 
+The function $f(\tau) =\tau$ is depicted in Figure~\ref{??}. We can assign a geometric interpretation to the above fractional integral by converting it into a Cavalieri integral using two steps. First, we convert 
 the above integral into a Riemann-Stieltjes integral:
 \begin{equation}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau). 
@@ -395,11 +395,45 @@ shape is determined by $\alpha$ and $t$, i.e. the geometric interpretation of Eq
 
 Lets clarify the above by working through a detailed example. If we set the value of $\alpha$ to $\frac{4}{5}$ and the value of $t$ to 10 in Eq.~\eqref{eq:ex1} we obtain:
 \begin{equation}
-\int_{a_{10}^{\frac{4}{5}}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau. 
+\int_{a_{10}^{\frac{4}{5}}(y)}^{b_{10}^{\frac{4}{5}}(y)} f(\tau)~d\tau. 
 \end{equation}
-This integral can be interpreted as the area of the region bounded by the $x$-axis, the function $f(y)$ and the function $b_{10}^{\frac{4}{5}}(y)$. Let us denote 
-this region with the symbol $R_1$. The region $R_1$ is depicted and labelled in the left most panel of Figure.~\ref{??}. The function    
+This integral can be interpreted as the area of the region bounded by the $x$-axis, the function $f(\tau)$ and the function $b_{10}^{\frac{4}{5}}(y)$. Let us denote 
+this region with the symbol $R_{10}^{\frac{4}{5}}$. The region $R_{10}^{\frac{4}{5}}$ is depicted and labelled in the right-most panel of Figure.~\ref{??}. We are now in a position to assign a geometric 
+interpretaion to Eq.~\eqref{}. We can approximate the area of $R_{10}^{\frac{4}{5}}$
+by summing together the area of non-rectangular integration strips that inscribe $R_{10}^{\frac{4}{5}}$. The only resctriction being: the sides of these non-rectangualar integration strips have to be translations of $b_{10}^{\frac{4}{5}}(y)$.
+Lets now choose to approximate the area of $R_{10}^{\frac{4}{5}}$ using five integration strips of equal width. The aformentioned integration strips are depicted in the right-most panel of Figure~\ref{??}.
+The sides of the integration strips are depicted using dashed lines. The more integration strips we consider the better our approximation of $R_{10}^{\frac{4}{5}}$ becomes. 
 
+
+
+We can better approximate the area of $R_{10}^{\frac{4}{5}}$ by increasing the number of integrations strips we use .   Increasing the number of integration strips we use improves our approximation of the area of $R_{10}^{\frac{4}{5}}$  
+If we decide on using five integration strips 
+
+
+that 
+we use whose sides are translations of $b_{10}^{\frac{4}{5}}(y)$ 
+
+
+Each panel of 
+Figure~\ref{??} depicts the function $f(\tau)$ and the set of curves $\mathsf{B}_T^{\alpha}$. The set $\mathsf{B}_T^{\alpha}$ is defined in Table~\ref{??} and contains 
+all the Cavalieri integral upper limits obtained by fixing the order of integration $\alpha$ to a specific value. In each panel, we depict the set of curves $\mathsf{B}_T^{\alpha}$ using different shades of grey. 
+The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases.
+
+
+The The $y$-valued functions are depicted in different shades of gray. The $\tau$-valued fun 
+
+The curve in the rightmost panel of 
+Figure~\ref{} which is depicted in the lightest shade of gray of 
+
+The function $b_{10}^{\frac{4}{5}}(y)$ 
+depicted in the lightest shade of gray used within the right-most panel
+
+
+The right-most panel of Figure.~\ref{??} contains 
+a few $y$-valued curves, each one depicted in a different shade of gray. The curve depicted in the lightest shade of gray is  
+
+
+In each of the panels  curves $\mathsf{B}_1^{\alpha}$
 
 convert the 
 integrals in ?? and ?? to equivalent Cavalieri integrals.
