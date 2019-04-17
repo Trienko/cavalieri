@@ -330,6 +330,23 @@ By employing $h$ we can transform eq.~\ref{eq:cav} into the following Riemann in
  \end{tabular}
 \end{table}
 
+\begin{table}[h!]
+\centering
+ \begin{tabular}{|c || c|} 
+ \hline
+ Symbol & Definition  \\ [0.1ex]
+ \hline 
+ \rule{0pt}{2.5ex}
+ $\mathsf{G}^{10}$ & $\{g_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
+ $\mathsf{H}^{10}$ & $\{h_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
+ $\mathsf{A}^{10}$ & $\{a_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
+ $\mathsf{B}^{10}$ & $\{b_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
+ $\mathsf{B}^{\frac{4}{5}}_1$ & $\{b_{t}^{\frac{4}{5}}(\tau)|t\in\alpha\in\{2,4,6,8,10\}$\\ [0.5ex]
+ $\mathsf{B}^{\frac{4}{5}}_2$ & $\{b_{10}^{\frac{4}{5}}(\tau)-c|c\in\in\{0,2,4,6,8\}$\\ [0.5ex]
+ \hline 
+ \end{tabular}
+\end{table}
+
 
 \begin{table}[h!]
 \centering
@@ -355,20 +372,38 @@ By employing $h$ we can transform eq.~\ref{eq:cav} into the following Riemann in
 
 \section{Examples}
 In this section we will illustrate the usefulness of the proposed geometric framework at the hand of two examples.
-Consider the two fractional integrals:
 
+Let us first consider the following fractional integral:
 \begin{equation}
-\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau 
+\label{eq:ex1_raw}
+\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau. 
 \end{equation}
-
-and
-
+We can assign a geometric interpretation to the above fractional integral by converting it into a Cavalieri integral using two steps. First, we convert 
+the above integral into a Riemann-Stieltjes integral:
 \begin{equation}
-\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau.
+\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau). 
 \end{equation}
+We then convert the resulting Riemann-Stieltjes integral into a Cavalieri integral:
+\begin{equation}
+\label{eq:ex1}
+\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau)=\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau. 
+\end{equation}
+We know that a Cavalieri integral can be interpreted as the area which is obtained by summing together the area associated with an infinite number of non-rectangular infinitesimals whose shape 
+is determined by the integration limits of the Cavalieri integral. Note that neither $g_t^{\alpha}(\tau)$ nor $a_t^{\alpha}(y)$ are static functions, 
+they depend on the value of $\alpha$ and $t$. This implies that a fractional integral of order $\alpha$ and extent $t$ can be interpeted as the area obtained by summing together the area associated with an infinite number of infinitesimals whose 
+shape is determined by $\alpha$ and $t$, i.e. the geometric interpretation of Eq.~\eqref{eq:ex1_raw} is non-static as it depends on the value of $\alpha$ and $t$.
 
-\noindent
-$\frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau$ and $\frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau$.\\
+Lets clarify the above by working through a detailed example. If we set the value of $\alpha$ to $\frac{4}{5}$ and the value of $t$ to 10 in Eq.~\eqref{eq:ex1} we obtain:
+\begin{equation}
+\int_{a_{10}^{\frac{4}{5}}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau. 
+\end{equation}
+This integral can be interpreted as the area of the region bounded by the $x$-axis, the function $f(y)$ and the function $b_{10}^{\frac{4}{5}}(y)$. Let us denote 
+this region with the symbol $R_1$. The region $R_1$ is depicted and labelled in the left most panel of Figure.~\ref{??}. The function    
+
+
+convert the 
+integrals in ?? and ?? to equivalent Cavalieri integrals.
+
 
 We can assign a geometric interpretation to the above fractional integrals by converting them into Cavalieri integrals. This can be achieved by first 
 converting the above integrals into Riemann-Stieltjes integrals and then converting the resulting integrals into Cavalieri integrals. Exaclty how these conversion are 
@@ -381,8 +416,16 @@ shape is determined by $\alpha$ and $t$.
 
 Lets clarify the above by working through a detailed example. Lets set the value of $\alpha$ to $\frac{4}{5}$ and the value of $t$ to 10 and then convert the 
 integrals in ?? and ?? to equivalent Cavalieri integrals. If we evaluate these Cavalieri integrals we obtain the area of two regions $A$ and $B$. Both $A$ and $B$ are bounded by the $x$-axis, 
-$f(x)$ and $b_{10}^{\frac{4}{5}}(y)$. Region $A$ and $B$ are depicted in the rightmost panel of Fig ?? and Fig ??. Note that the curves $\{b_{t}^{\frac{4}{5}}(y)|t\in\{2,4,6,8,10\}\}$ are plotted 
-using a greyscale. The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases.  is the lighter the curve associated with $b_t^{\alpha}(y)$ is.
+$f(x)$ and $b_{10}^{\frac{4}{5}}(y)$. Region $A$ and $B$ are respectively depicted in the rightmost panel of Fig ?? and Fig ??. The area of $A$ and $B$ can be approximated
+by summing together the area of non-rectangular integration strips that inscribes $A$ and $B$. The case in which we use five integration strips is depicted in 
+Fig ?? and Fig ??. The analytic expressions of the right sides of these integration strips are elements of the set $\mathsf{A} = \{b_{10}^{\frac{4}{5}}(y) - c|c\in\{0,2,4,6,8\}\}$. The 
+curves are plotted using dashed lines. 
+
+The curves $\mathsf{B} = \{b_{t}^{\frac{4}{5}}(y)|t\in\{2,4,6,8,10\}\}$ are plotted in different shades of grey. The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases. Note 
+that $\mathsf{A}\neq \mathsf{B}$. The sides of the integration strips 
+
+
+is the lighter the curve associated with $b_t^{\alpha}(y)$ is.
 
 We depict We depict $b_10^{\alpha}(y)$ with the lightest
 shade of
@@ -390,6 +433,13 @@ depicted in the right most   depict the region associated that is associated wit
 
 
 the obtained Lets depict the geometric interpretation 
+
+
+
+%\begin{equation}
+%\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau.
+%\end{equation}
+
 
 
 %The integration limits of the aformentioned Cavalieri 
