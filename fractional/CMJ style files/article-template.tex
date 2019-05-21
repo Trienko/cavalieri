@@ -383,7 +383,7 @@ Let us first consider the following fractional integral:
 \label{eq:ex1_raw}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau. 
 \end{equation}
-The function $f(\tau) =\tau$ is depicted in Figure~\ref{??}. We can assign a geometric interpretation to the above fractional integral by converting it into a Cavalieri integral using two steps. First, we convert 
+The function $f(\tau) =\tau$ is depicted in Figure~\ref{??}. As we mentioned in the previous section, we can assign a geometric interpretation to the above fractional integral by converting it into a Cavalieri integral using two steps. First, we convert 
 the above integral into a Riemann-Stieltjes integral:
 \begin{equation}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau). 
@@ -393,6 +393,11 @@ We then convert the resulting Riemann-Stieltjes integral into a Cavalieri integr
 \label{eq:ex1}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau)=\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau. 
 \end{equation}
+
+As we mentioned in the previous section Eq.~\ref{eq:ex1} has a clear geometric interpretation. It can be interpreted as the area obtained by summing togheher the areas of an infinite 
+number of infinitesimals whose shape is determined by $\alpha$ and $t$. The thing which remains unclear, however, is in what way does $\alpha$ and $t$ affect the 
+shape of the aforementioned infinitesimals. We will this question using two steps: we will first investigate the shape of the infinitesimal we obtain by fixing 
+$\alpha$ and $t$ to specific values. We will then explore how varying the value of $\alpha$ and $t$ affects the shape of the infinitesimals.
 
 %We know that a Cavalieri integral can be interpreted as the area which is obtained by summing together the area associated with an infinite number of non-rectangular infinitesimals whose shape 
 %is determined by the integration limits of the Cavalieri integral. Note that neither $g_t^{\alpha}(\tau)$ nor $a_t^{\alpha}(y)$ are static functions, 
