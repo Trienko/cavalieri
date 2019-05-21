@@ -254,13 +254,13 @@ I^{\alpha}I^{\beta}f(x) = I^{\alpha+\beta}f(x).
 
 \section{Geometric Interpretation of the Riemann-Liouville Fractional Integral}
 
-The fractional integral is defined as (need to be more explicit here). Need to add how it has come about... Start with a single integral, expand to the general case and then 
-to a general $\alpha$. 
+Recall that the Riemann-Liouville fractional integral of order $\alpha$ is defined as:
 \begin{equation}
+\label{eq:RL_frac_int}
 \frac{1}{\Gamma(\alpha)}\int_{0}^{t}f(\tau)(t-\tau)^{\alpha-1}~d\tau
 \end{equation}
 
-Podlubny showed that the fractional integral can be rewritten as a Riemann-Stieltjes integral:
+Podlubny showed that the above fractional integral can be rewritten as a Riemann-Stieltjes integral:
 \begin{equation}
 \label{eq:rs}
 \int_0^{t} f(\tau)~dg_t(\tau),
@@ -270,26 +270,27 @@ with
 g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
 \end{equation}
 
-Note that $g_t^{\alpha}(\tau)$ is always invertable, since $\frac{d g_t^{\alpha}}{d \tau} = \frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}>0$ for $\tau\in[0,t]$. 
+Note that $g_t^{\alpha}(\tau)$ is always invertable, since $\frac{d g_t^{\alpha}}{d \tau} = \frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}>0$ for $\tau\in[0,t]$. The inverse 
+of $g_t^{\alpha}(\tau)$ is equal to:
+\begin{equation}
+h_t^{\alpha}(x) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)x}
+\end{equation}
 
-We can now transform Equation~\ref{eq:rs} into an equivalent Cavalieri integral:
+Grobler et. al showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral. We review this conversion procedure in the Cavalieri section of this paper. Applying their approach to Eq.~\ref{eq:rs} results in:
 \begin{equation}
 \label{eq:cav}
 \int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau, 
 \end{equation}
 with
 \begin{equation}
-a_t^{\alpha}(y) = f^{-1}(y) - \frac{t^{\alpha}-(t-f^{-1}(y))^{\alpha}}{\Gamma(\alpha+1)}
+a_t^{\alpha}(y) = f^{-1}(y) - \frac{t^{\alpha}-(t-f^{-1}(y))^{\alpha}}{\Gamma(\alpha+1)}.
 \end{equation}
+Note, Eq.~\eqref{} is obtained by substituting Eq.~\eqref{} into Eq.~\eqref{}.
 
-Since Equation~\ref{eq:cav} is a Cavalieri integral, it has a clear geometric interpretation. The integral in eq xxx can be interpreted as an infinite
+Since Equation~\ref{eq:cav} is a Cavalieri integral, it has a clear geometric interpretation. The integral in Equation~\ref{eq:RL_frac_int} can, therefore, be interpreted as an infinite
 sum of infinitesimally small non–rectangular integration strips whose shape is determined by $\alpha$ and $t$. The shape of the integration 
 strip will change if either $\alpha$ or $t$ is changed. If $\alpha$ is equal to one, however, then the integral 
 reduces to a normal Riemann integral as the integration strips become rectangular for this particular choice of $\alpha$ (its shape is now also no longer affected by $t$).
-
-\begin{equation}
-h_t^{\alpha}(x) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)x}
-\end{equation}
 
 By employing $h$ we can transform eq.~\ref{eq:cav} into the following Riemann integral:
 \begin{equation}
@@ -401,12 +402,15 @@ If we set the value of $\alpha$ to $\sfrac{4}{5}$ and the value of $t$ to 10 in 
 A_{10}^{\sfrac{4}{5}}=\int_{a_{10}^{\frac{4}{5}}(y)}^{b_{10}^{\frac{4}{5}}(y)} f(\tau)~d\tau 
 \end{equation}
 Let $R_{10}^{\sfrac{4}{5}}$ denote the region which is bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{10}^{\sfrac{4}{5}}(y)$. The region $R_{10}^{\sfrac{4}{5}}$ is depicted and labelled in the right-most panel of Figure.~\ref{??}. 
-Moreover, let $A_{10}^{\sfrac{4}{5}}$ denote the area of $R_{10}^{\sfrac{4}{5}}$. We are now in a position to assign a geometric interpretation to Eq.~\eqref{eq:ex1_specific} as it 
-contains a Cavalieri integral. We can approximate the area of $A_{10}^{\sfrac{4}{5}}$ by summing together the area of $n$ equal width non-rectangular integration strips that inscribe $R_{10}^{\sfrac{4}{5}}$. 
-Furthermore, the sides of these non-rectangular integration strips have to be translations of $b_{10}^{\sfrac{4}{5}}(y)$.
-If we take the limit of the aforementioned sum as $n\rightarrow \infty$ we obtain $A_{10}^{\sfrac{4}{5}}$, i.e. the region $R_{10}^{\sfrac{4}{5}}$ is made up 
-of an infinite number of infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$. The special case in which we approximate $A_{10}^{\sfrac{4}{5}}$ using five equal width non-rectangular integration strips is depicted in the right-most panel of Figure~\ref{??}. 
-The sides of the aforementioned five integration strips are depicted in Fig.~\ref{??} using dashed lines. Let $\mathsf{B}_{10}^{\sfrac{4}{5}}$ denote the set containing these dashed curves. 
+Moreover, let $A_{10}^{\sfrac{4}{5}}$ denote the area of $R_{10}^{\sfrac{4}{5}}$. We can approximate the area of $R_{10}^{\sfrac{4}{5}}$ by summing together the area of $n$ equal width non-rectangular integration strips that inscribe $R_{10}^{\sfrac{4}{5}}$. 
+Furthermore, the sides of the non-rectangular integration strips we use in this approximation have to be translations of $b_{10}^{\sfrac{4}{5}}(y)$.
+If we take the limit of the aforementioned sum as $n\rightarrow \infty$ we obtain $A_{10}^{\sfrac{4}{5}}$, i.e. if we evaluate the Cavalieri 
+integral in Eq.~\eqref{??} we obtain $A_{10}^{\sfrac{4}{5}}$ (as we mentioned in the previous section). We can, therefore, think of Eq.~\eqref{} as implying that that the region  $R_{10}^{\sfrac{4}{5}}$ is made up 
+of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$. Moreover, the special case in which we approximate $A_{10}^{\sfrac{4}{5}}$ using five equal width non-rectangular integration strips is depicted in the right-most panel of Figure~\ref{??}. 
+The sides of the aforementioned five integration strips are depicted in Fig.~\ref{??} using dashed lines. Let $\mathsf{B}_{10}^{\sfrac{4}{5}}$ denote the set containing these dashed curves.
+
+%We can, therefore, interpet Eq.~\eqref{}  The region $R_{10}^{\sfrac{4}{5}}$ is, therefore, made up 
+%of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$.
 
 Varying both $\alpha$ and $t$ results in Eq.~\eqref{eq:ex1}. In contrast with Eq.~\eqref{eq:ex1_specific}, Eq.~\eqref{eq:ex1} can be associated with more than one region. 
 Let $R_{t}^{\alpha}$ denote the region which is bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{t}^{\alpha}(y)$. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_{t}^{\alpha}$ and let $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}=\{R_t^{\alpha}|t\in\mathsf{T},~\alpha\in\mathsf{A}\}$. 
