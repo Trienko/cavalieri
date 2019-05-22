@@ -128,9 +128,9 @@ Recall that the Riemann-Stieltjes integral is defined as follows:
 %in $[a,b]$ we use the function $g$. The reverse is achieved through $h$. The functions $g$ and $h$ depend soly on $a(y)$ and are also 
 %computed with it.
 \noindent
-\textbf{NEED TO REWRITE SOME OF IT} with $(x_i^2)_{i=0}^n$ being arbitrary partition points on the $x$-axis. Eq.~\eqref{eq:g_int2} shows us that the function of the integrator $g$ is to
-map points in the interval $[a',b']$ to other locations on the $x$-axis. When $g$ is monotone increasing, it maps points in the interval $[a',b']$ to $[a,b]$,
-with $a = g(a')$ and $b = g(b')$. The integral in Equation~\ref{eq:g_int2} is hard to evaluate in its present form. If $g$ is differentiable, however, then it becomes trivial to 
+with $(x_i^2)_{i=0}^n$ being arbitrary partition points on the $x$-axis. 
+The function $g$ is known as the integrator and if it is monotone increasing then it maps points in the interval $[a',b,]$ to the interval $[a,b]$, with $a = g(a')$ and $b = g(b')$.
+The integral in Equation~\ref{eq:g_int2} is hard to evaluate in its present form. If $g$ is differentiable, however, then it becomes trivial to 
 evaluate a Riemann-Stieltjes integral due to the following identity:
 \begin{equation}
 \int_{a'}^{b'} f(x) dg(x) = \int_{a'}^{b'} f(x)g'(x)~dx.
