@@ -269,6 +269,7 @@ Podlubny et al. showed that the above fractional integral can be rewritten as a 
 \end{equation}
 with 
 \begin{equation}
+\label{eq:g_rl}
 g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
 \end{equation}
 
@@ -310,20 +311,23 @@ solid lines, while the curves plotted with dashed lines are associated with $h$.
 \label{fig:gandh}
 \end{figure}
 
-Grobler et. al showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral. We review this conversion procedure in the Cavalieri section of this paper. Applying their approach to Eq.~\ref{eq:rs} results in:
+\noindent
+Furthermore, Grobler et. al showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral. We review this conversion procedure in the Cavalieri section of this paper (see Fig.~\ref{fig:caval2}). If we apply their conversion steps to Eq.~\eqref{eq:rs} we obtain:
 \begin{equation}
 \label{eq:cav}
 \int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau, 
 \end{equation}
 with
 \begin{equation}
+\label{eq:cav_a}
 a_t^{\alpha}(y) = f^{-1}(y) - \frac{t^{\alpha}-(t-f^{-1}(y))^{\alpha}}{\Gamma(\alpha+1)}.
 \end{equation}
-Note, Eq.~\eqref{} is obtained by substituting Eq.~\eqref{} into Eq.~\eqref{}.
+Eq.~\eqref{eq:cav_a} is obtained by substituting Eq.~\eqref{eq:g_rl} into Eq.~\eqref{eq:a_y}.
 
-Since Eq.~\eqref{eq:cav} is a Cavalieri integral, it has a clear geometric interpretation. The integral in Eq.~\eqref{eq:RL_frac_int} can, therefore, be interpreted as the area obtained 
-by summing toghether the area of an infinite number of infinitesimally small non–rectangular integration strips whose shape is determined by $\alpha$ and $t$. The shape of the integration 
-strip will change if either $\alpha$ or $t$ is changed. If $\alpha$ is equal to one, however, then the integral reduces to a normal Riemann integral as the integration strips become rectangular for this particular choice of $\alpha$ (its shape is now also no longer affected by $t$).
+\noindent
+Since, Eq.~\eqref{eq:cav} is a Cavalieri integral it has a clear geometric interpretation (see Fig.~\ref{fig:caval2}). The integral in Eq.~\eqref{eq:RL_frac_int} can, therefore, be interpreted as the area obtained 
+by summing together the area of an infinite number of infinitesimally small non–rectangular integration strips whose shape is determined by $\alpha$ and $t$. The shape of theses integration 
+strips will change if either $\alpha$ or $t$ is changed. If $\alpha$ is equal to one, however, then the integral reduces to a normal Riemann integral as the integration strips become rectangular for this particular choice of $\alpha$ (its shape is now also no longer affected by $t$).
 
 
 Furthermore, Eq.~\eqref{??} implies that we can use $h_t^{\alpha}(x)$ to convert Eq.~\eqref{eq:cav} into the following Riemann integral:
