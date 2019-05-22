@@ -130,7 +130,7 @@ Recall that the Riemann-Stieltjes integral is defined as follows:
 \noindent
 with $(x_i^2)_{i=0}^n$ being arbitrary partition points on the $x$-axis. 
 The function $g$ is known as the integrator and if it is monotone increasing then it maps points in the interval $[a',b,]$ to the interval $[a,b]$, with $a = g(a')$ and $b = g(b')$.
-The integral in Equation~\ref{eq:g_int2} is hard to evaluate in its present form. If $g$ is differentiable, however, then it becomes trivial to 
+The integral in Eq.~\eqref{eq:g_int2} is hard to evaluate in its present form. If $g$ is differentiable, however, then it becomes trivial to 
 evaluate a Riemann-Stieltjes integral due to the following identity:
 \begin{equation}
 \int_{a'}^{b'} f(x) dg(x) = \int_{a'}^{b'} f(x)g'(x)~dx.
@@ -161,6 +161,7 @@ The area of $R$ can be determined as follows if we employ the classical notion o
 \int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
 \end{equation}
 
+\noindent
 There, however, exists a more straightforward way do determine the area of $R$, i.e. we can sum together the area of non-rectangular integration strips inscribing $R$ instead of
 having to sum together the area of multiple rectangular integration strips. Moreover, the shape of the non-rectangular integration strips we should use is determined by the function $a(y)$. We can express this notion more formally as 
 follows, let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$.
@@ -169,7 +170,7 @@ We are now able to construct the following sum (the lower Cavalieri sum):
 \label{eq:cav_sum}
 \sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
 \end{equation}
-The partition points $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Note that Equation~\ref{eq:cav_sum} approximates the area of $R$. In the limit Equation~\ref{eq:cav_sum} approaches 
+The partition points $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Note that Eq.~\eqref{eq:cav_sum} approximates the area of $R$. In the limit Eq.~\eqref{eq:cav_sum} approaches 
 the Cavalieri integral:
 \begin{equation}
 \label{eq:caval1}
@@ -194,56 +195,56 @@ If we use its Riemann-Stieltjes equivalent we obtain:
 \int_{a(y)}^{b(y)}f(x)\, dx = \int_{a'}^{b'} f \, dg(x) = \int_{\frac{1}{2}}^2x\, d2x = 3.75.  
 \end{equation}
 
+\noindent
 Conversely, if $g$ is known (and not $a(y)$) and $g(a') = a$ then we can calculate $a(y)$ using the following:
 \begin{equation}
 \label{eq:a_y}
 a(y) = f^{-1}(y) - g\circ f^{-1}(y) + g(a'). 
 \end{equation}
-Note the power of Equation~\ref{eq:a_y} it allows us to transform a Riemann-Stieltjes integral into a Cavalieri integral. 
-This transformation allows us to give a geometric interpretation of a Riemann-Stieltjes integral. The interpretation being,
-the sum of an infinite amount of non-rectangular infinitesimals whose shape is determined by $a(y)$.
+Note the power of Eq.~\eqref{eq:a_y} it allows us to transform a Riemann-Stieltjes integral into an equivalent Cavalieri integral. 
+Furthermore, this transformation enables us to assign a geometric interpretation to a Riemann-Stieltjes integral. The interpretation being:
+it represents the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by $a(y)$.
 
 \section{Gamma Function}
 The gamma function was first devised by Euler. The gamma function is defined for all real numbers except for the non-negative integers. Moreover, it is a natural extension of the factorial function to the real numbers. The Gamma function is defined as:
 \begin{equation}
-\Gamma(x) = \int_0^{\infty} t^{x-1} e^{-t}\,dt
+\Gamma(x) = \int_0^{\infty} t^{x-1} e^{-t}\,dt.
 \end{equation}
+The function $\Gamma(x)$ is depicted in Fig.~\ref{fig:gamma} for $x\in(-5,5)$.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{gamma.pdf}
-\caption{A plot of $\Gamma(x)$. $\Gamma(x)$ is not defined for the non-negative integers.}
+\caption{A plot of $\Gamma(x)$ for $x\in(-5,5)$. $\Gamma(x)$ is not defined for the non-negative integers.}
 \label{fig:gamma}
 \end{figure}
-
-
 
 \section{Riemann-Liouville Fractional Integral}
 In this section we present the definition of the Riemann-Liouville fractional integral of order $\alpha$. Let
 \begin{equation}
 If(x) := \int_0^x f(t) dt.
 \end{equation}
-If we apply the above operator in a repetative manner to $f$ we obtain the $n$th antiderivative of $f$ based at 0:
+If we apply the above operator in a repetitive manner to $f$ we obtain the $n$th antiderivative of $f$ based at 0:
 \begin{equation}
 \label{eq:n_anti}
 I^nf(x) = \int_0^x\int_0^{x_1}\cdots \int_0^{x_{n-1}}f(x_n)~dx_n\cdots dx_2 dx_1.
 \end{equation}
-Applying Cauchy's formula for repetative integration to the above $n$th antiderivative of $f$ helps us express the above $n$th antiderivative as a single integral. 
-Applying Cauchy's formula to Equation~\ref{eq:n_anti} results in:
+Applying Cauchy's formula for repetitive integration to the above $n$th antiderivative of $f$ helps us express the above $n$th antiderivative as a single integral. 
+Applying Cauchy's formula to Eq.~\eqref{eq:n_anti} results in:
 \begin{equation}
 \label{eq:cauchy}
 I^nf(x) = \frac{1}{(n-1)!}\int_0^x (x-t)^{n-1}f(t)~dt.
 \end{equation}
-As an example if $f(x)=x$ and $n=2$ then Equation~\ref{eq:cauchy} reduces to:
+As an example if $f(x)=x$ and $n=2$ then Eq.~\eqref{eq:cauchy} reduces to:
 \begin{equation}
 I^2f(x) = \int_0^x (x-t)t~dt = \frac{t^2x}{2} - \frac{t^3}{3} \Bigg |_0^x = \frac{x^3}{3!}.
 \end{equation}
-The definition in Equation~\ref{eq:cauchy} can now be extended to an arbitrary fractional order by replacing $(n-1)!$ with the Gamma function:
+The definition in Eq.~\eqref{eq:cauchy} can now be extended to an arbitrary fractional order by replacing $(n-1)!$ with the Gamma function (see Fig.~\ref{fig:gamma}):
 \begin{equation}
 \label{eq:frac_integral}
 I^{\alpha}f(x) = \frac{1}{\Gamma(\alpha)}\int_0^x (x-t)^{\alpha-1}f(t)~dt.
 \end{equation}
-Equation~\ref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$. As an example if $f(x)=x$ and $\alpha=\frac{1}{2}$ then 
-Equation~\ref{eq:frac_integral} reduces to:
+Eq.~\eqref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$. As an example if $f(x)=x$ and $\alpha=\frac{1}{2}$ then 
+Eq.~\eqref{eq:frac_integral} reduces to:
 \begin{equation}
 I^{\frac{1}{2}}f(x) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^x \frac{t}{\sqrt{x-t}} dt = \frac{1}{\sqrt{\pi}}\left [ -\frac{2}{3}\sqrt{x-t}(t+2x)\right] \Bigg |_0^x=\frac{4}{3\sqrt{\pi}}x^{\frac{3}{2}}. 
 \end{equation}
@@ -260,7 +261,8 @@ Recall that the Riemann-Liouville fractional integral of order $\alpha$ is defin
 \frac{1}{\Gamma(\alpha)}\int_{0}^{t}f(\tau)(t-\tau)^{\alpha-1}~d\tau
 \end{equation}
 
-Podlubny showed that the above fractional integral can be rewritten as a Riemann-Stieltjes integral:
+\noindent
+Podlubny et al. showed that the above fractional integral can be rewritten as a Riemann-Stieltjes integral:
 \begin{equation}
 \label{eq:rs}
 \int_0^{t} f(\tau)~dg_t(\tau),
@@ -270,40 +272,21 @@ with
 g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
 \end{equation}
 
-Note that $g_t^{\alpha}(\tau)$ is always invertable, since $\frac{d g_t^{\alpha}}{d \tau} = \frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}>0$ for $\tau\in[0,t]$. The inverse 
+\noindent
+Note that $g_t^{\alpha}(\tau)$ is always invertible, since $\frac{d g_t^{\alpha}}{d \tau} = \frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}>0$ for $\tau\in[0,t]$. The inverse 
 of $g_t^{\alpha}(\tau)$ is equal to:
 \begin{equation}
-h_t^{\alpha}(x) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)x}
+h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)\tau}
 \end{equation}
 
-Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The analytic expressions of $g_t^{\alpha}(\tau)$ and $h_t^{\alpha}(x)$ are presented in Table~\ref{eq:} for $\alpha\in\mathsf{A}$ and $t=10$. 
-The expressions in Table~\ref{eq:} are depicted in Fig~\ref{fig:}.
-
-Grobler et. al showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral. We review this conversion procedure in the Cavalieri section of this paper. Applying their approach to Eq.~\ref{eq:rs} results in:
-\begin{equation}
-\label{eq:cav}
-\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau, 
-\end{equation}
-with
-\begin{equation}
-a_t^{\alpha}(y) = f^{-1}(y) - \frac{t^{\alpha}-(t-f^{-1}(y))^{\alpha}}{\Gamma(\alpha+1)}.
-\end{equation}
-Note, Eq.~\eqref{} is obtained by substituting Eq.~\eqref{} into Eq.~\eqref{}.
-
-Since Equation~\ref{eq:cav} is a Cavalieri integral, it has a clear geometric interpretation. The integral in Equation~\ref{eq:RL_frac_int} can, therefore, be interpreted as the area obtained 
-by summing toghether the area of an infinite number of infinitesimally small non–rectangular integration strips whose shape is determined by $\alpha$ and $t$. The shape of the integration 
-strip will change if either $\alpha$ or $t$ is changed. If $\alpha$ is equal to one, however, then the integral reduces to a normal Riemann integral as the integration strips become rectangular for this particular choice of $\alpha$ (its shape is now also no longer affected by $t$).
-
-
-Furthermore, Eq.~\eqref{??} implies that we can use $h_t^{\alpha}(x)$ to convert Eq.~\eqref{eq:cav} into the following Riemann integral:
-\begin{equation}
-\int_0^{\frac{t^{\alpha}}{\Gamma(\alpha+1)}} f\circ h_{\alpha}^t (\tau) d\tau.  
-\end{equation}
-We can, therefore, evaluate Eq.~\eqref{eq:cav} in one of two ways: we can either evaluate Eq.~\eqref{} or we can evaluate Eq.~\eqref{}.
-
+\noindent
+Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ are presented in Table~\ref{tab:gandh} for $\alpha\in\mathsf{A}$ and $t=10$. 
+The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
 
 \begin{table}[h!]
-\centering
+ \centering
+ \caption{The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$.}
+ \label{tab:gandh}
  \begin{tabular}{|c || c | c|} 
  \hline
  $\alpha$ & $g_{10}^{\alpha}(\tau)$ & $h_{10}^{\alpha}(\tau)$ \\ [0.5ex] 
@@ -316,7 +299,39 @@ We can, therefore, evaluate Eq.~\eqref{eq:cav} in one of two ways: we can either
  $1$ & $\tau$ & $\tau$ \\ [1ex] 
  \hline
  \end{tabular}
-\end{table}
+ \end{table}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{gh.pdf}
+\caption{This figure depicts the curves of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The curves associated with $g$ are plotted using 
+solid lines, while the curves plotted with dashed lines are associated with $h$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is, that is associated with it.
+}
+\label{fig:gandh}
+\end{figure}
+
+Grobler et. al showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral. We review this conversion procedure in the Cavalieri section of this paper. Applying their approach to Eq.~\ref{eq:rs} results in:
+\begin{equation}
+\label{eq:cav}
+\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau, 
+\end{equation}
+with
+\begin{equation}
+a_t^{\alpha}(y) = f^{-1}(y) - \frac{t^{\alpha}-(t-f^{-1}(y))^{\alpha}}{\Gamma(\alpha+1)}.
+\end{equation}
+Note, Eq.~\eqref{} is obtained by substituting Eq.~\eqref{} into Eq.~\eqref{}.
+
+Since Eq.~\eqref{eq:cav} is a Cavalieri integral, it has a clear geometric interpretation. The integral in Eq.~\eqref{eq:RL_frac_int} can, therefore, be interpreted as the area obtained 
+by summing toghether the area of an infinite number of infinitesimally small non–rectangular integration strips whose shape is determined by $\alpha$ and $t$. The shape of the integration 
+strip will change if either $\alpha$ or $t$ is changed. If $\alpha$ is equal to one, however, then the integral reduces to a normal Riemann integral as the integration strips become rectangular for this particular choice of $\alpha$ (its shape is now also no longer affected by $t$).
+
+
+Furthermore, Eq.~\eqref{??} implies that we can use $h_t^{\alpha}(x)$ to convert Eq.~\eqref{eq:cav} into the following Riemann integral:
+\begin{equation}
+\int_0^{\frac{t^{\alpha}}{\Gamma(\alpha+1)}} f\circ h_{\alpha}^t (\tau) d\tau.  
+\end{equation}
+We can, therefore, evaluate Eq.~\eqref{eq:cav} in one of two ways: we can either evaluate Eq.~\eqref{} or we can evaluate Eq.~\eqref{}.
+
 
 \begin{table}[h!]
 \centering
@@ -336,22 +351,22 @@ We can, therefore, evaluate Eq.~\eqref{eq:cav} in one of two ways: we can either
  \end{tabular}
 \end{table}
 
-\begin{table}[h!]
-\centering
- \begin{tabular}{|c || c|} 
- \hline
- Symbol & Definition  \\ [0.1ex]
- \hline 
- \rule{0pt}{2.5ex}
- $\mathsf{G}^{10}$ & $\{g_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
- $\mathsf{H}^{10}$ & $\{h_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
- $\mathsf{A}^{10}$ & $\{a_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
- $\mathsf{B}^{10}$ & $\{b_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
- $\mathsf{B}^{\frac{4}{5}}_1$ & $\{b_{t}^{\frac{4}{5}}(\tau)|t\in\alpha\in\{2,4,6,8,10\}$\\ [0.5ex]
- $\mathsf{B}^{\frac{4}{5}}_2$ & $\{b_{10}^{\frac{4}{5}}(\tau)-c|c\in\in\{0,2,4,6,8\}$\\ [0.5ex]
- \hline 
- \end{tabular}
-\end{table}
+% \begin{table}[h!]
+% \centering
+%  \begin{tabular}{|c || c|} 
+%  \hline
+%  Symbol & Definition  \\ [0.1ex]
+%  \hline 
+%  \rule{0pt}{2.5ex}
+%  $\mathsf{G}^{10}$ & $\{g_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
+%  $\mathsf{H}^{10}$ & $\{h_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
+%  $\mathsf{A}^{10}$ & $\{a_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
+%  $\mathsf{B}^{10}$ & $\{b_{10}^{\alpha}(\tau)|\alpha\in\{0,\frac{1}{5},\frac{2}{5},\frac{3}{5},\frac{4}{5}\}\}$\\ [0.5ex]
+%  $\mathsf{B}^{\frac{4}{5}}_1$ & $\{b_{t}^{\frac{4}{5}}(\tau)|t\in\alpha\in\{2,4,6,8,10\}$\\ [0.5ex]
+%  $\mathsf{B}^{\frac{4}{5}}_2$ & $\{b_{10}^{\frac{4}{5}}(\tau)-c|c\in\in\{0,2,4,6,8\}$\\ [0.5ex]
+%  \hline 
+%  \end{tabular}
+% \end{table}
 
 
 \begin{table}[h!]
