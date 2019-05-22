@@ -218,7 +218,7 @@ The gamma function was first devised by Euler. The gamma function is defined for
 
 
 \section{Riemann-Liouville Fractional Integral}
-In this section we derive the definition of the Riemann-Liouville fractional integral of order $\alpha$. Let
+In this section we present the definition of the Riemann-Liouville fractional integral of order $\alpha$. Let
 \begin{equation}
 If(x) := \int_0^x f(t) dt.
 \end{equation}
@@ -293,6 +293,7 @@ Note, Eq.~\eqref{} is obtained by substituting Eq.~\eqref{} into Eq.~\eqref{}.
 Since Equation~\ref{eq:cav} is a Cavalieri integral, it has a clear geometric interpretation. The integral in Equation~\ref{eq:RL_frac_int} can, therefore, be interpreted as the area obtained 
 by summing toghether the area of an infinite number of infinitesimally small non–rectangular integration strips whose shape is determined by $\alpha$ and $t$. The shape of the integration 
 strip will change if either $\alpha$ or $t$ is changed. If $\alpha$ is equal to one, however, then the integral reduces to a normal Riemann integral as the integration strips become rectangular for this particular choice of $\alpha$ (its shape is now also no longer affected by $t$).
+
 
 Furthermore, Eq.~\eqref{??} implies that we can use $h_t^{\alpha}(x)$ to convert Eq.~\eqref{eq:cav} into the following Riemann integral:
 \begin{equation}
@@ -395,9 +396,10 @@ We then convert the resulting Riemann-Stieltjes integral into a Cavalieri integr
 \end{equation}
 
 As we mentioned in the previous section Eq.~\ref{eq:ex1} has a clear geometric interpretation. It can be interpreted as the area obtained by summing togheher the areas of an infinite 
-number of infinitesimals whose shape is determined by $\alpha$ and $t$. The thing which remains unclear, however, is in what way does $\alpha$ and $t$ affect the 
-shape of the aforementioned infinitesimals. We will this question using two steps: we will first investigate the shape of the infinitesimal we obtain by fixing 
-$\alpha$ and $t$ to specific values. We will then explore how varying the value of $\alpha$ and $t$ affects the shape of the infinitesimals.
+number of infinitesimals whose shape is determined by $\alpha$ and $t$, i.e. the aforementioned infinitesimals have to be translations of $b_{\alpha}^t(y)$ which, in turn, is 
+function of $\alpha$ and $t$. The geometric interpretation of Eq.~\eqref{eq:ex1_raw} is, therefore, non-static as it depends on the value of $\alpha$ and $t$. 
+The thing which remains unclear, however, is in what way does $\alpha$ and $t$ affect the shape of the aforementioned infinitesimals, i.e. how does the value of $\alpha$ and $t$ affect the shape of $b_{\alpha}^t(y)$. 
+We will answer this question using two steps. First off, we will fix the value of $alpha$ and $t$ in Eq.~\eqref{} and then depict $b_{\alpha}^t(y)$. We will then explore how varying the value of $\alpha$ and $t$ in Eq.~\eqref{} affects the shape $b_{\alpha}^t(y)$.
 
 %We know that a Cavalieri integral can be interpreted as the area which is obtained by summing together the area associated with an infinite number of non-rectangular infinitesimals whose shape 
 %is determined by the integration limits of the Cavalieri integral. Note that neither $g_t^{\alpha}(\tau)$ nor $a_t^{\alpha}(y)$ are static functions, 
@@ -410,11 +412,11 @@ If we set the value of $\alpha$ to $\sfrac{4}{5}$ and the value of $t$ to 10 in 
 A_{10}^{\sfrac{4}{5}}=\int_{a_{10}^{\frac{4}{5}}(y)}^{b_{10}^{\frac{4}{5}}(y)} f(\tau)~d\tau 
 \end{equation}
 Let $R_{10}^{\sfrac{4}{5}}$ denote the region which is bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{10}^{\sfrac{4}{5}}(y)$. The region $R_{10}^{\sfrac{4}{5}}$ is depicted and labelled in the right-most panel of Figure.~\ref{??}. 
-Moreover, let $A_{10}^{\sfrac{4}{5}}$ denote the area of $R_{10}^{\sfrac{4}{5}}$. We can approximate the area of $R_{10}^{\sfrac{4}{5}}$ by summing together the area of $n$ equal width non-rectangular integration strips that inscribe $R_{10}^{\sfrac{4}{5}}$. 
-Furthermore, the sides of the non-rectangular integration strips we use in this approximation have to be translations of $b_{10}^{\sfrac{4}{5}}(y)$.
-If we take the limit of the aforementioned sum as $n\rightarrow \infty$ we obtain $A_{10}^{\sfrac{4}{5}}$, i.e. if we evaluate the Cavalieri 
-integral in Eq.~\eqref{??} we obtain $A_{10}^{\sfrac{4}{5}}$ (as we mentioned in the previous section). We can, therefore, think of Eq.~\eqref{} as implying that that the region  $R_{10}^{\sfrac{4}{5}}$ is made up 
-of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$. Moreover, the special case in which we approximate $A_{10}^{\sfrac{4}{5}}$ using five equal width non-rectangular integration strips is depicted in the right-most panel of Figure~\ref{??}. 
+Moreover, let $A_{10}^{\sfrac{4}{5}}$ denote the area of $R_{10}^{\sfrac{4}{5}}$. For the sake of completeness, lets first verify whether we can emplloy the Cavalieri integral in Eq.~\ref{eq:ex1_specific} to compute $A_{10}^{\sfrac{4}{5}}$ from first principles.
+We can approximate the area of $R_{10}^{\sfrac{4}{5}}$ by summing together the area of $n$ equal width non-rectangular integration strips that inscribe $R_{10}^{\sfrac{4}{5}}$, i.e. we can 
+construct a so called Cavalieri sum. Furthermore, the sides of the non-rectangular integration strips we use in this approximation have to be translations of $b_{10}^{\sfrac{4}{5}}(y)$.
+If we take the limit of the aforementioned sum as $n\rightarrow \infty$ we obtain $A_{10}^{\sfrac{4}{5}}$, i.e. the result obtained via the aforementioned limit is the Cavalieri integral found in Eq.~\eqref{eq:ex1_specific}. In conclusion, we can think of Eq.~\eqref{} as implying that the region $R_{10}^{\sfrac{4}{5}}$ is made up 
+of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$. Note, the rightmost curve depicted in the rightmost panel of Fig... is $b_{10}^{\sfrac{4}{5}}(y)$.  Moreover, the special case in which we approximate $A_{10}^{\sfrac{4}{5}}$ using five equal width non-rectangular integration strips is depicted in the right-most panel of Figure~\ref{??}. 
 The sides of the aforementioned five integration strips are depicted in Fig.~\ref{??} using dashed lines. Let $\mathsf{B}_{10}^{\sfrac{4}{5}}$ denote the set containing these dashed curves.
 
 %We can, therefore, interpet Eq.~\eqref{}  The region $R_{10}^{\sfrac{4}{5}}$ is, therefore, made up 
@@ -425,7 +427,7 @@ Let $R_{t}^{\alpha}$ denote the region which is bounded by the $\tau$-axis, the 
 The regions in the set $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}$ are depicted in Fig.~\textbf{??}. The regions that are depicted in each of the panels of Fig.~\ref{??} were generated by varying $t$, whilst keeping the value of $\alpha$ fixed. 
 The title of each panel indicate which $\alpha$-value was used to generate the regions depicted in each panel. The only difference between the regions located in each 
 panel is their right edges. The right edges of the regions in each panel are depicted using varying shades of gray. The lighter the shade with which an edge is depicted, 
-the larger the $t$-value is, that was used to generate it.
+the larger the $t$-value is, that is assoiciated with it.
 
 As was the case for $R_{10}^{\sfrac{4}{5}}$, each of the regions depicted in Fig.~\ref{} are made up of an infinite number of infinitesimals. The infinitesimals that make up a specific region are translations of that region's right edge. 
 The following observations can be made by inspecting Fig.\ref{??}: 
@@ -433,9 +435,9 @@ The following observations can be made by inspecting Fig.\ref{??}:
  \item[Effect of $\alpha$] the grey-tinted solid curves depicted in the different panels of Fig.~\ref{} are not equal to one-another.
  \item[Effect of $t$] the grey-tinted solid curves depicted in each of the panels of Fig.~\ref{} are not translations of one-another. Moreover, the dashed grey curves and the solid grey-tinted curves in the right-most panel are not equal to one-another.
 \end{description}
-We can therefore draw the following conclusion: the value of both $\alpha$ and $t$ alters the shape of the infinitesimals that make up the regions in Fig~\ref{??}. Interestingly, the effect of $\alpha$ on the shape of the infinitesimals that make up the regions depicted in Fig~\ref{??} is larger than the effect that $t$ has on their shape. 
+We can therefore draw the following conclusion: the value of both $\alpha$ and $t$ alters the shape of the infinitesimals (i.e. $b_{t}^{\alpha}(y)$) that make up the regions in Fig~\ref{??}. Interestingly, the effect of $\alpha$ on the shape of the infinitesimals that make up the regions depicted in Fig~\ref{??} is larger than the effect that $t$ has on their shape. 
 The curves associated with the infinitesimals obtained by varying $t$, whilst keeping the value of $\alpha$ fixed are very similar in nature and there exists a high degree of correlation between them (if their 
-size are ignored). The curves associated with the infinitesimals obtained by varying $\alpha$, whilst keeping the value of $t$ fixed are quite different from one another (the aforementioned curves are not highly correlated with 
+sizes are ignored). The curves associated with the infinitesimals obtained by varying $\alpha$, whilst keeping the value of $t$ fixed are quite different from one another (the aforementioned curves are not highly correlated with 
 one another).  
 
 %In the case of $\alpha$: the grey-tinted solid curves depicted in each panel are not equal to one-another. Similarly, in the case of $t$: the dashed grey curves and the solid grey-tinted curves in the right-most panel are not equal to one-another, i.e.$\mathsf{B}_T^{\alpha}\neq\mathcal{B}_T^{\alpha}$.
