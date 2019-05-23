@@ -338,23 +338,23 @@ Interestingly, Eq.~\eqref{eq:main_cav} implies that we can use $h_t^{\alpha}(\ta
 We can, therefore, evaluate Eq.~\eqref{eq:cav} in one of two ways: we can either evaluate Eq.~\eqref{eq:rs} or we can evaluate Eq.~\eqref{eq:option2}.
 
 
-\begin{table}[h!]
-\centering
- \begin{tabular}{|c || c | c|} 
- \hline
- & \multicolumn{2}{|c|}{$a_{10}^{\alpha}(\tau)$}\\
- \hline
- &$f(\tau) = \tau$ & $f(\tau)=\sqrt{\tau}$ \\ [0.5ex] 
- \hline\hline
- $0$ & 0 & $y=0$ \\ 
- $0.2$ & $y-[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-y}\right)$ & $y^2-[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-y^2}\right)$  \\
- $0.4$ & $y-[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-y)^2}\right)$ & $y^2-[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-y^2)^2}\right)$ \\
- $0.6$ & $y-[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-y)^3}\right)$ & $y^2-[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-y^2)^3}\right)$ \\
- $0.8$ & $y-[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-y)^4}\right)$ & $y^2-[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-y^2)^4}\right)$ \\ [1ex] 
- $1$ & $\tau$ & $\tau$ \\ [1ex] 
- \hline
- \end{tabular}
-\end{table}
+% \begin{table}[h!]
+% \centering
+%  \begin{tabular}{|c || c | c|} 
+%  \hline
+%  & \multicolumn{2}{|c|}{$a_{10}^{\alpha}(\tau)$}\\
+%  \hline
+%  &$f(\tau) = \tau$ & $f(\tau)=\sqrt{\tau}$ \\ [0.5ex] 
+%  \hline\hline
+%  $0$ & 0 & $y=0$ \\ 
+%  $0.2$ & $y-[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-y}\right)$ & $y^2-[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-y^2}\right)$  \\
+%  $0.4$ & $y-[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-y)^2}\right)$ & $y^2-[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-y^2)^2}\right)$ \\
+%  $0.6$ & $y-[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-y)^3}\right)$ & $y^2-[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-y^2)^3}\right)$ \\
+%  $0.8$ & $y-[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-y)^4}\right)$ & $y^2-[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-y^2)^4}\right)$ \\ [1ex] 
+%  $1$ & $\tau$ & $\tau$ \\ [1ex] 
+%  \hline
+%  \end{tabular}
+% \end{table}
 
 % \begin{table}[h!]
 % \centering
@@ -372,29 +372,6 @@ We can, therefore, evaluate Eq.~\eqref{eq:cav} in one of two ways: we can either
 %  \hline 
 %  \end{tabular}
 % \end{table}
-
-
-\begin{table}[h!]
-\centering
- \begin{tabular}{||c|| c| c||} 
- \hline
- $\alpha$ & $\frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau$ & $\frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau$ \\[0.5ex]
- \hline\hline
- \rule{0pt}{2.5ex}
- $0$ & $t$ & $\sqrt{t}$  \\  
- \rule{0pt}{2.5ex}
- $0.2$ & $\frac{25}{6\Gamma(\frac{1}{5})} t^{\frac{6}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{17}{10})} t^{\frac{7}{10}}$  \\ 
- \rule{0pt}{2.5ex}
- $0.4$ & $\frac{25}{14\Gamma(\frac{2}{5})} t^{\frac{7}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{19}{10})} t^{\frac{9}{10}}$  \\
- \rule{0pt}{2.5ex}
- $0.6$ & $\frac{25}{24\Gamma(\frac{3}{5})} t^{\frac{8}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{21}{10})} t^{\frac{11}{10}}$  \\ 
- \rule{0pt}{2.5ex}
- $0.8$ & $\frac{25}{36\Gamma(\frac{4}{5})} t^{\frac{9}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{23}{10})} t^{\frac{13}{10}}$  \\ 
- \rule{0pt}{2.5ex}
- $1$ & $\frac{1}{2}t^2$  & $\frac{2}{3}t^{\frac{3}{2}}$  \\ [1ex]
- \hline
- \end{tabular}
-\end{table}
 
 \section{Examples}
 In this section we will illustrate the usefulness of the non-static non-rectangular sum-based geometric interpretation we presented in the previous section at the 
@@ -448,7 +425,7 @@ We can approximate the area of $R_{10}^{\sfrac{4}{5}}$ by summing together the a
 construct a Cavalieri sum (see Eq.~\eqref{eq:cav_sum}). Note, the sides of the non-rectangular integration strips we use in this approximation have to be translations of $b_{10}^{\sfrac{4}{5}}(y)$.
 If we take the limit of the aforementioned sum as $n\rightarrow \infty$ we approach $A_{10}^{\sfrac{4}{5}}$, i.e. the result obtained via the aforementioned limit is the Cavalieri integral found in Eq.~\eqref{eq:ex1_specific}. In conclusion, we can think of Eq.~\eqref{eq:ex1_specific} as implying that the region $R_{10}^{\sfrac{4}{5}}$ is made up 
 of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$. Note, the right-most curve depicted in the right-most panel of Fig.~\ref{fig:geo1} is $b_{10}^{\sfrac{4}{5}}(y)$.  Moreover, the special case in which we approximate $A_{10}^{\sfrac{4}{5}}$ using five equal width non-rectangular integration strips is depicted in the right-most panel of Fig.~\ref{fig:geo1}. 
-The sides of the aforementioned five integration strips are depicted in Fig.~\ref{fig:geo1} using dashed lines.\\ 
+The sides of the aforementioned five integration strips are depicted in Fig.~\ref{fig:geo1} using dashed lines. Let, $\mathcal{B}_{\mathsf{T}}^{\sfrac{4}{5}}=\{b_{10}^{\frac{4}{5}}(y)-c|c\in(\mathsf{T}-2)\}$ with $\mathsf{T}=\{2,4,6,8,10\}$.\\ 
 
 %Let $\mathsf{B}_{10}^{\sfrac{4}{5}}$ denote the set containing these dashed curves.
 %We can, therefore, interpet Eq.~\eqref{}  The region $R_{10}^{\sfrac{4}{5}}$ is, therefore, made up 
@@ -456,39 +433,93 @@ The sides of the aforementioned five integration strips are depicted in Fig.~\re
 
 \noindent
 Varying both $\alpha$ and $t$ results in Eq.~\eqref{eq:ex1}. In contrast with Eq.~\eqref{eq:ex1_specific}, Eq.~\eqref{eq:ex1} can be associated with more than one region. 
-Let $R_{t}^{\alpha}$ denote the region which is bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{t}^{\alpha}(y)$. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_{t}^{\alpha}$ and let $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}=\{R_t^{\alpha}|t\in\mathsf{T},~\alpha\in\mathsf{A}\}$  with $\mathsf{T}=\{2,4,6,8,10\}$. 
+Let $R_{t}^{\alpha}$ denote the region which is bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{t}^{\alpha}(y)$. Note that $b_{t}^{\alpha}(y)$ forms the 
+right-most edge of $R_{t}^{\alpha}$. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_{t}^{\alpha}$ and let $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}=\{R_t^{\alpha}|t\in\mathsf{T},~\alpha\in\mathsf{A}\}$ and 
+$\mathsf{B}_{\mathsf{T}}^{\mathsf{A}}=\{b_t^{\alpha}(y)|t\in\mathsf{T},~\alpha\in\mathsf{A}\}$. 
 The regions in the set $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}$ are depicted in Fig.~\ref{fig:geo1}. The regions that are depicted in each of the panels of Fig.~\ref{fig:geo1} were generated by varying $t$, whilst keeping the value of $\alpha$ fixed. 
 The title of each panel indicate which $\alpha$-value was used to generate the regions depicted in each panel. The only difference between the regions located in each 
 panel is their right edges. The right edges of the regions in each panel are depicted using varying shades of gray. The lighter the shade with which an edge is depicted, 
 the larger the $t$-value is, that is associated with it.\\
 
 \noindent
-As was the case for $R_{10}^{\sfrac{4}{5}}$, Eq.~\eqref{eq:ex1} implies that we can assume that each of the regions depicted in Fig.~\ref{fig:geo1} are made up of an infinite number of infinitesimals. The infinitesimals that make up a specific region are translations of that region's right edge. 
+As was the case for Eq.~\eqref{eq:ex1_specific} and $R_{10}^{\sfrac{4}{5}}$, Eq.~\eqref{eq:ex1} implies that we can assume that each of the regions depicted in Fig.~\ref{fig:geo1} are made up of an infinite number of infinitesimals. The infinitesimals that make up a specific region are translations of that region's right edge. 
 The following observations can be made by inspecting Fig.~\ref{fig:geo1}: 
 \begin{description}
- \item[Effect of $\alpha$] the grey-tinted solid curves depicted in the different panels of Fig.~\ref{} are not equal to one-another.
- \item[Effect of $t$] the grey-tinted solid curves depicted in each of the panels of Fig.~\ref{} are not translations of one-another. Moreover, the dashed grey curves and the solid grey-tinted curves in the right-most panel are not equal to one-another.
+ \item[Effect of $\alpha$] the grey-tinted solid curves depicted in the different panels of Fig.~\ref{fig:geo1} are not equal to one-another, i.e. $\mathsf{B}_{\mathsf{T}}^{\alpha_1}\neq\mathsf{B}_{\mathsf{T}}^{\alpha_2}$. 
+ \item[Effect of $t$] the grey-tinted solid curves depicted in each of the panels of Fig.~\ref{fig:geo1} are not translations of one-another. Moreover, the dashed grey curves and the solid grey-tinted curves in the right-most panel are not equal to one-another, i.e. $\mathsf{B}_{\mathsf{T}}^{\sfrac{4}{5}}\neq\mathcal{B}_{\mathsf{T}}^{\sfrac{4}{5}}$.
 \end{description}
-We can therefore draw the following conclusion: the value of both $\alpha$ and $t$ alters the shape of the infinitesimals (i.e. the upper limit $b_{t}^{\alpha}(y)$ of Eq.~\eqref{eq:ex1} depends on $\alpha$ and $t$) that make up the regions in Fig~\ref{??}. Interestingly, the effect of $\alpha$ on the shape of the infinitesimals that make up the regions depicted in Fig~\ref{??} is larger than the effect that $t$ has on their shape. 
+We can therefore draw the following conclusion: the value of both $\alpha$ and $t$ alters the shape of the infinitesimals (i.e. the upper limit $b_{t}^{\alpha}(y)$ of Eq.~\eqref{eq:ex1} depends on $\alpha$ and $t$) that make up the regions in Fig.~\ref{fig:geo1}. Interestingly, the effect of $\alpha$ on the shape of the infinitesimals that make up the regions depicted in Fig.~\ref{fig:geo1} is larger than the effect that $t$ has on their shape. 
 The curves associated with the infinitesimals obtained by varying $t$, whilst keeping the value of $\alpha$ fixed are very similar in nature and there exists a high degree of correlation between them (if their 
 sizes are ignored). The curves associated with the infinitesimals obtained by varying $\alpha$, whilst keeping the value of $t$ fixed are quite different from one another (the aforementioned curves are not highly correlated with 
-one another).  
+one another).\\  
 
 %In the case of $\alpha$: the grey-tinted solid curves depicted in each panel are not equal to one-another. Similarly, in the case of $t$: the dashed grey curves and the solid grey-tinted curves in the right-most panel are not equal to one-another, i.e.$\mathsf{B}_T^{\alpha}\neq\mathcal{B}_T^{\alpha}$.
 
-If we evaluate the integral in Eq.~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ we obtain the curves in the left-most column of Table~\ref{??}. These curves are depicted in Fig~\ref{??}.
-The area of the regions depicted in Fig.~\ref{??} are also plotted in Fig.~\ref{??} using circular markers. As expected, the circular markers in Fig.~\ref{??} that correspond to the areas of the regions in Fig.~\ref{??}  
-associated with a particular choice of $\alpha$ (i.e. regions depicted in a particular panel of Fig.~\ref{??}) fall on the curve in Fig.~\ref{??}; associated with the same choice of $\alpha$. Moreover, note that we have adopted the 
-same coloring scheme in Fig.~\ref{??} and Fig.~\ref{??}. Using the same coloring scheme in both figures makes it clear which of the area values in Fig.~\ref{??} can be associated with which regions in Fig.~\ref{??}.
-To summarize, Fig.~\ref{??}, therefore, depicts a non-static non-rectangular sum-based geometric interpretation of Eq.~\eqref{}. Moreover, Fig.~\ref{??} corroborates this 
-geometric interpretation.
+\begin{table}[h!]
+\centering
+\caption{Curves obtained by evaluating Eq.~\eqref{eq:ex1} and Eq.~\eqref{eq:ex2} for all $\alpha\in \mathsf{A}$ using either Eq.~\eqref{eq:rs} or Eq.~\eqref{eq:option2}.}
+\label{tab:eval}
+\begin{tabular}{||c|| c| c||} 
+ \hline
+ $\alpha$ & $\frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau$ & $\frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau$ \\[0.5ex]
+ \hline\hline
+ \rule{0pt}{2.5ex}
+ $0$ & $t$ & $\sqrt{t}$  \\  
+ \rule{0pt}{2.5ex}
+ $0.2$ & $\frac{25}{6\Gamma(\frac{1}{5})} t^{\frac{6}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{17}{10})} t^{\frac{7}{10}}$  \\ 
+ \rule{0pt}{2.5ex}
+ $0.4$ & $\frac{25}{14\Gamma(\frac{2}{5})} t^{\frac{7}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{19}{10})} t^{\frac{9}{10}}$  \\
+ \rule{0pt}{2.5ex}
+ $0.6$ & $\frac{25}{24\Gamma(\frac{3}{5})} t^{\frac{8}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{21}{10})} t^{\frac{11}{10}}$  \\ 
+ \rule{0pt}{2.5ex}
+ $0.8$ & $\frac{25}{36\Gamma(\frac{4}{5})} t^{\frac{9}{5}}$  & $\frac{\sqrt{\pi}}{2\Gamma(\frac{23}{10})} t^{\frac{13}{10}}$  \\ 
+ \rule{0pt}{2.5ex}
+ $1$ & $\frac{1}{2}t^2$  & $\frac{2}{3}t^{\frac{3}{2}}$  \\ [1ex]
+ \hline
+ \end{tabular}
+\end{table}
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=1\textwidth]{func_eval1.pdf}
+\caption{Depicts the curves which are obtained by evaluating Eq.~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ using either Eq.~\eqref{eq:rs} or Eq.~\eqref{eq:option2}.}
+\label{fig:eval1}
+\end{figure}
+
+\noindent
+If we evaluate the integral in Eq.~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ (using either Eq.~\eqref{eq:rs} or Eq.~\eqref{eq:option2}) we obtain the curves in the 
+left-most column of Table~\ref{tab:eval}. These curves are depicted in Fig.~\ref{fig:eval1}.
+The area of the regions depicted in Fig.~\ref{fig:geo1} are also plotted in Fig.~\ref{fig:eval1} using circular markers. As expected, the circular markers in Fig.~\ref{fig:eval1} that correspond to the areas of the regions in Fig.~\ref{fig:eval1}  
+associated with a particular choice of $\alpha$ (i.e. regions depicted in a particular panel of Fig.~\ref{fig:geo1}) fall on the curve in Fig.~\ref{fig:eval1}; associated with the same choice of $\alpha$. Moreover, note that we have adopted the 
+same coloring scheme in Fig.~\ref{fig:geo1} and Fig.~\ref{fig:eval1}. Using the same coloring scheme in both figures makes it clear which of the area values in Fig.~\ref{fig:eval1} can be associated with which regions in Fig.~\ref{fig:geo1}.
+To summarize, Fig.~\ref{fig:geo1}, therefore, depicts a non-static non-rectangular sum-based geometric interpretation of Eq.~\eqref{eq:ex1}. Moreover, Fig.~\ref{fig:eval1} corroborates this 
+geometric interpretation.\\
+
+\noindent
 Let us know consider a different fractional integral:
 \begin{equation}
+\label{eq:ex2}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \sqrt{\tau}(t-\tau)^{\alpha-1}~d\tau. 
 \end{equation}
-If we evaluate the integral in Eq.~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ we obtain the curves in the right-most column of Table~\ref{??}. These curves are depicted in Fig~\ref{??}.
-The non-static non-rectangular sum-based geometric interpretation associated with Eq.~\eqref{eq:ex1} is depicted in Fig. The validity of this interpretation is corroborated by Fig. 
+The non-static non-rectangular sum-based geometric interpretation associated with Eq.~\eqref{eq:ex1} is depicted in Fig.~\ref{fig:geo2}. 
+If we evaluate the integral in Eq.~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ we obtain the curves in the right-most column of Table~\ref{tab:eval}. 
+These curves are depicted in Fig~\ref{fig:eval2}.
+The validity of the non-static non-rectangular sum-based geometric interpretation depicted in Fig.~\ref{fig:geo2} is corroborated by Fig.~\ref{fig:eval2}. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=1\textwidth]{geo_int2.pdf}
+\caption{The non-static non-rectangular sum-based geometric interpretation of Eq.~\eqref{eq:ex2}.}
+\label{fig:geo2}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=1\textwidth]{func_eval2.pdf}
+\caption{Depicts the curves which are obtained by evaluating Eq.~\eqref{eq:ex2} for all $\alpha\in \mathsf{A}$ using either Eq.~\eqref{eq:rs} or Eq.~\eqref{eq:option2}.}
+\label{fig:eval2}
+\end{figure}
+
 
 To conclude this section, a fractional integral of order $\alpha$ and extent $t$ can be interpreted as the area obtained by summing together the area associated with an infinite number of infinitesimals whose 
 shape is determined by $\alpha$ and $t$. The geometric interpretation of a fractional integral is, therefore, non-static as it depends on the value of both $\alpha$ and $t$. 
@@ -498,152 +529,140 @@ shape is determined by $\alpha$ and $t$. The geometric interpretation of a fract
 %they depend on the value of $\alpha$ and $t$. This implies that a fractional integral of order $\alpha$ and extent $t$ can be interpeted as the area obtained by summing together the area associated with an infinite number of infinitesimals whose 
 %shape is determined by $\alpha$ and $t$, i.e. the geometric interpretation of Eq.~\eqref{eq:ex1_raw} is non-static as it depends on the value of $\alpha$ and $t$.
 
-
-
-The circular markers in Figure ?? is depicted using the same tint-of-gray with which the right edge of the region  in question is depicted in Fig.
-
-
-
-Each of the curves 
-in Fig can therefore be associated with one of the panels in Fig. The area associated with the regions depicted in each of the panels in Fig. are plotted on the curves 
-in 
-associated with a particular panel appropriate 
-curves 
-in Fig using circular markers. The circular marker is depicted in Figure using the same tint-of-gray with which the 
-right edge of the region in question is depicted in Fig.  
-
-it is $\alpha$  
-Although $\alpha$ and $t$ alters the shape of the infinitesimals which make up the regions depicted in Fig.,  
-
-that make up the regions in Fig are confirmed by the following observation: $\mathsf{B}_T^{\alpha}\neq\mathcal{B}_T^{\alpha}$.
-We can visually verify that this observation is in fact true for $alpha=\frac{4}{5}$ by inspecting the right-most panel in Fig.~\ref{??}. The dashed curves and the grey tinted curves in this panel do not allign.
-
-
-
-the upper limit 
-of the Cavalieri integral in Eq. As the upper limit of the Cavalieri integral depends on
-
-As the shape of the infinitesimals which make up the regions depicted in Fig depend of the integration limit of the 
-Cavalieri integral or stated differently on the value of $t$ and $\alpha$.  
-
-If we set the value of $\alpha$ to $\frac{4}{5}$, but we do not fix the value of $t$ then Eq.~\eqref{eq:ex1} reduces to:
-\begin{equation}
-\int_{a_{t}^{\frac{4}{5}}(y)}^{b_{t}^{\frac{4}{5}}(y)} f(\tau)~d\tau 
-\end{equation}
-If we evaluate the above integral we obtain the area of the region $R_{t}^{\frac{4}{5}}$. The region $R_{t}^{\frac{4}{5}}$ is the region bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{t}^{\frac{4}{5}}(y)$.
-Note that the shape of $R_{t}^{\frac{4}{5}}$ depends on the value of $t$. The regions contained in the set $\mathsf{R}^{\frac{4}{5}}$ are depicted in the rightmost panel of Fig\textbf{??}. Let $\mathsf{B}^{\frac{4}{5}}$ contain the right 
-edges of the regions contained in the set $\mathsf{R}^{\frac{4}{5}}$. The shape of the edges in $\mathsf{B}^{\frac{4}{5}}$ depend on the value of $t$. The edges in $\mathsf{B}^{\frac{4}{5}}$ are depicted in Fig?? using different shades of gray. The shade with which the aformentioned curves are depicted becomes lighter 
-as the value of $t$ increases. The two sets b and b are not equal, i.e. the shape of the infinitesimals that make up the regions contained in 
-R are dependent on $t$. Although the infinitesimals that make up the regions contained in R have different shapes their form do share common characteristics. 
-
-
-
-
-
-
-
-altering $t$ alters the geometric interpretaion of 
-Eq???. The shape of the inifinitesimals that make up the region that is associated with Eq depend on the value of $t$. 
-
-
-the shape of the integration strip one has to use to construct the infinite sum that underpins the  used to create the   . Changing the value of $t$ alters the shape of the non-rectangular integration strip which is needed 
-
-
-limit alters the
-shape of the infinitesimal we need to use.
-
-
-The shade with which the aformentioned edges are depicted becomes lighter as the value of $t$ increases.
-
-
-
-The boundaries of these regions are depicted in varying shades of gray.  
-
-
-We depict $R_{t}^{\frac{4}{5}}$ in the left most panel of Fig.~\textbf{??} for all $t\in\mathsf{T}$. The set of functions   
-
-
-
-
-
-If we change the value of $t$ we change the area 
-
-
-In general can use $n$ integration strips to approximate 
-
-
-
-the area If we are to sum together the area of  non-rectangular integration strips whose sides are translations of $b_{10}^{\frac{4}{5}}(y)$ then the result our summation would tend to
-the area of $R_{10}^{\frac{4}{5}}$. 
-
-
-Lets now choose to approximate the area of $R_{10}^{\frac{4}{5}}$ using five non-rectangualr integration strips of equal width. Mathematically speaking, this is accomplished 
-by setting $n$ to 5 in Eq??. The aformentioned integration strips are depicted in the right-most panel of Figure~\ref{??}.
-The sides of the integration strips are depicted using dashed lines. The more integration strips we consider the better our approximation of $R_{10}^{\frac{4}{5}}$ becomes. 
-
-
-
-We can better approximate the area of $R_{10}^{\frac{4}{5}}$ by increasing the number of integrations strips we use .   Increasing the number of integration strips we use improves our approximation of the area of $R_{10}^{\frac{4}{5}}$  
-If we decide on using five integration strips 
-
-
-that 
-we use whose sides are translations of $b_{10}^{\frac{4}{5}}(y)$ 
-
-
-Each panel of 
-Figure~\ref{??} depicts the function $f(\tau)$ and the set of curves $\mathsf{B}_T^{\alpha}$. The set $\mathsf{B}_T^{\alpha}$ is defined in Table~\ref{??} and contains 
-all the Cavalieri integral upper limits obtained by fixing the order of integration $\alpha$ to a specific value. In each panel, we depict the set of curves $\mathsf{B}_T^{\alpha}$ using different shades of grey. 
-The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases.
-
-
-The The $y$-valued functions are depicted in different shades of gray. The $\tau$-valued fun 
-
-The curve in the rightmost panel of 
-Figure~\ref{} which is depicted in the lightest shade of gray of 
-
-The function $b_{10}^{\frac{4}{5}}(y)$ 
-depicted in the lightest shade of gray used within the right-most panel
-
-
-The right-most panel of Figure.~\ref{??} contains 
-a few $y$-valued curves, each one depicted in a different shade of gray. The curve depicted in the lightest shade of gray is  
-
-
-In each of the panels  curves $\mathsf{B}_1^{\alpha}$
-
-convert the 
-integrals in ?? and ?? to equivalent Cavalieri integrals.
-
-
-We can assign a geometric interpretation to the above fractional integrals by converting them into Cavalieri integrals. This can be achieved by first 
-converting the above integrals into Riemann-Stieltjes integrals and then converting the resulting integrals into Cavalieri integrals. Exaclty how these conversion are 
-to be performed is discussed in the previous section. The inegrator $g_t^{\alpha}(\tau)$ of the aforementioned intermediate Riemann-Stieltjes integrals are equal and independent of the integrand $f(\tau)$.
-The set of functions $\{g_{10}^{\alpha}(\tau)|\alpha\in\{0,0.2,\cdots,0.8,1\}\}$ are presented in Table \textbf{??} and depicted in Figure\textbf{??}. The integration limits of the aformentioned Cavalieri 
-integrals are functions and are determined by the integrand $f(\tau)$ and the integrator $g_t^{\alpha}(\tau)$. The set of functions $\{a_{10}^{\alpha}(y)|\alpha\in\{0,0.2,\cdots,0.8,1\}\}$ that can be 
-associated with the integrals in Eq~{??} and Eq~{??} are presented in Table~\textbf{??}. Note that neither $g_t^{\alpha}(\tau)$ nor $a_t^{\alpha}(y)$ are static functions, 
-they depend on the value of $\alpha$ and $t$. This implies that a fractional integral of order $\alpha$ and extent $t$ can be interpeted as an infitesimal sum of an infinite number of infinitesimals whose 
-shape is determined by $\alpha$ and $t$.
-
-Lets clarify the above by working through a detailed example. Lets set the value of $\alpha$ to $\frac{4}{5}$ and the value of $t$ to 10 and then convert the 
-integrals in ?? and ?? to equivalent Cavalieri integrals. If we evaluate these Cavalieri integrals we obtain the area of two regions $A$ and $B$. Both $A$ and $B$ are bounded by the $x$-axis, 
-$f(x)$ and $b_{10}^{\frac{4}{5}}(y)$. Region $A$ and $B$ are respectively depicted in the rightmost panel of Fig ?? and Fig ??. The area of $A$ and $B$ can be approximated
-by summing together the area of non-rectangular integration strips that inscribes $A$ and $B$. The case in which we use five integration strips is depicted in 
-Fig ?? and Fig ??. The analytic expressions of the right sides of these integration strips are elements of the set $\mathsf{A} = \{b_{10}^{\frac{4}{5}}(y) - c|c\in\{0,2,4,6,8\}\}$. The 
-curves are plotted using dashed lines. 
-
-The curves $\mathsf{B} = \{b_{t}^{\frac{4}{5}}(y)|t\in\{2,4,6,8,10\}\}$ are plotted in different shades of grey. The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases. Note 
-that $\mathsf{A}\neq \mathsf{B}$. The sides of the integration strips 
-
-
-is the lighter the curve associated with $b_t^{\alpha}(y)$ is.
-
-We depict We depict $b_10^{\alpha}(y)$ with the lightest
-shade of
-depicted in the right most   depict the region associated that is associated with the Cavalieri integral which is obtained 
-
-
-the obtained Lets depict the geometric interpretation 
+% The circular markers in Figure ?? is depicted using the same tint-of-gray with which the right edge of the region  in question is depicted in Fig.
+% 
+% Each of the curves 
+% in Fig can therefore be associated with one of the panels in Fig. The area associated with the regions depicted in each of the panels in Fig. are plotted on the curves 
+% in 
+% associated with a particular panel appropriate 
+% curves 
+% in Fig using circular markers. The circular marker is depicted in Figure using the same tint-of-gray with which the 
+% right edge of the region in question is depicted in Fig.  
+% 
+% it is $\alpha$  
+% Although $\alpha$ and $t$ alters the shape of the infinitesimals which make up the regions depicted in Fig.,  
+% 
+% that make up the regions in Fig are confirmed by the following observation: $\mathsf{B}_T^{\alpha}\neq\mathcal{B}_T^{\alpha}$.
+% We can visually verify that this observation is in fact true for $alpha=\frac{4}{5}$ by inspecting the right-most panel in Fig.~\ref{??}. The dashed curves and the grey tinted curves in this panel do not allign.
+% 
+% 
+% 
+% the upper limit 
+% of the Cavalieri integral in Eq. As the upper limit of the Cavalieri integral depends on
+% 
+% As the shape of the infinitesimals which make up the regions depicted in Fig depend of the integration limit of the 
+% Cavalieri integral or stated differently on the value of $t$ and $\alpha$.  
+% 
+% If we set the value of $\alpha$ to $\frac{4}{5}$, but we do not fix the value of $t$ then Eq.~\eqref{eq:ex1} reduces to:
+% \begin{equation}
+% \int_{a_{t}^{\frac{4}{5}}(y)}^{b_{t}^{\frac{4}{5}}(y)} f(\tau)~d\tau 
+% \end{equation}
+% If we evaluate the above integral we obtain the area of the region $R_{t}^{\frac{4}{5}}$. The region $R_{t}^{\frac{4}{5}}$ is the region bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{t}^{\frac{4}{5}}(y)$.
+% Note that the shape of $R_{t}^{\frac{4}{5}}$ depends on the value of $t$. The regions contained in the set $\mathsf{R}^{\frac{4}{5}}$ are depicted in the rightmost panel of Fig\textbf{??}. Let $\mathsf{B}^{\frac{4}{5}}$ contain the right 
+% edges of the regions contained in the set $\mathsf{R}^{\frac{4}{5}}$. The shape of the edges in $\mathsf{B}^{\frac{4}{5}}$ depend on the value of $t$. The edges in $\mathsf{B}^{\frac{4}{5}}$ are depicted in Fig?? using different shades of gray. The shade with which the aformentioned curves are depicted becomes lighter 
+% as the value of $t$ increases. The two sets b and b are not equal, i.e. the shape of the infinitesimals that make up the regions contained in 
+% R are dependent on $t$. Although the infinitesimals that make up the regions contained in R have different shapes their form do share common characteristics. 
+% 
+% 
+% altering $t$ alters the geometric interpretaion of 
+% Eq???. The shape of the inifinitesimals that make up the region that is associated with Eq depend on the value of $t$. 
+% 
+% 
+% the shape of the integration strip one has to use to construct the infinite sum that underpins the  used to create the   . Changing the value of $t$ alters the shape of the non-rectangular integration strip which is needed 
+% 
+% 
+% limit alters the
+% shape of the infinitesimal we need to use.
+% 
+% 
+% The shade with which the aformentioned edges are depicted becomes lighter as the value of $t$ increases.
+% 
+% 
+% 
+% The boundaries of these regions are depicted in varying shades of gray.  
+% 
+% 
+% We depict $R_{t}^{\frac{4}{5}}$ in the left most panel of Fig.~\textbf{??} for all $t\in\mathsf{T}$. The set of functions   
+% 
+% 
+% If we change the value of $t$ we change the area 
+% 
+% 
+% In general can use $n$ integration strips to approximate 
+% 
+% 
+% 
+% the area If we are to sum together the area of  non-rectangular integration strips whose sides are translations of $b_{10}^{\frac{4}{5}}(y)$ then the result our summation would tend to
+% the area of $R_{10}^{\frac{4}{5}}$. 
+% 
+% 
+% Lets now choose to approximate the area of $R_{10}^{\frac{4}{5}}$ using five non-rectangualr integration strips of equal width. Mathematically speaking, this is accomplished 
+% by setting $n$ to 5 in Eq??. The aformentioned integration strips are depicted in the right-most panel of Figure~\ref{??}.
+% The sides of the integration strips are depicted using dashed lines. The more integration strips we consider the better our approximation of $R_{10}^{\frac{4}{5}}$ becomes. 
+% 
+% 
+% 
+% We can better approximate the area of $R_{10}^{\frac{4}{5}}$ by increasing the number of integrations strips we use .   Increasing the number of integration strips we use improves our approximation of the area of $R_{10}^{\frac{4}{5}}$  
+% If we decide on using five integration strips 
+% 
+% 
+% that 
+% we use whose sides are translations of $b_{10}^{\frac{4}{5}}(y)$ 
+% 
+% 
+% Each panel of 
+% Figure~\ref{??} depicts the function $f(\tau)$ and the set of curves $\mathsf{B}_T^{\alpha}$. The set $\mathsf{B}_T^{\alpha}$ is defined in Table~\ref{??} and contains 
+% all the Cavalieri integral upper limits obtained by fixing the order of integration $\alpha$ to a specific value. In each panel, we depict the set of curves $\mathsf{B}_T^{\alpha}$ using different shades of grey. 
+% The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases.
+% 
+% 
+% The The $y$-valued functions are depicted in different shades of gray. The $\tau$-valued fun 
+% 
+% The curve in the rightmost panel of 
+% Figure~\ref{} which is depicted in the lightest shade of gray of 
+% 
+% The function $b_{10}^{\frac{4}{5}}(y)$ 
+% depicted in the lightest shade of gray used within the right-most panel
+% 
+% 
+% The right-most panel of Figure.~\ref{??} contains 
+% a few $y$-valued curves, each one depicted in a different shade of gray. The curve depicted in the lightest shade of gray is  
+% 
+% 
+% In each of the panels  curves $\mathsf{B}_1^{\alpha}$
+% 
+% convert the 
+% integrals in ?? and ?? to equivalent Cavalieri integrals.
+% 
+% 
+% We can assign a geometric interpretation to the above fractional integrals by converting them into Cavalieri integrals. This can be achieved by first 
+% converting the above integrals into Riemann-Stieltjes integrals and then converting the resulting integrals into Cavalieri integrals. Exaclty how these conversion are 
+% to be performed is discussed in the previous section. The inegrator $g_t^{\alpha}(\tau)$ of the aforementioned intermediate Riemann-Stieltjes integrals are equal and independent of the integrand $f(\tau)$.
+% The set of functions $\{g_{10}^{\alpha}(\tau)|\alpha\in\{0,0.2,\cdots,0.8,1\}\}$ are presented in Table \textbf{??} and depicted in Figure\textbf{??}. The integration limits of the aformentioned Cavalieri 
+% integrals are functions and are determined by the integrand $f(\tau)$ and the integrator $g_t^{\alpha}(\tau)$. The set of functions $\{a_{10}^{\alpha}(y)|\alpha\in\{0,0.2,\cdots,0.8,1\}\}$ that can be 
+% associated with the integrals in Eq~{??} and Eq~{??} are presented in Table~\textbf{??}. Note that neither $g_t^{\alpha}(\tau)$ nor $a_t^{\alpha}(y)$ are static functions, 
+% they depend on the value of $\alpha$ and $t$. This implies that a fractional integral of order $\alpha$ and extent $t$ can be interpeted as an infitesimal sum of an infinite number of infinitesimals whose 
+% shape is determined by $\alpha$ and $t$.
+% 
+% Lets clarify the above by working through a detailed example. Lets set the value of $\alpha$ to $\frac{4}{5}$ and the value of $t$ to 10 and then convert the 
+% integrals in ?? and ?? to equivalent Cavalieri integrals. If we evaluate these Cavalieri integrals we obtain the area of two regions $A$ and $B$. Both $A$ and $B$ are bounded by the $x$-axis, 
+% $f(x)$ and $b_{10}^{\frac{4}{5}}(y)$. Region $A$ and $B$ are respectively depicted in the rightmost panel of Fig ?? and Fig ??. The area of $A$ and $B$ can be approximated
+% by summing together the area of non-rectangular integration strips that inscribes $A$ and $B$. The case in which we use five integration strips is depicted in 
+% Fig ?? and Fig ??. The analytic expressions of the right sides of these integration strips are elements of the set $\mathsf{A} = \{b_{10}^{\frac{4}{5}}(y) - c|c\in\{0,2,4,6,8\}\}$. The 
+% curves are plotted using dashed lines. 
+% 
+% The curves $\mathsf{B} = \{b_{t}^{\frac{4}{5}}(y)|t\in\{2,4,6,8,10\}\}$ are plotted in different shades of grey. The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases. Note 
+% that $\mathsf{A}\neq \mathsf{B}$. The sides of the integration strips 
+% 
+% 
+% is the lighter the curve associated with $b_t^{\alpha}(y)$ is.
+% 
+% We depict We depict $b_10^{\alpha}(y)$ with the lightest
+% shade of
+% depicted in the right most   depict the region associated that is associated with the Cavalieri integral which is obtained 
+% 
+% 
+% the obtained Lets depict the geometric interpretation 
 
 
 
@@ -663,45 +682,28 @@ the obtained Lets depict the geometric interpretation
 %The brigther the function the larger $t$ is. For the case $t=10$ we also plot the integration strips. The fractional integral $\frac{1}{\Gamma(\alpha)}\int_0^10 f(\tau) (t-\tau)^{\alpha-1}~d\tau$ can therefore 
 %be interpreted as the sum of inThey clearly do not match the other functions. 
 
-\begin{enumerate}
- \item Examples.
- \item If we evaluate \textbf{[is this word correct?]} these integrals we obtaine the functions in Table \textbf{??}. These functions are plotted in Fig xx.
- \item Assign a geometric interpretation by converting to a Riemann-Stieltjes integral and then to a Cavalieri integral.
- \item \textbf{[Is there a need to mention the fact that it is mapped to a set of different Cavalieri integrals]}. Note that we obtain a different 
- Cavalieri integral for each value of alpha and t.
- \item Let us fix alpha and t to specific values, ie write down the integrals. The function b the left most function in the leftmost panel (plotted in the lightest 
- shade of gray of all the y-valued functions. The integral , and by implication , can be inerpreted as the are of the region formed by f, b and the x-axis. This 
- area can be obtained by summing together an infinite number of infinitesimals whose shape is determined by b. This are can be approximated by using integration strips. These 
- strips is depicted using dashed lines. The area of this region and $t$ forms a specific point on the curves in Fig. The point is plotted in the same shade of gray than b.
- \item If we take another value of t we obtain a different region. Note that b and b are not mere translations of each other. Changing the integration limit alters the 
- shape of the infinitesimal we need to use. Althoug both t and alpa alters the shape of b, it is only alpha that fundamentally changes .... \textbf{[how to state this shape altering thing i do not know]} 
- \item Need to finish the discussion of al the points mapping to the other figures. 
- \item Summary of overall interpretation of fractional integral.....
-\end{enumerate}
+% \begin{enumerate}
+%  \item Examples.
+%  \item If we evaluate \textbf{[is this word correct?]} these integrals we obtaine the functions in Table \textbf{??}. These functions are plotted in Fig xx.
+%  \item Assign a geometric interpretation by converting to a Riemann-Stieltjes integral and then to a Cavalieri integral.
+%  \item \textbf{[Is there a need to mention the fact that it is mapped to a set of different Cavalieri integrals]}. Note that we obtain a different 
+%  Cavalieri integral for each value of alpha and t.
+%  \item Let us fix alpha and t to specific values, ie write down the integrals. The function b the left most function in the leftmost panel (plotted in the lightest 
+%  shade of gray of all the y-valued functions. The integral , and by implication , can be inerpreted as the are of the region formed by f, b and the x-axis. This 
+%  area can be obtained by summing together an infinite number of infinitesimals whose shape is determined by b. This are can be approximated by using integration strips. These 
+%  strips is depicted using dashed lines. The area of this region and $t$ forms a specific point on the curves in Fig. The point is plotted in the same shade of gray than b.
+%  \item If we take another value of t we obtain a different region. Note that b and b are not mere translations of each other. Changing the integration limit alters the 
+%  shape of the infinitesimal we need to use. Althoug both t and alpa alters the shape of b, it is only alpha that fundamentally changes .... \textbf{[how to state this shape altering thing i do not know]} 
+%  \item Need to finish the discussion of al the points mapping to the other figures. 
+%  \item Summary of overall interpretation of fractional integral.....
+% \end{enumerate}
 
-
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=1\textwidth]{geo_int2.pdf}
-\caption{A plot of $\Gamma(x)$. $\Gamma(x)$ is not defined for the non-negative integers.}
-\label{fig:geo2}
-\end{figure}
-
-
-
-These steps 
-were discussed in more detail in the previous section. 
-
-The steps to visualize the above two integrals were described in the previous paragraph. We first convert the integrals into Riemann-Stieltjes integrals. The 
-Riemann-Stieltjes integrals are then converted to Cavalieri integrals. We can then simply depict the Cavalieri integrals and in doing so obtain a geometric interpretaion
-of the original fractional integrals. Importantly, for each value of $t$ we obtain a different 
-
-
-
-
-
-
+% These steps 
+% were discussed in more detail in the previous section. 
+% 
+% The steps to visualize the above two integrals were described in the previous paragraph. We first convert the integrals into Riemann-Stieltjes integrals. The 
+% Riemann-Stieltjes integrals are then converted to Cavalieri integrals. We can then simply depict the Cavalieri integrals and in doing so obtain a geometric interpretaion
+% of the original fractional integrals. Importantly, for each value of $t$ we obtain a different 
 
 
 \section{First-level section heading}
