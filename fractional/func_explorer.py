@@ -16,6 +16,10 @@ import math
 #    x = -0.25*y**(2.0/3.0) + 9.0/2.0*y**(1.0/3.0) - 11
 #    return x
 
+def ys(y):
+    x = y**2
+    return x
+
 def a1(y,alpha,t,b):
     x = y - 1.0/math.gamma(alpha+1)*(t**alpha - (t-y)**alpha)
     return x+b
@@ -44,27 +48,6 @@ def f2(x):
 
 def f2_inv(y):
     return y**2
-
-def plt_gh_functions(alpha = np.array([0.2,0.4,0.6,0.8,1.0]),t=10,num=1000):
-    tau = np.linspace(0,t,num)
-    #[0.125,0.25,0.375,0.5,0.625,0.75,0.875,1.0]
-    v = np.linspace(0,1.5,len(alpha))
-
-    for k in range(len(alpha)):
-        tau2 = np.linspace(0,(t**alpha[k])/math.gamma(alpha[k]+1),num)
-        y1 = g_func(tau,alpha[k],t)
-        y2 = h_func(tau2,alpha[k],t)
-        col = [v[k]/2,v[k]/2,v[k]/2]    
-        plt.plot(tau,y1,color=col)
-        plt.plot(tau2,y2,color=col,ls = "--")
-
-    plt.xlabel(r"$\tau$")
-    plt.ylabel(r"$y$")
-    plt.xlim([0,10])
-    plt.ylim([0,10])
-    plt.show()
-
-
 
 def plot_g_functions(t_vector,alpha_vector,tau_points):
     fig, ax = plt.subplots(len(t_vector), len(alpha_vector), sharex='all', sharey='all')
@@ -105,45 +88,6 @@ def plot_a_functions(t_vector,alpha_vector,y_points,f_inv,f):
               ax[k,i].set_ylabel("t = "+str(round(t_vector[k],1)))
     plt.show() 
 
-def plot_b_functions(t_vector=np.array([2,4,6,8,10]),alpha_vector=np.array([0.2,0.4,0.6,0.8]),y_points=50000,f_inv=f1_inv,f=f1):
-    #plt.grid('on')
-    fig,ax = plt.subplots(1,len(alpha_vector),sharex='all', sharey='all')
-    #plt.grid('on')
-    v = np.linspace(0,1.5,len(t_vector))
-
-    for i in range(len(alpha_vector)):
-        x = np.linspace(0,t_vector[-1],y_points)
-        
-        ax[i].plot(x,f(x),"k") 
-        if i == 0:
-           ax[i].set_xlabel(r"$\tau$")
-           ax[i].set_ylabel(r"$y$")
-        ax[i].set_title(r"$\alpha = $"+str(alpha_vector[i]))
-        for k in range(len(t_vector)):
-            y = np.linspace(0,f(t_vector[k]),y_points)
-            b = g_func(t_vector[k],alpha_vector[i],t_vector[k])
-            b_p = h_func(b,alpha_vector[i],t_vector[-1])
-            y2 = np.linspace(0,f(b_p),y_points)
-            col = [v[k]/2,v[k]/2,v[k]/2]    
-        
-            ax[i].plot(a_func(y,alpha_vector[i],t_vector[k],f_inv)+b,y,color=col) 
-            if i == len(alpha_vector)-1:
-               ax[i].plot(a_func(y2,alpha_vector[i],t_vector[-1],f_inv)+b,y2,color=col,ls="--") 
-            ax[i].set_xlim([0,t_vector[-1]+0.6])
-            ax[i].set_ylim([0,f(t_vector[-1])]) 
-              
-    plt.show()        
-            
-def scaling(t_vector=np.array([2,4,6,8,10]),alpha=0.8,y_points=1000,f_inv=f1_inv,f=f1):
-    
-    for k in range(2,len(t_vector)):
-            y = np.linspace(0,f(t_vector[k]),y_points)
-            s = a_func(y,alpha,t_vector[k],f_inv)/a_func(y,alpha,t_vector[k-1],f_inv)
-            y = np.linspace(0,f(t_vector[k]),y_points)
-            plt.plot(s)    
-    plt.show()        
-   
-
 def plot_area(t_vector,alpha_vector,y_points,f_inv,f):
     fig, ax = plt.subplots(len(t_vector), len(alpha_vector), sharex='all', sharey='all')
     for k in range(0,len(t_vector)):
@@ -177,9 +121,6 @@ def plot_gamma(x):
     plt.plot(x,y) 
     plt.ylim([-5,5])      
     plt.show()
-
-
-
 
 def plot_gamma2(x):
     
@@ -280,6 +221,7 @@ def plot_gamma2(x):
     
     plt.plot(x,y,"b")
     
+    plt.axvline(x=-5, color='r', linestyle='--')
     plt.axvline(x=-4, color='r', linestyle='--')
     plt.axvline(x=-3, color='r', linestyle='--')
     plt.axvline(x=-2, color='r', linestyle='--')
@@ -291,150 +233,25 @@ def plot_gamma2(x):
     plt.ylabel(r"$\Gamma(x)$")
     plt.ylim([-5,5])      
     plt.show()
-
-def plot_g(alpha, t, num):
-    tau = np.linspace(0,t,num)
-    plt.plot(tau,tau**alpha,"r")
-    plt.plot(tau,(-1*tau)**alpha,"b")
-    plt.plot(tau,(t-tau)**alpha,"m")
-    plt.plot(tau,-1*(t-tau)**alpha,"c")
-    plt.plot(tau,t**alpha-(t-tau)**alpha,"g")
-    plt.show()
-
-def plot_g_scaling(alpha=0.6,t=10,num_points=1000,k=3):
-    
-    tau = np.linspace(0,t*k,num_points)
-    y = k**alpha*g_func(tau/k,alpha,t)
-    y2 = g_func(tau,alpha,t*k)
-
-    plt.plot(tau,y)
-    plt.plot(tau,y2)
-
-    plt.show()
-
-    #tau = np.linspace(0,t,num_points)
-    #tau2 = np.linspace(0,t*k,num_points)
-    #y = g_func(tau,alpha,t)
-    #y2 = g_func(k*tau,alpha,t*k)
-    #plt.plot(tau,y)
-    #plt.plot(tau,y*k**alpha)
-    #plt.plot(tau,y2)
-    #plt.show()   
-
-
-def fp(x):
-    return -1*(x*x) + 1 
-    
-def plot_inversepar(k=2):
-    x = np.linspace(-1,1)
-    x2 = x*k
-    y = fp(x)
-    y2 = k*fp(x2/k)
-    plt.plot(x,y)
-    plt.plot(x2,y2)
-
-    plt.show()
-
-def plot_y_test(alpha=0.5,t=10,num_points=200):
-    y = np.linspace(0,t,num_points)
-    tau = -1*g_func(y,alpha,t)
-    plt.plot(tau,y)
-    plt.plot(tau+y,y)
-    plt.plot(y,y)
-    plt.show()
-
-def plot_frac_int1():
-    t = np.linspace(0,10,1000)
-
-    plt.plot(t,t,"k",lw=2,label=r"$\alpha=0$")
-    y1 = (25.0/(6.0*math.gamma(1.0/5.0)))*t**(6.0/5.0)
-    y2 = (25.0/(14.0*math.gamma(2.0/5.0)))*t**(7.0/5.0)
-    y3 = (25.0/(24.0*math.gamma(3.0/5.0)))*t**(8.0/5.0)
-    y4 = (25.0/(36.0*math.gamma(4.0/5.0)))*t**(9.0/5.0)
-    plt.plot(t,y1,"k",dashes=[10, 5, 20, 5],label=r"$\alpha=0.2$")	
-    plt.plot(t,y2,"k",dashes=[4,10],label=r"$\alpha=0.4$")
-    plt.plot(t,y3,"k",ls=":",label=r"$\alpha=0.6$")
-    plt.plot(t,y4,"k",ls="-.",label=r"$\alpha=0.8$")
-    plt.plot(t,0.5*t*t,"k",dashes=[5,1],lw=2,label=r"$\alpha=1.0$")
-
-    t_vector = np.array([2,4,6,8,10])
-
-    v = np.linspace(0,1.5,len(t_vector))
-    plt.legend()
-
-    for k in range(len(v)):
-    	y1 = (25.0/(6.0*math.gamma(1.0/5.0)))*t_vector[k]**(6.0/5.0)
-    	y2 = (25.0/(14.0*math.gamma(2.0/5.0)))*t_vector[k]**(7.0/5.0)
-    	y3 = (25.0/(24.0*math.gamma(3.0/5.0)))*t_vector[k]**(8.0/5.0)
-    	y4 = (25.0/(36.0*math.gamma(4.0/5.0)))*t_vector[k]**(9.0/5.0)
-    
-    	plt.plot(t_vector[k],y1,"o",color=[v[k]/2,v[k]/2,v[k]/2])
-    	plt.plot(t_vector[k],y2,"o",color=[v[k]/2,v[k]/2,v[k]/2])
-    	plt.plot(t_vector[k],y3,"o",color=[v[k]/2,v[k]/2,v[k]/2])
-    	plt.plot(t_vector[k],y4,"o",color=[v[k]/2,v[k]/2,v[k]/2])
-
-    plt.xlim([0,10])
-    plt.ylim([0,50])
-    plt.xlabel(r"$t$")
-    plt.ylabel(r"$y$")
-    
-    plt.show()
-
-def plot_frac_int2():
-    t = np.linspace(0,10,1000)
-    from matplotlib.pyplot import figure
-    from matplotlib.ticker import MaxNLocator
-    ax = figure().gca()
-    plt.plot(t,np.sqrt(t),"k",lw=2,label=r"$\alpha=0$")
-    y1 = (np.sqrt(np.pi)/(2*math.gamma(17.0/10.0)))*t**(7.0/10.0)
-    y2 = (np.sqrt(np.pi)/(2*math.gamma(19.0/10.0)))*t**(9.0/10.0)
-    y3 = (np.sqrt(np.pi)/(2*math.gamma(21.0/10.0)))*t**(11.0/10.0)
-    y4 = (np.sqrt(np.pi)/(2*math.gamma(23.0/10.0)))*t**(13.0/10.0)
-    ax.plot(t,y1,"k",dashes=[10, 5, 20, 5],label=r"$\alpha=0.2$")	
-    ax.plot(t,y2,"k",dashes=[4,10],label=r"$\alpha=0.4$")
-    ax.plot(t,y3,"k",ls=":",label=r"$\alpha=0.6$")
-    ax.plot(t,y4,"k",ls="-.",label=r"$\alpha=0.8$")
-    ax.plot(t,2.0/3.0*t**(3.0/2.0),"k",dashes=[5,1],lw=2,label=r"$\alpha=1.0$")
-
-    t_vector = np.array([2,4,6,8,10])
-
-    v = np.linspace(0,1.5,len(t_vector))
-    plt.legend()
-
-    for k in range(len(v)):
-    	y1 = (np.sqrt(np.pi)/(2*math.gamma(17.0/10.0)))*t_vector[k]**(7.0/10.0)
-    	y2 = (np.sqrt(np.pi)/(2*math.gamma(19.0/10.0)))*t_vector[k]**(9.0/10.0)
-    	y3 = (np.sqrt(np.pi)/(2*math.gamma(21.0/10.0)))*t_vector[k]**(11.0/10.0)
-    	y4 = (np.sqrt(np.pi)/(2*math.gamma(23.0/10.0)))*t_vector[k]**(13.0/10.0)
-    
-    	ax.plot(t_vector[k],y1,"o",color=[v[k]/2,v[k]/2,v[k]/2])
-    	ax.plot(t_vector[k],y2,"o",color=[v[k]/2,v[k]/2,v[k]/2])
-    	ax.plot(t_vector[k],y3,"o",color=[v[k]/2,v[k]/2,v[k]/2])
-    	ax.plot(t_vector[k],y4,"o",color=[v[k]/2,v[k]/2,v[k]/2])
-
-    ax.set_xlim([0,10])
-    ax.set_ylim([0,22])
-
-    ax.set_xlabel(r"$t$")
-    ax.set_ylabel(r"$y$")
-    ax.yaxis.set_major_locator(MaxNLocator(integer=True))    
-    plt.show()
-
+ 
 
 if __name__ == "__main__":
-   plot_frac_int1()
-   plot_frac_int2()
-   #plot_y_test()
-   #plot_inversepar()
-   #plt_gh_functions()
-   plot_b_functions()
-   plot_b_functions(f_inv = f2_inv, f=f2)
-   #scaling() 
-   #plot_g_scaling()
-   #plot_g(1.5,10,1000)
-   #x = np.linspace(-5,5,2000)
-   #x = x[1:]
-   #plot_gamma2(x)
+   #y = np.linspace(-2,2,100)
+   #t = 4
+
+
+   #x = ys(y)
+
+   #plt.plot(x,y,"b")
+   #plt.plot(-1*x,y,"r")
+   #plt.plot((x)**(2),y,"k")
+   #plt.plot((x+t)**(2),y,"c")
+   #plt.plot(t-x,y,"g")
+   #plt.show()
+
+   x = np.linspace(-5,5,2000)
+   x = x[1:]
+   plot_gamma2(x)
    '''
    num_points = 5
    t_f = 10
