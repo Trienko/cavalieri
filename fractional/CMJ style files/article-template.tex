@@ -38,7 +38,7 @@ consequences will be drawn}'' \cite{ross77,machado14}.\\
 
 \noindent
 The mathematical discipline in which we study the extension of derivatives and integrals to non-integer orders is known as fractional calculus. Euler, Liouville and Riemann laid most 
-of the theoretical groundwork which was needed to develop the field of fractional calculus \cite{davis59,liouville1832,riemann1876,laurent1884}. Fractional calculus has now developed into a mature discipline \cite{machado14}. 
+of the theoretical groundwork which was needed to develop the field of fractional calculus \cite{davis59,euler1738,liouville1832,riemann1876,laurent1884}. Fractional calculus has now developed into a mature discipline \cite{machado14}. 
 However, there is one aspect of the discipline which only started to develop fairly recently: its physical and geometric interpretability. At the first international conference on fractional calculus in
 New Haven (USA) (which took place in 1974) it was pointed out that literature lacked an acceptable geometric and physical interpretation of fractional calculus \cite{ross06}. Subsequently, the last few decades has seen 
 a number of papers that attempt to rectify this. There now exists probabilistic interpretations \cite{stanislavsky04,machado03}, geometric interpretations \cite{adda97,tarasov16,podlubny02}, physical interpretations \cite{cioc16,rutman95} and economic 
@@ -51,7 +51,7 @@ the Riemann-Liouville fractional integral \cite{laurent1884}. At this point in t
 We, however, deem these definitions to be beyond the scope of the current article and as such we do not discuss them any further in this work. Furthermore, the geometric interpretation 
 we present here is an extension of the geometric interpretation presented by Podlubny \cite{podlubny02}. Podlubny showed that a Riemann-Liouville fractional integral 
 can be converted into a Riemann-Stieltjes integral. Furthermore, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area whis is obtained by summing toghether 
-the area of an infinite number of non-rectangular infinitesimels, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,?}. Combining these two ideas together results in the following geometric 
+the area of an infinite number of non-rectangular infinitesimels, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,grobler19}. Combining these two ideas together results in the following geometric 
 interpretation: the Riemann-Liouville fractional integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by the order of integration $\alpha$ and the integration limit $t$.\\
 
 \noindent
@@ -115,7 +115,7 @@ We end the paper by presenting our novel geometric interpretation, some examples
 %geometric interpretation will encourage and enable undergraduate lectures to introduce undergraduates to this fascinating mathematical discipline.  
 
 \section{Riemann-Stieltjes Integral}
-Recall that the Riemann-Stieltjes integral is defined as follows:
+Recall that the Riemann-Stieltjes integral is defined as follows \cite{bartle76}:
 \begin{equation}
 \label{eq:g_int2}
 \int_{a'}^{b'} f(x) dg(x) =  \lim_{n \rightarrow \infty}\sum_{i=0}^{n-1} f(x_i^2)[g(x_{i+1}^2)-g(x_{i}^2)], 
@@ -140,7 +140,7 @@ As an example:
 \end{equation}
 
 \section{Cavalieri Integral}
-Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
+In this section we define the Cavalieri integral \cite{ackermann12}. Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.3\textwidth]{fig12}
@@ -196,17 +196,17 @@ If we use its Riemann-Stieltjes equivalent we obtain:
 \end{equation}
 
 \noindent
-Conversely, if $g$ is known (and not $a(y)$) and $g(a') = a$ then we can calculate $a(y)$ using the following:
+Conversely, if $g$ is known (and not $a(y)$) and $g(a') = a$ then we can calculate $a(y)$ using the following \cite{grobler19}:
 \begin{equation}
 \label{eq:a_y}
 a(y) = f^{-1}(y) - g\circ f^{-1}(y) + g(a'). 
 \end{equation}
-Note the power of Eq.~\eqref{eq:a_y} it allows us to transform a Riemann-Stieltjes integral into an equivalent Cavalieri integral. 
+Eq.~\eqref{eq:a_y} allows us to transform a Riemann-Stieltjes integral into an equivalent Cavalieri integral. 
 Furthermore, this transformation enables us to assign a geometric interpretation to a Riemann-Stieltjes integral. The interpretation being:
-it represents the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by $a(y)$.
+it represents the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals; all of them being translations of $a(y)$.
 
 \section{Gamma Function}
-The gamma function was first devised by Euler. The gamma function is defined for all real numbers except for the non-negative integers. Moreover, it is a natural extension of the factorial function to the real numbers. The Gamma function is defined as:
+The gamma function was first devised by Euler \cite{euler1738}. The gamma function is defined for all real numbers except for the non-negative integers. Moreover, it is a natural extension of the factorial function to the real numbers. The Gamma function is defined as:
 \begin{equation}
 \Gamma(x) = \int_0^{\infty} t^{x-1} e^{-t}\,dt.
 \end{equation}
@@ -219,42 +219,42 @@ The function $\Gamma(x)$ is depicted in Fig.~\ref{fig:gamma} for $x\in(-5,5)$.
 \end{figure}
 
 \section{Riemann-Liouville Fractional Integral}
-In this section we present the definition of the Riemann-Liouville fractional integral of order $\alpha$. Let
+In this section we present the definition of the Riemann-Liouville fractional integral of order $\alpha$ \cite{laurent1884}. Let
 \begin{equation}
-If(x) := \int_0^x f(t) dt.
+If(t) := \int_0^t f(\tau)~d\tau.
 \end{equation}
 If we apply the above operator in a repetitive manner to $f$ we obtain the $n$th antiderivative of $f$ based at 0:
 \begin{equation}
 \label{eq:n_anti}
-I^nf(x) = \int_0^x\int_0^{x_1}\cdots \int_0^{x_{n-1}}f(x_n)~dx_n\cdots dx_2 dx_1.
+I^nf(t) = \int_0^t\int_0^{t_1}\cdots \int_0^{t_{n-1}}f(t_n)~dt_n\cdots dt_2 dt_1.
 \end{equation}
 Applying Cauchy's formula for repetitive integration to the above $n$th antiderivative of $f$ helps us express the above $n$th antiderivative as a single integral. 
 Applying Cauchy's formula to Eq.~\eqref{eq:n_anti} results in:
 \begin{equation}
 \label{eq:cauchy}
-I^nf(x) = \frac{1}{(n-1)!}\int_0^x (x-t)^{n-1}f(t)~dt.
+I^nf(t) = \frac{1}{(n-1)!}\int_0^t (t-\tau)^{n-1}f(\tau)~d\tau.
 \end{equation}
-As an example if $f(x)=x$ and $n=2$ then Eq.~\eqref{eq:cauchy} reduces to:
+As an example if $f(t)=t$ and $n=2$ then Eq.~\eqref{eq:cauchy} reduces to:
 \begin{equation}
-I^2f(x) = \int_0^x (x-t)t~dt = \frac{t^2x}{2} - \frac{t^3}{3} \Bigg |_0^x = \frac{x^3}{3!}.
+I^2f(t) = \int_0^t (t-\tau)t~dt = \frac{\tau^2 t}{2} - \frac{\tau^3}{3} \Bigg |_0^t = \frac{t^3}{3!}.
 \end{equation}
 The definition in Eq.~\eqref{eq:cauchy} can now be extended to an arbitrary fractional order by replacing $(n-1)!$ with the Gamma function (see Fig.~\ref{fig:gamma}):
 \begin{equation}
 \label{eq:frac_integral}
-I^{\alpha}f(x) = \frac{1}{\Gamma(\alpha)}\int_0^x (x-t)^{\alpha-1}f(t)~dt.
+I^{\alpha}f(t) = \frac{1}{\Gamma(\alpha)}\int_0^t (t-\tau)^{\alpha-1}f(\tau)~d\tau.
 \end{equation}
-Eq.~\eqref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$. As an example if $f(x)=x$ and $\alpha=\frac{1}{2}$ then 
+Eq.~\eqref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$. As an example if $f(t)=t$ and $\alpha=\frac{1}{2}$ then 
 Eq.~\eqref{eq:frac_integral} reduces to:
 \begin{equation}
-I^{\frac{1}{2}}f(x) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^x \frac{t}{\sqrt{x-t}} dt = \frac{1}{\sqrt{\pi}}\left [ -\frac{2}{3}\sqrt{x-t}(t+2x)\right] \Bigg |_0^x=\frac{4}{3\sqrt{\pi}}x^{\frac{3}{2}}. 
+I^{\frac{1}{2}}f(\tau) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^t \frac{\tau}{\sqrt{t-\tau}} dt = \frac{1}{\sqrt{\pi}}\left [ -\frac{2}{3}\sqrt{t-\tau}(t+2x)\right] \Bigg |_0^t=\frac{4}{3\sqrt{\pi}}t^{\frac{3}{2}}. 
 \end{equation}
 Furthermore, it is straightforward to show that the $I$ operator satisfies:
 \begin{equation}
-I^{\alpha}I^{\beta}f(x) = I^{\alpha+\beta}f(x). 
+I^{\alpha}I^{\beta}f(t) = I^{\alpha+\beta}f(t). 
 \end{equation}
 
 \section{Geometric Interpretation of the Riemann-Liouville Fractional Integral}
-
+In this section we present a novel geometric interpretation of the Riemann-Liouville fractional integral. 
 Recall that the Riemann-Liouville fractional integral of order $\alpha$ is defined as:
 \begin{equation}
 \label{eq:RL_frac_int}
@@ -262,7 +262,7 @@ Recall that the Riemann-Liouville fractional integral of order $\alpha$ is defin
 \end{equation}
 
 \noindent
-Podlubny et al. showed that the above fractional integral can be rewritten as a Riemann-Stieltjes integral:
+Podlubny showed that the above fractional integral can be rewritten as a Riemann-Stieltjes integral \cite{podlubny02}:
 \begin{equation}
 \label{eq:rs}
 \int_0^{t} f(\tau)~dg_t(\tau),
@@ -281,7 +281,7 @@ h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)\tau}
 \end{equation}
 
 \noindent
-Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ are presented in Table~\ref{tab:gandh} for $\alpha\in\mathsf{A}$ and $t=10$. 
+Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ are presented in Table~\ref{tab:gandh} for $\alpha\in\mathsf{A}$. 
 The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
 
 \begin{table}[h!]
@@ -312,7 +312,7 @@ solid lines, while the curves plotted with dashed lines are associated with $h$.
 \end{figure}
 
 \noindent
-Furthermore, Grobler et. al showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral. We review this conversion procedure in the Cavalieri section of this paper (see Fig.~\ref{fig:caval2}). If we apply their conversion steps to Eq.~\eqref{eq:rs} we obtain:
+Furthermore, Grobler showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral \cite{ackermann12,grobler19} (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper for more details). If we apply conversion steps he outlines in \cite{grobler19} to Eq.~\eqref{eq:rs} we obtain:
 \begin{equation}
 \label{eq:cav}
 \int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau, 
@@ -325,7 +325,7 @@ a_t^{\alpha}(y) = f^{-1}(y) - \frac{t^{\alpha}-(t-f^{-1}(y))^{\alpha}}{\Gamma(\a
 Eq.~\eqref{eq:cav_a} is obtained by substituting Eq.~\eqref{eq:g_rl} into Eq.~\eqref{eq:a_y}.
 
 \noindent
-We can easily assign a geometric interpretation to Eq.~\eqref{eq:cav}, since it is a Cavalieri integral (see Fig.~\ref{fig:caval2}). The fractional integral in Eq.~\eqref{eq:RL_frac_int} can, therefore, be interpreted as the area obtained 
+We can now assign a geometric interpretation to Eq.~\eqref{eq:cav}, since it is a Cavalieri integral (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper). The fractional integral in Eq.~\eqref{eq:RL_frac_int} can, therefore, be interpreted as the area obtained 
 by summing together the area of an infinite number of infinitesimally small non-rectangular integration strips whose shape is determined by $\alpha$ and $t$. If $\alpha$ is equal to one, however, then the integral reduces to a normal Riemann integral as the integration strips become rectangular for this particular choice of $\alpha$ (its shape becomes independent of $t$).\\
 
 \noindent
@@ -382,7 +382,7 @@ Let us first consider the following fractional integral:
 \label{eq:ex1_raw}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau. 
 \end{equation}
-The function $f(\tau) =\tau$ is depicted in Fig.~\ref{fig:geo1}. As we mentioned in the previous section, we can assign a geometric interpretation to the above fractional integral by converting it into a Cavalieri integral using two steps. First, we convert 
+The function $f(t) =t$ is depicted in Fig.~\ref{fig:geo1}. As we mentioned in the previous section, we can assign a geometric interpretation to the above fractional integral by converting it into a Cavalieri integral using two steps. First, we convert 
 the above integral into a Riemann-Stieltjes integral:
 \begin{equation}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau). 
@@ -794,11 +794,17 @@ que\textquotesingle conques. \textit{Journal d l\textquotesingle Ecole Polytechn
 \bibitem{ackermann12} Ackermann,~E.~R, Grobler,~T.~L., Kleynhans,~W., Olivier,~J.~C., Salmon,~B.~P, van Zyl,~A.~J. (2012). Cavalieri
 Integration. \textit{Quaest. Math.} 35(3): 265–296.
 
-\bibitem{parker13} Adam Parker, Who solved the Bernoulli equation and how did they do it? \textit{Coll. Math. J.} \textbf{44} (2013) 89--97.
+\bibitem{parker13} Adam Parker, Who solved the Bernoulli equation and how did they do it? \textit{Coll. Math. J.} \textbf{44} 89--97.
 
-\bibitem{laurent1884} Laurent, H. (1884). Sur le calcul des d\'{e}riv\'{e}es \`{a} indices quelconques. \textit{Nouv Annales de Mathem\'{e}matiques.} 3(3):240--252. 
+\bibitem{laurent1884} Laurent,~H. (1884). Sur le calcul des d\'{e}riv\'{e}es \`{a} indices quelconques. \textit{Nouv Annales de Mathem\'{e}matiques.} 3(3):240--252. 
 
-\bibitem{munkhammar05} Munkhammar, J. (2005). Fractional calculus and the Taylor-Riemann series. \textit{Rose-Hulman Undergraduate Mathematics Journal}, 6(1): 6.
+\bibitem{munkhammar05} Munkhammar,~J. (2005). Fractional calculus and the Taylor-Riemann series. \textit{Rose-Hulman Undergraduate Mathematics Journal}, 6(1): 6.
+
+\bibitem{grobler19} Grobler,~T.L. (2019). Visualization of the Riemann-Stieltjes integral. \textit{Coll. Math. J.} 50(3): 198--209.
+
+\bibitem{bartle76} Bartle,~R.~G. (1976). \textit{The Elements of Real Analysis.} New York: Wiley.
+
+\bibitem{euler1738} Euler,~L. (1738). De progressionibus transcendentibus seu quarum termini generales algebraice dari nequeunt. \textit{Commentarii academiae scientiarum Petropolitanae}. 36--57.
 
 \bibitem{hopkins} Brian Hopkins, ed., \textit{Resources for Teaching Discrete Mathematics}, Mathematical Association of America, Washington DC, 2009.
 \end{thebibliography}
