@@ -234,7 +234,7 @@ Applying Cauchy's formula to Eq.~\eqref{eq:n_anti} results in:
 \label{eq:cauchy}
 I^nf(t) = \frac{1}{(n-1)!}\int_0^t (t-\tau)^{n-1}f(\tau)~d\tau.
 \end{equation}
-As an example if $f(t)=t$ and $n=2$ then Eq.~\eqref{eq:cauchy} reduces to:
+As an example if $f(\tau)=\tau$ and $n=2$ then Eq.~\eqref{eq:cauchy} reduces to:
 \begin{equation}
 I^2f(t) = \int_0^t (t-\tau)t~dt = \frac{\tau^2 t}{2} - \frac{\tau^3}{3} \Bigg |_0^t = \frac{t^3}{3!}.
 \end{equation}
@@ -243,7 +243,7 @@ The definition in Eq.~\eqref{eq:cauchy} can now be extended to an arbitrary frac
 \label{eq:frac_integral}
 I^{\alpha}f(t) = \frac{1}{\Gamma(\alpha)}\int_0^t (t-\tau)^{\alpha-1}f(\tau)~d\tau.
 \end{equation}
-Eq.~\eqref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$. As an example if $f(t)=t$ and $\alpha=\frac{1}{2}$ then 
+Eq.~\eqref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$. As an example if $f(\tau)=\tau$ and $\alpha=\frac{1}{2}$ then 
 Eq.~\eqref{eq:frac_integral} reduces to:
 \begin{equation}
 I^{\frac{1}{2}}f(\tau) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^t \frac{\tau}{\sqrt{t-\tau}} dt = \frac{1}{\sqrt{\pi}}\left [ -\frac{2}{3}\sqrt{t-\tau}(t+2x)\right] \Bigg |_0^t=\frac{4}{3\sqrt{\pi}}t^{\frac{3}{2}}. 
@@ -312,7 +312,7 @@ solid lines, while the curves plotted with dashed lines are associated with $h$.
 \end{figure}
 
 \noindent
-Furthermore, Grobler showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral \cite{ackermann12,grobler19} (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper for more details). If we apply conversion steps he outlines in \cite{grobler19} to Eq.~\eqref{eq:rs} we obtain:
+Furthermore, Grobler showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral \cite{ackermann12,grobler19} (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper for more details). If we follow the conversion steps outlined in \cite{grobler19} to Eq.~\eqref{eq:rs} we obtain:
 \begin{equation}
 \label{eq:cav}
 \int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau, 
@@ -382,7 +382,7 @@ Let us first consider the following fractional integral:
 \label{eq:ex1_raw}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau. 
 \end{equation}
-The function $f(t) =t$ is depicted in Fig.~\ref{fig:geo1}. As we mentioned in the previous section, we can assign a geometric interpretation to the above fractional integral by converting it into a Cavalieri integral using two steps. First, we convert 
+The function $f(\tau) =\tau$ is depicted in Fig.~\ref{fig:geo1}. As we mentioned in the previous section, we can assign a geometric interpretation to the above fractional integral by converting it into a Cavalieri integral using two steps. First, we convert 
 the above integral into a Riemann-Stieltjes integral:
 \begin{equation}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau). 
@@ -395,18 +395,18 @@ We then convert the resulting Riemann-Stieltjes integral into a Cavalieri integr
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=1\textwidth]{geo_int1.pdf}
+\includegraphics[width=0.75\textwidth]{geo_int1.pdf}
 \caption{The non-static non-rectangular sum-based geometric interpretation of Eq.~\eqref{eq:ex1_raw}.}
 \label{fig:geo1}
 \end{figure}
 
 \noindent
 Since Eq.~\ref{eq:ex1}, is a Cavalieri integral it has a known geometric interpretation (see Fig.~\ref{fig:caval2}). It can be interpreted as the area obtained by summing together the areas of an infinite 
-number of infinitesimals whose shape is determined by $\alpha$ and $t$. Moreover, these infinitesimals have to be translations of $b_t^{\alpha}(y)$ which, in turn, is 
-function of $\alpha$ and $t$. The geometric interpretation of Eq.~\eqref{eq:ex1_raw} is, therefore, non-static as it depends on the value of $\alpha$ and $t$. 
+number of infinitesimals whose shape is determined by $\alpha$ and $t$, i.e. these infinitesimals have to be translations of $b_t^{\alpha}(y)$. The geometric interpretation of Eq.~\eqref{eq:ex1_raw} is, therefore, non-static as it depends on the value of $\alpha$ and $t$. 
 There is one thing, however, which remains unclear: in what way does $\alpha$ and $t$ affect the shape of the aforementioned infinitesimals, i.e. how does the value of $\alpha$ and $t$ affect the shape of $b_t^{\alpha}(y)$. 
-We will answer this question by using two basic steps. First off, we will fix the value of $\alpha$ and $t$ in Eq.~\eqref{eq:ex1} and then depict $b_t^{\alpha}(y)$. We will then explore how varying the value of $\alpha$ and $t$ in Eq.~\eqref{eq:ex1} affects the shape $b_t^{\alpha}(y)$.\\
+We will answer this question by working through a detailed example.\\
 
+%using two basic steps. First off, we will fix the value of $\alpha$ and $t$ in Eq.~\eqref{eq:ex1} and then depict $b_t^{\alpha}(y)$. We will then explore how varying the value of $\alpha$ and $t$ in Eq.~\eqref{eq:ex1} affects the shape $b_t^{\alpha}(y)$.\\
 %We know that a Cavalieri integral can be interpreted as the area which is obtained by summing together the area associated with an infinite number of non-rectangular infinitesimals whose shape 
 %is determined by the integration limits of the Cavalieri integral. Note that neither $g_t^{\alpha}(\tau)$ nor $a_t^{\alpha}(y)$ are static functions, 
 %they depend on the value of $\alpha$ and $t$. This implies that a fractional integral of order $\alpha$ and extent $t$ can be interpeted as the area obtained by summing together the area associated with an infinite number of infinitesimals whose 
@@ -422,7 +422,8 @@ Let $R_{10}^{\sfrac{4}{5}}$ denote the region which is bounded by the $\tau$-axi
 regions that are depicted in the right-most panel of Fig.~\ref{fig:geo1}. Moreover, let $A_{10}^{\sfrac{4}{5}}$ denote the area of $R_{10}^{\sfrac{4}{5}}$. For the sake of completeness, lets first verify that we can employ the Cavalieri integral in Eq.~\ref{eq:ex1_specific} to compute $A_{10}^{\sfrac{4}{5}}$ from first principles.
 We can approximate the area of $R_{10}^{\sfrac{4}{5}}$ by summing together the area of $n$ equal width non-rectangular integration strips that inscribe $R_{10}^{\sfrac{4}{5}}$, i.e. we can 
 construct a Cavalieri sum (see Eq.~\eqref{eq:cav_sum}). Note, the sides of the non-rectangular integration strips we use in this approximation have to be translations of $b_{10}^{\sfrac{4}{5}}(y)$.
-If we take the limit of the aforementioned sum as $n\rightarrow \infty$ we approach $A_{10}^{\sfrac{4}{5}}$, i.e. the result obtained via the aforementioned limit is the Cavalieri integral found in Eq.~\eqref{eq:ex1_specific}. In conclusion, we can think of Eq.~\eqref{eq:ex1_specific} as implying that the region $R_{10}^{\sfrac{4}{5}}$ is made up 
+If we take the limit of the aforementioned sum as $n\rightarrow \infty$ we approach $A_{10}^{\sfrac{4}{5}}$, i.e. the result obtained via the aforementioned limit is the Cavalieri integral found in Eq.~\eqref{eq:ex1_specific}. This then verifies 
+the assertion we made earlier. Eq.~\eqref{eq:ex1_specific}, therefore, implies that the region $R_{10}^{\sfrac{4}{5}}$ is made up 
 of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$. Note, the right-most curve depicted in the right-most panel of Fig.~\ref{fig:geo1} is $b_{10}^{\sfrac{4}{5}}(y)$.  Moreover, the special case in which we approximate $A_{10}^{\sfrac{4}{5}}$ using five equal width non-rectangular integration strips is depicted in the right-most panel of Fig.~\ref{fig:geo1}. 
 The sides of the aforementioned five integration strips are depicted in Fig.~\ref{fig:geo1} using dashed lines. Let, $\mathcal{B}_{\mathsf{T}}^{\sfrac{4}{5}}=\{b_{10}^{\frac{4}{5}}(y)-c|c\in(\mathsf{T}-2)\}$ with $\mathsf{T}=\{2,4,6,8,10\}$.\\ 
 
@@ -480,7 +481,7 @@ one another).\\
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=1\textwidth]{func_eval1.pdf}
+\includegraphics[width=0.75\textwidth]{func_eval1.pdf}
 \caption{Depicts the curves which are obtained by evaluating Eq.~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ using either Eq.~\eqref{eq:rs} or Eq.~\eqref{eq:option2}.}
 \label{fig:eval1}
 \end{figure}
@@ -507,14 +508,14 @@ The validity of the non-static non-rectangular sum-based geometric interpretatio
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=1\textwidth]{geo_int2.pdf}
+\includegraphics[width=0.75\textwidth]{geo_int2.pdf}
 \caption{The non-static non-rectangular sum-based geometric interpretation of Eq.~\eqref{eq:ex2}.}
 \label{fig:geo2}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=1\textwidth]{func_eval2.pdf}
+\includegraphics[width=0.75\textwidth]{func_eval2.pdf}
 \caption{Depicts the curves which are obtained by evaluating Eq.~\eqref{eq:ex2} for all $\alpha\in \mathsf{A}$ using either Eq.~\eqref{eq:rs} or Eq.~\eqref{eq:option2}.}
 \label{fig:eval2}
 \end{figure}
@@ -748,11 +749,12 @@ shape is determined by $\alpha$ and $t$. The geometric interpretation of a fract
 % 
 % Note that the \textit{College Mathematics Journal\/} is meant to be accessible to a broad audience, so heavy use of theorem-like formalisms is generally discouraged.
 
-\begin{acknowledgment}
-The authors wish to thank the Greek polymath Anonymous, whose prolific works are an endless source of inspiration.
-\end{acknowledgment}
+%\begin{acknowledgment}
+%The authors wish to thank the Greek polymath Anonymous, whose prolific works are an endless source of inspiration.
+%\end{acknowledgment}
 
 \begin{abstract}
+Having geometrical ideas  interpretations of complex mathematical ideas is crucial if we
 An abstract should not contain concrete mathematics, but rather should be discrete.  Be brief and avoid using mathematical notation except where absolutely necessary, since this brief synopsis will be used by search engines to identify your article!
 \end{abstract}
 
