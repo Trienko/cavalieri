@@ -17,7 +17,7 @@
 \begin{document}
 
 \title{Visualization of the Riemann-Liouville Fractional Integral}
-\author{Woodrow Wilson and Herbert Hoover} %%leave blank in initial submission to allow for double blind reviewing
+%\author{Woodrow Wilson and Herbert Hoover} %%leave blank in initial submission to allow for double blind reviewing
 %\author{ }
 
 \maketitle
@@ -33,25 +33,25 @@
 \noindent
 Leibniz, who is regarded by many scholars as the father of calculus, is credited with inventing the following notation: $\frac{d^n y}{d x^n}$. 
 A natural question which arises when one inspects this notation is: Can $n$ be a non-integer value? L'Hospital phrased it differently: ``\emph{What if $n$ be a $\frac{1}{2}$?}''. 
-In a letter Leibniz sent to L'Hospital, Leibniz comments on L'Hospital's question by making the following prophetic remark: ``\emph{This is an apparant paradox from which, one day, useful 
-consequences will be drawn}'' \cite{ross77,machado14}.\\
+In a letter Leibniz sent to L'Hospital, Leibniz comments on L'Hospital's question by making the following prophetic remark: ``\emph{This is an apparent paradox from which, one day, useful 
+consequences will be drawn}'' \cite{ross77,machado14,machado17}.\\
 
 \noindent
 The mathematical discipline in which we study the extension of derivatives and integrals to non-integer orders is known as fractional calculus. Euler, Liouville and Riemann laid most 
-of the theoretical groundwork which was needed to develop the field of fractional calculus \cite{davis59,euler1738,liouville1832,riemann1876,laurent1884}. Fractional calculus has now developed into a mature discipline \cite{machado14}. 
+of the theoretical groundwork which was needed to develop the field of fractional calculus \cite{davis59,euler1738,liouville1832,riemann1876,laurent1884}. Fractional calculus has now developed into a mature discipline \cite{machado14,machado17}. 
 However, there is one aspect of the discipline which only started to develop fairly recently: its physical and geometric interpretability. At the first international conference on fractional calculus in
 New Haven (USA) (which took place in 1974) it was pointed out that literature lacked an acceptable geometric and physical interpretation of fractional calculus \cite{ross06}. Subsequently, the last few decades has seen 
-a number of papers that attempt to rectify this. There now exists probabilistic interpretations \cite{stanislavsky04,machado03}, geometric interpretations \cite{adda97,tarasov16,podlubny02}, physical interpretations \cite{cioc16,rutman95} and economic 
+a number of papers that attempt to rectify this. There now exists probabilistic interpretations \cite{stanislavsky04,machado03}, geometric interpretations \cite{adda97,tarasov16,podlubny02}, physical interpretations \cite{cioc16,rutman95, nigmatullin92, gomez14} and economic 
 interpretations \cite{tarasova17} of fractional order integrals and differentials.\\
 
 \noindent
-In this article we specifically focus on the geometric interpretation of fractional integrals. To be more specific, we present a novel geometric interpretation of the Riemann-Liouville fractional integral \cite{laurent1884}.
-As we mentioned earlier, Riemann and Liouville played an important role in the development of fractional calculus. Their work was crucial in defining what is now know as 
-the Riemann-Liouville fractional integral based at 0 \cite{laurent1884}. At this point in time the reader should be made aware of the fact that there exists many other accepted fractional integral definitions in the literature.
+In this article we specifically focus on the geometric interpretation of fractional integrals. To be more specific, we present a novel geometric interpretation of the Riemann-Liouville fractional integral based at 0 \cite{laurent1884}.
+As we mentioned earlier, Riemann and Liouville played an important role in the development of fractional calculus. Their work was crucial in defining what is now known as 
+the Riemann-Liouville fractional integral \cite{laurent1884}. At this point in time the reader should be made aware of the fact that there exists many other accepted fractional integral definitions in the literature.
 We, however, deem these definitions to be beyond the scope of the current article and as such we do not discuss them any further in this work. Furthermore, the geometric interpretation 
 we present here is an extension of the geometric interpretation presented by Podlubny \cite{podlubny02}. Podlubny showed that a Riemann-Liouville fractional integral 
-can be converted into a Riemann-Stieltjes integral. Furthermore, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area whis is obtained by summing toghether 
-the area of an infinite number of non-rectangular infinitesimels, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,grobler19}. Combining these two ideas together results in the following geometric 
+can be converted into a Riemann-Stieltjes integral. Furthermore, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area which is obtained by summing together 
+the area of an infinite number of non-rectangular infinitesimals, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,grobler19}. Combining these two ideas together results in the following geometric 
 interpretation: the Riemann-Liouville fractional integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by the order of integration $\alpha$ and the integration limit $t$.\\
 
 \noindent
@@ -60,12 +60,12 @@ as such we will try to steer clear from using too many mathematical definitions 
 three groups mentioned we believe that the undergraduate student will find this article the most useful. Although undergraduate students have a limited understanding of 
 fractional calculus they generally are quite interested in the subject. This is quite evident from perusing mathematical social media platforms and from surveying 
 articles published in undergraduate journals \cite{munkhammar05}. Undergraduates struggle to grasp fractional calculus, because it is very abstract. We believe that the geometric interpretation we present in this paper, as it is similar in nature to the definition of classical integration, will provide undergraduates with the insight that they need to quickly grasp and understand the fundamental 
-concepts that unerpin fractional calculus.\\
+concepts that underpin fractional calculus.\\
 
 %We also hope that this paper will enable and encourage lectures to teach this fascinating mathematical discipline to undergraduate students.\\
 
 \noindent
-We start the paper by reviewing the definition of the Riemann-Stieltjes integreal, the Cavalieri integral and the Euler function. We then present the definition of the Riemann-Liouville fractional integral. 
+We start the paper by reviewing the definition of the Riemann-Stieltjes integral, the Cavalieri integral and the Euler function. We then present the definition of the Riemann-Liouville fractional integral. 
 We end the paper by presenting our novel geometric interpretation, some examples and a conclusion.
 
 %Due to the 
@@ -393,10 +393,7 @@ We then convert the resulting Riemann-Stieltjes integral into a Cavalieri integr
 \label{eq:ex1}
 \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau)=\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau,
 \end{equation}
-with
-\begin{equation}
-a_t^{\alpha}(y) = y - \frac{t^{\alpha}-(t-y)^{\alpha}}{\Gamma(\alpha+1)}.
-\end{equation}
+with $a_t^{\alpha}(y) = y - \frac{t^{\alpha}-(t-y)^{\alpha}}{\Gamma(\alpha+1)}.$
 
 \begin{figure}[htb]
 \centering
@@ -451,15 +448,15 @@ the larger the $t$-value is, that is associated with it.\\
 As was the case for Eq.~\eqref{eq:ex1_specific} and $R_{10}^{\sfrac{4}{5}}$, Eq.~\eqref{eq:ex1} implies that we can assume that each of the regions depicted in Fig.~\ref{fig:geo1} are made up of an infinite number of infinitesimals. The infinitesimals that make up a specific region are translations of that region's right edge. 
 The following observations can be made by inspecting Fig.~\ref{fig:geo1}: 
 \begin{description}
- \item[Effect of $\alpha$] the grey-tinted solid curves depicted in the different panels of Fig.~\ref{fig:geo1} are not equal to one-another, i.e. $\mathsf{B}_{\mathsf{T}}^{\alpha_1}\neq\mathsf{B}_{\mathsf{T}}^{\alpha_2}$. 
- \item[Effect of $t$] the grey-tinted solid curves depicted in each of the panels of Fig.~\ref{fig:geo1} are not translations of one-another. Moreover, the dashed grey curves and the solid grey-tinted curves in the right-most panel are not equal to one-another, i.e. $\mathsf{B}_{\mathsf{T}}^{\sfrac{4}{5}}\neq\mathcal{B}_{\mathsf{T}}^{\sfrac{4}{5}}$.
+ \item[Effect of $\alpha$] the gray-tinted solid curves depicted in the different panels of Fig.~\ref{fig:geo1} are not equal to one-another, i.e. $\mathsf{B}_{\mathsf{T}}^{\alpha_1}\neq\mathsf{B}_{\mathsf{T}}^{\alpha_2}$. 
+ \item[Effect of $t$] the gray-tinted solid curves depicted in each of the panels of Fig.~\ref{fig:geo1} are not translations of one-another. Moreover, the dashed gray curves and the solid gray-tinted curves in the right-most panel are not equal to one-another, i.e. $\mathsf{B}_{\mathsf{T}}^{\sfrac{4}{5}}\neq\mathcal{B}_{\mathsf{T}}^{\sfrac{4}{5}}$.
 \end{description}
 We can therefore draw the following conclusion: the value of both $\alpha$ and $t$ alters the shape of the infinitesimals ($b_{t}^{\alpha}(y)$ depends on $\alpha$ and $t$) that make up the regions in Fig.~\ref{fig:geo1}. Interestingly, the effect of $\alpha$ on the shape of the infinitesimals that make up the regions depicted in Fig.~\ref{fig:geo1} is larger than the effect that $t$ has on their shape. 
 The curves associated with the infinitesimals obtained by varying $t$, whilst keeping the value of $\alpha$ fixed are very similar in nature and there exists a high degree of correlation between them (if their 
 sizes are ignored). The curves associated with the infinitesimals obtained by varying $\alpha$, whilst keeping the value of $t$ fixed are quite different from one another (the aforementioned curves are not highly correlated with 
 one another).\\  
 
-%In the case of $\alpha$: the grey-tinted solid curves depicted in each panel are not equal to one-another. Similarly, in the case of $t$: the dashed grey curves and the solid grey-tinted curves in the right-most panel are not equal to one-another, i.e.$\mathsf{B}_T^{\alpha}\neq\mathcal{B}_T^{\alpha}$.
+%In the case of $\alpha$: the gray-tinted solid curves depicted in each panel are not equal to one-another. Similarly, in the case of $t$: the dashed gray curves and the solid gray-tinted curves in the right-most panel are not equal to one-another, i.e.$\mathsf{B}_T^{\alpha}\neq\mathcal{B}_T^{\alpha}$.
 
 \begin{table}[h!]
 \centering
@@ -548,7 +545,7 @@ The validity of the non-static non-rectangular sum-based geometric interpretatio
 % Although $\alpha$ and $t$ alters the shape of the infinitesimals which make up the regions depicted in Fig.,  
 % 
 % that make up the regions in Fig are confirmed by the following observation: $\mathsf{B}_T^{\alpha}\neq\mathcal{B}_T^{\alpha}$.
-% We can visually verify that this observation is in fact true for $alpha=\frac{4}{5}$ by inspecting the right-most panel in Fig.~\ref{??}. The dashed curves and the grey tinted curves in this panel do not allign.
+% We can visually verify that this observation is in fact true for $alpha=\frac{4}{5}$ by inspecting the right-most panel in Fig.~\ref{??}. The dashed curves and the gray tinted curves in this panel do not allign.
 % 
 % 
 % 
@@ -617,7 +614,7 @@ The validity of the non-static non-rectangular sum-based geometric interpretatio
 % 
 % Each panel of 
 % Figure~\ref{??} depicts the function $f(\tau)$ and the set of curves $\mathsf{B}_T^{\alpha}$. The set $\mathsf{B}_T^{\alpha}$ is defined in Table~\ref{??} and contains 
-% all the Cavalieri integral upper limits obtained by fixing the order of integration $\alpha$ to a specific value. In each panel, we depict the set of curves $\mathsf{B}_T^{\alpha}$ using different shades of grey. 
+% all the Cavalieri integral upper limits obtained by fixing the order of integration $\alpha$ to a specific value. In each panel, we depict the set of curves $\mathsf{B}_T^{\alpha}$ using different shades of gray. 
 % The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases.
 % 
 % 
@@ -656,7 +653,7 @@ The validity of the non-static non-rectangular sum-based geometric interpretatio
 % Fig ?? and Fig ??. The analytic expressions of the right sides of these integration strips are elements of the set $\mathsf{A} = \{b_{10}^{\frac{4}{5}}(y) - c|c\in\{0,2,4,6,8\}\}$. The 
 % curves are plotted using dashed lines. 
 % 
-% The curves $\mathsf{B} = \{b_{t}^{\frac{4}{5}}(y)|t\in\{2,4,6,8,10\}\}$ are plotted in different shades of grey. The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases. Note 
+% The curves $\mathsf{B} = \{b_{t}^{\frac{4}{5}}(y)|t\in\{2,4,6,8,10\}\}$ are plotted in different shades of gray. The shade with which $b_t^{\alpha}(y)$ is depicted becomes lighter as the value of $t$ increases. Note 
 % that $\mathsf{A}\neq \mathsf{B}$. The sides of the integration strips 
 % 
 % 
@@ -759,63 +756,68 @@ The validity of the non-static non-rectangular sum-based geometric interpretatio
 %\end{acknowledgment}
 
 \begin{abstract}
-We presented a novel geometric interpetation of the Riemann-Liouville fractional integral. We found that a Riemann-Liouville integral can 
+We presented a novel geometric interpretation of the Riemann-Liouville fractional integral. We found that a Riemann-Liouville integral can 
 be thought of as the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by the 
 order of integration $\alpha$ and the integration limit $t$. We also showed that this geometric interpretation offers many pedagogical benefits as it is very similar
-in nature to the geometric interpreation of the Riemann integral.   
+in nature to the geometric interpretation of the Riemann integral.   
 \end{abstract}
 
 \begin{thebibliography}{1}
 
-\bibitem{ross77} Ross,~B. (1977). The development of fractional calculus 1695--1900. \textit{Hist. Math.} 4(1): 75--89.
+\bibitem{ackermann12} Ackermann,~E.~R, Grobler,~T.~L., Kleynhans,~W., Olivier,~J.~C., Salmon,~B.~P, van Zyl,~A.~J. (2012). Cavalieri
+Integration. \textit{Quaest. Math.} 35(3): 265–296.
 
-\bibitem{liouville1832} Liouville,~J. (1832). M\'{e}moire sur l\textquotesingle integration de l\textquotesingle \'{e}quation $(mx^2+nx+p)\frac{d^2y}{dx^2}+(qx+r)\frac{dy}{dx}+sy$ \`{a} l\textquotesingle aide des diff\'{e}rentielles \`{a} indices 
-que\textquotesingle conques. \textit{Journal d l\textquotesingle Ecole Polytechnique.} 13(21): 163--186. 
+\bibitem{adda97} Adda,~F.~B. (1997). Geometric interpretation of the fractional derivative. \textit{J. of Fract. Calc.}, 11: 21--52.
 
-\bibitem{riemann1876} Riemann,~B.~G.~F (1876). Gesammelte Werke.
-
-\bibitem{davis59} Davis,~P.~J. (1959). Leonhard Euler's Integral: A Historical Profile of the Gamma Function. \textit{Amer. Math. Monthly}. 66(10): 849--869
-
-\bibitem{machado14} Machado,~J.~T., Galhano,~A.~M., Trujillo,~J.~J. (2014). On development of fractional calculus during the last fifty years. \textit{Scientometrics}. 98(1): 577-582.
-
-\bibitem{ross06} Ross,~B. (Ed.). (2006). \textit{Fractional calculus and its applications: proceedings of the international conference held at the University of New Haven, June 1974}, Vol. 457, Springer.
- 
-%Probability
-\bibitem{stanislavsky04} Stanislavsky,~A.~A. (2004).  Probability interpretation of the integral of fractional order, \textit{Theoretical and Mathematical Physics.} 138(3): 418--431.
-
-\bibitem{machado03} Machado,~J.~T. (2003). A probabilistic interpretation of the fractional-order differentiation. \textit{Fract. Calc. Appl. Anal.} 6(1): 73--80.
-
-\bibitem{adda97} Adda,~F.~B. (1997). Geometric interpretation of the fractional derivative. \textit{Journal of Fract. Calc.}, 11: 21--52.
-
-%Geometric
-\bibitem{tarasov16} Tarasov,~V.~E. (2016). Geometric interpretation of fractional-order derivative. \textit{Fract. Calc. Appl. Anal.} 19(5): 1200--1221.
-
-\bibitem{podlubny02} Podlubny,~I. (2002). Geometric and Physical Interpretation of Fractional Integration and Fractional Differentiation, \textit{Fract. Calc. Appl. Anal.} 5(4): 367--386.
+\bibitem{bartle76} Bartle,~R.~G. (1976). \textit{The Elements of Real Analysis.} New York: Wiley.
 
 %Physical
 \bibitem{cioc16} Cioc, R. (2016). Physical and geometrical interpretation of Gr\"{u}nwald-Letnikov differintegrals: Measurement of path and acceleration. \textit{Fract. Calc. Appl. Anal.} 19(1): 161--172.
 
-\bibitem{rutman95} Rutman,~R.S. (1995). On physical interpretations of fractional integration and differentiation. \textit{Theoretical and Mathematical Physics.} 105(3):1509--1519
-
-%Economic
-\bibitem{tarasova17} Tarasova,~V.~V., Tarasov,~V.~E. (2017). Economic Interpretation of Fractional Derivatives. \textit{Progress in Fractional Differentiation and Applications.} 3(1):1--7. 
-
-\bibitem{ackermann12} Ackermann,~E.~R, Grobler,~T.~L., Kleynhans,~W., Olivier,~J.~C., Salmon,~B.~P, van Zyl,~A.~J. (2012). Cavalieri
-Integration. \textit{Quaest. Math.} 35(3): 265–296.
-
-\bibitem{parker13} Adam Parker, Who solved the Bernoulli equation and how did they do it? \textit{Coll. Math. J.} \textbf{44} 89--97.
-
-\bibitem{laurent1884} Laurent,~H. (1884). Sur le calcul des d\'{e}riv\'{e}es \`{a} indices quelconques. \textit{Nouv Annales de Mathem\'{e}matiques.} 3(3):240--252. 
-
-\bibitem{munkhammar05} Munkhammar,~J. (2005). Fractional calculus and the Taylor-Riemann series. \textit{Rose-Hulman Undergraduate Mathematics Journal}, 6(1): 6.
-
-\bibitem{grobler19} Grobler,~T.L. (2019). Visualization of the Riemann-Stieltjes integral. \textit{Coll. Math. J.} 50(3): 198--209.
-
-\bibitem{bartle76} Bartle,~R.~G. (1976). \textit{The Elements of Real Analysis.} New York: Wiley.
+\bibitem{davis59} Davis,~P.~J. (1959). Leonhard Euler's Integral: A Historical Profile of the Gamma Function. \textit{Amer. Math. Monthly}. 66(10): 849--869
 
 \bibitem{euler1738} Euler,~L. (1738). De progressionibus transcendentibus seu quarum termini generales algebraice dari nequeunt. \textit{Commentarii academiae scientiarum Petropolitanae}. 36--57.
 
-\bibitem{hopkins} Brian Hopkins, ed., \textit{Resources for Teaching Discrete Mathematics}, Mathematical Association of America, Washington DC, 2009.
+\bibitem{gomez14} Gomez-Aguilara,~J.~F., Razo-Hernandez,~R., Granados-Lieberman, D.~ A (2014). Physical interpretation of fractional
+calculus in observable terms: analysis of the fractional time constant and the transitory response. \textit{Revista Mexicana de Fisica.} 60: 32--38
+
+\bibitem{grobler19} Grobler,~T.~L. (2019). Visualization of the Riemann-Stieltjes integral. \textit{Coll. Math. J.} 50(3): 198--209.
+
+\bibitem{laurent1884} Laurent,~H. (1884). Sur le calcul des d\'{e}riv\'{e}es \`{a} indices quelconques. \textit{Nouv Annales de Mathem\'{e}matiques.} 3(3):240--252. 
+
+\bibitem{liouville1832} Liouville,~J. (1832). M\'{e}moire sur l\textquotesingle integration de l\textquotesingle \'{e}quation $(mx^2+nx+p)\frac{d^2y}{dx^2}+(qx+r)\frac{dy}{dx}+sy$ \`{a} l\textquotesingle aide des diff\'{e}rentielles \`{a} indices 
+que\textquotesingle conques. \textit{Journal d l\textquotesingle Ecole Polytechnique.} 13(21): 163--186. 
+
+\bibitem{machado03} Machado,~J.~T. (2003). A probabilistic interpretation of the fractional-order differentiation. \textit{Fract. Calc. Appl. Anal.} 6(1): 73--80.
+
+\bibitem{machado14} Machado,~J.~T., Galhano,~A.~M., Trujillo,~J.~J. (2014). On development of fractional calculus during the last fifty years. \textit{Scientometrics}. 98(1): 577-582.
+
+\bibitem{machado17} Machado,~J.~T., Kiryakova,~V. (2017). The chronicles of fractional calculus. \textit{Fract. Calc. Appl. Anal.} 20(2): 307--336.
+
+\bibitem{munkhammar05} Munkhammar,~J. (2005). Fractional calculus and the Taylor-Riemann series. \textit{Rose-Hulman Undergrad. Math. J.}, 6(1): 6.
+
+%physical
+\bibitem{nigmatullin92} Nigmatullin,~R.~R (1992). A fractional integral and its physical interpretation. \textit{Theor. and Math. Phys.} 90(3): 242--251.
+
+\bibitem{podlubny02} Podlubny,~I. (2002). Geometric and Physical Interpretation of Fractional Integration and Fractional Differentiation, \textit{Fract. Calc. Appl. Anal.} 5(4): 367--386.
+
+\bibitem{riemann1876} Riemann,~B.~G.~F (1876). Gesammelte Werke.
+
+\bibitem{ross77} Ross,~B. (1977). The development of fractional calculus 1695--1900. \textit{Hist. Math.} 4(1): 75--89.
+
+\bibitem{ross06} Ross,~B. (Ed.). (2006). \textit{Fractional calculus and its applications: proceedings of the international conference held at the University of New Haven, June 1974}, Vol. 457, Springer.
+ 
+\bibitem{rutman95} Rutman,~R.S. (1995). On physical interpretations of fractional integration and differentiation. \textit{Theor. and Math. Phys.} 105(3):1509--1519
+
+ %Probability
+\bibitem{stanislavsky04} Stanislavsky,~A.~A. (2004).  Probability interpretation of the integral of fractional order, \textit{Theor. and Math. Phys.} 138(3): 418--431.
+
+%Geometric
+\bibitem{tarasov16} Tarasov,~V.~E. (2016). Geometric interpretation of fractional-order derivative. \textit{Fract. Calc. Appl. Anal.} 19(5): 1200--1221.
+
+%Economic
+\bibitem{tarasova17} Tarasova,~V.~V., Tarasov,~V.~E. (2017). Economic Interpretation of Fractional Derivatives. \textit{Prog. in Fract. Diff. and Appl.} 3(1):1--7. 
+
 \end{thebibliography}
 \vfill\eject
 
