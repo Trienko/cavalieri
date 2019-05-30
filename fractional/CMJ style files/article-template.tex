@@ -31,7 +31,7 @@
 %\end{biog}
 %This is not to say that there  This is partly, because there is no simplistic geometric interpretation for fractional calculus.  
 \noindent
-Leibniz, who is regarded by many scholars as the farther of calculus, is credited with inventing the following notation: $\frac{d^n y}{d x^n}$. 
+Leibniz, who is regarded by many scholars as the father of calculus, is credited with inventing the following notation: $\frac{d^n y}{d x^n}$. 
 A natural question which arises when one inspects this notation is: Can $n$ be a non-integer value? L'Hospital phrased it differently: ``\emph{What if $n$ be a $\frac{1}{2}$?}''. 
 In a letter Leibniz sent to L'Hospital, Leibniz comments on L'Hospital's question by making the following prophetic remark: ``\emph{This is an apparant paradox from which, one day, useful 
 consequences will be drawn}'' \cite{ross77,machado14}.\\
@@ -47,7 +47,7 @@ interpretations \cite{tarasova17} of fractional order integrals and differential
 \noindent
 In this article we specifically focus on the geometric interpretation of fractional integrals. To be more specific, we present a novel geometric interpretation of the Riemann-Liouville fractional integral \cite{laurent1884}.
 As we mentioned earlier, Riemann and Liouville played an important role in the development of fractional calculus. Their work was crucial in defining what is now know as 
-the Riemann-Liouville fractional integral \cite{laurent1884}. At this point in time the reader should be made aware of the fact that there exists many other accepted fractional integral definitions in the literature.
+the Riemann-Liouville fractional integral based at 0 \cite{laurent1884}. At this point in time the reader should be made aware of the fact that there exists many other accepted fractional integral definitions in the literature.
 We, however, deem these definitions to be beyond the scope of the current article and as such we do not discuss them any further in this work. Furthermore, the geometric interpretation 
 we present here is an extension of the geometric interpretation presented by Podlubny \cite{podlubny02}. Podlubny showed that a Riemann-Liouville fractional integral 
 can be converted into a Riemann-Stieltjes integral. Furthermore, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area whis is obtained by summing toghether 
@@ -55,7 +55,7 @@ the area of an infinite number of non-rectangular infinitesimels, i.e. a Riemann
 interpretation: the Riemann-Liouville fractional integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by the order of integration $\alpha$ and the integration limit $t$.\\
 
 \noindent
-It should be noted that we specifically wrote this paper for people with a pedagogical interest, undergraduate students and for the layman who finds integration theory intriguing and 
+It is important for the reader to realize that we specifically wrote this paper for people with a pedagogical interest, undergraduate students and for the layman who finds integration theory intriguing and 
 as such we will try to steer clear from using too many mathematical definitions and proofs. We will rather convey our ideas using as many examples as possible. From the 
 three groups mentioned we believe that the undergraduate student will find this article the most useful. Although undergraduate students have a limited understanding of 
 fractional calculus they generally are quite interested in the subject. This is quite evident from perusing mathematical social media platforms and from surveying 
@@ -203,7 +203,8 @@ a(y) = f^{-1}(y) - g\circ f^{-1}(y) + g(a').
 \end{equation}
 Eq.~\eqref{eq:a_y} allows us to transform a Riemann-Stieltjes integral into an equivalent Cavalieri integral. 
 Furthermore, this transformation enables us to assign a geometric interpretation to a Riemann-Stieltjes integral. The interpretation being:
-it represents the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals; all of them being translations of $a(y)$.
+it represents the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals; all of them being translations of $a(y)$. Note,
+$b(y) = a(y) + (b-a)$.
 
 \section{Gamma Function}
 The gamma function was first devised by Euler \cite{euler1738}. The gamma function is defined for all real numbers except for the non-negative integers. Moreover, it is a natural extension of the factorial function to the real numbers. The Gamma function is defined as:
@@ -246,7 +247,7 @@ I^{\alpha}f(t) = \frac{1}{\Gamma(\alpha)}\int_0^t (t-\tau)^{\alpha-1}f(\tau)~d\t
 Eq.~\eqref{eq:frac_integral} is known as the Riemann-Liouville fractional integral of order $\alpha$. As an example if $f(\tau)=\tau$ and $\alpha=\frac{1}{2}$ then 
 Eq.~\eqref{eq:frac_integral} reduces to:
 \begin{equation}
-I^{\frac{1}{2}}f(\tau) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^t \frac{\tau}{\sqrt{t-\tau}} dt = \frac{1}{\sqrt{\pi}}\left [ -\frac{2}{3}\sqrt{t-\tau}(t+2x)\right] \Bigg |_0^t=\frac{4}{3\sqrt{\pi}}t^{\frac{3}{2}}. 
+I^{\frac{1}{2}}f(t) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^t \frac{\tau}{\sqrt{t-\tau}} dt = \frac{1}{\sqrt{\pi}}\left [ -\frac{2}{3}\sqrt{t-\tau}(t+2x)\right] \Bigg |_0^t=\frac{4}{3\sqrt{\pi}}t^{\frac{3}{2}}. 
 \end{equation}
 Furthermore, it is straightforward to show that the $I$ operator satisfies:
 \begin{equation}
@@ -312,7 +313,7 @@ solid lines, while the curves plotted with dashed lines are associated with $h$.
 \end{figure}
 
 \noindent
-Furthermore, Grobler showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral \cite{ackermann12,grobler19} (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper for more details). If we follow the conversion steps outlined in \cite{grobler19} to Eq.~\eqref{eq:rs} we obtain:
+Furthermore, Grobler showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral \cite{ackermann12,grobler19} (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper if more details are required). If we apply Grobler's conversion method to Eq.~\eqref{eq:rs} we obtain:
 \begin{equation}
 \label{eq:cav}
 \int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau, 
@@ -322,7 +323,7 @@ with
 \label{eq:cav_a}
 a_t^{\alpha}(y) = f^{-1}(y) - \frac{t^{\alpha}-(t-f^{-1}(y))^{\alpha}}{\Gamma(\alpha+1)}.
 \end{equation}
-Eq.~\eqref{eq:cav_a} is obtained by substituting Eq.~\eqref{eq:g_rl} into Eq.~\eqref{eq:a_y}.
+Eq.~\eqref{eq:cav_a} is obtained by substituting Eq.~\eqref{eq:g_rl} into Eq.~\eqref{eq:a_y}. Note, $b_t^{\alpha}(y) = a_t^{\alpha}(y) + \frac{t^{\alpha}}{\Gamma(\alpha+1)}$. 
 
 \noindent
 We can now assign a geometric interpretation to Eq.~\eqref{eq:cav}, since it is a Cavalieri integral (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper). The fractional integral in Eq.~\eqref{eq:RL_frac_int} can, therefore, be interpreted as the area obtained 
@@ -390,7 +391,11 @@ the above integral into a Riemann-Stieltjes integral:
 We then convert the resulting Riemann-Stieltjes integral into a Cavalieri integral:
 \begin{equation}
 \label{eq:ex1}
-\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau)=\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau. 
+\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau)=\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau,
+\end{equation}
+with
+\begin{equation}
+a_t^{\alpha}(y) = y - \frac{t^{\alpha}-(t-y)^{\alpha}}{\Gamma(\alpha+1)}.
 \end{equation}
 
 \begin{figure}[htb]
@@ -419,14 +424,15 @@ If we set the value of $\alpha$ to $\sfrac{4}{5}$ and the value of $t$ to 10 in 
 A_{10}^{\sfrac{4}{5}}=\int_{a_{10}^{\frac{4}{5}}(y)}^{b_{10}^{\frac{4}{5}}(y)} f(\tau)~d\tau 
 \end{equation}
 Let $R_{10}^{\sfrac{4}{5}}$ denote the region which is bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{10}^{\sfrac{4}{5}}(y)$. The region $R_{10}^{\sfrac{4}{5}}$ is depicted in the right-most panel of Fig.~\ref{fig:geo1}. It is the largest of all the 
-regions that are depicted in the right-most panel of Fig.~\ref{fig:geo1}. Moreover, let $A_{10}^{\sfrac{4}{5}}$ denote the area of $R_{10}^{\sfrac{4}{5}}$. For the sake of completeness, lets first verify that we can employ the Cavalieri integral in Eq.~\ref{eq:ex1_specific} to compute $A_{10}^{\sfrac{4}{5}}$ from first principles.
+regions that are depicted in the right-most panel of Fig.~\ref{fig:geo1}. Moreover, let $A_{10}^{\sfrac{4}{5}}$ denote the area of $R_{10}^{\sfrac{4}{5}}$. 
 We can approximate the area of $R_{10}^{\sfrac{4}{5}}$ by summing together the area of $n$ equal width non-rectangular integration strips that inscribe $R_{10}^{\sfrac{4}{5}}$, i.e. we can 
 construct a Cavalieri sum (see Eq.~\eqref{eq:cav_sum}). Note, the sides of the non-rectangular integration strips we use in this approximation have to be translations of $b_{10}^{\sfrac{4}{5}}(y)$.
-If we take the limit of the aforementioned sum as $n\rightarrow \infty$ we approach $A_{10}^{\sfrac{4}{5}}$, i.e. the result obtained via the aforementioned limit is the Cavalieri integral found in Eq.~\eqref{eq:ex1_specific}. This then verifies 
-the assertion we made earlier. Eq.~\eqref{eq:ex1_specific}, therefore, implies that the region $R_{10}^{\sfrac{4}{5}}$ is made up 
-of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$. Note, the right-most curve depicted in the right-most panel of Fig.~\ref{fig:geo1} is $b_{10}^{\sfrac{4}{5}}(y)$.  Moreover, the special case in which we approximate $A_{10}^{\sfrac{4}{5}}$ using five equal width non-rectangular integration strips is depicted in the right-most panel of Fig.~\ref{fig:geo1}. 
+If we take the limit of the aforementioned sum as $n\rightarrow \infty$ we approach $A_{10}^{\sfrac{4}{5}}$.  
+Eq.~\eqref{eq:ex1_specific}, therefore, implies that the region $R_{10}^{\sfrac{4}{5}}$ is made up 
+of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$, i.e. we can compute $A_{10}^{\sfrac{4}{5}}$ by evaluating the Cavalieri integral found in Eq.~\eqref{eq:ex1_specific}. Note, the right-most curve depicted in the right-most panel of Fig.~\ref{fig:geo1} is $b_{10}^{\sfrac{4}{5}}(y)$.  Moreover, the special case in which we approximate $A_{10}^{\sfrac{4}{5}}$ using five equal width non-rectangular integration strips is depicted in the right-most panel of Fig.~\ref{fig:geo1}. 
 The sides of the aforementioned five integration strips are depicted in Fig.~\ref{fig:geo1} using dashed lines. Let, $\mathcal{B}_{\mathsf{T}}^{\sfrac{4}{5}}=\{b_{10}^{\frac{4}{5}}(y)-c|c\in(\mathsf{T}-2)\}$ with $\mathsf{T}=\{2,4,6,8,10\}$.\\ 
 
+%We have thus verified that we can employ the Cavalieri integral in Eq.~\ref{eq:ex1_specific} to compute $A_{10}^{\sfrac{4}{5}}$ from first principles.
 %Let $\mathsf{B}_{10}^{\sfrac{4}{5}}$ denote the set containing these dashed curves.
 %We can, therefore, interpet Eq.~\eqref{}  The region $R_{10}^{\sfrac{4}{5}}$ is, therefore, made up 
 %of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$.
@@ -448,7 +454,7 @@ The following observations can be made by inspecting Fig.~\ref{fig:geo1}:
  \item[Effect of $\alpha$] the grey-tinted solid curves depicted in the different panels of Fig.~\ref{fig:geo1} are not equal to one-another, i.e. $\mathsf{B}_{\mathsf{T}}^{\alpha_1}\neq\mathsf{B}_{\mathsf{T}}^{\alpha_2}$. 
  \item[Effect of $t$] the grey-tinted solid curves depicted in each of the panels of Fig.~\ref{fig:geo1} are not translations of one-another. Moreover, the dashed grey curves and the solid grey-tinted curves in the right-most panel are not equal to one-another, i.e. $\mathsf{B}_{\mathsf{T}}^{\sfrac{4}{5}}\neq\mathcal{B}_{\mathsf{T}}^{\sfrac{4}{5}}$.
 \end{description}
-We can therefore draw the following conclusion: the value of both $\alpha$ and $t$ alters the shape of the infinitesimals (i.e. the upper limit $b_{t}^{\alpha}(y)$ of Eq.~\eqref{eq:ex1} depends on $\alpha$ and $t$) that make up the regions in Fig.~\ref{fig:geo1}. Interestingly, the effect of $\alpha$ on the shape of the infinitesimals that make up the regions depicted in Fig.~\ref{fig:geo1} is larger than the effect that $t$ has on their shape. 
+We can therefore draw the following conclusion: the value of both $\alpha$ and $t$ alters the shape of the infinitesimals ($b_{t}^{\alpha}(y)$ depends on $\alpha$ and $t$) that make up the regions in Fig.~\ref{fig:geo1}. Interestingly, the effect of $\alpha$ on the shape of the infinitesimals that make up the regions depicted in Fig.~\ref{fig:geo1} is larger than the effect that $t$ has on their shape. 
 The curves associated with the infinitesimals obtained by varying $t$, whilst keeping the value of $\alpha$ fixed are very similar in nature and there exists a high degree of correlation between them (if their 
 sizes are ignored). The curves associated with the infinitesimals obtained by varying $\alpha$, whilst keeping the value of $t$ fixed are quite different from one another (the aforementioned curves are not highly correlated with 
 one another).\\  
@@ -753,10 +759,10 @@ The validity of the non-static non-rectangular sum-based geometric interpretatio
 %\end{acknowledgment}
 
 \begin{abstract}
-In this paper we present a novel geometric interpetation of the Riemann-Liouville fractional integral. We found that a Riemann-Liouville integral can 
+We presented a novel geometric interpetation of the Riemann-Liouville fractional integral. We found that a Riemann-Liouville integral can 
 be thought of as the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by the 
-order of integration $\alpha$ and the integration limit $t$. We also emphasize the pedagogical benefits that this interpretation offers, as it is very 
-similar in nature to the geometric interpretation that is associated with classic Riemann integrals.   
+order of integration $\alpha$ and the integration limit $t$. We also showed that this geometric interpretation offers many pedagogical benefits as it is very similar
+in nature to the geometric interpreation of the Riemann integral.   
 \end{abstract}
 
 \begin{thebibliography}{1}
