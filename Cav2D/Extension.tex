@@ -1,0 +1,59 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amssymb,graphicx,subfigure,mathtools}
+\usepackage{amsmath}
+\usepackage{rotating}
+\usepackage{lscape}
+
+\newcommand{\conj}[1]{\overline{#1}}
+
+%MATRIX HELPER FUNCTIONS
+\newcommand\coolover[2]{\mathrlap{\smash{\overbrace{\phantom{%
+    \begin{matrix} #2 \end{matrix}}}^{\mbox{$#1$}}}}#2} 
+
+\newcommand\coolunder[2]{\mathrlap{\smash{\underbrace{\phantom{%
+    \begin{matrix} #2 \end{matrix}}}_{\mbox{$#1$}}}}#2}
+
+\newcommand\coolleftbrace[2]{%
+#1\left\{\vphantom{\begin{matrix} #2 \end{matrix}}\right.}
+
+\newcommand\coolrightbrace[2]{%
+\left.\vphantom{\begin{matrix} #1 \end{matrix}}\right\}#2}
+
+
+
+%opening
+\title{Two dimensional Cavalieri Integral}
+\author{T.L. Grobler}
+
+\begin{document}
+
+\maketitle
+
+\begin{section}{Extension}
+
+$\mathcal{C} = \{P,S\}$ and $\Delta x_{ij}^1 = x_{i+1,j}^1 - x_{ij}^1$. $P$ is a parametric curve that intersects region $S$ at $(x_{ij}^1,y_{ij}^1)$ and surface 
+$f$ at $(x_{ij}^2,y_{ij}^2)$.
+
+\begin{eqnarray}
+\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(x_{ij}^2,y_{ij}^2) \Delta x_{ij}^1\Delta y_{ij}^1\\
+&=&  \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(g(x_{ij}^1,y_{ij}^1),r(x_{ij}^1,y_{ij}^1)) \Delta x_{ij}^1\Delta y_{ij}^1\\
+&=& \int_a^b\int_c^d f(g(x,y),r(x,y))~dx~dy.
+\end{eqnarray}
+
+$\Delta h_{ij} = h(x_{i+1,j}^2,y_{ij}^2) - h(x_{ij}^2,y_{ij}^2)$ and $\Delta s_{ij} = s(x_{ij}^2,y_{i,j+1}^2) - s(x_{ij}^2,y_{ij}^2)$ 
+\begin{eqnarray}
+\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n  \Delta x_{ij}^1\Delta y_{ij}^1\\
+&=&  \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(x_{ij}^2,y_{ij}^2) \Delta h_{ij}\Delta s_{ij}\\
+&=&  \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(x_{ij}^2,y_{ij}^2) \frac{\Delta h_{ij}}{\Delta x_{ij}^2}\Delta x_{ij}^2 \frac{\Delta s_{ij}}{\Delta y_{ij}^2}\Delta y_{ij}^2\\
+&=& \int_{a'}^{b'}\int_{c'}^{d'} f(x,y)\frac{\partial h(x,y)}{\partial x}\frac{\partial s(x,y)}{\partial y}~dx~dy.
+\end{eqnarray}
+
+
+
+
+\end{section}
+
+
+\end{document}
+ 
