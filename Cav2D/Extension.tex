@@ -32,14 +32,19 @@
 
 \begin{section}{Extension}
 
-$\mathcal{C} = \{P,S\}$ and $\Delta x_{ij}^1 = x_{i+1,j}^1 - x_{ij}^1$. $P$ is a parametric curve that intersects region $S$ at $(x_{ij}^1,y_{ij}^1)$ and surface 
+$\mathcal{C} = \{L,S\}$ and $\Delta x_{ij}^1 = x_{i+1,j}^1 - x_{ij}^1$. $L$ is a parametric curve that intersects region $S$ at $(x_{ij}^1,y_{ij}^1)$ and surface 
 $f$ at $(x_{ij}^2,y_{ij}^2)$.
+
 
 \begin{eqnarray}
 \iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(x_{ij}^2,y_{ij}^2) \Delta x_{ij}^1\Delta y_{ij}^1\\
 &=&  \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(g(x_{ij}^1,y_{ij}^1),r(x_{ij}^1,y_{ij}^1)) \Delta x_{ij}^1\Delta y_{ij}^1\\
 &=& \int_a^b\int_c^d f(g(x,y),r(x,y))~dx~dy.
 \end{eqnarray}
+
+\noindent
+\textbf{NOT SURE ABOUT MATH --- NEED TO DOUBLE CHECK THIS --- DOES NOT MAKE SENSE}
+
 
 $\Delta h_{ij} = h(x_{i+1,j}^2,y_{ij}^2) - h(x_{ij}^2,y_{ij}^2)$ and $\Delta s_{ij} = s(x_{ij}^2,y_{i,j+1}^2) - s(x_{ij}^2,y_{ij}^2)$ 
 \begin{eqnarray}
@@ -49,10 +54,37 @@ $\Delta h_{ij} = h(x_{i+1,j}^2,y_{ij}^2) - h(x_{ij}^2,y_{ij}^2)$ and $\Delta s_{
 &=& \int_{a'}^{b'}\int_{c'}^{d'} f(x,y)\frac{\partial h(x,y)}{\partial x}\frac{\partial s(x,y)}{\partial y}~dx~dy.
 \end{eqnarray}
 
-
-
-
 \end{section}
+
+\begin{section}{Example}
+The vector equation of $L$ is
+\begin{equation}
+\left <x_{ij}^2,y_{ij}^2,f(x_{ij}^2,y_{ij}^2) \right > = \left < x_{ij}^1, y_{ij}^1, 0\right > - \left < a, c, 0\right > - t \left < \frac{1}{A},\frac{1}{C},1\right >.  
+\end{equation}
+
+The surface $f(x,y) = -x - y + K$.
+
+\begin{eqnarray}
+z &=& - x_{ij}^2 - y_{ij}^2 + K\\
+-t &=& -(x_{ij}^1 - a) + \frac{t}{A} - (y_{ij}^1 - c) + \frac{t}{C} + K\\
+t &=& \frac{(x_{ij}^1 - a) + (y_{ij}^1 - c) + K}{PA}
+\end{eqnarray}
+with $P = 1 + \frac{A+C}{AC}$.
+
+\begin{equation}
+x_{ij}^2 = h(x_{ij}^1,y_{ij}^1) = (x_{ij}^1 - a)\left [ \frac{PA-1}{PA} \right ] - \frac{(y_{ij}^1 - c)}{PA} + \frac{K}{PA}.
+\end{equation}
+
+\begin{equation}
+y_{ij}^2 = r(x_{ij}^1,y_{ij}^1) = (y_{ij}^1 - c)\left [ \frac{PC-1}{PC} \right ] - \frac{(x_{ij}^1 - a)}{PC} + \frac{K}{PC}.  
+\end{equation}
+
+
+
+
+ 
+\end{section}
+
 
 
 \end{document}
