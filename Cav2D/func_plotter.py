@@ -81,10 +81,15 @@ def create_xy_1(a=0,b=4,c=0,d=4,Nx = 10,Ny = 10):
 
 def x_2_func_line(x,y,a,c,A,C,K):
     P = 1 + ((A+C)/(A*C))
+    print("P = "+str(P))
     T1 = (P*A-1)/(P*A)
+    print("T1 = "+str(T1))
     T2 = (P*C-1)/(P*C)
+    print("T2 = "+str(T2)) 
     PA_inv = 1.0/(P*A)
     PC_inv = 1.0/(P*C)
+    print("PA_inv = "+str(PA_inv))
+    print("PC_inv = "+str(PC_inv))
     x2 = (x-a)*T1 - (y-c)*PA_inv + K*PA_inv
     y2 = (y-c)*T2 - (x-a)*PC_inv + K*PC_inv
     return x2,y2
@@ -293,6 +298,9 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
     ax.annotate('N', xy=(0.8, 4), xytext=(0.8, 4-0.3))
     ax.set_xlabel("$x$")
     ax.set_ylabel("$y$")
+
+    v = np.array([2.73067,8.256,0.5333333,3.95062,0.505679,0.293926,5.952,0.5333333,0.341333,0.606815,0.316049,1.58025])
+    print(np.sum(v))
 
 
     #x1 = np.linspace(0,2,200)

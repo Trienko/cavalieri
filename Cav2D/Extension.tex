@@ -83,6 +83,23 @@ x_{ij}^2 = h(x_{ij}^1,y_{ij}^1) = (x_{ij}^1 - a)\left [ \frac{PA-1}{PA} \right ]
 y_{ij}^2 = r(x_{ij}^1,y_{ij}^1) = (y_{ij}^1 - c)\left [ \frac{PC-1}{PC} \right ] - \frac{(x_{ij}^1 - a)}{PC} + \frac{K}{PC}.  
 \end{equation}
 
+Let $A=2$, $C=1$, $a = 0$, $c = 0$ and $K=8$. Then $P = 2\sfrac{1}{2}$. Moreover, 
+\begin{equation}
+x_{ij}^2 = h(x_{ij}^1,y_{ij}^1) = \frac{4}{5} x_{ij}^1 - \frac{1}{5} y_{ij}^1 + \frac{8}{5}  
+\end{equation}
+and
+\begin{equation}
+y_{ij}^2 = r(x_{ij}^1,y_{ij}^1) = \frac{3}{5} x_{ij}^1 - \frac{2}{5} y_{ij}^1 + \frac{16}{5}  
+\end{equation}
+
+Now,
+\begin{eqnarray}
+\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^4\int_0^4 f(h(x,y),r(x,y))~dydx\\
+&=& \int_0^4 \int_0^4 -\frac{7}{5}x + \frac{3}{5} y + \frac{16}{5}~dydx\\
+&=& 25.6
+\end{eqnarray}
+
+
 
 \begin{figure}
   \includegraphics[width=\linewidth]{proj_xy.pdf}
@@ -96,18 +113,18 @@ y_{ij}^2 = r(x_{ij}^1,y_{ij}^1) = (y_{ij}^1 - c)\left [ \frac{PC-1}{PC} \right ]
 
 \begin{tabular}{|l l l l l l l l|}
   $k$ & Vertices & $a$ & $b$ & $g_1$ & $g_2$ & $f_k$ & $\iint\limits_{\!R_k} f_k~dA$\\
-  1 & AEM & 0 & \sfrac{8}{5} & $2x$ & 0 & $y$ & ? \\
-  2 & MELB & \sfrac{8}{5} & 4 & -$\frac{1}{2}x+4$ & 0 & $y$ & ? \\
-  3 & BLF & 4 & \sfrac{24}{5} & -$\frac{1}{2}x+4$ & $2x-8$ & $y-2(x-4)$ & ? \\
-  4 & ACIJ & 0 & \sfrac{4}{3} & 4 & $2x$ & $2x$ & ?\\
-  5 & JIE & \sfrac{4}{3} & \sfrac{8}{5} & $-3x+8$ & $2x$ & $2x$ & ?\\ 
-  6 & EIK & \sfrac{4}{3} & \sfrac{8}{5} & 4 & $-3x+8$& $-x-y+8$ & ? \\ 
-  7 & EKDL & \sfrac{8}{5} & 4 & 4 & $-\frac{1}{2}x+4$& $-x-y+8$ & ? \\ 
-  8 & LDF & 4 & \sfrac{24}{5} & $-3x+16$ & $-\frac{1}{2}x+4$& $-x-y+8-2(x-4)$ & ? \\ 
-  9 & CGN & 0 & \sfrac{4}{5} & $2x+4$ & 4& $2x-(y-4)$ & ? \\ 
-  10 & NCI & \sfrac{4}{5} & \sfrac{4}{3}& $-3x+8$ & 4& $2x-(y-4)$ & ? \\
-  11 & ICH & \sfrac{4}{5} & \sfrac{4}{3}& $-\frac{1}{2}x+6$ & $-3x+8$ & $-x-y+8-(y-4)$&?\\
-  12 & IHD & \sfrac{4}{3}& 4 & $-\frac{1}{2}x+6$ & 4 & $-x-y+8-(y-4)$&?\\
+  1 & AEM & 0 & \sfrac{8}{5} & $2x$ & 0 & $y$ & 2.7307 \\
+  2 & MELB & \sfrac{8}{5} & 4 & -$\frac{1}{2}x+4$ & 0 & $y$ & 8.2560 \\
+  3 & BLF & 4 & \sfrac{24}{5} & -$\frac{1}{2}x+4$ & $2x-8$ & $y-2(x-4)$ & 0.5333 \\
+  4 & ACIJ & 0 & \sfrac{4}{3} & 4 & $2x$ & $2x$ & 3.9506\\
+  5 & JIE & \sfrac{4}{3} & \sfrac{8}{5} & $-3x+8$ & $2x$ & $2x$ & 0.5058\\ 
+  6 & EIK & \sfrac{4}{3} & \sfrac{8}{5} & 4 & $-3x+8$& $-x-y+8$ & 0.2939 \\ 
+  7 & EKDL & \sfrac{8}{5} & 4 & 4 & $-\frac{1}{2}x+4$& $-x-y+8$ & 5.9520 \\ 
+  8 & LDF & 4 & \sfrac{24}{5} & $-3x+16$ & $-\frac{1}{2}x+4$& $-x-y+8-2(x-4)$ & 0.5333 \\ 
+  9 & CGN & 0 & \sfrac{4}{5} & $2x+4$ & 4& $2x-(y-4)$ & 0.3413 \\ 
+  10 & NCI & \sfrac{4}{5} & \sfrac{4}{3}& $-3x+8$ & 4& $2x-(y-4)$ & 0.6068 \\
+  11 & ICH & \sfrac{4}{5} & \sfrac{4}{3}& $-\frac{1}{2}x+6$ & $-3x+8$ & $-x-y+8-(y-4)$&0.3160\\
+  12 & IHD & \sfrac{4}{3}& 4 & $-\frac{1}{2}x+6$ & 4 & $-x-y+8-(y-4)$&1.5803\\
 \end{tabular}
  
 \end{center}
