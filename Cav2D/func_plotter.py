@@ -73,7 +73,7 @@ def point_plot():
     #plt.show()
 
 
-def create_xy_1(a=0,b=4,c=0,d=4,Nx = 5,Ny = 5):
+def create_xy_1(a=0,b=4,c=0,d=4,Nx = 10,Ny = 10):
     x = np.linspace(a,b,Nx)
     y = np.linspace(c,d,Ny)
     xx,yy = np.meshgrid(x,y)
@@ -89,7 +89,7 @@ def x_2_func_line(x,y,a,c,A,C,K):
     y2 = (y-c)*T2 - (x-a)*PC_inv + K*PC_inv
     return x2,y2
 
-def create_xy_2_line(xx, yy,a=0.0, c=0.0, A=0.5, C=1.0, K = 8):
+def create_xy_2_line(xx, yy,a=0.0, c=0.0, A=2, C=1.0, K = 8):
     xx2 = np.zeros(xx.shape,dtype=float)
     yy2 = np.zeros(yy.shape,dtype=float)
     #print(xx2)
@@ -115,11 +115,50 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
 
     ax = plt.gca()
     ax.hold(True)
-    ax.scatter3D(xx2.flatten(), yy2.flatten(), zz2.flatten() ,c="b",alpha=0.2); 
-    ax.scatter3D(xx.flatten(), yy.flatten(), np.zeros((len(yy.flatten()),),dtype=float) ,c="r",alpha=0.2); 
+    #ax.scatter3D(xx2.flatten(), yy2.flatten(), zz2.flatten() ,c="b",alpha=0.2); 
+    #ax.scatter3D(xx.flatten(), yy.flatten(), np.zeros((len(yy.flatten()),),dtype=float) ,c="r",alpha=0.2); 
 
     delta_x = yy[1,0] - yy[0,0]
     delta_y = xx[0,1] - xx[0,0]
+
+
+    volume = np.zeros((8,3),dtype=float)
+
+    volume[0,0] = xx[0,0]
+    volume[0,1] = yy[0,0]
+    volume[1,0] = xx[0,-1]
+    volume[1,1] = yy[0,-1]
+    volume[2,0] = xx[-1,0]
+    volume[2,1] = yy[-1,0]
+    volume[3,0] = xx[-1,-1]
+    volume[3,1] = yy[-1,-1]
+
+    volume[4,0] = xx2[0,0]
+    volume[4,1] = yy2[0,0]
+    volume[4,2] = zz2[0,0]
+    volume[5,0] = xx2[0,-1]
+    volume[5,1] = yy2[0,-1]
+    volume[5,2] = zz2[0,-1]
+    volume[6,0] = xx2[-1,0]
+    volume[6,1] = yy2[-1,0]
+    volume[6,2] = zz2[-1,0]
+    volume[7,0] = xx2[-1,-1]
+    volume[7,1] = yy2[-1,-1]
+    volume[7,2] = zz2[-1,-1]
+
+    ax.plot3D(np.array([volume[0,0],volume[1,0]]), np.array([volume[0,1],volume[1,1]]), np.array([volume[0,2],volume[1,2]]), 'black') 
+    ax.plot3D(np.array([volume[1,0],volume[3,0]]), np.array([volume[1,1],volume[3,1]]), np.array([volume[1,2],volume[3,2]]), 'black',ls="--") 
+    ax.plot3D(np.array([volume[3,0],volume[2,0]]), np.array([volume[3,1],volume[2,1]]), np.array([volume[3,2],volume[2,2]]), 'black',ls="--") 
+    ax.plot3D(np.array([volume[2,0],volume[0,0]]), np.array([volume[2,1],volume[0,1]]), np.array([volume[2,2],volume[0,2]]), 'black') 
+    ax.plot3D(np.array([volume[4,0],volume[5,0]]), np.array([volume[4,1],volume[5,1]]), np.array([volume[4,2],volume[5,2]]), 'black') 
+    ax.plot3D(np.array([volume[5,0],volume[7,0]]), np.array([volume[5,1],volume[7,1]]), np.array([volume[5,2],volume[7,2]]), 'black') 
+    ax.plot3D(np.array([volume[7,0],volume[6,0]]), np.array([volume[7,1],volume[6,1]]), np.array([volume[7,2],volume[6,2]]), 'black') 
+    ax.plot3D(np.array([volume[6,0],volume[4,0]]), np.array([volume[6,1],volume[4,1]]), np.array([volume[6,2],volume[4,2]]), 'black') 
+    ax.plot3D(np.array([volume[0,0],volume[4,0]]), np.array([volume[0,1],volume[4,1]]), np.array([volume[0,2],volume[4,2]]), 'black') 
+    ax.plot3D(np.array([volume[2,0],volume[6,0]]), np.array([volume[2,1],volume[6,1]]), np.array([volume[2,2],volume[6,2]]), 'black') 
+    ax.plot3D(np.array([volume[3,0],volume[7,0]]), np.array([volume[3,1],volume[7,1]]), np.array([volume[3,2],volume[7,2]]), 'black') 
+    ax.plot3D(np.array([volume[1,0],volume[5,0]]), np.array([volume[1,1],volume[5,1]]), np.array([volume[1,2],volume[5,2]]), 'black') 
+                          
 
     print(delta_x)
     print(delta_y)
@@ -131,8 +170,8 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
     t1 = t1[::-1]
     t2 = t2[::-1]
 
-    for j in t1:
-        for i in t2:
+    for j in range(1,2):
+        for i in range(4,5):
 
             four_points_1 = np.zeros((4,3),dtype=float)
             four_points_2 = np.zeros((4,3),dtype=float)
@@ -177,12 +216,12 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
 
             if (i == 3):
                if (j == 3):
-                  faces = Poly3DCollection(verts, linewidths=1, edgecolors='k',facecolors='red',alpha=0.3,zsort='max',zorder=2)
+                  faces = Poly3DCollection(verts, linewidths=0.3, edgecolors='k',facecolors='red',alpha=0.3)
                else:
-                  faces = Poly3DCollection(verts, linewidths=1, edgecolors='k',facecolors='cyan',alpha=0.3,zsort='max',zorder=1)
+                  faces = Poly3DCollection(verts, linewidths=0.3, edgecolors='k',facecolors='cyan',alpha=0.3)
             else:
-                faces = Poly3DCollection(verts, linewidths=1, edgecolors='k',facecolors='cyan',alpha=0.3,zsort='max',zorder=1)
-            #faces.set_facecolor((0,0,1,0.1))
+                faces = Poly3DCollection(verts, linewidths=0.3, edgecolors='k',facecolors='cyan',alpha=0.3)
+            faces.set_facecolor((0,1,0,0.1))
 
             ax.add_collection3d(faces)
 
@@ -215,6 +254,46 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
     #        ax.plot3D(np.array([xx[i,j],xx2[i,j]]), np.array([yy[i,j],yy2[i,j]]), np.array([0,zz2[i,j]]), 'black',alpha=0.3)
 
 
+    plt.show()
+    
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    ax.plot(np.array([volume[0,0],volume[1,0]]), np.array([volume[0,1],volume[1,1]]), 'black',ls="--") 
+    ax.plot(np.array([volume[1,0],volume[3,0]]), np.array([volume[1,1],volume[3,1]]), 'black',ls="--") 
+    ax.plot(np.array([volume[3,0],volume[2,0]]), np.array([volume[3,1],volume[2,1]]), 'black',ls="--") 
+    ax.plot(np.array([volume[2,0],volume[0,0]]), np.array([volume[2,1],volume[0,1]]), 'black',ls="--") 
+    ax.plot(np.array([volume[4,0],volume[5,0]]), np.array([volume[4,1],volume[5,1]]), 'black') 
+    ax.plot(np.array([volume[5,0],volume[7,0]]), np.array([volume[5,1],volume[7,1]]), 'black') 
+    ax.plot(np.array([volume[7,0],volume[6,0]]), np.array([volume[7,1],volume[6,1]]), 'black') 
+    ax.plot(np.array([volume[6,0],volume[4,0]]), np.array([volume[6,1],volume[4,1]]), 'black') 
+    ax.plot(np.array([volume[0,0],volume[4,0]]), np.array([volume[0,1],volume[4,1]]), 'black') 
+    ax.plot(np.array([volume[2,0],volume[6,0]]), np.array([volume[2,1],volume[6,1]]), 'black') 
+    ax.plot(np.array([volume[3,0],volume[7,0]]), np.array([volume[3,1],volume[7,1]]), 'black') 
+    ax.plot(np.array([volume[1,0],volume[5,0]]), np.array([volume[1,1],volume[5,1]]), 'black') 
+    ax.plot(np.array([4.0/3.0,4.0/3.0]), np.array([16.0/3.0,8.0/3.0]), 'black',ls="-.") 
+    ax.plot(np.array([1.6,1.6]), np.array([4,3.2]), 'black',ls="-.") 
+    
+
+
+    ax.annotate('A', xy=(0, 0), xytext=(-0.12, -0.12))
+    ax.annotate('B', xy=(4, 0), xytext=(4+0.06, -0.12))
+    ax.annotate('C', xy=(0, 4), xytext=(-0.12, 4))
+    ax.annotate('D', xy=(4, 4), xytext=(4+0.03, 4))
+    ax.annotate('E', xy=(1.6, 3.2), xytext=(1.6, 3.2-0.3))
+    ax.annotate('F', xy=(4.8, 1.6), xytext=(4.8+0.03, 1.6))
+    ax.annotate('G', xy=(0.8, 5.6), xytext=(0.8, 5.6+0.03))
+
+    #x1 = np.linspace(0,2,200)
+    #x2 = np.linspace(0,4,200)
+
+    #plt.plot(x1,2*x1,"b")
+    #plt.plot(x2,-0.5*x2 + 4,"r")
+
+    print(np.array([volume[4,0],volume[4,1],volume[4,2]]))
+    print((np.array([volume[5,0],volume[5,1],volume[5,2]])))
+    print((np.array([volume[6,0],volume[6,1],volume[6,2]])))
+    print((np.array([volume[7,0],volume[7,1],volume[7,2]])))
     plt.show()
    
  
