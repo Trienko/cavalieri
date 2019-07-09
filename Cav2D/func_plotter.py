@@ -272,7 +272,8 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
     ax.plot(np.array([volume[3,0],volume[7,0]]), np.array([volume[3,1],volume[7,1]]), 'black') 
     ax.plot(np.array([volume[1,0],volume[5,0]]), np.array([volume[1,1],volume[5,1]]), 'black') 
     ax.plot(np.array([4.0/3.0,4.0/3.0]), np.array([16.0/3.0,8.0/3.0]), 'black',ls="-.") 
-    ax.plot(np.array([1.6,1.6]), np.array([4,3.2]), 'black',ls="-.") 
+    ax.plot(np.array([1.6,1.6]), np.array([4,0]), 'black',ls="-.") 
+    ax.plot(np.array([0.8,0.8]), np.array([5.6,4]), 'black',ls="-.") 
     
 
 
@@ -280,9 +281,19 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
     ax.annotate('B', xy=(4, 0), xytext=(4+0.06, -0.12))
     ax.annotate('C', xy=(0, 4), xytext=(-0.12, 4))
     ax.annotate('D', xy=(4, 4), xytext=(4+0.03, 4))
-    ax.annotate('E', xy=(1.6, 3.2), xytext=(1.6, 3.2-0.3))
+    ax.annotate('E', xy=(1.6, 3.2), xytext=(1.6+0.01, 3.2-0.31))
     ax.annotate('F', xy=(4.8, 1.6), xytext=(4.8+0.03, 1.6))
     ax.annotate('G', xy=(0.8, 5.6), xytext=(0.8, 5.6+0.03))
+    ax.annotate('H', xy=(4.0/3.0, 16.0/3.0), xytext=(4.0/3.0, 16.0/3.0+0.03))
+    ax.annotate('I', xy=(4.0/3.0, 4), xytext=(4.0/3.0+0.03, 4+0.04))
+    ax.annotate('J', xy=(4.0/3.0, 8.0/3.0), xytext=(4.0/3.0+0.06, 8.0/3.0-0.04))
+    ax.annotate('K', xy=(1.6, 4), xytext=(1.6, 4+0.04))
+    ax.annotate('L', xy=(4, 2), xytext=(4, 2+0.04))
+    ax.annotate('M', xy=(1.6, 0), xytext=(1.6+0.01, 0+0.05))
+    ax.annotate('N', xy=(0.8, 4), xytext=(0.8, 4-0.3))
+    ax.set_xlabel("$x$")
+    ax.set_ylabel("$y$")
+
 
     #x1 = np.linspace(0,2,200)
     #x2 = np.linspace(0,4,200)

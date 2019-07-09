@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{rotating}
 \usepackage{lscape}
+\usepackage{xfrac}
 
 \newcommand{\conj}[1]{\overline{#1}}
 
@@ -94,9 +95,19 @@ y_{ij}^2 = r(x_{ij}^1,y_{ij}^1) = (y_{ij}^1 - c)\left [ \frac{PC-1}{PC} \right ]
 \begin{center}
 
 \begin{tabular}{|l l l l l l l l|}
-  $k$ & Vertices & $a$ & $b$ & $g_1(y)$ & $g_2(y)$ & $f_k(x,y)$ & $\iint\limits_{\!R_k} f(x,y) dA$\\
-  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
-  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\
+  $k$ & Vertices & $a$ & $b$ & $g_1$ & $g_2$ & $f_k$ & $\iint\limits_{\!R_k} f_k~dA$\\
+  1 & AEM & 0 & \sfrac{8}{5} & $2x$ & 0 & $y$ & ? \\
+  2 & MELB & \sfrac{8}{5} & 4 & -$\frac{1}{2}x+4$ & 0 & $y$ & ? \\
+  3 & BLF & 4 & \sfrac{24}{5} & -$\frac{1}{2}x+4$ & $2x-8$ & $y-2(x-4)$ & ? \\
+  4 & ACIJ & 0 & \sfrac{4}{3} & 4 & $2x$ & $2x$ & ?\\
+  5 & JIE & \sfrac{4}{3} & \sfrac{8}{5} & $-3x+8$ & $2x$ & $2x$ & ?\\ 
+  6 & EIK & \sfrac{4}{3} & \sfrac{8}{5} & 4 & $-3x+8$& $-x-y+8$ & ? \\ 
+  7 & EKDL & \sfrac{8}{5} & 4 & 4 & $-\frac{1}{2}x+4$& $-x-y+8$ & ? \\ 
+  8 & LDF & 4 & \sfrac{24}{5} & $-3x+16$ & $-\frac{1}{2}x+4$& $-x-y+8-2(x-4)$ & ? \\ 
+  9 & CGN & 0 & \sfrac{4}{5} & $2x+4$ & 4& $2x-(y-4)$ & ? \\ 
+  10 & NCI & \sfrac{4}{5} & \sfrac{4}{3}& $-3x+8$ & 4& $2x-(y-4)$ & ? \\
+  11 & ICH & \sfrac{4}{5} & \sfrac{4}{3}& $-\frac{1}{2}x+6$ & $-3x+8$ & $-x-y+8-(y-4)$&?\\
+  12 & IHD & \sfrac{4}{3}& 4 & $-\frac{1}{2}x+6$ & 4 & $-x-y+8-(y-4)$&?\\
 \end{tabular}
  
 \end{center}
