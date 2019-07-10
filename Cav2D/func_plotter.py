@@ -108,7 +108,11 @@ def func_p(xx2,yy2,K=8):
     zz2 = -xx2-yy2 + K
     return zz2
 
-def test(xx,yy,xx2,yy2,zz2,K=8):
+def plot_figures(xx,yy,xx2,yy2,zz2,K=8):
+    
+
+    #PLOT PLANE
+    ############################################################
     # create x,y
     xx_new, yy_new = np.meshgrid(range(7), range(7))
 
@@ -120,13 +124,13 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
 
     ax = plt.gca()
     ax.hold(True)
+    ############################################################
+    
     #ax.scatter3D(xx2.flatten(), yy2.flatten(), zz2.flatten() ,c="b",alpha=0.2); 
     #ax.scatter3D(xx.flatten(), yy.flatten(), np.zeros((len(yy.flatten()),),dtype=float) ,c="r",alpha=0.2); 
-
-    delta_x = yy[1,0] - yy[0,0]
-    delta_y = xx[0,1] - xx[0,0]
-
-
+    
+    #PLOT VOLUME
+    ############################################################
     volume = np.zeros((8,3),dtype=float)
 
     volume[0,0] = xx[0,0]
@@ -163,104 +167,69 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
     ax.plot3D(np.array([volume[2,0],volume[6,0]]), np.array([volume[2,1],volume[6,1]]), np.array([volume[2,2],volume[6,2]]), 'black') 
     ax.plot3D(np.array([volume[3,0],volume[7,0]]), np.array([volume[3,1],volume[7,1]]), np.array([volume[3,2],volume[7,2]]), 'black') 
     ax.plot3D(np.array([volume[1,0],volume[5,0]]), np.array([volume[1,1],volume[5,1]]), np.array([volume[1,2],volume[5,2]]), 'black') 
+    ############################################################
                           
-
-    print(delta_x)
-    print(delta_y)
-
-    #z_order = xx.shape[0]*zz.shape[1]
-
-    t1 = range(xx.shape[0])
-    t2 = range(yy.shape[1])
-    t1 = t1[::-1]
-    t2 = t2[::-1]
-
-    for j in range(1,2):
-        for i in range(4,5):
-
-            four_points_1 = np.zeros((4,3),dtype=float)
-            four_points_2 = np.zeros((4,3),dtype=float)
+    
+    #DRAW INTEGRATION STRIP
+    ############################################################
+    delta_x = yy[1,0] - yy[0,0]
+    delta_y = xx[0,1] - xx[0,0]
+ 
+    four_points_1 = np.zeros((4,3),dtype=float)
+    four_points_2 = np.zeros((4,3),dtype=float)
             
-            for k in range(4):
-                four_points_1[k,0] = xx[i,j]
-                four_points_1[k,1] = yy[i,j]
-                four_points_1[k,2] = 0 
+    for k in range(4):
+        four_points_1[k,0] = xx[0,0]
+        four_points_1[k,1] = yy[0,0]
+        four_points_1[k,2] = 0 
 
-                four_points_2[k,0] = xx2[i,j]
-                four_points_2[k,1] = yy2[i,j]
-                four_points_2[k,2] = zz2[i,j]
+        four_points_2[k,0] = xx2[0,0]
+        four_points_2[k,1] = yy2[0,0]
+        four_points_2[k,2] = zz2[0,0]
 
-            for k in range(1,4):
-                print(k)
-                if k == 1: 
-                   four_points_1[k,0] += delta_x
-                   four_points_2[k,0] += delta_x
-                if k == 2:
-                   four_points_1[k,1] += delta_y
-                   four_points_2[k,1] += delta_y
-                if k == 3:
-                   four_points_1[k,0] += delta_x
-                   four_points_2[k,0] += delta_x
-                   four_points_1[k,1] += delta_y
-                   four_points_2[k,1] += delta_y
+    for k in range(1,4):
+          if k == 1: 
+             four_points_1[k,0] += delta_x
+             four_points_2[k,0] += delta_x
+          if k == 2:
+             four_points_1[k,1] += delta_y
+             four_points_2[k,1] += delta_y
+          if k == 3:
+             four_points_1[k,0] += delta_x
+             four_points_2[k,0] += delta_x
+             four_points_1[k,1] += delta_y
+             four_points_2[k,1] += delta_y
 
             #print(four_points_1)
             #print(four_points_2)
 
-            Z = np.concatenate((four_points_1,four_points_2))  
+    Z = np.concatenate((four_points_1,four_points_2))  
 
-              
+    # list of sides' polygons of figure
+    verts = [[Z[0],Z[1],Z[3],Z[2]],
+             [Z[4],Z[5],Z[7],Z[6]], 
+             [Z[0],Z[4],Z[5],Z[1]], 
+             [Z[1],Z[5],Z[7],Z[3]], 
+             [Z[2],Z[6],Z[7],Z[3]],
+             [Z[0],Z[2],Z[6],Z[4]]]
 
-            # list of sides' polygons of figure
-            verts = [[Z[0],Z[1],Z[3],Z[2]],
-                     [Z[4],Z[5],Z[7],Z[6]], 
-                     [Z[0],Z[4],Z[5],Z[1]], 
-                     [Z[1],Z[5],Z[7],Z[3]], 
-                     [Z[2],Z[6],Z[7],Z[3]],
-                     [Z[0],Z[2],Z[6],Z[4]]]
+    faces = Poly3DCollection(verts, linewidths=0.3, edgecolors='k',facecolors='cyan',alpha=0.3)
+    faces.set_facecolor((0,1,0,0.1))
 
-            if (i == 3):
-               if (j == 3):
-                  faces = Poly3DCollection(verts, linewidths=0.3, edgecolors='k',facecolors='red',alpha=0.3)
-               else:
-                  faces = Poly3DCollection(verts, linewidths=0.3, edgecolors='k',facecolors='cyan',alpha=0.3)
-            else:
-                faces = Poly3DCollection(verts, linewidths=0.3, edgecolors='k',facecolors='cyan',alpha=0.3)
-            faces.set_facecolor((0,1,0,0.1))
+    ax.add_collection3d(faces)
 
-            ax.add_collection3d(faces)
-
-            # plot sides
-            #ax.add_collection3d(Poly3DCollection(verts, facecolors='cyan', linewidths=1, edgecolors='r', alpha=.25))
-
-            '''
-            ax.plot3D(np.array([four_points_1[0,0],four_points_1[1,0]]), np.array([four_points_1[0,1],four_points_1[1,1]]), np.array([four_points_1[0,2],four_points_1[1,2]]), 'black',alpha=0.3) 
-                         
-            ax.plot3D(np.array([four_points_1[0,0],four_points_1[2,0]]), np.array([four_points_1[0,1],four_points_1[2,1]]), np.array([four_points_1[0,2],four_points_1[2,2]]), 'black',alpha=0.3) 
-
-            ax.plot3D(np.array([four_points_1[1,0],four_points_1[3,0]]), np.array([four_points_1[1,1],four_points_1[3,1]]), np.array([four_points_1[1,2],four_points_1[3,2]]), 'black',alpha=0.3) 
-
-            ax.plot3D(np.array([four_points_1[2,0],four_points_1[3,0]]), np.array([four_points_1[2,1],four_points_1[3,1]]), np.array([four_points_1[2,2],four_points_1[3,2]]), 'black',alpha=0.3) 
-
-            ax.plot3D(np.array([four_points_2[0,0],four_points_2[1,0]]), np.array([four_points_2[0,1],four_points_2[1,1]]), np.array([four_points_2[0,2],four_points_2[1,2]]), 'black',alpha=0.3) 
-                         
-            ax.plot3D(np.array([four_points_2[0,0],four_points_2[2,0]]), np.array([four_points_2[0,1],four_points_2[2,1]]), np.array([four_points_2[0,2],four_points_2[2,2]]), 'black',alpha=0.3) 
-
-            ax.plot3D(np.array([four_points_2[1,0],four_points_2[3,0]]), np.array([four_points_2[1,1],four_points_2[3,1]]), np.array([four_points_2[1,2],four_points_2[3,2]]), 'black',alpha=0.3) 
-
-            ax.plot3D(np.array([four_points_2[2,0],four_points_2[3,0]]), np.array([four_points_2[2,1],four_points_2[3,1]]), np.array([four_points_2[2,2],four_points_2[3,2]]), 'black',alpha=0.3) 
-
-            for k in range(4):
-                ax.plot3D(np.array([four_points_1[k,0],four_points_2[k,0]]), np.array([four_points_1[k,1],four_points_2[k,1]]), np.array([four_points_1[k,2],four_points_2[k,2]]), 'gray',alpha=0.3) 
-            '''
-
-    #for i in range(len(xx)):
-    #    for j in range(len(yy)):
-    #        ax.plot3D(np.array([xx[i,j],xx2[i,j]]), np.array([yy[i,j],yy2[i,j]]), np.array([0,zz2[i,j]]), 'black',alpha=0.3)
-
-
+    #Draw redline --- hardcoded :-(
+    ax.plot3D(np.array([xx[4,4],xx2[4,4]]), np.array([yy[4,4],yy2[4,4]]), np.array([0,zz2[4,4]]), 'red') 
+    ax.set_xlabel("$x$")
+    ax.set_ylabel("$y$")
+    ax.set_zlabel("$z$")
     plt.show()
     
+    ############################################################
+
+    
+    #PLOT XY PROJ - TOP VIEW
+    ############################################################
     fig = plt.figure()
     ax = fig.add_subplot(111)
 
@@ -281,7 +250,8 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
     ax.plot(np.array([0.8,0.8]), np.array([5.6,4]), 'black',ls="-.") 
     
 
-
+    #NB HARDCODED :-(
+    #xy coordinates of each point
     ax.annotate('A', xy=(0, 0), xytext=(-0.12, -0.12))
     ax.annotate('B', xy=(4, 0), xytext=(4+0.06, -0.12))
     ax.annotate('C', xy=(0, 4), xytext=(-0.12, 4))
@@ -298,23 +268,16 @@ def test(xx,yy,xx2,yy2,zz2,K=8):
     ax.annotate('N', xy=(0.8, 4), xytext=(0.8, 4-0.3))
     ax.set_xlabel("$x$")
     ax.set_ylabel("$y$")
+    plt.show()
+   
 
+    #---VOLUME OF EACH SUBBODY---
     v = np.array([2.73067,8.256,0.5333333,3.95062,0.505679,0.293926,5.952,0.5333333,0.341333,0.606815,0.316049,1.58025])
     print(np.sum(v))
 
-
-    #x1 = np.linspace(0,2,200)
-    #x2 = np.linspace(0,4,200)
-
-    #plt.plot(x1,2*x1,"b")
-    #plt.plot(x2,-0.5*x2 + 4,"r")
-
-    print(np.array([volume[4,0],volume[4,1],volume[4,2]]))
-    print((np.array([volume[5,0],volume[5,1],volume[5,2]])))
-    print((np.array([volume[6,0],volume[6,1],volume[6,2]])))
-    print((np.array([volume[7,0],volume[7,1],volume[7,2]])))
-    plt.show()
-   
+    ############################################################
+    
+    
  
 
 if __name__ == "__main__":
@@ -327,7 +290,7 @@ if __name__ == "__main__":
 
    zz2 = func_p(xx2,yy2)
 
-   test(xx,yy,xx2,yy2,zz2)
+   plot_figures(xx,yy,xx2,yy2,zz2)
   
    for i in range(xx.shape[0]):
        for j in range(yy.shape[1]):
