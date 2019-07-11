@@ -277,10 +277,29 @@ def plot_figures(xx,yy,xx2,yy2,zz2,K=8):
 
     ############################################################
     
+def plot_parametric_test():
+    plt3d = plt.figure().gca(projection='3d')
+    t = np.linspace(1,10,100)
+    x = -2*t
+    y = t
+    z = 4*t**2-4
+
+    ax = plt.gca()
+    ax.hold(True)
+    ax.plot3D(x, y, z, 'black')
+    ax.plot3D((x+2)+10,(y-1)+10,z,'red')
+    ax.scatter3D(-2,1,0)
+    ax.scatter3D(10,10,0)
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.show() 
+     
     
  
 
 if __name__ == "__main__":
+   plot_parametric_test()
+
    xx,yy = create_xy_1()
    print(xx)
    print(yy)
@@ -292,16 +311,27 @@ if __name__ == "__main__":
 
    plot_figures(xx,yy,xx2,yy2,zz2)
   
+   
+   #PLOTS THE DOTS (CREATE FILLED POLYGONS)???
    for i in range(xx.shape[0]):
        for j in range(yy.shape[1]):
            plt.plot(xx[i,j],yy[i,j],"bo")
            plt.plot(xx2[i,j],yy2[i,j],"ro")
 
+   x = np.array([xx[0,0],xx[0,-1],xx[-1,-1],xx[-1,0]])
+   y = np.array([yy[0,0],yy[0,-1],yy[-1,-1],yy[-1,0]])
+   x2 = np.array([xx2[0,0],xx2[0,-1],xx2[-1,-1],xx2[-1,0]])
+   y2 = np.array([yy2[0,0],yy2[0,-1],yy2[-1,-1],yy2[-1,0]])
    plt.show()
+   #plt.figure(figsize=(8, 8))
+   #plt.axis('equal')
+   plt.fill(x, y,"b",x2,y2,"r",alpha=0.2,edgecolor='black', linewidth=3)
+   plt.xlim(0,5.1)
+   plt.xlabel("$x$")
+   plt.ylabel("$y$")
+   plt.show() 
 
-   #point_plot()
-   
-   
+  
 
 
 
