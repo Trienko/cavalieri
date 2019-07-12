@@ -285,7 +285,7 @@ def plot_parametric_test():
     z = 4*t**2-4
 
     ax = plt.gca()
-    ax.hold(True)
+    ax.hold(True) 
     ax.plot3D(x, y, z, 'black')
     ax.plot3D((x+2)+10,(y-1)+10,z,'red')
     ax.scatter3D(-2,1,0)
@@ -294,12 +294,62 @@ def plot_parametric_test():
     plt.ylabel('y')
     plt.show() 
      
+def plot_parametric_test2():
+    plt3d = plt.figure().gca(projection='3d')
+    t = np.linspace(0,10,200)
+    x = t
+    y = t
+    z = np.sqrt(t)
+
+    ax = plt.gca()
+    ax.hold(True)
+    ax.plot3D(x, y, z, 'black')
+    #ax.plot3D((x+2)+10,(y-1)+10,z,'red')
+    #ax.scatter3D(-2,1,0)
+    #ax.scatter3D(10,10,0)
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.show() 
+
+def create_xy_2_sphere(xx,yy,p=True):
+
+    xx2 = np.zeros(xx.shape,dtype=float)
+    yy2 = np.zeros(xx.shape,dtype=float)
+
+    for k in range(xx.shape[0]):
+        for j in range(xx.shape[1]):
+            K = -4*xx[k,j]**2 + 8*xx[k,j]*yy[k,j] + 4*xx[k,j] - 4*yy[k,j]**2+4*yy[k,j] + 33
+            if p:
+               t = 0.25*(-2*xx[k,j]-2*yy[k,j] - 1 + np.sqrt(K)) 
+            else:
+               t = 0.25*(-2*xx[k,j]-2*yy[k,j] - 1 - np.sqrt(K)) 
+            xx2[k,j] = xx[k,j] + t
+            yy2[k,j] = yy[k,j] + t
     
- 
+    return xx2,yy2   
+
 
 if __name__ == "__main__":
-   plot_parametric_test()
+   xx,yy = create_xy_1(Nx = 10,Ny = 10,b=1,d=1)
+   xx2,yy2 = create_xy_2_sphere(xx,yy,p=True)
+   for i in range(xx.shape[0]):
+       for j in range(yy.shape[1]):
+           plt.plot(xx[i,j],yy[i,j],"bo")
+           plt.plot(xx2[i,j],yy2[i,j],"ro")
 
+   x = np.linspace(0,2,100)
+   y = np.sqrt(-x**2 -x+4)
+   y2 = np.sqrt(-x**2-(x-1)+4)
+   y3 = 0.5*(np.sqrt(17-4*x**2)-1)
+   y4 = 0.5*(np.sqrt(21-4*x**2)-1)
+   plt.plot(x,y)
+   plt.plot(x,y2)
+   plt.plot(x,y3)
+   plt.plot(x,y4)
+   plt.show()
+
+   plot_parametric_test2()
+   
    xx,yy = create_xy_1()
    print(xx)
    print(yy)
