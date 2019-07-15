@@ -408,6 +408,10 @@ def plot_volume2(xx,yy,xx2,yy2,t):
     ax.plot3D(np.array([0,1]),np.array([0,0]),np.array([0,0]),"black") 
     ax.plot3D(np.array([1,1]),np.array([1,0]),np.array([0,0]),"black",ls="--") 
     ax.plot3D(np.array([1,0]),np.array([1,1]),np.array([0,0]),"black",ls="--") 
+    ax.set_xlabel("$x$")
+    ax.set_ylabel("$y$")
+    ax.set_zlabel("$z$")
+    
     #ax.plot3D(np.array([1,0]),np.array([1,1]),np.array([0,0]),"black") 
     #ax.plot3D(np.array([0,1]),np.array([1,1]),np.array([0,0]),"black")
     #print(xx[k,j])
@@ -473,7 +477,37 @@ def plot_volume2(xx,yy,xx2,yy2,t):
 
     #ax.scatter3D(xx2.flatten(), yy2.flatten(), zz2.flatten() ,c="b",alpha=0.2); 
     #ax.scatter3D(xx.flatten(), yy.flatten(), np.zeros((len(yy.flatten()),),dtype=float) ,c="r",alpha=0.2); 
+       
+    x = np.linspace(x_v[2],x_v[1],100)
+    y1 = np.zeros((100,),dtype=float)
+    y2 = np.zeros((100,),dtype=float)
+
+    for k in range(len(x)):
+        if (x[k]>x_v[0]):
+           y1[k] = 0.5*(np.sqrt(17-4*x[k]**2)-1)
+        else:
+           y1[k] = np.sqrt(-x[k]**2 -x[k]+4)
+
+        if (x[k]>x_v[3]):
+           y2[k] = np.sqrt(-x[k]**2-(x[k]-1)+4)
+        else:
+           y2[k] = 0.5*(np.sqrt(21-4*x[k]**2)-1)
+
+    plt.fill_between(x, y1, y2, color='red',alpha=0.2)
+    plt.plot(x,y1,"black",alpha=0.2,linewidth=3)
+    plt.plot(x,y2,"black",alpha=0.2,linewidth=3)
     
+    x = np.array([xx[0,0],xx[0,-1],xx[-1,-1],xx[-1,0]])
+    y = np.array([yy[0,0],yy[0,-1],yy[-1,-1],yy[-1,0]])
+    #plt.figure(figsize=(8, 8))
+    #plt.axis('equal')
+    plt.fill(x, y,"b",alpha=0.2,edgecolor='black', linewidth=3)
+    plt.xlabel("$x$")
+    plt.ylabel("$y$")
+    plt.show()
+
+   
+
     '''
     #PLOT VOLUME
     ############################################################
@@ -633,20 +667,20 @@ if __name__ == "__main__":
            plt.plot(xx[i,j],yy[i,j],"bo")
            plt.plot(xx2[i,j],yy2[i,j],"ro")
 
-   x = np.linspace(0,2,100)
-   y = np.sqrt(-x**2 -x+4)
-   y2 = np.sqrt(-x**2-(x-1)+4)
-   y3 = 0.5*(np.sqrt(17-4*x**2)-1)
-   y4 = 0.5*(np.sqrt(21-4*x**2)-1)
-   plt.plot(x,y)
-   plt.plot(x,y2)
-   plt.plot(x,y3)
-   plt.plot(x,y4)
+   #x = np.linspace(0,2,100)
+   #y = np.sqrt(-x**2 -x+4)
+   #y2 = np.sqrt(-x**2-(x-1)+4)
+   #y3 = 0.5*(np.sqrt(17-4*x**2)-1)
+   #y4 = 0.5*(np.sqrt(21-4*x**2)-1)
+   #plt.plot(x,y)
+   #plt.plot(x,y2)
+   #plt.plot(x,y3)
+   #plt.plot(x,y4)
    plt.show()
    
    plot_volume2(xx,yy,xx2,yy2,t)
 
-   plot_parametric_test2()
+   #plot_parametric_test2()
    
    xx,yy = create_xy_1()
    print(xx)
