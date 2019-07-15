@@ -354,6 +354,13 @@ def plot_volume2(xx,yy,xx2,yy2,t):
     x_v = np.zeros((4,),dtype=float)
     y_v = np.zeros((4,),dtype=float)
 
+    t_max = t[t.shape[0]/2,t.shape[0]/2]
+    t_v = np.linspace(0,t_max,200)
+    x = xx[t.shape[0]/2,t.shape[0]/2] + t_v
+    y = yy[t.shape[0]/2,t.shape[0]/2] + t_v 
+    z = 0 + np.sqrt(t_v)
+    ax.plot3D(x,y,z,"red")        
+
     c = 0
 
     for k in n:
@@ -399,15 +406,64 @@ def plot_volume2(xx,yy,xx2,yy2,t):
 
     ax.plot3D(np.array([0,0]),np.array([0,1]),np.array([0,0]),"black") 
     ax.plot3D(np.array([0,1]),np.array([0,0]),np.array([0,0]),"black") 
-    ax.plot3D(np.array([1,1]),np.array([1,0]),np.array([0,0]),"black") 
-    ax.plot3D(np.array([1,0]),np.array([1,1]),np.array([0,0]),"black") 
+    ax.plot3D(np.array([1,1]),np.array([1,0]),np.array([0,0]),"black",ls="--") 
+    ax.plot3D(np.array([1,0]),np.array([1,1]),np.array([0,0]),"black",ls="--") 
     #ax.plot3D(np.array([1,0]),np.array([1,1]),np.array([0,0]),"black") 
     #ax.plot3D(np.array([0,1]),np.array([1,1]),np.array([0,0]),"black")
     #print(xx[k,j])
     #plt.zlim(0,2)
     plt.show()
     ############################################################
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+
+    for k in range(4):
+        if k == 0:
+           x = np.linspace(x_v[2],x_v[0],100)
+           y = np.sqrt(-x**2 -x+4)
+        elif k == 1:
+           x = np.linspace(x_v[0],x_v[1],100)
+           y = 0.5*(np.sqrt(17-4*x**2)-1)
+        elif k == 2:
+           x = np.linspace(x_v[3],x_v[1],100)
+           y = np.sqrt(-x**2-(x-1)+4)
+        else:
+           x = np.linspace(x_v[2],x_v[3],100)
+           y = 0.5*(np.sqrt(21-4*x**2)-1)
+        #z = np.sqrt(-x**2-y**2+4)
+        ax.plot(x,y,"black")
+
+    ax.plot(np.array([0,0]),np.array([0,1]),"black") 
+    ax.plot(np.array([0,1]),np.array([0,0]),"black") 
+    ax.plot(np.array([1,1]),np.array([1,0]),"black",ls="--") 
+    ax.plot(np.array([1,0]),np.array([1,1]),"black",ls="--")
+
+    ax.plot(np.array([0,x_v[3]]),np.array([0,y_v[3]]),"black")
+    ax.plot(np.array([0,x_v[2]]),np.array([1,y_v[2]]),"black")
+    ax.plot(np.array([1,x_v[1]]),np.array([0,y_v[1]]),"black")
+
+    ax.plot(np.array([x_v[2],x_v[2]]),np.array([y_v[2],1]),"black",ls = "-.")
+    ax.plot(np.array([1,1]),np.array([1,0.5*(np.sqrt(21-4*1**2)-1)]),"black",ls = "-.")
+    ax.plot(np.array([x_v[0],x_v[0]]),np.array([x_v[0]-1,0.5*(np.sqrt(21-4*x_v[0]**2)-1)]),"black",ls = "-.")
+    ax.plot(np.array([x_v[3],x_v[3]]),np.array([y_v[3],0.5*(np.sqrt(17-4*x_v[3]**2)-1)]),"black",ls = "-.")
+
+    ax.annotate('A', xy=(0, 0), xytext=(-0.05, -0.05))
+    ax.annotate('B', xy=(1, 0), xytext=(1+0.03, -0.03))
+    ax.annotate('C', xy=(0, 1), xytext=(-0.06, 1))
+    ax.annotate('D', xy=(1, 1), xytext=(1+0.03, 1-0.03))
+    ax.annotate('E', xy=(x_v[0], y_v[0]), xytext=(x_v[0]+0.03, y_v[0]-0.02))
+    ax.annotate('F', xy=(x_v[1], y_v[1]), xytext=(x_v[1], y_v[1]))
+    ax.annotate('G', xy=(x_v[2], y_v[2]), xytext=(x_v[2], y_v[2]))
+    ax.annotate('H', xy=(x_v[3], y_v[3]), xytext=(x_v[3], y_v[3]))
+
+    ax.annotate('I', xy=(x_v[2], 1), xytext=(x_v[2], 1-0.07))
+
+    ax.set_xlabel("$x$")
+    ax.set_ylabel("$y$")
     
+    
+    plt.show()
+
     #ax.scatter3D(xx2.flatten(), yy2.flatten(), zz2.flatten() ,c="b",alpha=0.2); 
     #ax.scatter3D(xx.flatten(), yy.flatten(), np.zeros((len(yy.flatten()),),dtype=float) ,c="r",alpha=0.2); 
     
