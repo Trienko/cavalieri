@@ -458,6 +458,13 @@ def plot_volume2(xx,yy,xx2,yy2,t):
 
     ax.annotate('I', xy=(x_v[2], 1), xytext=(x_v[2], 1-0.07))
 
+    ax.annotate('J', xy=(1, 0.5*(np.sqrt(21-4*1**2)-1)), xytext=(1, 0.5*(np.sqrt(21-4*1**2)-1)+0.03))
+    ax.annotate('K', xy=(1, np.sqrt(-1**2 -1+4)), xytext=(1+0.01, np.sqrt(-1**2 -1+4)+0.01))
+    ax.annotate('L', xy=(x_v[0], 0.5*(np.sqrt(21-4*x_v[0]**2)-1)), xytext=(x_v[0], 0.5*(np.sqrt(21-4*x_v[0]**2)-1)+0.03))
+    ax.annotate('M', xy=(x_v[0], x_v[0]-1), xytext=(x_v[0], x_v[0]-1-0.06))
+    ax.annotate('N', xy=(x_v[3], 0.5*(np.sqrt(17-4*x_v[3]**2)-1)), xytext=(x_v[3]+0.01, 0.5*(np.sqrt(17-4*x_v[3]**2)-1)))
+    #ax.annotate('K', xy=(1, 1), xytext=(x_v[2], 1-0.07))
+
     ax.set_xlabel("$x$")
     ax.set_ylabel("$y$")
     
