@@ -447,7 +447,7 @@ def plot_volume2(xx,yy,xx2,yy2,t):
     ax.plot(np.array([1,x_v[1]]),np.array([0,y_v[1]]),"black")
 
     ax.plot(np.array([x_v[2],x_v[2]]),np.array([y_v[2],1]),"black",ls = "-.")
-    ax.plot(np.array([1,1]),np.array([1,0.5*(np.sqrt(21-4*1**2)-1)]),"black",ls = "-.")
+    ax.plot(np.array([1,1]),np.array([1,np.sqrt(-1**2 -1+4)]),"black",ls = "-.")
     ax.plot(np.array([x_v[0],x_v[0]]),np.array([x_v[0]-1,0.5*(np.sqrt(21-4*x_v[0]**2)-1)]),"black",ls = "-.")
     ax.plot(np.array([x_v[3],x_v[3]]),np.array([y_v[3],0.5*(np.sqrt(17-4*x_v[3]**2)-1)]),"black",ls = "-.")
 
@@ -462,16 +462,17 @@ def plot_volume2(xx,yy,xx2,yy2,t):
 
     ax.annotate('I', xy=(x_v[2], 1), xytext=(x_v[2], 1-0.07))
 
-    ax.annotate('J', xy=(1, 0.5*(np.sqrt(21-4*1**2)-1)), xytext=(1, 0.5*(np.sqrt(21-4*1**2)-1)+0.03))
-    ax.annotate('K', xy=(1, np.sqrt(-1**2 -1+4)), xytext=(1+0.01, np.sqrt(-1**2 -1+4)+0.01))
-    ax.annotate('L', xy=(x_v[0], 0.5*(np.sqrt(21-4*x_v[0]**2)-1)), xytext=(x_v[0], 0.5*(np.sqrt(21-4*x_v[0]**2)-1)+0.03))
-    ax.annotate('M', xy=(x_v[0], x_v[0]-1), xytext=(x_v[0], x_v[0]-1-0.06))
-    ax.annotate('N', xy=(x_v[3], 0.5*(np.sqrt(17-4*x_v[3]**2)-1)), xytext=(x_v[3]+0.01, 0.5*(np.sqrt(17-4*x_v[3]**2)-1)))
+    #ax.annotate('J', xy=(1, 0.5*(np.sqrt(21-4*1**2)-1)), xytext=(1, 0.5*(np.sqrt(21-4*1**2)-1)+0.03))
+    ax.annotate('J', xy=(1, np.sqrt(-1**2 -1+4)), xytext=(1+0.01, np.sqrt(-1**2 -1+4)+0.01))
+    ax.annotate('K', xy=(x_v[0], 0.5*(np.sqrt(21-4*x_v[0]**2)-1)), xytext=(x_v[0], 0.5*(np.sqrt(21-4*x_v[0]**2)-1)+0.03))
+    ax.annotate('L', xy=(x_v[0], x_v[0]-1), xytext=(x_v[0], x_v[0]-1-0.06))
+    ax.annotate('M', xy=(x_v[3], 0.5*(np.sqrt(17-4*x_v[3]**2)-1)), xytext=(x_v[3]+0.01, 0.5*(np.sqrt(17-4*x_v[3]**2)-1)))
     #ax.annotate('K', xy=(1, 1), xytext=(x_v[2], 1-0.07))
 
     ax.set_xlabel("$x$")
     ax.set_ylabel("$y$")
     
+    print("M = ",str(x_v[0])+" "+str(x_v[0]-1))
     
     plt.show()
 
@@ -508,156 +509,7 @@ def plot_volume2(xx,yy,xx2,yy2,t):
 
    
 
-    '''
-    #PLOT VOLUME
-    ############################################################
-    volume = np.zeros((8,3),dtype=float)
-
-    volume[0,0] = xx[0,0]
-    volume[0,1] = yy[0,0]
-    volume[1,0] = xx[0,-1]
-    volume[1,1] = yy[0,-1]
-    volume[2,0] = xx[-1,0]
-    volume[2,1] = yy[-1,0]
-    volume[3,0] = xx[-1,-1]
-    volume[3,1] = yy[-1,-1]
-
-    volume[4,0] = xx2[0,0]
-    volume[4,1] = yy2[0,0]
-    volume[4,2] = zz2[0,0]
-    volume[5,0] = xx2[0,-1]
-    volume[5,1] = yy2[0,-1]
-    volume[5,2] = zz2[0,-1]
-    volume[6,0] = xx2[-1,0]
-    volume[6,1] = yy2[-1,0]
-    volume[6,2] = zz2[-1,0]
-    volume[7,0] = xx2[-1,-1]
-    volume[7,1] = yy2[-1,-1]
-    volume[7,2] = zz2[-1,-1]
-
-    ax.plot3D(np.array([volume[0,0],volume[1,0]]), np.array([volume[0,1],volume[1,1]]), np.array([volume[0,2],volume[1,2]]), 'black') 
-    ax.plot3D(np.array([volume[1,0],volume[3,0]]), np.array([volume[1,1],volume[3,1]]), np.array([volume[1,2],volume[3,2]]), 'black',ls="--") 
-    ax.plot3D(np.array([volume[3,0],volume[2,0]]), np.array([volume[3,1],volume[2,1]]), np.array([volume[3,2],volume[2,2]]), 'black',ls="--") 
-    ax.plot3D(np.array([volume[2,0],volume[0,0]]), np.array([volume[2,1],volume[0,1]]), np.array([volume[2,2],volume[0,2]]), 'black') 
-    ax.plot3D(np.array([volume[4,0],volume[5,0]]), np.array([volume[4,1],volume[5,1]]), np.array([volume[4,2],volume[5,2]]), 'black') 
-    ax.plot3D(np.array([volume[5,0],volume[7,0]]), np.array([volume[5,1],volume[7,1]]), np.array([volume[5,2],volume[7,2]]), 'black') 
-    ax.plot3D(np.array([volume[7,0],volume[6,0]]), np.array([volume[7,1],volume[6,1]]), np.array([volume[7,2],volume[6,2]]), 'black') 
-    ax.plot3D(np.array([volume[6,0],volume[4,0]]), np.array([volume[6,1],volume[4,1]]), np.array([volume[6,2],volume[4,2]]), 'black') 
-    ax.plot3D(np.array([volume[0,0],volume[4,0]]), np.array([volume[0,1],volume[4,1]]), np.array([volume[0,2],volume[4,2]]), 'black') 
-    ax.plot3D(np.array([volume[2,0],volume[6,0]]), np.array([volume[2,1],volume[6,1]]), np.array([volume[2,2],volume[6,2]]), 'black') 
-    ax.plot3D(np.array([volume[3,0],volume[7,0]]), np.array([volume[3,1],volume[7,1]]), np.array([volume[3,2],volume[7,2]]), 'black') 
-    ax.plot3D(np.array([volume[1,0],volume[5,0]]), np.array([volume[1,1],volume[5,1]]), np.array([volume[1,2],volume[5,2]]), 'black') 
-    ############################################################
-                          
     
-    #DRAW INTEGRATION STRIP
-    ############################################################
-    delta_x = yy[1,0] - yy[0,0]
-    delta_y = xx[0,1] - xx[0,0]
- 
-    four_points_1 = np.zeros((4,3),dtype=float)
-    four_points_2 = np.zeros((4,3),dtype=float)
-            
-    for k in range(4):
-        four_points_1[k,0] = xx[0,0]
-        four_points_1[k,1] = yy[0,0]
-        four_points_1[k,2] = 0 
-
-        four_points_2[k,0] = xx2[0,0]
-        four_points_2[k,1] = yy2[0,0]
-        four_points_2[k,2] = zz2[0,0]
-
-    for k in range(1,4):
-          if k == 1: 
-             four_points_1[k,0] += delta_x
-             four_points_2[k,0] += delta_x
-          if k == 2:
-             four_points_1[k,1] += delta_y
-             four_points_2[k,1] += delta_y
-          if k == 3:
-             four_points_1[k,0] += delta_x
-             four_points_2[k,0] += delta_x
-             four_points_1[k,1] += delta_y
-             four_points_2[k,1] += delta_y
-
-            #print(four_points_1)
-            #print(four_points_2)
-
-    Z = np.concatenate((four_points_1,four_points_2))  
-
-    # list of sides' polygons of figure
-    verts = [[Z[0],Z[1],Z[3],Z[2]],
-             [Z[4],Z[5],Z[7],Z[6]], 
-             [Z[0],Z[4],Z[5],Z[1]], 
-             [Z[1],Z[5],Z[7],Z[3]], 
-             [Z[2],Z[6],Z[7],Z[3]],
-             [Z[0],Z[2],Z[6],Z[4]]]
-
-    faces = Poly3DCollection(verts, linewidths=0.3, edgecolors='k',facecolors='cyan',alpha=0.3)
-    faces.set_facecolor((0,1,0,0.1))
-
-    ax.add_collection3d(faces)
-
-    #Draw redline --- hardcoded :-(
-    ax.plot3D(np.array([xx[4,4],xx2[4,4]]), np.array([yy[4,4],yy2[4,4]]), np.array([0,zz2[4,4]]), 'red') 
-    ax.set_xlabel("$x$")
-    ax.set_ylabel("$y$")
-    ax.set_zlabel("$z$")
-    plt.show()
-    
-    ############################################################
-
-    
-    #PLOT XY PROJ - TOP VIEW
-    ############################################################
-    fig = plt.figure()
-    ax = fig.add_subplot(111)
-
-    ax.plot(np.array([volume[0,0],volume[1,0]]), np.array([volume[0,1],volume[1,1]]), 'black',ls="--") 
-    ax.plot(np.array([volume[1,0],volume[3,0]]), np.array([volume[1,1],volume[3,1]]), 'black',ls="--") 
-    ax.plot(np.array([volume[3,0],volume[2,0]]), np.array([volume[3,1],volume[2,1]]), 'black',ls="--") 
-    ax.plot(np.array([volume[2,0],volume[0,0]]), np.array([volume[2,1],volume[0,1]]), 'black',ls="--") 
-    ax.plot(np.array([volume[4,0],volume[5,0]]), np.array([volume[4,1],volume[5,1]]), 'black') 
-    ax.plot(np.array([volume[5,0],volume[7,0]]), np.array([volume[5,1],volume[7,1]]), 'black') 
-    ax.plot(np.array([volume[7,0],volume[6,0]]), np.array([volume[7,1],volume[6,1]]), 'black') 
-    ax.plot(np.array([volume[6,0],volume[4,0]]), np.array([volume[6,1],volume[4,1]]), 'black') 
-    ax.plot(np.array([volume[0,0],volume[4,0]]), np.array([volume[0,1],volume[4,1]]), 'black') 
-    ax.plot(np.array([volume[2,0],volume[6,0]]), np.array([volume[2,1],volume[6,1]]), 'black') 
-    ax.plot(np.array([volume[3,0],volume[7,0]]), np.array([volume[3,1],volume[7,1]]), 'black') 
-    ax.plot(np.array([volume[1,0],volume[5,0]]), np.array([volume[1,1],volume[5,1]]), 'black') 
-    ax.plot(np.array([4.0/3.0,4.0/3.0]), np.array([16.0/3.0,8.0/3.0]), 'black',ls="-.") 
-    ax.plot(np.array([1.6,1.6]), np.array([4,0]), 'black',ls="-.") 
-    ax.plot(np.array([0.8,0.8]), np.array([5.6,4]), 'black',ls="-.") 
-    
-
-    #NB HARDCODED :-(
-    #xy coordinates of each point
-    ax.annotate('A', xy=(0, 0), xytext=(-0.12, -0.12))
-    ax.annotate('B', xy=(4, 0), xytext=(4+0.06, -0.12))
-    ax.annotate('C', xy=(0, 4), xytext=(-0.12, 4))
-    ax.annotate('D', xy=(4, 4), xytext=(4+0.03, 4))
-    ax.annotate('E', xy=(1.6, 3.2), xytext=(1.6+0.01, 3.2-0.31))
-    ax.annotate('F', xy=(4.8, 1.6), xytext=(4.8+0.03, 1.6))
-    ax.annotate('G', xy=(0.8, 5.6), xytext=(0.8, 5.6+0.03))
-    ax.annotate('H', xy=(4.0/3.0, 16.0/3.0), xytext=(4.0/3.0, 16.0/3.0+0.03))
-    ax.annotate('I', xy=(4.0/3.0, 4), xytext=(4.0/3.0+0.03, 4+0.04))
-    ax.annotate('J', xy=(4.0/3.0, 8.0/3.0), xytext=(4.0/3.0+0.06, 8.0/3.0-0.04))
-    ax.annotate('K', xy=(1.6, 4), xytext=(1.6, 4+0.04))
-    ax.annotate('L', xy=(4, 2), xytext=(4, 2+0.04))
-    ax.annotate('M', xy=(1.6, 0), xytext=(1.6+0.01, 0+0.05))
-    ax.annotate('N', xy=(0.8, 4), xytext=(0.8, 4-0.3))
-    ax.set_xlabel("$x$")
-    ax.set_ylabel("$y$")
-    plt.show()
-   
-
-    #---VOLUME OF EACH SUBBODY---
-    v = np.array([2.73067,8.256,0.5333333,3.95062,0.505679,0.293926,5.952,0.5333333,0.341333,0.606815,0.316049,1.58025])
-    print(np.sum(v))
-
-    ############################################################
-    '''
-
 
 if __name__ == "__main__":
    xx,yy = create_xy_1(Nx = 10,Ny = 10,b=1,d=1)
