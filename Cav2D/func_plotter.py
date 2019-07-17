@@ -464,9 +464,12 @@ def plot_volume2(xx,yy,xx2,yy2,t):
 
     #ax.annotate('J', xy=(1, 0.5*(np.sqrt(21-4*1**2)-1)), xytext=(1, 0.5*(np.sqrt(21-4*1**2)-1)+0.03))
     ax.annotate('J', xy=(1, np.sqrt(-1**2 -1+4)), xytext=(1+0.01, np.sqrt(-1**2 -1+4)+0.01))
+    print("J = ",str(np.sqrt(-1**2 -1+4)))
     ax.annotate('K', xy=(x_v[0], 0.5*(np.sqrt(21-4*x_v[0]**2)-1)), xytext=(x_v[0], 0.5*(np.sqrt(21-4*x_v[0]**2)-1)+0.03))
+    print("K = ",str(0.5*(np.sqrt(21-4*x_v[0]**2)-1)))
     ax.annotate('L', xy=(x_v[0], x_v[0]-1), xytext=(x_v[0], x_v[0]-1-0.06))
     ax.annotate('M', xy=(x_v[3], 0.5*(np.sqrt(17-4*x_v[3]**2)-1)), xytext=(x_v[3]+0.01, 0.5*(np.sqrt(17-4*x_v[3]**2)-1)))
+    print("M = ",str(0.5*(np.sqrt(17-4*x_v[3]**2)-1)))
     #ax.annotate('K', xy=(1, 1), xytext=(x_v[2], 1-0.07))
 
     ax.set_xlabel("$x$")
@@ -507,7 +510,7 @@ def plot_volume2(xx,yy,xx2,yy2,t):
     plt.ylabel("$y$")
     plt.show()
 
-    volume_v = np.array([0.266667,0.0844182,0.0625933,0.266667,0.0519962,0.071572,0.0234433,0.0128692,0.00547412,0.00547412,0.00921532,0.00912802])
+    volume_v = np.array([0.2666667,0.0844182,0.0625933,0.2666667,0.0519962,0.071572,0.0234433,0.0128692,0.00547412,0.00921532,0.00912802])
 
     print("v = "+str(np.sum(volume_v)))
     #v = 0.8695177800000001
