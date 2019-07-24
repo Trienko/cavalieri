@@ -515,10 +515,137 @@ def plot_volume2(xx,yy,xx2,yy2,t):
     print("v = "+str(np.sum(volume_v)))
     #v = 0.8695177800000001
    
+def d3(A,B):
+
+    return np.sqrt((A[0]-B[0])**2+(A[1]-B[1])**2+(A[2]-B[2])**2)
+
+def area_trap(a,b,c,d):
+    return np.sqrt(c**2 - 0.25*(((c**2-d**2)/(b-a)) + (b-a))**2)*(a+b)*0.5
+
+def area_heron(a,b,c):
+    S = 0.5*(a+b+c)
+    return np.sqrt(S*(S-a)*(S-b)*(S-c))
+
+
+def volume_of_prismatoid():
+    #base 1
+    #A, E, G, C
+
+    A = np.zeros((3,),dtype=float)
+    E = np.copy(A)
+    G = np.copy(A)
+    C = np.copy(A)
+
+    E[0] = 8.0/5.0
+    E[1] = 16.0/5.0
+    E[2] = -E[0]-E[1]+8
+
+    G[0] = 4.0/5.0
+    G[1] = 28.0/5.0
+    G[2] = -G[0]-G[1]+8
+
+    C[1] = 4.0
+
+    a = d3(G,C)
+    b = d3(A,E)
+    c = d3(G,E)
+    d = d3(C,A)
+
+    A1 = area_trap(a,b,c,d) 
+    print("A1 = ",A1)
+
+    #base 2
+    #QRD (middle cross-section)
+    Q = np.zeros((3,),dtype=float)
+    R = np.copy(Q)
+    D = np.copy(Q)
+
+    Q[0] = 2.0
+    
+    #2x-4 = -0.5x+4
+    R[0] = 8/2.5
+    R[1] = 2*R[0]-4
+    R[2] = -R[0]-R[1]+8
+
+    D[0] = 4.0
+    D[1] = 4.0
+    
+    a = d3(Q,R)
+    b = d3(R,D)
+    c = d3(D,Q)
+
+    A2 = area_heron(a,b,c)
+    print("A2 = ",A2)
+
+    #base 3
+    #BDF
+    B = np.zeros((3,),dtype=float)
+    D = np.copy(B)
+    F = np.copy(B)
+
+    B[0] = 4.0
+    
+    D[0] = 4.0
+    D[1] = 4.0
+
+    F[0] = 24.0/5.0
+    F[1] = 8.0/5.0
+    F[2] = -F[0]-F[1]+8
+
+    a = d3(B,F)
+    b = d3(F,D)
+    c = d3(B,D)
+
+    A3 = area_heron(a,b,c)
+    print("A3 = ",A3)
+
+    # vector calculations
+
+    a_v = F-B
+    b_v = D-B
+
+    print("a_v = ",a_v)
+    print("b_v = ",b_v)
+
+    c_v = np.zeros((3,),dtype=float)
+    c_v[0] = a_v[1]*b_v[2] - a_v[2]*b_v[1] 
+    c_v[1] = a_v[2]*b_v[0] - a_v[0]*b_v[2]
+    c_v[2] = a_v[0]*b_v[1] - a_v[1]*b_v[0]
+    
+    print("c_v = ",c_v)
+
+    #B + tc_v #equation for line normal to BFD
+    #z = 2x
+    #c_v = ', array([-6.4,  0. ,  3.2]))
+    #3.2t = 2(4-6.4t)
+    #t = 0.5
+    #x = 4 - 6.4(0.5) = 0.8
+    #y = 0
+    #z = 1.6 
+    
+    T = np.zeros((3,),dtype=float)
+    T[0] = 0.8
+    T[1] = 0
+    T[2] = 1.6
+
+    h = d3(B,T)
+    print("h = ",h)
+
+    V = (1.0/6.0)*h*(A1+4*A2+A3)
+    print("V = ",V)
+    V = (1.0/6.0)*4*(A1+4*A2+A3)
+    print("V = ",V)
+
 
     
 
+ 
+     
+        
+   
+
 if __name__ == "__main__":
+   volume_of_prismatoid()
    xx,yy = create_xy_1(Nx = 10,Ny = 10,b=1,d=1)
    xx2,yy2,t = create_xy_2_sphere(xx,yy,p=True)
    for i in range(xx.shape[0]):
