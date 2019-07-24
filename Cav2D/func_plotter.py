@@ -633,11 +633,41 @@ def volume_of_prismatoid():
 
     V = (1.0/6.0)*h*(A1+4*A2+A3)
     print("V = ",V)
-    V = (1.0/6.0)*4*(A1+4*A2+A3)
-    print("V = ",V)
+    
+    #TESTING NEW HEIGHT IDEA
+    
+    V1 = np.zeros((3,),dtype=float)
+    V2 = np.copy(V1)
+    V3 = np.copy(V2)
+    V4 = np.copy(V3)
 
+    V1[0] = h/2.0
+
+    V2[0] = h/2.0
+    V2[1] = 4.0
+
+    V3[0] = (h+4)/2.5
+    V3[1] = -0.5*V3[0]+4
+    V3[2] = -V3[0]-V3[1]+8
+
+    V4[0] = (h+6)/2.5
+    V4[1] = -0.5*V4[0]+6
+    V4[2] = -V4[0]-V4[1]+8
+
+    a = d3(V2,V4)
+    b = d3(V1,V3)
+    c = d3(V4,V3)
+    d = d3(V1,V2)
+  
+    A2a = area_trap(a,b,c,d) 
+    
+    Va = (1.0/6.0)*4*(A1+4*A2a+A3)
+    print("Va = ",Va)
 
     
+
+    
+
 
  
      
