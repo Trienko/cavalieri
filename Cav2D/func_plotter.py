@@ -220,8 +220,114 @@ def plot_figures(xx,yy,xx2,yy2,zz2,K=8):
 
     ax.add_collection3d(faces)
 
+    B = np.zeros((3,),dtype=float)
+    D = np.copy(B)
+    F = np.copy(B)
+
+    #BASE 1
+    #########################
+    B[0] = 4.0
+    
+    D[0] = 4.0
+    D[1] = 4.0
+
+    F[0] = 24.0/5.0
+    F[1] = 8.0/5.0
+    F[2] = -F[0]-F[1]+8
+
+    vrtx = [[B,D,F]]  
+ 
+    faces = Poly3DCollection(vrtx, linewidths=1, edgecolors='k',facecolors='cyan',alpha=0.3)
+    faces.set_facecolor((1,1,0,0.1))
+
+    ax.add_collection3d(faces)
+    #########################
+    
+    #BASE 2
+    #########################
+    V1 = np.zeros((3,),dtype=float)
+    V2 = np.copy(V1)
+    V3 = np.copy(V2)
+    V4 = np.copy(V3)
+
+    V1[0] = 2
+
+    V2[0] = 2
+    V2[1] = 4.0
+
+    #2x-4 = -0.5x+4
+    V3[0] = 8/2.5
+    V3[1] = 2*V3[0]-4
+    V3[2] = -V3[0]-V3[1]+8
+
+    #2x = -0.5x+6
+    V4[0] = (6)/2.5
+    V4[1] = -0.5*V4[0]+6
+    V4[2] = -V4[0]-V4[1]+8
+    
+    vrtx = [[V1,V2,V4,V3]]  
+ 
+    faces = Poly3DCollection(vrtx, linewidths=1, edgecolors='k',facecolors='red',alpha=0.3)
+    faces.set_facecolor((1,0,0,0.1))
+
+    ax.add_collection3d(faces)
+    #########################
+    #BASE 3
+    #########################
+
+    A = np.zeros((3,),dtype=float)
+    E = np.copy(A)
+    G = np.copy(A)
+    C = np.copy(A)
+
+    E[0] = 8.0/5.0
+    E[1] = 16.0/5.0
+    E[2] = -E[0]-E[1]+8
+
+    G[0] = 4.0/5.0
+    G[1] = 28.0/5.0
+    G[2] = -G[0]-G[1]+8
+
+    C[1] = 4.0
+    vrtx = [[A,E,G,C]]  
+ 
+    faces = Poly3DCollection(vrtx, linewidths=1, edgecolors='k',facecolors='red',alpha=0.3)
+    faces.set_facecolor((0,1,0,0.1))
+
+    ax.add_collection3d(faces)
+    
+    #########################
+
+
+
+    #import mpl_toolkits.mplot3d as a3
+    #import matplotlib.colors as colors
+    #import pylab as pl
+    #import scipy as sp
+
+    #ax = a3.Axes3D(pl.figure())
+    #for i in range(10000):
+    #    vtx = sp.rand(3,3)
+    #    tri = a3.art3d.Poly3DCollection([vtx])
+    #    tri.set_color(colors.rgb2hex(sp.rand(3)))
+    #    tri.set_edgecolor('k')
+    #    ax.add_collection3d(tri)
+    #pl.show()
+
     #Draw redline --- hardcoded :-(
     ax.plot3D(np.array([xx[4,4],xx2[4,4]]), np.array([yy[4,4],yy2[4,4]]), np.array([0,zz2[4,4]]), 'red') 
+
+    T = np.zeros((3,),dtype=float)
+    T[0] = 0.8
+    T[1] = 0
+    T[2] = 1.6
+
+    B = np.zeros((3,),dtype=float)
+    B[0] = 4.0
+    
+    ax.plot3D(np.array([T[0],B[0]]), np.array([T[1]+2,B[1]+2]), np.array([T[2],B[2]]), 'blue') 
+
+
     ax.set_xlabel("$x$")
     ax.set_ylabel("$y$")
     ax.set_zlabel("$z$")
@@ -526,7 +632,7 @@ def area_heron(a,b,c):
     S = 0.5*(a+b+c)
     return np.sqrt(S*(S-a)*(S-b)*(S-c))
 
-
+#COMPUTING THE VOLUME USING PRISMATOID EQUATION
 def volume_of_prismatoid():
     #base 1
     #A, E, G, C
@@ -661,8 +767,46 @@ def volume_of_prismatoid():
   
     A2a = area_trap(a,b,c,d) 
     
-    Va = (1.0/6.0)*4*(A1+4*A2a+A3)
+    Va = (1.0/6.0)*h*(A1+4*A2+A3)
     print("Va = ",Va)
+
+    #TESTING NEW NEW HEIGHT IDEA --- WORKED... IT IS  A PRISMATOID!!
+
+    #(4,0,0)
+    #(0.8,0,1.6)
+
+    #(2.4,0,0.8) --- Midway point 
+
+    V1 = np.zeros((3,),dtype=float)
+    V2 = np.copy(V1)
+    V3 = np.copy(V2)
+    V4 = np.copy(V3)
+
+    V1[0] = 2
+
+    V2[0] = 2
+    V2[1] = 4.0
+
+    #2x-4 = -0.5x+4
+    V3[0] = 8/2.5
+    V3[1] = 2*V3[0]-4
+    V3[2] = -V3[0]-V3[1]+8
+
+    #2x = -0.5x+6
+    V4[0] = (6)/2.5
+    V4[1] = -0.5*V4[0]+6
+    V4[2] = -V4[0]-V4[1]+8
+
+    a = d3(V2,V4)
+    b = d3(V1,V3)
+    c = d3(V4,V3)
+    d = d3(V1,V2)
+  
+    A2a = area_trap(a,b,c,d) 
+    
+    Va = (1.0/6.0)*h*(A1+4*A2a+A3)
+    print("Va = ",Va)
+
 
     
 
