@@ -3,6 +3,48 @@
 \usepackage{xfrac}
 \usepackage{textcomp}
 
+
+%MAKING THE CAVALIERI INTEGRAL NOTATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+%\let\DOTSI\relax % amsmath support for \dots
+\newcommand*{\cint}{%
+  \DOTSI
+  \mathop{%
+    \mathpalette\@LetterOnInt{\mathbf{c}}%
+  }%
+  \mkern-\thinmuskip % thin space is inserted between two \mathop
+  \int
+}
+\newcommand*{\@LetterOnInt}[2]{%
+  \sbox0{$#1\int\m@th$}%
+  \sbox2{$%
+    \ifx#1\displaystyle
+      \textstyle
+    \else
+      \scriptscriptstyle
+    \fi
+    #2%
+  \m@th$}%
+  \dimen@=.4\dimexpr\ht0+\dp0\relax
+  \ifdim\dimexpr\ht2+\dp2\relax>\dimen@
+    \sbox2{\resizebox*{!}{\dimen@}{\unhcopy2}}%
+  \fi
+  \dimen@=\wd0 %
+  \ifdim\wd2>\dimen@
+    \dimen@=\wd2 %
+  \fi
+  \rlap{\hbox to \dimen@{\hfil
+    $#1\vcenter{\copy2}\m@th$%
+  \hfil}}%
+  \ifdim\dimen@>\wd0 %
+    \kern.5\dimexpr\dimen@-\wd0\relax
+  \fi
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %% IF YOU HAVE FONTS INSTALLED
 %\usepackage{mtpro}
 %\usepackage{mathtime}
@@ -72,7 +114,7 @@ Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{fig13.eps}
-\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The figure also depicts the partition points $x_i^2$ as used in the Cavalieri sum (see Eq.~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The figure also depicts the partition points $x_i^1$ and $x_i^2$ as used in the Cavalieri sum (see Eq.~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
 \label{fig:caval2}
 \end{figure}
 
@@ -83,64 +125,60 @@ We can compute the area of $R$ as follows:
 \end{equation}
 
 \noindent
-However, the area of $R$ can also be determined via the Cavalieri integral:
+Alternatively, the area of $R$ can also be determined via the Cavalieri integral:
 \begin{equation}
 \label{eq:caval1}
 \int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1,
 \end{equation}
-with $\Delta x_i^1 = x_{i+1}^1 - x_i^1$. The partition points $(x_i^1)_{i=0}^{n}$ and $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Note that 
-$\Delta x_i^1$ and $f(x_i^2)$ can be interpreted as the width and the height of the $i$-th non-rectangular integration strip inscribing $R$. Their product, therefore, represents the 
-area of the aformentioned integration strip. The right hand side of Equation~\eqref{eq:caval1} can therefore be interpreted as the area which 
-is obtained 
+with $\Delta x_i^1 = x_{i+1}^1 - x_i^1$. Furthermore, the partition points $(x_i^1)_{i=0}^{n}$ and $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Let us review why this is in fact the case:
+\begin{itemize}
+ \item $\Delta x_i^1 = x_{i+1}^1 - x_i^1$ represents the width of a non-rectangular integration strip.
+ \item $f(x_i^2)$ represents the height of a non-rectangular integration strip.
+ \item $f(x_i^2)\Delta x_i^1$ represents the height of a non-rectangular integration strip (due to Cavalieri's principle).
+ \item The Cavalieri sum $\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1$, therefore, approximates the area of $R$.
+ \item In the limit the Cavalieri sum, therefore, approaches the area of $R$.
+\end{itemize}
 
+\noindent
+The Cavalieri integral is, however, hard to evaluate directly. Fortunately, it is easy to convert a Cavalieri integral into an equivalent Riemann integral:
+\begin{equation}
+\int_{a(y)}^{b(y)}f(x)\, dx = \int_{a}^{b} f\circ h(x)~dx, 
+\end{equation}
+with $a(0) = a$, $b(0)=b$ and $h = g^{-1}$. Furthermore, $g(x) = x - a\circ f(x) + a$.
 
-
-We can also compute the area of $R$ by summing together non-rectangular integration strips inscribing $R$.
-
-There, however, exists a more straightforward way do determine the area of $R$, i.e. we can sum together the area of non-rectangular integration strips inscribing $R$ instead of
-having to sum together the area of multiple rectangular integration strips. Moreover, the shape of the non-rectangular integration strips we should use is determined by the function $a(y)$. We can express this notion more formally as 
-follows, let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$.
-We are now able to construct the following sum (the lower Cavalieri sum):
-\begin{equation}
-\label{eq:cav_sum}
-\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
-\end{equation}
-The partition points $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Note that Eq.~\eqref{eq:cav_sum} approximates the area of $R$. In the limit Eq.~\eqref{eq:cav_sum} approaches 
-the Cavalieri integral:
-\begin{equation}
-\label{eq:caval1}
-\int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
-\end{equation}
-It is, however, quite hard to evaluate the above integral directly. Fortunately, it is easy to convert a Cavalieri integral into an equivalent Riemann or Riemann-Stieltjes 
-integral by using the transformation functions $h$ and $g$. Expressed mathematically:
-\begin{equation}
-\label{eq:main_cav}
-\int_{a(y)}^{b(y)}f(x)\,dx =\int_a^b f \circ h (x)\, dx = \int_{a'}^{b'} f(x) dg(x).
-\end{equation}
-We can calculate $g$ as follows:
-\begin{equation}
-g(x) = x - a\circ f(x) + a.
-\end{equation}
-Moreover, $h=g^{-1}$. We can now evaluate the Cavalieri integral by using its equivalent Riemann or Rieman-Stieltjes integral.
-If we use its Riemann equivalent we obtain:
+\noindent
+The area of $R$ can, therefore, also be computed as follows:
 \begin{equation}
 \int_{a(y)}^{b(y)}f(x)\, dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75.  
 \end{equation}
-If we use its Riemann-Stieltjes equivalent we obtain:
-\begin{equation}
-\int_{a(y)}^{b(y)}f(x)\, dx = \int_{a'}^{b'} f \, dg(x) = \int_{\frac{1}{2}}^2x\, d2x = 3.75.  
-\end{equation}
 
 \noindent
-Conversely, if $g$ is known (and not $a(y)$) and $g(a') = a$ then we can calculate $a(y)$ using the following \cite{grobler19}:
+Expressing \eqref{eq:caval1} in vector calculus notation
+
 \begin{equation}
-\label{eq:a_y}
-a(y) = f^{-1}(y) - g\circ f^{-1}(y) + g(a'). 
+\int_{a(y)}^{b(y)}f(x)\, dx =\cint_a^b f(x)~dx, 
 \end{equation}
-Eq.~\eqref{eq:a_y} allows us to transform a Riemann-Stieltjes integral into an equivalent Cavalieri integral. 
-Furthermore, this transformation enables us to assign a geometric interpretation to a Riemann-Stieltjes integral. The interpretation being:
-it represents the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals; all of them being translations of $a(y)$. Note,
-$b(y) = a(y) + (b-a)$.
+with $\mathbf{c}(t) = <c_x(t),c_y(t)>$ denoting a vector equation that passes through the origin and is a translation of $a(y)$. We can express $a(y)$ as $\mathbf{c}(t) + <a,0>$.
+Note that partition $x_i^1$ and $x_i^2$ are related to each other via: 
+\begin{equation}
+\label{eq:pat_rel}
+<x_i^2,f(x_i^2)> = <x_i^1,0> + <c_x(t),c_y(t)> 
+\end{equation}
+
+It follows from Eq.~\eqref{eq:pat_rel} that 
+\begin{equation}
+c_y(t) = f(x_i^1 + c_x(t)). 
+\end{equation}
+We can therefore express $t$ as a function of $x_i^1$. We can now compute $h(x_i^1) = x_i^1 + t(x_i^1)$.
+
+
+
+
+
+
+
+
+ 
 
 
 
