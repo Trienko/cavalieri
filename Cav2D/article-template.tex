@@ -57,13 +57,18 @@ to Cavalieri's principle. Note that in this article we use the non-standerdized 
 base and lateral edges that are non-linear and translations of one another.
 
 \section{Cavalieri Integral}
-In this section we define the Cavalieri integral \cite{ackermann12}. Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
+In this section we define the Cavalieri integral \cite{ackermann12}. 
+
+
+Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.3\textwidth]{fig12}
 %\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
 %\label{fig:ex1}
 %\end{figure}
+
+
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{fig13.eps}
@@ -72,12 +77,26 @@ In this section we define the Cavalieri integral \cite{ackermann12}. Let the reg
 \end{figure}
 
 \noindent
-The area of $R$ can be determined as follows if we employ the classical notion of integration:
+We can compute the area of $R$ as follows:
 \begin{equation}
 \int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
 \end{equation}
 
 \noindent
+However, the area of $R$ can also be determined via the Cavalieri integral:
+\begin{equation}
+\label{eq:caval1}
+\int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1,
+\end{equation}
+with $\Delta x_i^1 = x_{i+1}^1 - x_i^1$. The partition points $(x_i^1)_{i=0}^{n}$ and $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Note that 
+$\Delta x_i^1$ and $f(x_i^2)$ can be interpreted as the width and the height of the $i$-th non-rectangular integration strip inscribing $R$. Their product, therefore, represents the 
+area of the aformentioned integration strip. The right hand side of Equation~\eqref{eq:caval1} can therefore be interpreted as the area which 
+is obtained 
+
+
+
+We can also compute the area of $R$ by summing together non-rectangular integration strips inscribing $R$.
+
 There, however, exists a more straightforward way do determine the area of $R$, i.e. we can sum together the area of non-rectangular integration strips inscribing $R$ instead of
 having to sum together the area of multiple rectangular integration strips. Moreover, the shape of the non-rectangular integration strips we should use is determined by the function $a(y)$. We can express this notion more formally as 
 follows, let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$.
