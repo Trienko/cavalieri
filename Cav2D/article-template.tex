@@ -144,7 +144,8 @@ The Cavalieri integral is, however, hard to evaluate directly. Fortunately, it i
 \begin{equation}
 \int_{a(y)}^{b(y)}f(x)\, dx = \int_{a}^{b} f\circ h(x)~dx, 
 \end{equation}
-with $a(0) = a$, $b(0)=b$ and $h = g^{-1}$. Furthermore, $g(x) = x - a\circ f(x) + a$.
+with $a(0) = a$ and $b(0)=b$. The function $h$ is known as the transformation function and it maps $x_i^1\in[a,b]$ to $x_i^2\in[a',b']$. It can be constructed via the function $g(x) = x - a\circ f(x) + a$ as 
+$h=g^{-1}$.
 
 \noindent
 The area of $R$ can, therefore, also be computed as follows:
@@ -152,57 +153,50 @@ The area of $R$ can, therefore, also be computed as follows:
 \int_{a(y)}^{b(y)}f(x)\, dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75.  
 \end{equation}
 
-As will become apparent later on in the article extending the definition of the Cavalieri integral as it appears in ?? into $\mathbb{R}^3$ is problematic. However,
+\noindent
+Intersestingly, the definition in Eq.~\eqref{??} can also be formulated via vector calculus notation. As will become apparent later on in the article extending the definition of the Cavalieri integral as it appears in ?? into $\mathbb{R}^3$ is problematic. However,
 if the definition in ?? is first re-expressed in vector calculus notation then it becomes trivial to extend it into $\mathbb{R}^3$.
 
-Let $\mathbf{c}(t) = \left <c_x(t),c_y(t) \right>$ be the vector equation of $a(y)-a$. Note that, for every coordinate $(x_i^1,x_i^2) \in [a,b]  [a',b']$ there exists a unique $t\in\mathbb{R}$ such that
+\noindent
+Let $\mathbf{c}(t) = \left <c_x(t),c_y(t) \right>$ be the vector equation of $a(y)-a$. Note that, for every coordinate $(x_i^1,x_i^2) \in [a,b] \times [a',b']$ there exists a unique $t\in\mathbb{R}$ such that
 \begin{equation}
 \label{eq:pat_rel}
-\left <x_i^2,f(x_i^2) \right > = \left <x_i^1,0 \right> + \left<c_x(t),c_y(t) \right > 
+\left <x_i^2,f(x_i^2) \right > = \left <x_i^1,0 \right> + \left<c_x(t),c_y(t) \right >.
 \end{equation}
-Equation~\eqref{eq:pat_rel} can be rewritten as
+We can rewrite Equation~\eqref{eq:pat_rel} as
 \begin{equation}
 \label{eq:t_func}
-c_y(t) = f(x_i^1 + c_x(t)).
+c_y(t) = f(x_i^1 + c_x(t)),
 \end{equation}
-Equation~\eqref{eq:t_func} implies that $t$ can be expressed in terms of $x_i^1$. We can, therefore, calculate $h(x_i^1)$ using $t(x_i^1)$ via:
+which highlights the fact that $t$ is a function of $x_i^1$. If we substitute $t(x_i)$ into Equation~\ref{eq:pat_rel} we obtain
 \begin{equation}
 \label{eq:h_func}
-x_i^2 = h(x_i^1) = x_i^1 + c_x\circ t(x_i^1).
+x_i^2 = x_i^1 + c_x\circ t(x_i^1).
 \end{equation}
-Equation~\eqref{eq:h_func} is a trivial consequence of the definition of $h$ and Equation~\eqref{eq:pat_rel}.
+Note that Equation~\eqref{eq:h_func} is nothing more than the function $h$ expressed in terms of $t$, i.e. $x_i^2 = h(x_i^1) = x_i^1 + c_x\circ t(x_i^1)$.
+Equation~\eqref{eq:h_func} implies  
 
 
 
-
-and as such $t(x_i^1)$ can be used to determine $h(x_i^1)$.
-i.e. $t$ is a function 
-
-
-
-
-
-It is therefore possible to define $t$ in terms of $x_i^1$.  
-
-
-\noindent
-Expressing \eqref{eq:caval1} in vector calculus notation
-
-\begin{equation}
-\int_{a(y)}^{b(y)}f(x)\, dx =\cint_a^b f(x)~dx, 
-\end{equation}
-with $\mathbf{c}(t) = <c_x(t),c_y(t)>$ denoting a vector equation that passes through the origin and is a translation of $a(y)$. We can express $a(y)$ as $\mathbf{c}(t) + <a,0>$.
-Note that partition $x_i^1$ and $x_i^2$ are related to each other via: 
-\begin{equation}
-\label{eq:pat_rel}
-<x_i^2,f(x_i^2)> = <x_i^1,0> + <c_x(t),c_y(t)> 
-\end{equation}
-
-It follows from Eq.~\eqref{eq:pat_rel} that 
-\begin{equation}
-c_y(t) = f(x_i^1 + c_x(t)). 
-\end{equation}
-We can therefore express $t$ as a function of $x_i^1$. We can now compute $h(x_i^1) = x_i^1 + t(x_i^1)$.
+% and as such $t(x_i^1)$ can be used to determine $h(x_i^1)$.
+% i.e. $t$ is a function 
+% It is therefore possible to define $t$ in terms of $x_i^1$.  
+% \noindent
+% Expressing \eqref{eq:caval1} in vector calculus notation
+% \begin{equation}
+% \int_{a(y)}^{b(y)}f(x)\, dx =\cint_a^b f(x)~dx, 
+% \end{equation}
+% with $\mathbf{c}(t) = <c_x(t),c_y(t)>$ denoting a vector equation that passes through the origin and is a translation of $a(y)$. We can express $a(y)$ as $\mathbf{c}(t) + <a,0>$.
+% Note that partition $x_i^1$ and $x_i^2$ are related to each other via: 
+% \begin{equation}
+% \label{eq:pat_rel}
+% <x_i^2,f(x_i^2)> = <x_i^1,0> + <c_x(t),c_y(t)> 
+% \end{equation}
+% It follows from Eq.~\eqref{eq:pat_rel} that 
+% \begin{equation}
+% c_y(t) = f(x_i^1 + c_x(t)). 
+% \end{equation}
+% We can therefore express $t$ as a function of $x_i^1$. We can now compute $h(x_i^1) = x_i^1 + t(x_i^1)$.
 
 
 
