@@ -147,6 +147,54 @@ The Cavalieri integral is, however, hard to evaluate directly. Fortunately, it i
 with $a(0) = a$ and $b(0)=b$. The function $h$ is known as the transformation function and it maps $x_i^1\in[a,b]$ to $x_i^2\in[a',b']$. It can be constructed via the function $g(x) = x - a\circ f(x) + a$ as 
 $h=g^{-1}$.
 
+Let $\mathbf{c}(t) = \left <c_x(t),c_y(t) \right>$ be the vector equation of $a(y)-a$. The notation which we have been using to denote a Cavalieri integral up until now 
+in the paper was first proposed by Ackermann. Going forward in this paper, however, we propose making use of the following alternative notation:
+\begin{equation}
+\label{eq:new_def_cavalieri}
+\int \limits_{\mathcal{C}} f(x)~dx := \int_{a(y)}^{b(y)}f(x)~dx,
+\end{equation}
+with $\mathcal{C} = \{\mathbf{c}(t),[a,b]\}$. Note that $\left<a,0\right> + \mathbf{c}(t)$ and $\left<b,0\right> + \mathbf{c}(t)$ are the vector equations of $a(y)$ and 
+$b(y)$. The reason for this change in notation will become clear to the reader at a later stage. In turns out, that we can use $\mathbf{c}(t)$ to construct $h(x)$ via:
+\begin{equation}
+\label{eq:h_func}
+x_i^2 = h(x_i^1) = x_i^1 + c_x\circ t(x_i^1).
+\end{equation}
+
+\noindent
+We will now show that this is indeed the case. Note that, for every coordinate $(x_i^1,x_i^2) \in [a,b] \times [a',b']$ there exists a unique $t\in\mathbb{R}$ such that
+\begin{equation}
+\label{eq:pat_rel}
+\left <x_i^2,f(x_i^2) \right > = \left <x_i^1,0 \right> + \left<c_x(t),c_y(t) \right >.
+\end{equation}
+We can rewrite Equation~\eqref{eq:pat_rel} as
+\begin{equation}
+\label{eq:t_func}
+c_y(t) = f(x_i^1 + c_x(t)).
+\end{equation}
+We can now solve for $t$ in Equation~\eqref{eq:t_func} in terms of $x_i^1$. If we substitute the solution $t(x_i)$ into Equation~\ref{eq:pat_rel} we obtain Equation~\ref{eq:h_func}.
+
+
+
+
+In turns out that $h$ can be constructed 
+
+
+
+
+as the reader progresses through the paper. As will become apparent later on in this paper defining your Cavalieri integral in terms of $\mathbf{c}(t)$ instead of 
+$a(y)$ makes it trivial to extend its defintion into $\mathbb{R}^3$.
+
+
+
+In Equation~\eqref{eq:new_def_cavalieri}, we denote the $\{\mathbf{c}(t),[a,b]\}$ via $\mathcal{C}$. Furthermore, $\mathbf{c}(t)$ denotes the vector equation of 
+$a(y)-a$.
+
+
+
+
+
+an alternative notation
+
 \noindent
 The area of $R$ can, therefore, also be computed as follows:
 \begin{equation}
@@ -155,10 +203,10 @@ The area of $R$ can, therefore, also be computed as follows:
 
 \noindent
 Intersestingly, the definition in Eq.~\eqref{??} can also be formulated via vector calculus notation. As will become apparent later on in the article extending the definition of the Cavalieri integral as it appears in ?? into $\mathbb{R}^3$ is problematic. However,
-if the definition in ?? is first re-expressed in vector calculus notation then it becomes trivial to extend it into $\mathbb{R}^3$.
+if the definition in ?? is first re-expressed in vector calculus notation then it becomes trivial to extend it into $\mathbb{R}^3$.\\
 
 \noindent
-Let $\mathbf{c}(t) = \left <c_x(t),c_y(t) \right>$ be the vector equation of $a(y)-a$. Note that, for every coordinate $(x_i^1,x_i^2) \in [a,b] \times [a',b']$ there exists a unique $t\in\mathbb{R}$ such that
+We will now show that this is indeed the case. Note that, for every coordinate $(x_i^1,x_i^2) \in [a,b] \times [a',b']$ there exists a unique $t\in\mathbb{R}$ such that
 \begin{equation}
 \label{eq:pat_rel}
 \left <x_i^2,f(x_i^2) \right > = \left <x_i^1,0 \right> + \left<c_x(t),c_y(t) \right >.
@@ -166,14 +214,22 @@ Let $\mathbf{c}(t) = \left <c_x(t),c_y(t) \right>$ be the vector equation of $a(
 We can rewrite Equation~\eqref{eq:pat_rel} as
 \begin{equation}
 \label{eq:t_func}
-c_y(t) = f(x_i^1 + c_x(t)),
+c_y(t) = f(x_i^1 + c_x(t)).
 \end{equation}
-which highlights the fact that $t$ is a function of $x_i^1$. If we substitute $t(x_i)$ into Equation~\ref{eq:pat_rel} we obtain
+We can now solve for $t$ in Equation~\eqref{eq:t_func} in terms of $x_i^1$. If we substitute the solution $t(x_i)$ into Equation~\ref{eq:pat_rel} we obtain
 \begin{equation}
 \label{eq:h_func}
 x_i^2 = x_i^1 + c_x\circ t(x_i^1).
 \end{equation}
 Note that Equation~\eqref{eq:h_func} is nothing more than the function $h$ expressed in terms of $t$, i.e. $x_i^2 = h(x_i^1) = x_i^1 + c_x\circ t(x_i^1)$.
+We can, therefore compute $h(x)$ from $\mathbf{c}(t)$ and as such we can can define the Cavalieri integral in terms of $\mathbf{c}(t)$ instead of $a(y)$. In light 
+of this observation we propose the following alternative notation to denote a Cavalieri integral 
+\begin{equation}
+\int  
+\end{equation}
+
+
+
 Equation~\eqref{eq:h_func} implies  
 
 
