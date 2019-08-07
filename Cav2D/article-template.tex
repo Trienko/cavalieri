@@ -197,10 +197,34 @@ In the case of $R$ we have that $\mathbf{c}(t) = \left<-\frac{1}{2} t,\frac{1}{2
 $t(x_i^1) = x_i^1$. If we now substitute our solution $t(x_i^1)$ into Eq we obtain, as required, $h(x_i^1) = \frac{1}{2}x_i^2$. This result, therefore, validates Eq ??.
 
 \section{Two Dimensional Cavalieri Integral}
-Let $\mathcal{S}$ be the solid which is bounded by the planes $f(x,y)=-x-y+8$, $2x$, $2(x-4)$, $y$, $y-4$ as well as the $xy$-plane. Solid $\mathcal{S}$ is depicted 
+Let $\mathcal{S}$ be the solid which is bounded by the planes $f(x,y)=-x-y+8$, $2x$, $2(x-4)$, $y$, $y-4$ and the $xy$-plane. Solid $\mathcal{S}$ is depicted 
 in Figure~\ref{fig:prismatoid}, Figure~\ref{fig:prismatoid_real} and Figure~\ref{fig:prismatoid_solid}. Solid $\mathcal{S}$ is a prismatoid, since all of its 
-vertices lie in two parallel planes. Furthermore, all of its lateral faces are trapezoids or triangles. The volume of $S$ can easily be computed using the 
-volume equation of a prismatoid. The details of this computation is described in the caption of Figure~\ref{fig:prismatoid}.
+vertices lie in two parallel planes. Furthermore, all of its lateral faces are trapezoids or triangles. The volume of $\mathcal{S}$, $V_{\mathcal{S}}$, can easily be computed using the 
+volume equation of a prismatoid. The details of this computation is described in the caption of Figure~\ref{fig:prismatoid}. According to the prismatoid volume 
+equation $V_{\mathcal{S}}=25.6$.
+
+Note that $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ is the line of intersection between the planes $2x$ and $y$. Furthermore, the line 
+$\mathbf{c}(t)$ passes through the origin. The line $\mathbf{c}(t)$ is depicted and labelled in Figure~\ref{fig:prismatoid_solid}. Let 
+\begin{equation}
+R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber
+\end{equation}
+and
+\begin{equation}
+S = \{(x,y)\in\mathbb{R}^2|-\sfrac{1}{3}y+\sfrac{8}{3}\geq x\geq -\sfrac{1}{3}y+\sfrac{16}{3}, \sfrac{1}{2} x + 4\geq y \geq \sfrac{1}{2} x + 6 \}. \nonumber
+\end{equation}
+The region $S$ and $R$ is depicted in Figure~\ref{fig:prismatoid_solid} and Figure~\ref{fig:prismatoid_regions}. Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_i^1)\in R$ at which $\mathbf{c}(t) + \left <x_i^1,y_i^2,0 \right >$ intersects the 
+$xy$-plane to the $xy$--coordinate $(x_i^2,y_i^2)\in S$ at which $\mathbf{c}(t) + \left <x_i^1,y_i^2,0 \right >$ intersects $f(x,y)$. 
+
+
+
+
+$R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\}$
+and $S = \{(x,y)\in\mathbb{R}^2|-\sfrac{1}{3}y+\sfrac{8}{3}\geq x\leq -\sfrac{1}{3}y+\sfrac{16}{3} \}$.
+
+
+
+The line $\mathbf{c}(t)$  is depicted and labelled in 
+
 
 \begin{figure}[htb]
 \centering
@@ -227,28 +251,28 @@ volume equation of a prismatoid. The details of this computation is described in
 \centering
 \includegraphics[width=0.75\textwidth]{prismatoid_regions.pdf}
 \caption{xx}
-\label{fig:prismatoid_solid}
+\label{fig:prismatoid_regions}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{prismatoid_xy.pdf}
 \caption{xx}
-\label{fig:prismatoid_solid}
+\label{fig:prismatoid_xy}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{sphere_solid.pdf}
 \caption{xx}
-\label{fig:prismatoid_solid}
+\label{fig:sphere_solid}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{sphere_regions.pdf}
 \caption{xx}
-\label{fig:prismatoid_solid}
+\label{fig:sphere_regions}
 \end{figure}
 
 \begin{figure}[htb]
