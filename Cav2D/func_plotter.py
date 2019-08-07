@@ -397,7 +397,7 @@ def plot_paper_figure(xx,yy,xx2,yy2,zz2,K=8):
     z = -1*yy_new -1*xx_new + K
 
     plt3d = plt.figure().gca(projection='3d')
-    plt3d.plot_surface(xx2, yy2, zz2, alpha=0.2)
+    plt3d.plot_surface(xx2, yy2, zz2, color="red",alpha=0.2)
 
     #plt3d.plot_surface(xx_new, yy_new, z, alpha=0.2)
 
@@ -435,15 +435,15 @@ def plot_paper_figure(xx,yy,xx2,yy2,zz2,K=8):
     volume[7,2] = zz2[-1,-1]
 
     ax.plot3D(np.array([volume[0,0],volume[1,0]]), np.array([volume[0,1],volume[1,1]]), np.array([volume[0,2],volume[1,2]]), 'black') 
-    ax.plot3D(np.array([volume[1,0],volume[3,0]]), np.array([volume[1,1],volume[3,1]]), np.array([volume[1,2],volume[3,2]]), 'black',ls="--") 
+    ax.plot3D(np.array([volume[1,0],volume[3,0]]), np.array([volume[1,1],volume[3,1]]), np.array([volume[1,2],volume[3,2]]), 'black') 
     ax.plot3D(np.array([volume[3,0],volume[2,0]]), np.array([volume[3,1],volume[2,1]]), np.array([volume[3,2],volume[2,2]]), 'black',ls="--") 
-    ax.plot3D(np.array([volume[2,0],volume[0,0]]), np.array([volume[2,1],volume[0,1]]), np.array([volume[2,2],volume[0,2]]), 'black') 
+    ax.plot3D(np.array([volume[2,0],volume[0,0]]), np.array([volume[2,1],volume[0,1]]), np.array([volume[2,2],volume[0,2]]), 'black',ls="--") 
     ax.plot3D(np.array([volume[4,0],volume[5,0]]), np.array([volume[4,1],volume[5,1]]), np.array([volume[4,2],volume[5,2]]), 'black') 
     ax.plot3D(np.array([volume[5,0],volume[7,0]]), np.array([volume[5,1],volume[7,1]]), np.array([volume[5,2],volume[7,2]]), 'black') 
     ax.plot3D(np.array([volume[7,0],volume[6,0]]), np.array([volume[7,1],volume[6,1]]), np.array([volume[7,2],volume[6,2]]), 'black') 
     ax.plot3D(np.array([volume[6,0],volume[4,0]]), np.array([volume[6,1],volume[4,1]]), np.array([volume[6,2],volume[4,2]]), 'black') 
     ax.plot3D(np.array([volume[0,0],volume[4,0]]), np.array([volume[0,1],volume[4,1]]), np.array([volume[0,2],volume[4,2]]), 'black') 
-    ax.plot3D(np.array([volume[2,0],volume[6,0]]), np.array([volume[2,1],volume[6,1]]), np.array([volume[2,2],volume[6,2]]), 'black') 
+    ax.plot3D(np.array([volume[2,0],volume[6,0]]), np.array([volume[2,1],volume[6,1]]), np.array([volume[2,2],volume[6,2]]), 'black',ls="--") 
     ax.plot3D(np.array([volume[3,0],volume[7,0]]), np.array([volume[3,1],volume[7,1]]), np.array([volume[3,2],volume[7,2]]), 'black') 
     ax.plot3D(np.array([volume[1,0],volume[5,0]]), np.array([volume[1,1],volume[5,1]]), np.array([volume[1,2],volume[5,2]]), 'black') 
     ############################################################
@@ -595,6 +595,12 @@ def plot_paper_figure(xx,yy,xx2,yy2,zz2,K=8):
     #Draw redline --- hardcoded :-(
     ax.plot3D(np.array([xx[0,0],xx2[0,0]]), np.array([yy[0,0],yy2[0,0]]), np.array([0,zz2[0,0]]), 'red',lw=2) 
     ax.plot3D(np.array([xx2[0,0],xx2[0,0]]), np.array([yy2[0,0],yy2[0,0]]), np.array([0,zz2[0,0]]), 'red',ls="--") 
+
+    Ce = np.zeros((3,))
+
+    Ce[0] = (xx[0,0]+xx2[0,0])/2.0
+    Ce[1] = (yy[0,0]+yy2[0,0])/2.0
+    Ce[2] = zz2[0,0]/2.0
     
     ax.text(-1.1, 0, 0, r"$(x_i^1,y_i^1)$", "y")
 
@@ -605,6 +611,7 @@ def plot_paper_figure(xx,yy,xx2,yy2,zz2,K=8):
     ax.text(0, -0.6, 0, r"$\Delta x_i^1$", "x")
     ax.text(0.4, 0.3, 0, r"$\Delta y_i^1$", "y")
 
+    ax.text(Ce[0],Ce[1],Ce[2],r"$\mathbf{c}(t)$","x")
 
     ax.text(2, 2, 0, r"$R$", "x")
     ax.text(2.9, 3.2, 0, r"$S$", "x")
@@ -784,15 +791,15 @@ def plot_prismatoid(xx,yy,xx2,yy2,zz2,K=8):
     volume[7,2] = zz2[-1,-1]
 
     ax.plot3D(np.array([volume[0,0],volume[1,0]]), np.array([volume[0,1],volume[1,1]]), np.array([volume[0,2],volume[1,2]]), 'black') 
-    ax.plot3D(np.array([volume[1,0],volume[3,0]]), np.array([volume[1,1],volume[3,1]]), np.array([volume[1,2],volume[3,2]]), 'black',ls="--") 
+    ax.plot3D(np.array([volume[1,0],volume[3,0]]), np.array([volume[1,1],volume[3,1]]), np.array([volume[1,2],volume[3,2]]), 'black') 
     ax.plot3D(np.array([volume[3,0],volume[2,0]]), np.array([volume[3,1],volume[2,1]]), np.array([volume[3,2],volume[2,2]]), 'black',ls="--") 
-    ax.plot3D(np.array([volume[2,0],volume[0,0]]), np.array([volume[2,1],volume[0,1]]), np.array([volume[2,2],volume[0,2]]), 'black') 
+    ax.plot3D(np.array([volume[2,0],volume[0,0]]), np.array([volume[2,1],volume[0,1]]), np.array([volume[2,2],volume[0,2]]), 'black',ls="--") 
     ax.plot3D(np.array([volume[4,0],volume[5,0]]), np.array([volume[4,1],volume[5,1]]), np.array([volume[4,2],volume[5,2]]), 'black') 
     ax.plot3D(np.array([volume[5,0],volume[7,0]]), np.array([volume[5,1],volume[7,1]]), np.array([volume[5,2],volume[7,2]]), 'black') 
     ax.plot3D(np.array([volume[7,0],volume[6,0]]), np.array([volume[7,1],volume[6,1]]), np.array([volume[7,2],volume[6,2]]), 'black') 
     ax.plot3D(np.array([volume[6,0],volume[4,0]]), np.array([volume[6,1],volume[4,1]]), np.array([volume[6,2],volume[4,2]]), 'black') 
     ax.plot3D(np.array([volume[0,0],volume[4,0]]), np.array([volume[0,1],volume[4,1]]), np.array([volume[0,2],volume[4,2]]), 'black') 
-    ax.plot3D(np.array([volume[2,0],volume[6,0]]), np.array([volume[2,1],volume[6,1]]), np.array([volume[2,2],volume[6,2]]), 'black') 
+    ax.plot3D(np.array([volume[2,0],volume[6,0]]), np.array([volume[2,1],volume[6,1]]), np.array([volume[2,2],volume[6,2]]), 'black',ls="--") 
     ax.plot3D(np.array([volume[3,0],volume[7,0]]), np.array([volume[3,1],volume[7,1]]), np.array([volume[3,2],volume[7,2]]), 'black') 
     ax.plot3D(np.array([volume[1,0],volume[5,0]]), np.array([volume[1,1],volume[5,1]]), np.array([volume[1,2],volume[5,2]]), 'black') 
     ############################################################
@@ -863,7 +870,7 @@ def plot_prismatoid(xx,yy,xx2,yy2,zz2,K=8):
     vrtx = [[B,D,F]]  
  
     faces = Poly3DCollection(vrtx, linewidths=1, edgecolors='k',facecolors='cyan',alpha=0.3)
-    faces.set_facecolor((1,1,0,0.1))
+    faces.set_facecolor((0,1,0,0.1))
 
     ax.add_collection3d(faces)
     #########################
@@ -893,7 +900,7 @@ def plot_prismatoid(xx,yy,xx2,yy2,zz2,K=8):
     vrtx = [[V1,V2,V4,V3]]  
  
     faces = Poly3DCollection(vrtx, linewidths=2, edgecolors='k',facecolors='red',alpha=0.3)
-    faces.set_facecolor((1,0,0,0.1))
+    faces.set_facecolor((0,1,0,0.1))
 
     ax.add_collection3d(faces)
     #########################
@@ -952,7 +959,9 @@ def plot_prismatoid(xx,yy,xx2,yy2,zz2,K=8):
     
     #ax.plot3D(np.array([T[0],B[0]]), np.array([T[1]+2,B[1]+2]), np.array([T[2],B[2]]), 'blue') 
 
-
+    ax.set_xlim([-1,5])
+    ax.set_ylim([-1,5])
+    
     ax.set_xlabel("$x$")
     ax.set_ylabel("$y$")
     ax.set_zlabel("$z$")
@@ -1077,7 +1086,7 @@ def plot_volume2(xx,yy,xx2,yy2,t):
     z = np.sqrt(-xx2**2-yy2**2+4)
 
     plt3d = plt.figure().gca(projection='3d')
-    plt3d.plot_surface(xx2, yy2, z, alpha=0.2)
+    plt3d.plot_surface(xx2, yy2, z, color="red", alpha=0.2)
 
     ax = plt.gca()
     ax.hold(True)
@@ -1092,7 +1101,7 @@ def plot_volume2(xx,yy,xx2,yy2,t):
     x = xx[t.shape[0]/2,t.shape[0]/2] + t_v
     y = yy[t.shape[0]/2,t.shape[0]/2] + t_v 
     z = 0 + np.sqrt(t_v)
-    ax.plot3D(x,y,z,"red")        
+    #ax.plot3D(x,y,z,"red")        
 
     c = 0
 
@@ -1109,9 +1118,12 @@ def plot_volume2(xx,yy,xx2,yy2,t):
             print(y[-1])
             x_v[c] = x[-1]
             y_v[c] = y[-1]
-            c = c+1   
-            ax.plot3D(x,y,z,"black")
-    
+            c = c+1 
+            if ((k == -1) and (j == 0)):
+               ax.plot3D(x,y,z,"black",ls="--")
+            else:        
+               ax.plot3D(x,y,z,"black")
+            
     #1.1861406616345072
     #1.1861406616345072 A - 0
     #1.6861406616345072
@@ -1137,9 +1149,9 @@ def plot_volume2(xx,yy,xx2,yy2,t):
         z = np.sqrt(-x**2-y**2+4)
         ax.plot3D(x,y,z,"black")
 
-    ax.plot3D(np.array([0,0]),np.array([0,1]),np.array([0,0]),"black") 
+    ax.plot3D(np.array([0,0]),np.array([0,1]),np.array([0,0]),"black",ls="--") 
     ax.plot3D(np.array([0,1]),np.array([0,0]),np.array([0,0]),"black") 
-    ax.plot3D(np.array([1,1]),np.array([1,0]),np.array([0,0]),"black",ls="--") 
+    ax.plot3D(np.array([1,1]),np.array([1,0]),np.array([0,0]),"black") 
     ax.plot3D(np.array([1,0]),np.array([1,1]),np.array([0,0]),"black",ls="--") 
     ax.set_xlabel("$x$")
     ax.set_ylabel("$y$")
@@ -1239,6 +1251,14 @@ def plot_volume2(xx,yy,xx2,yy2,t):
     #plt.figure(figsize=(8, 8))
     #plt.axis('equal')
     plt.fill(x, y,"b",alpha=0.2,edgecolor='black', linewidth=3)
+
+    plt.annotate('$R-(x_i^1,y_i^1)$', xy=(0.5, 0.5), xytext=(0.4, 0.4))
+    plt.scatter(0.5,0.5,color="b",s=30, marker="o",alpha=0.8)
+    plt.annotate('$S-(x_i^2,y_i^2)$', xy=(1.3, 1.3), xytext=(1.18, 1.35))
+    plt.scatter(1.25,1.3,color="r",s=30, marker="o",alpha=0.8)
+    plt.annotate('$T$', xy=(0.8, 0.9), xytext=(0.9, 1))
+    plt.arrow(0.55, 0.55, 0.64, 0.68,width=0.001,head_width=0.025)  
+    
     plt.xlabel("$x$")
     plt.ylabel("$y$")
     plt.show()
@@ -1498,6 +1518,18 @@ if __name__ == "__main__":
    #plt.figure(figsize=(8, 8))
    #plt.axis('equal')
    plt.fill(x, y,"b",x2,y2,"r",alpha=0.2,edgecolor='black', linewidth=3)
+
+   plt.annotate('$R-(x_i^1,y_i^1)$', xy=(2, 2), xytext=(1.7, 1.65))
+   plt.scatter(2,2,color="b",s=30, marker="o",alpha=0.8)
+   plt.annotate('$S-(x_i^2,y_i^2)$', xy=(3, 3.6), xytext=(2.6, 3.8))
+   plt.scatter(3,3.6,color="r",s=30, marker="o",alpha=0.8)
+   plt.annotate('$T$', xy=(2.5, 2.8), xytext=(2.5, 2.9))
+   
+   
+   
+   plt.arrow(2.1, 2.1, 0.8, 1.25,width=0.01,head_width=0.1)
+
+   
    plt.xlim(0,5.1)
    plt.xlabel("$x$")
    plt.ylabel("$y$")
