@@ -148,7 +148,7 @@ with $\Delta x_i^1 = x_{i+1}^1 - x_i^1$. Furthermore, the partition points $(x_i
 \begin{itemize}
  \item $\Delta x_i^1 = x_{i+1}^1 - x_i^1$ represents the width of a non-rectangular integration strip.
  \item $f(x_i^2)$ represents the height of a non-rectangular integration strip.
- \item $f(x_i^2)\Delta x_i^1$ represents the height of a non-rectangular integration strip (due to Cavalieri's principle).
+ \item $f(x_i^2)\Delta x_i^1$ represents the area of a non-rectangular integration strip (due to Cavalieri's principle).
  \item The Cavalieri sum $\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1$, therefore, approximates the area of $R$.
  \item In the limit the Cavalieri sum, therefore, approaches the area of $R$.
 \end{itemize}
@@ -212,8 +212,16 @@ and
 \begin{equation}
 S = \{(x,y)\in\mathbb{R}^2|-\sfrac{1}{3}y+\sfrac{8}{3}\geq x\geq -\sfrac{1}{3}y+\sfrac{16}{3}, \sfrac{1}{2} x + 4\geq y \geq \sfrac{1}{2} x + 6 \}. \nonumber
 \end{equation}
-The region $S$ and $R$ is depicted in Figure~\ref{fig:prismatoid_solid} and Figure~\ref{fig:prismatoid_regions}. Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_i^1)\in R$ at which $\mathbf{c}(t) + \left <x_i^1,y_i^2,0 \right >$ intersects the 
-$xy$-plane to the $xy$--coordinate $(x_i^2,y_i^2)\in S$ at which $\mathbf{c}(t) + \left <x_i^1,y_i^2,0 \right >$ intersects $f(x,y)$. 
+The region $S$ and $R$ is depicted in Figure~\ref{fig:prismatoid_solid} and Figure~\ref{fig:prismatoid_regions}. Let us now subdivide $R$ into 
+subrectangles $R_{ij} = [x_{i},x_{i+1}] \times [y_{j},y_{j+1}]$ of equal width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i$ and length $\Delta y^1= \Delta y_j^1 = y_{j+1}-y_j$. 
+Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_i^1)\in R$ at which $\mathbf{c}(t) + \left <x_i^1,y_i^1,0 \right >$ intersects the 
+$xy$-plane to the $xy$--coordinate $(x_i^2,y_j^2)\in S$ at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects $f(x,y)$. 
+We can now approximate $\mathcal{S}_V$ via:
+\begin{equation}
+V_{\mathcal{S}} \approx \sum_{i=0}^n \sum_{j=0}^m f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
+\end{equation}
+
+
 
 
 
