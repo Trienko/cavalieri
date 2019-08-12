@@ -205,12 +205,33 @@ Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_i^1)\
 $xy$-plane to the $xy$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects $f(x,y)$. Note, the domain of $T$ is $R$. Moreover, let us denote the range 
 of $T$ with $\mathcal{S}$. The transformation $T:R\rightarrow S$ maps every point $(x_i^1,y_i^1)\in R$ to a point $(x_i^2,y_i^2)\in S$ and is formally defined as follows:
 \begin{equation}
-x_i^2 = h(x_i^1,y_i^1) = x_i^1 + c_x\circ t(x_i^1,y_i^1) 
+x_i^2 = h(x_i^1,y_i^1)~\textrm{and}~y_i^2 = s(x_i^1,y_i^1).
 \end{equation}
-and 
+Let $\mathcal{S}$ denote a solid that has the following charachteristics:
+\begin{itemize}
+ \item $R$ and $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$ as basis.
+ \item The following four lateral edges:
+ \begin{itemize}
+ \item The segement of $\mathbf{c}(t) + \left <a, c,0\right>$ which starts at $(a,c,0)$ and ends at $(h(a,c),s(a,c),f(h(a,c),s(a,c))$.
+ \item The segement of $\mathbf{c}(t) + \left <a, d,0\right>$ which starts at $(a,d,0)$ and ends at $(h(a,d),s(a,d),f(h(a,d),s(a,d))$.
+ \item The segement of $\mathbf{c}(t) + \left <b, c,0\right>$ which starts at $(b,c,0)$ and ends at \\$(h(b,c),s(b,c),f(h(b,c),s(b,c))$.
+ \item The segement of $\mathbf{c}(t) + \left <b, d,0\right>$ which starts at $(b,d,0)$ and ends at $(h(b,d),s(b,d),f(h(b,d),s(b,d))$.
+ \end{itemize}
+\end{itemize}
+We can approximate the volume of $\mathcal{S}$, $\mathcal{S}_V$, via:
 \begin{equation}
-y_i^2 = s(x_i^1,y_i^1) = y_i^1 + c_y\circ t(x_i^1,y_i^1). 
+V_{\mathcal{S}} \approx \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
 \end{equation}
+Let us verify that this is indeed the case:
+\begin{itemize}
+\item $\Delta x_i^1$ and $\Delta y_i^i$ represent the width and the length of subrectangle $R_{ij}$.
+\item The product $\Delta A = \Delta x_i^1\times \Delta y_i^i$ represent the area of subrectangle $R_{ij}$.
+\item $f(x_i^2,y_i^2)$ represents the height of a non-linear rectangular column or prism $\mathcal{K}_{ij}$ whose base is $R_{ij}$. Furthermore, the lateral edges of this column are all translations 
+of $\mathbf{c}(t)$ along the $xy$-plane. 
+\item The product $f(x_i^2,y_i^2)\times \Delta A$ represents the volume of $\mathcal{K}_{ij}$ (due to Cavalieri's principle).
+\item The double Cavalieri sum $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta A$, therefore, approximates $V_{\mathcal{S}}$. 
+\item In the limit the double Cavalieri sum approaches $V_{\mathcal{S}}$ (if this limit exists). 
+\end{itemize}
 
 
 
@@ -299,6 +320,8 @@ and
 y_i^2 = s(x_i^1,y_i^1) = y_i^1 + c_y\circ t(x_i^1,y_i^1) 
 \end{equation}
 
+%Let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$. Note that in $\mathbb{R}^3$, $R$ has the following vertices $\mathbf{v}_{R} = \{(x,y,z)\in\mathbb{R}^3|x\in\{a,b\},y\in\{c,d\}~\textrm{and}~z=0\}$,
+%while $S_f$ has the following vertices $\mathbf{v}_{S_f} = \{(x,y,z)\in\mathbb{R}^3|x\in\{a,b\},y\in\{c,d\}~\textrm{and}~z=f(h(x,y),s(x,y))\}$. 
 
 
 
