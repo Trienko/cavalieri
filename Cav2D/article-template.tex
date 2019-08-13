@@ -197,28 +197,42 @@ In the case of $R$ we have that $\mathbf{c}(t) = \left<-\frac{1}{2} t,\frac{1}{2
 $t(x_i^1) = x_i^1$. If we now substitute our solution $t(x_i^1)$ into Eq we obtain, as required, $h(x_i^1) = \frac{1}{2}x_i^2$. This result, therefore, validates Eq ??.
 
 \section{Double Cavalieri Integral}
-Without any the loss of generality, let $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
+Without the loss of generality, consider the surface $f(x,y)$ the curve $\mathbf{c}(t)$ and the region $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
+
+\begin{definition}[Translational curve in $\mathbb{R}^3$]
 If a curve $\mathbf{c}(t) = \left <c_x(t),c_y(t), c_z(t) \right >$ in $\mathbb{R}^3$ intersects the $xy$ plane at the origin and $\mathbf{c}(t) + \left < e,f,0 \right >$ intersects 
 the surface $f(x,y)$ at a single point for all $(e,f)\in R$ then $\mathbf{c}(t)$ is a translational curve 
-with respect to $f(x,y)$ on $R$. Let us now subdivide $R$ into $n\times m$ subrectangles $R_{ij} = [x_{i},x_{i+1}] \times [y_{j},y_{j+1}]$ of equal width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$ and length $\Delta y^1= \Delta y_j^1 = y_{j+1}-y_j\ll(d-c)$. 
+with respect to $f(x,y)$ on $R$. 
+\end{definition}
+
+Moreover, assume that $\mathbf{c}(t)$ is a translational curve with respect to $f(x,y)$ on $R$. 
+
+Let us now subdivide $R$ into $n\times m$ subrectangles $R_{ij} = [x_{i},x_{i+1}] \times [y_{j},y_{j+1}]$ of equal width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$ and length $\Delta y^1= \Delta y_j^1 = y_{j+1}-y_j\ll(d-c)$. 
+
+
 Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_i^1)\in R$ (the lower left vertice of $R_{ij}$) at which $\mathbf{c}(t) + \left <x_i^1,y_i^1,0 \right >$ intersects the 
 $xy$-plane to the $xy$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects $f(x,y)$. Note, the domain of $T$ is $R$. Moreover, let us denote the range 
-of $T$ with $\mathcal{S}$. The transformation $T:R\rightarrow S$ maps every point $(x_i^1,y_i^1)\in R$ to a point $(x_i^2,y_i^2)\in S$ and is formally defined as follows:
+of $T$ with $S$. The transformation $T:R\rightarrow S$ maps every point $(x_i^1,y_i^1)\in R$ to a point $(x_i^2,y_i^2)\in S$ and is formally defined as follows:
 \begin{equation}
 x_i^2 = h(x_i^1,y_i^1)~\textrm{and}~y_i^2 = s(x_i^1,y_i^1).
 \end{equation}
-Let $\mathcal{S}$ denote a solid that has the following charachteristics:
-\begin{itemize}
- \item $R$ and $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$ as basis.
- \item The following four lateral edges:
- \begin{itemize}
- \item The segement of $\mathbf{c}(t) + \left <a, c,0\right>$ which starts at $(a,c,0)$ and ends at $(h(a,c),s(a,c),f(h(a,c),s(a,c))$.
- \item The segement of $\mathbf{c}(t) + \left <a, d,0\right>$ which starts at $(a,d,0)$ and ends at $(h(a,d),s(a,d),f(h(a,d),s(a,d))$.
- \item The segement of $\mathbf{c}(t) + \left <b, c,0\right>$ which starts at $(b,c,0)$ and ends at \\$(h(b,c),s(b,c),f(h(b,c),s(b,c))$.
- \item The segement of $\mathbf{c}(t) + \left <b, d,0\right>$ which starts at $(b,d,0)$ and ends at $(h(b,d),s(b,d),f(h(b,d),s(b,d))$.
- \end{itemize}
-\end{itemize}
-We can approximate the volume of $\mathcal{S}$, $\mathcal{S}_V$, via:
+
+Without any loss of generality, assume that $f(x,y)\geq0$. Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$. 
+Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and $S_f$ via translations of $\mathbf{c}(t)$ along 
+the $xy$ plane.  
+
+%We can construct 
+%a solid We can use $\mathbf{c}(t)$, 
+%$R$ and $f(x,y)$ to construct a solid $\mathcal{S}$. The bottom and the top base of $\mathcal{S}$ is $R$ and $S_f$. The solid $\mathcal{S}$ also has the following four 
+%lateral edges: 
+%\begin{itemize}
+%\item The segement of $\mathbf{c}(t) + \left <a, c,0\right>$ which starts at $(a,c,0)$ and ends at\\$(h(a,c),s(a,c),f(h(a,c),s(a,c))$.
+%\item The segement of $\mathbf{c}(t) + \left <a, d,0\right>$ which starts at $(a,d,0)$ and ends at\\$(h(a,d),s(a,d),f(h(a,d),s(a,d))$.
+%\item The segement of $\mathbf{c}(t) + \left <b, c,0\right>$ which starts at $(b,c,0)$ and ends at\\$(h(b,c),s(b,c),f(h(b,c),s(b,c))$.
+%\item The segement of $\mathbf{c}(t) + \left <b, d,0\right>$ which starts at $(b,d,0)$ and ends at\\$(h(b,d),s(b,d),f(h(b,d),s(b,d))$.
+%\end{itemize}
+
+Let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
 \begin{equation}
 V_{\mathcal{S}} \approx \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
 \end{equation}
@@ -227,7 +241,7 @@ Let us verify that this is indeed the case:
 \item $\Delta x_i^1$ and $\Delta y_i^i$ represent the width and the length of subrectangle $R_{ij}$.
 \item The product $\Delta A = \Delta x_i^1\times \Delta y_i^i$ represent the area of subrectangle $R_{ij}$.
 \item $f(x_i^2,y_i^2)$ represents the height of a non-linear rectangular column or prism $\mathcal{K}_{ij}$ whose base is $R_{ij}$. Furthermore, the lateral edges of this column are all translations 
-of $\mathbf{c}(t)$ along the $xy$-plane. 
+of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel plane to the $xy$-axis that intersects $\mathcal{K}_{ij}$ is a rectangle with the same dimensions as $R_{ij}$. 
 \item The product $f(x_i^2,y_i^2)\times \Delta A$ represents the volume of $\mathcal{K}_{ij}$ (due to Cavalieri's principle).
 \item The double Cavalieri sum $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta A$, therefore, approximates $V_{\mathcal{S}}$. 
 \item In the limit the double Cavalieri sum approaches $V_{\mathcal{S}}$ (if this limit exists). 
