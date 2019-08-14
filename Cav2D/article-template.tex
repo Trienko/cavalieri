@@ -136,13 +136,14 @@ at which $\mathbf{c}(t) + \left <b,0 \right >$ intersects $f(x,y)$.  Note, the r
 of $h$ is $[a',b']$. As the partition of $[a,b]$ can be made arbitrarily fine, $h:[a,b]\rightarrow [a',b']$ actually maps every point $x_i^1\in [a,b]$ to a point $x_i^2\in [a',b']$. \\
 
 \noindent
-Let $R$ denote the region which is bounded by $f(x,y)$, $\mathbf{c}(t)+\left <a,0\right >$, $\mathbf{c}(t)+\left <b,0\right >$ and the $x$-axis. Let the $A_R$ denote 
-the area of $R$. We can approximate $A_R$ with:
+Let $R$ denote the region which is bounded by $f(x,y)$, $\mathbf{c}(t)+\left <a,0\right >$, $\mathbf{c}(t)+\left <b,0\right >$ and the $x$-axis. 
+As an example, the region $R$ depicted in Figure~\ref{fig:caval2} is obtained if we set $f(x) = x$, $\mathbf{c}(t) = \left<-\frac{1}{2} t,\frac{1}{2} t\right>$, $a = 1$ and $b = 4$.
+Let $A_R$ denote the area of $R$. We can approximate $A_R$ with:
 \begin{equation}
  \label{eq:caval1}
  A_R \approx \sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1,
  \end{equation}
-Let us verify that this is indeed the case:
+Let us verify that this is indeed the case. If we closely inspect Equation~\ref{eq:caval1} and Figure~\ref{fig:caval2} we notice the following:
  \begin{itemize}
   \item $\Delta x_i^1 = x_{i+1}^1 - x_i^1$ represents the width of a non-rectangular integration strip.
   \item $f(x_i^2)$ represents the height of a non-rectangular integration strip.
@@ -150,7 +151,14 @@ Let us verify that this is indeed the case:
   \item The Cavalieri sum $\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1$, therefore, approximates the area of $R$.
   \item In the limit the Cavalieri sum (if this limit exists), therefore, approaches the area of $R$.
  \end{itemize}
- 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{fig13.eps}
+\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The figure also depicts the partition points $x_i^1$ and $x_i^2$ as used in the Cavalieri sum (see Eq.~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+\label{fig:caval2}
+\end{figure}
+
 \noindent
 The aforementioned limit is known as the Cavalieri integral and in this paper we denote this integral as follows:
 
@@ -201,14 +209,6 @@ where $a(y)$ denotes the functional representation of $\mathbf{c}(t) + \left <a,
 %\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
 %\label{fig:ex1}
 %\end{figure}
-
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.75\textwidth]{fig13.eps}
-\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The figure also depicts the partition points $x_i^1$ and $x_i^2$ as used in the Cavalieri sum (see Eq.~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
-\label{fig:caval2}
-\end{figure}
 
 % \noindent
 % We can compute the area of $R$ as follows:
@@ -320,15 +320,16 @@ x_i^2 = h(x_i^1,y_i^1)~\textrm{and}~y_i^2 = s(x_i^1,y_i^1).
 Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$.  Let us further assume that $f(x,y) > 0$ for all $(x,y)\in S$. Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and 
 $S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aforementioned connections by employing appropriate surfaces. 
 As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
-Moreover, the domain $R$ and the range $S$ of the transformation function $T$ which is associated with the solid $\mathcal{S}$ that is depicted in Figure~\ref{fig:prismatoid_solid} is depicted in Figure~\ref{fig:prismatoid_regions}.  
+Moreover, the domain $R$ and the range $S$ of the transformation function $T$ which is associated with the solid $\mathcal{S}$ is depicted in Figure~\ref{fig:prismatoid_regions}.  
 Let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
 \begin{equation}
+\label{eq:cav_sum_2d}
 V_{\mathcal{S}} \approx \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
 \end{equation}
-Let us verify that this is indeed the case:
+Let us verify that this is indeed the case. If we closely inspect Equation~\ref{eq:cav_sum_2d} and Figure~\ref{fig:prismatoid_solid} we notice the following:
 \begin{itemize}
 \item $\Delta x_i^1$ and $\Delta y_i^i$ represent the width and the length of subrectangle $R_{ij}$.
-\item The product $\Delta A = \Delta x_i^1\times \Delta y_i^i$ represent the area of subrectangle $R_{ij}$.
+\item The product $\Delta A = \Delta x_i^1\times \Delta y_i^i$ represents the area of subrectangle $R_{ij}$.
 \item $f(x_i^2,y_i^2)$ represents the height of a non-linear rectangular column or prism $\mathcal{K}_{ij}$ whose base is $R_{ij}$. Furthermore, the lateral edges of this column are all translations 
 of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel plane to the $xy$-plane and $\mathcal{K}_{ij}$ is a rectangle with the same dimensions as $R_{ij}$. 
 \item The product $f(x_i^2,y_i^2)\times \Delta A$ represents the volume of $\mathcal{K}_{ij}$ (due to Cavalieri's principle).
