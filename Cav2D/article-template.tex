@@ -113,7 +113,7 @@ to Cavalieri's principle. Note that in this article we use the non-standerdized 
 base and lateral edges that are non-linear and translations of one another.
 
 \section{Cavalieri Integral}
-The single Cavalieri integral was originally defined in \cite{ackermann12} without having to resort to vector calculus. In this section we will define the Cavalieri integral using vector calculus. As the reader will undoubtedly realize, if we define the single Cavalieri integral using vector calculus then it becomes trivial to
+The single Cavalieri integral was originally defined in \cite{ackermann12} without having to resort to vector calculus. In this section we will redefine the Cavalieri integral using vector calculus notation. As the reader will undoubtedly realize, if we define the single Cavalieri integral using vector calculus then it becomes trivial to
 extend its definition into $\mathbb{R}^3$.\\
 
 %In this section we define the Cavalieri integral \cite{ackermann12}. 
@@ -140,7 +140,7 @@ Let $R$ denote the region which is bounded by $f(x,y)$, $\mathbf{c}(t)+\left <a,
 the area of $R$. We can approximate $A_R$ with:
 \begin{equation}
  \label{eq:caval1}
- \int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1,
+ A_R \approx \sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1,
  \end{equation}
 Let us verify that this is indeed the case:
  \begin{itemize}
@@ -150,6 +150,48 @@ Let us verify that this is indeed the case:
   \item The Cavalieri sum $\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1$, therefore, approximates the area of $R$.
   \item In the limit the Cavalieri sum, therefore, approaches the area of $R$.
  \end{itemize}
+ 
+\noindent
+The aforementioned limit is known as Cavalieri integral and in this paper we denote this integral as follows:
+
+\begin{equation}
+\label{eq:cav_1d}
+\int \limits_{\mathcal{C}} f(x)~dx = \lim_{n \rightarrow \infty}  \sum_{i=0}^{n-1} f(x_i^2) \Delta x_i^1,
+\end{equation}
+with $\mathcal{C} = \{\mathbf{c}(t),[a,b]\}$. Equation~\eqref{eq:cav_1d} is difficult to evaluate in its current form. Luckily, the Cavalieri integral 
+can be converted into an equivalent Riemann integral using the transformation $h$:
+ \begin{equation}
+ \int \limits_{\mathcal{C}} f(x)\, dx = \int_{a}^{b} f\circ h(x)~dx. 
+\end{equation}
+
+\noindent
+The only thing that now remains is to find an expression for $h$. Note that, for every coordinate $(x_i^1,x_i^2) \in [a,b] \times [a',b']$ there exists a unique $t\in\mathbb{R}$ such that
+\begin{equation}
+ \label{eq:pat_rel_1d}
+ \left <x_i^2,f(x_i^2) \right > = \left <x_i^1,0 \right> + \left<c_x(t),c_y(t) \right >.
+ \end{equation}
+ We can rewrite Equation~\eqref{eq:pat_rel_1d} as
+ \begin{equation}
+ \label{eq:t_func_1d}
+ c_y(t) = f(x_i^1 + c_x(t)).
+ \end{equation}
+ We can now solve for $t$ in Equation~\eqref{eq:t_func_1d} in terms of $x_i^1$. If we substitute the solution $t(x_i)$ so obtained into Equation~\ref{eq:pat_rel_1d} we obtain 
+\begin{equation}
+\label{eq:h_func_1d}
+ x_i^2 = h(x_i^1) = x_i^1 + c_x\circ t(x_i^1).
+\end{equation}
+
+\noindent
+Note, the Cavalieri integral is denoted in \cite{ackermann12} via:
+\begin{equation}
+\label{eq:cav_1d}
+\int_{a(y)}^{b(y)} f(x)~dx = \lim_{n \rightarrow \infty}  \sum_{i=0}^{n-1} f(x_i^2) \Delta x_i^1,
+\end{equation}
+where $a(y)$ denotes the functional representation of $\mathbf{c}(t) + \left <a,0 \right >$ and $b(y) = a(y)+(b-a)$.
+
+
+
+
 
 
 %Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
