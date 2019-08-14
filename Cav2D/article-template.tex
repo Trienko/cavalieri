@@ -197,29 +197,31 @@ In the case of $R$ we have that $\mathbf{c}(t) = \left<-\frac{1}{2} t,\frac{1}{2
 $t(x_i^1) = x_i^1$. If we now substitute our solution $t(x_i^1)$ into Eq we obtain, as required, $h(x_i^1) = \frac{1}{2}x_i^2$. This result, therefore, validates Eq ??.
 
 \section{Double Cavalieri Integral}
-Without the loss of generality, consider the surface $f(x,y)$ the curve $\mathbf{c}(t)$ and the region $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
+Without the loss of generality, consider the surface $f(x,y)$, the curve $\mathbf{c}(t)$\\$=\left <c_x(t),c_y(t), c_z(t) \right >$ and the region $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
 
 \begin{definition}[Translational curve in $\mathbb{R}^3$]
-If a curve $\mathbf{c}(t) = \left <c_x(t),c_y(t), c_z(t) \right >$ in $\mathbb{R}^3$ intersects the $xy$ plane at the origin and $\mathbf{c}(t) + \left < e,f,0 \right >$ intersects 
+If a curve $\mathbf{c}(t)$ in $\mathbb{R}^3$ intersects the $xy$ plane at the origin and $\mathbf{c}(t) + \left < e,f,0 \right >$ intersects 
 the surface $f(x,y)$ at a single point for all $(e,f)\in R$ then $\mathbf{c}(t)$ is a translational curve 
 with respect to $f(x,y)$ on $R$. 
 \end{definition}
 
-Moreover, assume that $\mathbf{c}(t)$ is a translational curve with respect to $f(x,y)$ on $R$. 
-
-Let us now subdivide $R$ into $n\times m$ subrectangles $R_{ij} = [x_{i},x_{i+1}] \times [y_{j},y_{j+1}]$ of equal width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$ and length $\Delta y^1= \Delta y_j^1 = y_{j+1}-y_j\ll(d-c)$. 
-
-
+\noindent
+Moreover, assume that $\mathbf{c}(t)$ is a translational curve with respect to $f(x,y)$ on $R$. Let us first subdivide $R$ into $n\times m$ subrectangles $R_{ij} = [x_{i},x_{i+1}] \times [y_{j},y_{j+1}]$ of equal width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$ and length $\Delta y^1= \Delta y_j^1 = y_{j+1}-y_j\ll(d-c)$.
 Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_i^1)\in R$ (the lower left vertice of $R_{ij}$) at which $\mathbf{c}(t) + \left <x_i^1,y_i^1,0 \right >$ intersects the 
 $xy$-plane to the $xy$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects $f(x,y)$. Note, the domain of $T$ is $R$. Moreover, let us denote the range 
-of $T$ with $S$. The transformation $T:R\rightarrow S$ maps every point $(x_i^1,y_i^1)\in R$ to a point $(x_i^2,y_i^2)\in S$ and is formally defined as follows:
+of $T$ with $S$. As the subdivision of $R$ can be made arbitrarily small, $T:R\rightarrow S$ actually maps every point $(x_i^1,y_i^1)\in R$ to a point $(x_i^2,y_i^2)\in S$. In general, the transformation $T$ is defined as follows:
 \begin{equation}
 x_i^2 = h(x_i^1,y_i^1)~\textrm{and}~y_i^2 = s(x_i^1,y_i^1).
 \end{equation}
 
-Without any loss of generality, assume that $f(x,y)\geq0$. Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$. 
-Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and $S_f$ via translations of $\mathbf{c}(t)$ along 
-the $xy$ plane.  
+
+
+%We will now show 
+%that we can approximate $V_{\mathcal{S}}$ by summing together the volume of $n$ non-linear prisms that cicumscribe $\mathcal{S}$ and that as $n\rightarrow \infty$ 
+%the aformentioned sum approaches $V_{\mathcal{S}}$. 
+%Without any loss of generality, assume that $f(x,y)\geq0$. Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$. 
+%Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and $S_f$ via translations of $\mathbf{c}(t)$ along 
+%the $xy$ plane.  
 
 %We can construct 
 %a solid We can use $\mathbf{c}(t)$, 
@@ -232,7 +234,9 @@ the $xy$ plane.
 %\item The segement of $\mathbf{c}(t) + \left <b, d,0\right>$ which starts at $(b,d,0)$ and ends at\\$(h(b,d),s(b,d),f(h(b,d),s(b,d))$.
 %\end{itemize}
 
-Let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
+\noindent
+Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$.  Let us further assume that $f(x,y) > 0$ for all $(x,y)\in S$. Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and 
+$S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aformentioned connections. Let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
 \begin{equation}
 V_{\mathcal{S}} \approx \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
 \end{equation}
@@ -241,11 +245,46 @@ Let us verify that this is indeed the case:
 \item $\Delta x_i^1$ and $\Delta y_i^i$ represent the width and the length of subrectangle $R_{ij}$.
 \item The product $\Delta A = \Delta x_i^1\times \Delta y_i^i$ represent the area of subrectangle $R_{ij}$.
 \item $f(x_i^2,y_i^2)$ represents the height of a non-linear rectangular column or prism $\mathcal{K}_{ij}$ whose base is $R_{ij}$. Furthermore, the lateral edges of this column are all translations 
-of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel plane to the $xy$-axis that intersects $\mathcal{K}_{ij}$ is a rectangle with the same dimensions as $R_{ij}$. 
+of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel plane to the $xy$-plane and $\mathcal{K}_{ij}$ is a rectangle with the same dimensions as $R_{ij}$. 
 \item The product $f(x_i^2,y_i^2)\times \Delta A$ represents the volume of $\mathcal{K}_{ij}$ (due to Cavalieri's principle).
 \item The double Cavalieri sum $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta A$, therefore, approximates $V_{\mathcal{S}}$. 
 \item In the limit the double Cavalieri sum approaches $V_{\mathcal{S}}$ (if this limit exists). 
 \end{itemize}
+
+\noindent
+In this paper, we will refer to aforementioned limit as the double Cavalieri integral and we will denote this integral as follows:
+
+\begin{equation}
+\label{eq:cav_2d}
+\iint \limits_{\mathcal{C}} f(x,y)~dA = \lim_{n,m \rightarrow \infty}  \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1,
+\end{equation}
+with $\mathcal{C} = \{\mathbf{c}(t),R\}$. As is the case for the single Cavalieri integral, Equation~\eqref{eq:cav_2d} is difficult to evaluate in its current form. Luckily, the double 
+Cavalieri integral can be converted into an equivalent double Riemann integral using the transformation $T$:
+
+\begin{eqnarray}
+\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(x_{ij}^2,y_{ij}^2) \Delta x_{ij}^1\Delta y_{ij}^1\\
+&=&  \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(h(x_{ij}^1,y_{ij}^1),s(x_{ij}^1,y_{ij}^1)) \Delta x_{ij}^1\Delta y_{ij}^1\\
+&=& \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy.
+\end{eqnarray}
+
+\noindent
+The only thing that now remains is to find expressions for $h$ and $s$. Note that, for every coordinate pair $(x_i^1,y_i^1)$ and $(x_i^2,y_i^2)$ there exists a unique $t\in \mathbb{R}$ such that 
+\begin{equation}
+\label{eq:vector_2}
+\left< x_i^2, y_i^2, f(x_i^2,y_i^2) \right > = \left < x_i^1, y_i^1, 0 \right > + \left <c_x(t),c_y(t),c_z(t)\right >  
+\end{equation}
+The above equation can be re-expressed as:
+\begin{equation}
+c_z(t) = f(x_i^1 + c_x(t),y_i^1 + c_y(t)). 
+\end{equation}
+We can now solve for $t$ in terms of $x_i^1$ and $y_i^1$. If we substitute this solution into Equation~\ref{eq:vector_2} we obtain:
+\begin{equation}
+x_i^2 = h(x_i^1,y_i^1) = x_i^1 + c_x\circ t(x_i^1,y_i^1) 
+\end{equation}
+and 
+\begin{equation}
+y_i^2 = s(x_i^1,y_i^1) = y_i^1 + c_y\circ t(x_i^1,y_i^1) 
+\end{equation}
 
 
 
@@ -276,63 +315,6 @@ $xy$-plane to the $xy$--coordinate $(x_i^2,y_j^2)\in S$ at which $\mathbf{c}(t) 
 %\begin{equation}
 %y_i^2 = s(x_i^1,y_i^1)
 %\end{equation}
-We can approximate $\mathcal{S}_V$ via:
-\begin{equation}
-V_{\mathcal{S}} \approx \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
-\end{equation}
-Let us verify that this is indeed the case:
-\begin{itemize}
-\item $\Delta x_i^1$ and $\Delta y_i^i$ represent the width and the length of subrectangle $R_{ij}$.
-\item The product $\Delta A = \Delta x_i^1\times \Delta y_i^i$ represent the area of subrectangle $R_{ij}$.
-\item $f(x_i^2,y_i^2)$ represents the height of a non-linear rectangular column or prism $\mathcal{K}_{ij}$ whose base is $R_{ij}$. Furthermore, the lateral edges of this column are all translations 
-of $\mathbf{c}(t)$ along the $xy$-plane. 
-\item The product $f(x_i^2,y_i^2)\times \Delta A$ represents the volume of $\mathcal{K}_{ij}$ (due to Cavalieri's principle).
-\item The double Cavalieri sum $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta A$, therefore, approximates $V_{\mathcal{S}}$. 
-\item In the limit the double Cavalieri sum approaches $V_{\mathcal{S}}$ (if this limit exists). 
-\end{itemize}
-
-In this paper, we will refer to aformentioned limit as the two dimensional Cavalieri integral and we will denote this integral as follows:
-
-\begin{equation}
-\label{eq:cav_2d}
-\iint \limits_{\mathcal{C}} f(x,y)~dA = \lim_{n,m \rightarrow \infty}  \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1,
-\end{equation}
-with $\mathcal{C} = \{\mathbf{c}(t),R\}$. As is the case for the single Cavalieri integral, Equation~\eqref{eq:cav_2d} is difficult to evaluate in its current form. Luckily, the double 
-Cavalieri integral can be converted into an equivalent Riemann integral using the transformation $T$. In general the transformation $T$ is defined via the following 
-equations:
-\begin{equation}
-x_i^2 = h(x_i^1,y_i^2)~\textrm{and}~y_i^2 = s(x_i^1,y_i^1) 
-\end{equation}
-We can now rewrite Equation~\eqref{eq:cav_2d} as follows:
-
-\begin{eqnarray}
-\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(x_{ij}^2,y_{ij}^2) \Delta x_{ij}^1\Delta y_{ij}^1\\
-&=&  \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(g(x_{ij}^1,y_{ij}^1),r(x_{ij}^1,y_{ij}^1)) \Delta x_{ij}^1\Delta y_{ij}^1\\
-&=& \int_a^b\int_c^d f(g(x,y),r(x,y))~dx~dy.
-\end{eqnarray}
-
-Note that, for every coordinate pair there exists a unique $t\in \mathbb{R}$ such that 
-
-\begin{equation}
-\label{eq:vector_2}
-\left< x_i^2, y_i^2, f(x_i^2,y_i^2) \right > = \left < x_i^1, y_i^1, 0 \right > + \left <c_x(t),c_y(t),c_z(t)\right >  
-\end{equation}
-
-The above equation can be re-expressed as
-
-\begin{equation}
-c_z(t) = f(x_i^1 + c_x(t),y_i^1 + c_y(t)). 
-\end{equation}
-
-We can now solve for $t$ in terms of $x_i^1$ and $y_i^1$. If we substitute this solution into Equation~\ref{eq:vector_2} we obtain
-
-\begin{equation}
-x_i^2 = h(x_i^1,y_i^1) = x_i^1 + c_x\circ t(x_i^1,y_i^1) 
-\end{equation}
-and 
-\begin{equation}
-y_i^2 = s(x_i^1,y_i^1) = y_i^1 + c_y\circ t(x_i^1,y_i^1) 
-\end{equation}
 
 %Let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$. Note that in $\mathbb{R}^3$, $R$ has the following vertices $\mathbf{v}_{R} = \{(x,y,z)\in\mathbb{R}^3|x\in\{a,b\},y\in\{c,d\}~\textrm{and}~z=0\}$,
 %while $S_f$ has the following vertices $\mathbf{v}_{S_f} = \{(x,y,z)\in\mathbb{R}^3|x\in\{a,b\},y\in\{c,d\}~\textrm{and}~z=f(h(x,y),s(x,y))\}$. 
