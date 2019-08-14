@@ -58,7 +58,7 @@
 
 \begin{document}
 
-\title{Computing volume via non-linear rectangular prisms}
+\title{Computing volume via non-linear rectangular infinitesimals}
 %\author{Woodrow Wilson and Herbert Hoover} %%leave blank in initial submission to allow for double blind reviewing
 %\author{ }
 
@@ -318,7 +318,10 @@ x_i^2 = h(x_i^1,y_i^1)~\textrm{and}~y_i^2 = s(x_i^1,y_i^1).
 
 \noindent
 Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$.  Let us further assume that $f(x,y) > 0$ for all $(x,y)\in S$. Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and 
-$S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aformentioned connections by employing appropriate surfaces. Let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
+$S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aforementioned connections by employing appropriate surfaces. 
+As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
+Moreover, the domain $R$ and the range $S$ of the transformation function $T$ which is associated with the solid $\mathcal{S}$ that is depicted in Figure~\ref{fig:prismatoid_solid} is depicted in Figure~\ref{fig:prismatoid_regions}.  
+Let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
 \begin{equation}
 V_{\mathcal{S}} \approx \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
 \end{equation}
@@ -332,6 +335,20 @@ of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel 
 \item The double Cavalieri sum $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta A$, therefore, approximates $V_{\mathcal{S}}$. 
 \item In the limit the double Cavalieri sum approaches $V_{\mathcal{S}}$ (if this limit exists). 
 \end{itemize}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{prismatoid_solid.pdf}
+\caption{xx}
+\label{fig:prismatoid_solid}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{prismatoid_regions.pdf}
+\caption{xx}
+\label{fig:prismatoid_regions}
+\end{figure}
 
 \noindent
 In this paper, we will refer to the aforementioned limit as the double Cavalieri integral and we will denote this integral as follows:
@@ -437,20 +454,6 @@ The line $\mathbf{c}(t)$  is depicted and labelled in
 \includegraphics[width=0.5\textwidth]{prismatoid_real.jpg}
 \caption{xx}
 \label{fig:prismatoid_real}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.75\textwidth]{prismatoid_solid.pdf}
-\caption{xx}
-\label{fig:prismatoid_solid}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.75\textwidth]{prismatoid_regions.pdf}
-\caption{xx}
-\label{fig:prismatoid_regions}
 \end{figure}
 
 \begin{figure}[htb]
