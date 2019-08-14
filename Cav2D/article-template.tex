@@ -113,10 +113,46 @@ to Cavalieri's principle. Note that in this article we use the non-standerdized 
 base and lateral edges that are non-linear and translations of one another.
 
 \section{Cavalieri Integral}
-In this section we define the Cavalieri integral \cite{ackermann12}. 
+The single Cavalieri integral was originally defined in \cite{ackermann12} without having to resort to vector calculus. In this section we will define the Cavalieri integral using vector calculus. As the reader will undoubtedly realize, if we define the single Cavalieri integral using vector calculus then it becomes trivial to
+extend its definition into $\mathbb{R}^3$.\\
+
+%In this section we define the Cavalieri integral \cite{ackermann12}. 
+
+\noindent
+Consider the curve $f(x)$, the curve $\mathbf{c}(t)=\left <c_x(t),c_y(t) \right >$ and the interval $[a,b]$.
+
+\begin{definition}[Translational curve in $\mathbb{R}^2$]
+If a curve $\mathbf{c}(t)$ in $\mathbb{R}^2$ intersects the $x$ axis at the origin and $\mathbf{c}(t) + \left < e,0 \right >$ intersects 
+the curve $f(x)$ at a single point for all $e\in [a,b]$ then $\mathbf{c}(t)$ is a translational curve 
+with respect to $f(x)$ on $[a,b]$. 
+\end{definition}
+
+\noindent
+Moreover, assume that $\mathbf{c}(t)$ is a translational curve with respect to $f(x)$ on $[a,b]$. Let us first partition $[a,b]$ into $n$ subintervals $[x_{i},x_{i+1}]$ of equal 
+width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$. Furthermore, let the transformation function $h$ map the $x$--coordinate $x_i^1\in [a,b]$ at which $\mathbf{c}(t) + \left <x_i^1,0 \right >$ intersects the 
+$x$-axis to the $x$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,0 \right >$ intersects $f(x,y)$. Note, the domain of $h$ is $[a,b]$. Let $a'$ denote the $x$-coordinate 
+at which $\mathbf{c}(t) + \left <a,0 \right >$ intersects $f(x,y)$ and let $b'$ denote the $x$-coordinate 
+at which $\mathbf{c}(t) + \left <b,0 \right >$ intersects $f(x,y)$.  Note, the range 
+of $h$ is $[a',b']$. As the partition of $[a,b]$ can be made arbitrarily fine, $h:[a,b]\rightarrow [a',b']$ actually maps every point $x_i^1\in [a,b]$ to a point $x_i^2\in [a',b']$. \\
+
+\noindent
+Let $R$ denote the region which is bounded by $f(x,y)$, $\mathbf{c}(t)+\left <a,0\right >$, $\mathbf{c}(t)+\left <b,0\right >$ and the $x$-axis. Let the $A_R$ denote 
+the area of $R$. We can approximate $A_R$ with:
+\begin{equation}
+ \label{eq:caval1}
+ \int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1,
+ \end{equation}
+Let us verify that this is indeed the case:
+ \begin{itemize}
+  \item $\Delta x_i^1 = x_{i+1}^1 - x_i^1$ represents the width of a non-rectangular integration strip.
+  \item $f(x_i^2)$ represents the height of a non-rectangular integration strip.
+  \item $f(x_i^2)\Delta x_i^1$ represents the area of a non-rectangular integration strip (due to Cavalieri's principle).
+  \item The Cavalieri sum $\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1$, therefore, approximates the area of $R$.
+  \item In the limit the Cavalieri sum, therefore, approaches the area of $R$.
+ \end{itemize}
 
 
-Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
+%Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
 %\begin{figure}[htb]
 %\centering
 %\includegraphics[width=0.3\textwidth]{fig12}
@@ -132,71 +168,75 @@ Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$
 \label{fig:caval2}
 \end{figure}
 
-\noindent
-We can compute the area of $R$ as follows:
-\begin{equation}
-\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
-\end{equation}
-
-\noindent
-Alternatively, the area of $R$ can also be determined via the Cavalieri integral:
-\begin{equation}
-\label{eq:caval1}
-\int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1,
-\end{equation}
-with $\Delta x_i^1 = x_{i+1}^1 - x_i^1$. Furthermore, the partition points $(x_i^1)_{i=0}^{n}$ and $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Let us review why this is in fact the case:
-\begin{itemize}
- \item $\Delta x_i^1 = x_{i+1}^1 - x_i^1$ represents the width of a non-rectangular integration strip.
- \item $f(x_i^2)$ represents the height of a non-rectangular integration strip.
- \item $f(x_i^2)\Delta x_i^1$ represents the area of a non-rectangular integration strip (due to Cavalieri's principle).
- \item The Cavalieri sum $\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1$, therefore, approximates the area of $R$.
- \item In the limit the Cavalieri sum, therefore, approaches the area of $R$.
-\end{itemize}
-
-\noindent
-The Cavalieri integral is, however, hard to evaluate directly. Fortunately, it is easy to convert a Cavalieri integral into an equivalent Riemann integral:
-\begin{equation}
-\int_{a(y)}^{b(y)}f(x)\, dx = \int_{a}^{b} f\circ h(x)~dx, 
-\end{equation}
-with $a(0) = a$ and $b(0)=b$. The function $h$ is known as the transformation function and it maps $x_i^1\in[a,b]$ to $x_i^2\in[a',b']$. It can be constructed via the function $g(x) = x - a\circ f(x) + a$ as 
-$h=g^{-1}$.
-
-\noindent
-The area of $R$ can, therefore, also be computed as follows:
-\begin{equation}
-\int_{a(y)}^{b(y)}f(x)\, dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75.  
-\end{equation}
-
-Let $\mathbf{c}(t) = \left <c_x(t),c_y(t) \right>$ be the vector equation of $a(y)-a$. The notation which we have been using to denote a Cavalieri integral up until now 
-in the paper was first proposed by Ackermann. Going forward in this paper, however, we propose making use of the following alternative notation:
-\begin{equation}
-\label{eq:new_def_cavalieri}
-\int \limits_{\mathcal{C}} f(x)~dx := \int_{a(y)}^{b(y)}f(x)~dx,
-\end{equation}
-with $\mathcal{C} = \{\mathbf{c}(t),[a,b]\}$. Note that $\left<a,0\right> + \mathbf{c}(t)$ and $\left<b,0\right> + \mathbf{c}(t)$ are the vector equations of $a(y)$ and 
-$b(y)$. The reason for this change in notation will become clear to the reader at a later stage. In turns out, that we can use $\mathbf{c}(t)$ to construct $h(x)$ via:
-\begin{equation}
-\label{eq:h_func}
-x_i^2 = h(x_i^1) = x_i^1 + c_x\circ t(x_i^1).
-\end{equation}
-
-\noindent
-We will now show that this is indeed the case. Note that, for every coordinate $(x_i^1,x_i^2) \in [a,b] \times [a',b']$ there exists a unique $t\in\mathbb{R}$ such that
-\begin{equation}
-\label{eq:pat_rel}
-\left <x_i^2,f(x_i^2) \right > = \left <x_i^1,0 \right> + \left<c_x(t),c_y(t) \right >.
-\end{equation}
-We can rewrite Equation~\eqref{eq:pat_rel} as
-\begin{equation}
-\label{eq:t_func}
-c_y(t) = f(x_i^1 + c_x(t)).
-\end{equation}
-We can now solve for $t$ in Equation~\eqref{eq:t_func} in terms of $x_i^1$. If we substitute the solution $t(x_i)$ so obtained into Equation~\ref{eq:pat_rel} we obtain Equation~\ref{eq:h_func}.
-
-In the case of $R$ we have that $\mathbf{c}(t) = \left<-\frac{1}{2} t,\frac{1}{2} t\right>$. If we solve for $t$ in terms of $x_i^1$ after having substituted $\mathbf{c}(t)$ into Eq we obtain 
-$t(x_i^1) = x_i^1$. If we now substitute our solution $t(x_i^1)$ into Eq we obtain, as required, $h(x_i^1) = \frac{1}{2}x_i^2$. This result, therefore, validates Eq ??.
+% \noindent
+% We can compute the area of $R$ as follows:
+% \begin{equation}
+% \int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
+% \end{equation}
+% 
+% \noindent
+% Alternatively, the area of $R$ can also be determined via the Cavalieri integral:
+% \begin{equation}
+% \label{eq:caval1}
+% \int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1,
+% \end{equation}
+% with $\Delta x_i^1 = x_{i+1}^1 - x_i^1$. Furthermore, the partition points $(x_i^1)_{i=0}^{n}$ and $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Let us review why this is in fact the case:
+% \begin{itemize}
+%  \item $\Delta x_i^1 = x_{i+1}^1 - x_i^1$ represents the width of a non-rectangular integration strip.
+%  \item $f(x_i^2)$ represents the height of a non-rectangular integration strip.
+%  \item $f(x_i^2)\Delta x_i^1$ represents the area of a non-rectangular integration strip (due to Cavalieri's principle).
+%  \item The Cavalieri sum $\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1$, therefore, approximates the area of $R$.
+%  \item In the limit the Cavalieri sum, therefore, approaches the area of $R$.
+% \end{itemize}
+% 
+% \noindent
+% The Cavalieri integral is, however, hard to evaluate directly. Fortunately, it is easy to convert a Cavalieri integral into an equivalent Riemann integral:
+% \begin{equation}
+% \int_{a(y)}^{b(y)}f(x)\, dx = \int_{a}^{b} f\circ h(x)~dx, 
+% \end{equation}
+% with $a(0) = a$ and $b(0)=b$. The function $h$ is known as the transformation function and it maps $x_i^1\in[a,b]$ to $x_i^2\in[a',b']$. It can be constructed via the function $g(x) = x - a\circ f(x) + a$ as 
+% $h=g^{-1}$.
+% 
+% \noindent
+% The area of $R$ can, therefore, also be computed as follows:
+% \begin{equation}
+% \int_{a(y)}^{b(y)}f(x)\, dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75.  
+% \end{equation}
+% 
+% Let $\mathbf{c}(t) = \left <c_x(t),c_y(t) \right>$ be the vector equation of $a(y)-a$. The notation which we have been using to denote a Cavalieri integral up until now 
+% in the paper was first proposed by Ackermann. Going forward in this paper, however, we propose making use of the following alternative notation:
+% \begin{equation}
+% \label{eq:new_def_cavalieri}
+% \int \limits_{\mathcal{C}} f(x)~dx := \int_{a(y)}^{b(y)}f(x)~dx,
+% \end{equation}
+% with $\mathcal{C} = \{\mathbf{c}(t),[a,b]\}$. Note that $\left<a,0\right> + \mathbf{c}(t)$ and $\left<b,0\right> + \mathbf{c}(t)$ are the vector equations of $a(y)$ and 
+% $b(y)$. The reason for this change in notation will become clear to the reader at a later stage. In turns out, that we can use $\mathbf{c}(t)$ to construct $h(x)$ via:
+% \begin{equation}
+% \label{eq:h_func}
+% x_i^2 = h(x_i^1) = x_i^1 + c_x\circ t(x_i^1).
+% \end{equation}
+% 
+% \noindent
+% We will now show that this is indeed the case. Note that, for every coordinate $(x_i^1,x_i^2) \in [a,b] \times [a',b']$ there exists a unique $t\in\mathbb{R}$ such that
+% \begin{equation}
+% \label{eq:pat_rel}
+% \left <x_i^2,f(x_i^2) \right > = \left <x_i^1,0 \right> + \left<c_x(t),c_y(t) \right >.
+% \end{equation}
+% We can rewrite Equation~\eqref{eq:pat_rel} as
+% \begin{equation}
+% \label{eq:t_func}
+% c_y(t) = f(x_i^1 + c_x(t)).
+% \end{equation}
+% We can now solve for $t$ in Equation~\eqref{eq:t_func} in terms of $x_i^1$. If we substitute the solution $t(x_i)$ so obtained into Equation~\ref{eq:pat_rel} we obtain Equation~\ref{eq:h_func}.
+% 
+% In the case of $R$ we have that $\mathbf{c}(t) = \left<-\frac{1}{2} t,\frac{1}{2} t\right>$. If we solve for $t$ in terms of $x_i^1$ after having substituted $\mathbf{c}(t)$ into Eq we obtain 
+% $t(x_i^1) = x_i^1$. If we now substitute our solution $t(x_i^1)$ into Eq we obtain, as required, $h(x_i^1) = \frac{1}{2}x_i^2$. This result, therefore, validates Eq ??.
 
 \section{Double Cavalieri Integral}
+In this section we define the double Cavalieri integral and we show that it can be used to calculate the volume of solids that can be decomposed into an infinite 
+number of non-linear regtangular infinitesimals.\\
+
+\noindent
 Without the loss of generality, consider the surface $f(x,y)$, the curve $\mathbf{c}(t)$\\$=\left <c_x(t),c_y(t), c_z(t) \right >$ and the region $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
 
 \begin{definition}[Translational curve in $\mathbb{R}^3$]
@@ -206,10 +246,10 @@ with respect to $f(x,y)$ on $R$.
 \end{definition}
 
 \noindent
-Moreover, assume that $\mathbf{c}(t)$ is a translational curve with respect to $f(x,y)$ on $R$. Let us first subdivide $R$ into $n\times m$ subrectangles $R_{ij} = [x_{i},x_{i+1}] \times [y_{j},y_{j+1}]$ of equal width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$ and length $\Delta y^1= \Delta y_j^1 = y_{j+1}-y_j\ll(d-c)$.
+Moreover, assume that $\mathbf{c}(t)$ is a translational curve with respect to $f(x,y)$ on $R$. Let us first partition $R$ into $n\times m$ subrectangles $R_{ij} = [x_{i},x_{i+1}] \times [y_{j},y_{j+1}]$ of equal width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$ and length $\Delta y^1= \Delta y_j^1 = y_{j+1}-y_j\ll(d-c)$.
 Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_i^1)\in R$ (the lower left vertice of $R_{ij}$) at which $\mathbf{c}(t) + \left <x_i^1,y_i^1,0 \right >$ intersects the 
 $xy$-plane to the $xy$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects $f(x,y)$. Note, the domain of $T$ is $R$. Moreover, let us denote the range 
-of $T$ with $S$. As the subdivision of $R$ can be made arbitrarily small, $T:R\rightarrow S$ actually maps every point $(x_i^1,y_i^1)\in R$ to a point $(x_i^2,y_i^2)\in S$. In general, the transformation $T$ is defined as follows:
+of $T$ with $S$. As the paartition of $R$ can be made arbitrarily fine, $T:R\rightarrow S$ actually maps every point $(x_i^1,y_i^1)\in R$ to a point $(x_i^2,y_i^2)\in S$. In general, the transformation $T$ is defined as follows:
 \begin{equation}
 x_i^2 = h(x_i^1,y_i^1)~\textrm{and}~y_i^2 = s(x_i^1,y_i^1).
 \end{equation}
@@ -236,7 +276,7 @@ x_i^2 = h(x_i^1,y_i^1)~\textrm{and}~y_i^2 = s(x_i^1,y_i^1).
 
 \noindent
 Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$.  Let us further assume that $f(x,y) > 0$ for all $(x,y)\in S$. Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and 
-$S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aformentioned connections. Let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
+$S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aformentioned connections by employing appropriate surfaces. Let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
 \begin{equation}
 V_{\mathcal{S}} \approx \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
 \end{equation}
@@ -252,7 +292,7 @@ of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel 
 \end{itemize}
 
 \noindent
-In this paper, we will refer to aforementioned limit as the double Cavalieri integral and we will denote this integral as follows:
+In this paper, we will refer to the aforementioned limit as the double Cavalieri integral and we will denote this integral as follows:
 
 \begin{equation}
 \label{eq:cav_2d}
@@ -268,7 +308,7 @@ Cavalieri integral can be converted into an equivalent double Riemann integral u
 \end{eqnarray}
 
 \noindent
-The only thing that now remains is to find expressions for $h$ and $s$. Note that, for every coordinate pair $(x_i^1,y_i^1)$ and $(x_i^2,y_i^2)$ there exists a unique $t\in \mathbb{R}$ such that 
+The only thing that now remains is to find expressions for $h$ and $s$. Note that, for every coordinate pair $(x_i^1,y_i^1)\in R$ and $(x_i^2,y_i^2)\in S$ there exists a unique $t\in \mathbb{R}$ such that 
 \begin{equation}
 \label{eq:vector_2}
 \left< x_i^2, y_i^2, f(x_i^2,y_i^2) \right > = \left < x_i^1, y_i^1, 0 \right > + \left <c_x(t),c_y(t),c_z(t)\right >  
@@ -283,7 +323,7 @@ x_i^2 = h(x_i^1,y_i^1) = x_i^1 + c_x\circ t(x_i^1,y_i^1)
 \end{equation}
 and 
 \begin{equation}
-y_i^2 = s(x_i^1,y_i^1) = y_i^1 + c_y\circ t(x_i^1,y_i^1) 
+y_i^2 = s(x_i^1,y_i^1) = y_i^1 + c_y\circ t(x_i^1,y_i^1). 
 \end{equation}
 
 
