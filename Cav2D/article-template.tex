@@ -389,9 +389,11 @@ y_i^2 = s(x_i^1,y_i^1) = y_i^1 + c_y\circ t(x_i^1,y_i^1).
 \section{Prismatoid}
 Let $\mathcal{S}$ be the solid which is bounded by the planes $f(x,y)=-x-y+8$, $2x$, $2(x-4)$, $y$, $y-4$ and the $xy$-plane. Solid $\mathcal{S}$ is depicted 
 in Figure~\ref{fig:prismatoid_solid}, Figure~\ref{fig:prismatoid} and Figure~\ref{fig:prismatoid_real}. Solid $\mathcal{S}$ is a prismatoid, since all of its 
-vertices lie in two parallel planes. Furthermore, all of its lateral faces are trapezoids or triangles. Note that, the line of intersection between $2x$ and $y$ is $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$.
-The line $\mathbf{c}(t)$ is depicted and labelled in Figure~\ref{fig:prismatoid_solid}.
+vertices lie in two parallel planes. Furthermore, all of its lateral faces are trapezoids or triangles (if viewed from the side). Also note the following: the base of $\mathcal{S}$ is the region 
+ $R = [0,4]\times [0,4]$ and that the line of intersection between $2x$ and $y$ is $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$. The region $R$ and the line $\mathbf{c}(t)$ are
+also depicted and labelled in Figure~\ref{fig:prismatoid_solid}.\\
 
+\noindent
 As we alluded to in the previous section we can calculate $V_{\mathcal{S}}$ using the double Cavalieri integral:
 \begin{equation}
 \iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy,
