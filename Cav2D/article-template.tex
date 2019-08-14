@@ -386,13 +386,17 @@ and
 y_i^2 = s(x_i^1,y_i^1) = y_i^1 + c_y\circ t(x_i^1,y_i^1). 
 \end{equation}
 
-
-
+\section{Prismatoid}
 Let $\mathcal{S}$ be the solid which is bounded by the planes $f(x,y)=-x-y+8$, $2x$, $2(x-4)$, $y$, $y-4$ and the $xy$-plane. Solid $\mathcal{S}$ is depicted 
-in Figure~\ref{fig:prismatoid}, Figure~\ref{fig:prismatoid_real} and Figure~\ref{fig:prismatoid_solid}. Solid $\mathcal{S}$ is a prismatoid, since all of its 
-vertices lie in two parallel planes. Furthermore, all of its lateral faces are trapezoids or triangles. The volume of $\mathcal{S}$, $V_{\mathcal{S}}$, can easily be computed using the 
-volume equation of a prismatoid. The details of this computation is described in the caption of Figure~\ref{fig:prismatoid}. According to the prismatoid volume 
-equation $V_{\mathcal{S}}=25.6$.
+in Figure~\ref{fig:prismatoid_solid}, Figure~\ref{fig:prismatoid} and Figure~\ref{fig:prismatoid_real}. Solid $\mathcal{S}$ is a prismatoid, since all of its 
+vertices lie in two parallel planes. Furthermore, all of its lateral faces are trapezoids or triangles. Note that, the line of intersection between $2x$ and $y$ is $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$.
+The line $\mathbf{c}(t)$ is depicted and labelled in Figure~\ref{fig:prismatoid_solid}.
+
+As we alluded to in the previous section we can calculate $V_{\mathcal{S}}$ using the double Cavalieri integral:
+\begin{equation}
+\iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy,
+\end{equation}
+with $\mathcal{C}=\{\mathbf{c}(t),R\}$. We can, however, only evaluate the above integral if the transformation $T$ is known (see Figure ). We can find $T$ using Equation
 
 Let $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ be the line of intersection between the planes $2x$ and $y$. Furthermore, note that the line 
 $\mathbf{c}(t)$ passes through the origin. The line $\mathbf{c}(t)$ is depicted and labelled in Figure~\ref{fig:prismatoid_solid}. Let 
@@ -419,7 +423,9 @@ $xy$-plane to the $xy$--coordinate $(x_i^2,y_j^2)\in S$ at which $\mathbf{c}(t) 
 %Let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$. Note that in $\mathbb{R}^3$, $R$ has the following vertices $\mathbf{v}_{R} = \{(x,y,z)\in\mathbb{R}^3|x\in\{a,b\},y\in\{c,d\}~\textrm{and}~z=0\}$,
 %while $S_f$ has the following vertices $\mathbf{v}_{S_f} = \{(x,y,z)\in\mathbb{R}^3|x\in\{a,b\},y\in\{c,d\}~\textrm{and}~z=f(h(x,y),s(x,y))\}$. 
 
-
+We can easily compute $V_{\mathcal{S}}$ using the 
+volume equation of a prismatoid. The details of this computation is described in the caption of Figure~\ref{fig:prismatoid}. According to the prismatoid volume 
+equation $V_{\mathcal{S}}=25.6$.\\
 
 
 
@@ -482,7 +488,7 @@ The line $\mathbf{c}(t)$  is depicted and labelled in
 \centering
 \includegraphics[width=0.75\textwidth]{sphere_xy.pdf}
 \caption{xx}
-\label{fig:prismatoid_solid}
+\label{fig:sphere_solid}
 \end{figure}
 
 
