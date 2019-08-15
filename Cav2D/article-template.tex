@@ -441,8 +441,6 @@ V_{\mathcal{S}}=\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^4\int_0^4 f(h(
 We can easily verify that the $V_{\mathcal{S}} = 25.6$ is in fact correct, since $\mathcal{S}$ is a prismatoid. According to the prismatoid volume 
 equation $V_{\mathcal{S}}=25.6$. The details of this computation is described in the caption of Figure~\ref{fig:prismatoid}. This then validates Equation~\ref{eq:final_int_prismatoid}.
 
-
-
 % Let $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ be the line of intersection between the planes $2x$ and $y$. Furthermore, note that the line 
 % $\mathbf{c}(t)$ passes through the origin. The line $\mathbf{c}(t)$ is depicted and labelled in Figure~\ref{fig:prismatoid_solid}. Let 
 % \begin{equation}
@@ -493,15 +491,71 @@ equation $V_{\mathcal{S}}=25.6$. The details of this computation is described in
 \section{Another example}
 Let $\mathcal{S}$ be the solid which is bounded by the planes $f(x,y)=\sqrt{-x^2-y^2+4}$, $\sqrt{x}$, $\sqrt{x-1}$, $\sqrt{y}$, $\sqrt{y-1}$ and the $xy$-plane. Solid $\mathcal{S}$ is depicted 
 in Figure~\ref{fig:sphere_solid}. Also note the following: the base of $\mathcal{S}$ is the region 
-$R = [0,1]\times [0,1]$ (if viewed from the front) and that the curve of intersection between $\sqrt{x}$ and $\sqrt{y}$ is $\mathbf{c}(t) = \left < t,t,\sqrt{t}\right >$. 
+$R = [0,1]\times [0,1]$ (if viewed from the front) and that the curve of intersection between $\sqrt{x}$ and $\sqrt{y}$ is $\mathbf{c}(t) = \left < t,t,\sqrt{t}\right >$. \\
 
-We can compute $V_{\mathcal{S}}$ as follows:
+\noindent
+Since $\mathcal{S}$ can be decomposed into an infinite number of non-linear rectangular infinitesimals we can compute its volume using:
 \begin{equation}
 \label{eq:cav_ex2}
 V_{\mathcal{S}} = \iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy,
 \end{equation}
 with $\mathcal{C}=\{\mathbf{c}(t),R\}$. We, however, first need to calculate $T$ if we wish to evaluate Equation~\ref{eq:cav_ex2} (see Figure~\ref{fig:sphere_regions}). We can determine $T$ via 
-Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d}. Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} in turn requires $t(x_i^1,y_j^2)$, which can be calculated with 
+Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d}. Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} in turn requires $t(x_i^1,y_j^2)$, which can be obtained via Equation~\eqref{eq:c_z}.
+If we substite $f(x,y)$ and $\mathbf{c}(t)$ into Equation~\eqref{eq:c_z} and then solve for $t$ we obtain:
+\begin{equation}
+t = \frac{1}{4}[-2 x_{i}^1 - 2 y_{j}^1  -  1 + K(x_{i}^1,y_{j}^1)],
+\end{equation}
+where
+\begin{equation}
+K(x_{i}^1,y_{j}^1) = \sqrt{-4(x_{i}^1)^2+4x_{i}^1+8x_{i}^1y_{j}^1-4(y_{j}^1)^2+4y_{j}^1 + 33}. 
+\end{equation}
+With $t(x_i^1,y_j^1)$ we can find expressions for $h$ and $s$ by employing Equation~\eqref{eq:c_z}. The obtained expressions of $h$ and $s$ can then be used to evaluate Equation~\eqref{eq:cav_ex2}:  
+\begin{eqnarray}
+\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^1\int_0^1 f(h(x,y),r(x,y))~dydx\\
+&=& \int_0^1 \int_0^1 \sqrt{-(x+t(x,y))^2 - (y+t(x,y))^2 + 4} ~dydx\\
+&=& 0.864043
+\end{eqnarray}
+
+We can verify that $V_{\mathcal{S}}=0.864043$ is indeed correct via tradiosional calculus. We can first subdivide the $xy$-projection of $\mathcal{S}$ into regions 
+
+\begin{table}
+\caption{Double integrals for sphere. $c_1 \approx 1.1861407$, $c_2 \approx 1.6861407$, $c_3 \approx 0.6861407$ and $c_4 \approx 1.3507811$. $r_1(x) = \frac{1}{2}[\sqrt{17-4x^2}-1]$,
+$r_2(x) = \sqrt{-x^2-x+4}$, $r_3(x) = \sqrt{-x^2-(x-1)+4}$ and $r_4(x) = \frac{1}{2}[\sqrt{21-4x^2}-1]$.} 
+\begin{center}
+
+\begin{tabular}{|l l l l l l l l|}
+  $k$ & Vertices & $a$ & $b$  & $g_1$ & $g_2$ & $f_k$ & $\iint\limits_{\!R_k} f_k~dA$\\
+  1 & ABD & 0 & 1& 0 & $x$ & $\sqrt{y}$ & 0.2667\\
+  2 & BLED& 1& $c_1$ & $x-1$ & $x$ & $\sqrt{y} - \sqrt{x-1}$& 0.0844\\
+  3 & LFE& $c_1$ & $c_2$ & $x-1$ & $r_1(x)$&$\sqrt{y} - \sqrt{x-1}$&0.0626\\
+  4 & ADC& 0 & 1 & $x$ & 1 & $\sqrt{x}$ &0.2667\\
+  5 & CIG& 0 & $c_3$ & 1 & $x+1$ & $\sqrt{x} - \sqrt{y-1}$ &0.0520\\
+  6 & IDJG& $c_3$ & 1 & 1 & $r_2(x)$ & $\sqrt{x} - \sqrt{y-1}$&0.0716\\
+  7 & DEJ& 1& $c_1$& $x$ & $r_2(x)$ & $\sqrt{x} - \sqrt{y-1}$&0.0234\\ 
+  8 & EKG& $c_3$& $c_1$& $r_2(x)$ & $r_4(x)$ & $\sqrt{-x^2-y^2+4}-\sqrt{y-1}$&0.0129\\ 
+  9 & EHK& $c_1$& $c_4$& $x$& $r_4(x)$ & $\sqrt{-x^2-y^2+4}-\sqrt{y-1}$&0.0055\\
+  10& EMH& $c_1$& $c_4$& $r_1(x)$& $x$ & $\sqrt{-x^2-y^2+4}-\sqrt{x-1}$&0.0092\\
+  11& MFH& $c_4$& $c_2$& $r_1(x)$& $r_3(x)$ & $\sqrt{-x^2-y^2+4}-\sqrt{x-1}$&0.0091\\ 
+  %1 & AEM & 0 & \sfrac{8}{5}  & 0 & $2x$ &  $y$ & 2.7307 \\
+  %2 & MELB & \sfrac{8}{5} & 4  & 0 & -$\frac{1}{2}x+4$ & $y$ & 8.2560 \\
+  %3 & BLF & 4 & \sfrac{24}{5} & $2x-8$ & -$\frac{1}{2}x+4$ & $y-2(x-4)$ & 0.5333 \\
+  %4 & ACIJ & 0 & \sfrac{4}{3} & $2x$ & 4 & $2x$ & 3.9506\\
+  %5 & JIE & \sfrac{4}{3} & \sfrac{8}{5} & $2x$ & $-3x+8$ & $2x$ & 0.5058\\ 
+  %6 & EIK & \sfrac{4}{3} & \sfrac{8}{5} & $-3x+8$ & 4 &  $-x-y+8$ & 0.2939 \\ 
+  %7 & EKDL & \sfrac{8}{5} & 4 & $-\frac{1}{2}x+4$ & 4 &  $-x-y+8$ & 5.9520 \\ 
+  %8 & LDF & 4 & \sfrac{24}{5} & $-\frac{1}{2}x+4$ & $-3x+16$ & $-x-y+8-2(x-4)$ & 0.5333 \\ 
+  %9 & CGN & 0 & \sfrac{4}{5} & 4 & $2x+4$ & $2x-(y-4)$ & 0.3413 \\ 
+  %10 & NCI & \sfrac{4}{5} & \sfrac{4}{3} & 4 & $-3x+8$ & $2x-(y-4)$ & 0.6068 \\
+  %11 & ICH & \sfrac{4}{5} & \sfrac{4}{3} & $-3x+8$ & $-\frac{1}{2}x+6$ & $-x-y+8-(y-4)$&0.3160\\
+  %12 & IHD & \sfrac{4}{3}& 4  & 4 & $-\frac{1}{2}x+6$ & $-x-y+8-(y-4)$&1.5803\\
+\end{tabular}
+ 
+\end{center}
+
+\end{table}
+
+
+
 
  
 
