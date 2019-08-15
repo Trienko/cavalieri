@@ -509,18 +509,23 @@ where
 \begin{equation}
 K(x_{i}^1,y_{j}^1) = \sqrt{-4(x_{i}^1)^2+4x_{i}^1+8x_{i}^1y_{j}^1-4(y_{j}^1)^2+4y_{j}^1 + 33}. 
 \end{equation}
-With $t(x_i^1,y_j^1)$ we can find expressions for $h$ and $s$ by employing Equation~\eqref{eq:c_z}. The obtained expressions of $h$ and $s$ can then be used to evaluate Equation~\eqref{eq:cav_ex2}:  
+As mentioned earlier, we can use $t(x_i^1,y_j^1)$ to find expressions for $h$ and $s$. The expressions of $h$ and $s$ so obtained can then be used to evaluate Equation~\eqref{eq:cav_ex2}:  
 \begin{eqnarray}
 \iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^1\int_0^1 f(h(x,y),r(x,y))~dydx\\
 &=& \int_0^1 \int_0^1 \sqrt{-(x+t(x,y))^2 - (y+t(x,y))^2 + 4} ~dydx\\
 &=& 0.864043
 \end{eqnarray}
 
-We can verify that $V_{\mathcal{S}}=0.864043$ is indeed correct via tradiosional calculus. We can first subdivide the $xy$-projection of $\mathcal{S}$ into regions 
+\noindent
+We can verify that $V_{\mathcal{S}}=0.864043$ is indeed correct via a more traditional route. We first need to project $\mathcal{S}$ onto the $xy$ plane (see Figure~\ref{fig:sphere_xy}). We can then subdivide this projection into multiple regions (see Table~\ref{tab:table1}). Doing so actually results in $\mathcal{S}$ being decomposed into multiple solids. We can then 
+compute the volume of the aforementioned solids. These computed volumes can then be added together to find the total volume of $\mathcal{S}$. The calculation details 
+of this approach is presented in Table~\ref{tab:table1}. Table~\ref{tab:table1} verifies that the volume of $\mathcal{S}$ is indeed $0.864043$.
 
 \begin{table}
+
 \caption{Double integrals for sphere. $c_1 \approx 1.1861407$, $c_2 \approx 1.6861407$, $c_3 \approx 0.6861407$ and $c_4 \approx 1.3507811$. $r_1(x) = \frac{1}{2}[\sqrt{17-4x^2}-1]$,
 $r_2(x) = \sqrt{-x^2-x+4}$, $r_3(x) = \sqrt{-x^2-(x-1)+4}$ and $r_4(x) = \frac{1}{2}[\sqrt{21-4x^2}-1]$.} 
+\label{tab:table1}
 \begin{center}
 
 \begin{tabular}{|l l l l l l l l|}
