@@ -171,7 +171,7 @@ Let us verify that this is indeed the case. If we closely inspect Equation~\ref{
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{fig13.eps}
-\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The parametric representation of $a(y)$ is $\mathbf{c}(t) = \frac{1}{2} \left <-t,t \right >$. The figure also depicts the partition points $x_i^1$ and $x_i^2$ as used in the Cavalieri sum (see Eq.~\eqref{eq:caval1}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The parametric representation of $a(y)$ is $\mathbf{c}(t) = \frac{1}{2} \left <-t,t \right >$. The figure also depicts the partition points $x_i^1$ and $x_i^2$ as used in the Cavalieri sum (see Equation~\eqref{eq:caval1}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
 \label{fig:caval2}
 \end{figure}
 
@@ -217,17 +217,7 @@ this result is correct by using a more conventional approach:
 \end{equation}
 
 \noindent
-In \cite{ackermann12}, the Cavalieri integral is denoted via:
-\begin{equation}
-\label{eq:cav_1d}
-\int_{a(y)}^{b(y)} f(x)~dx = \lim_{n \rightarrow \infty}  \sum_{i=0}^{n-1} f(x_i^2) \Delta x_i^1,
-\end{equation}
-where $a(y)$ denotes the functional representation of $\mathbf{c}(t) + \left <a,0 \right >$ and $b(y) = a(y)+(b-a)$.
-
-  
-
-
-
+In \cite{ackermann12}, the Cavalieri integral is denoted via $\int_{a(y)}^{b(y)} f(x)~dx$, where $a(y)$ denotes the functional representation of $\mathbf{c}(t) + \left <a,0 \right >$ and $b(y) = a(y)+(b-a)$ 
 
 %Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
 %\begin{figure}[htb]
@@ -306,7 +296,7 @@ In this section we define the double Cavalieri integral and we show that it can 
 number of non-linear regtangular infinitesimals.\\
 
 \noindent
-Without the loss of generality, consider the surface $f(x,y)$, the curve $\mathbf{c}(t)$\\$=\left <c_x(t),c_y(t), c_z(t) \right >$ and the region $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
+Without the loss of generality, consider the continuous surface $f(x,y)$, the continuous curve $\mathbf{c}(t)=\left <c_x(t),c_y(t), c_z(t) \right >$ and the region $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
 
 \begin{definition}[Translational curve in $\mathbb{R}^3$]
 If a curve $\mathbf{c}(t)$ in $\mathbb{R}^3$ intersects the $xy$ plane at the origin and $\mathbf{c}(t) + \left < e,f,0 \right >$ intersects 
@@ -318,7 +308,7 @@ with respect to $f(x,y)$ on $R$.
 Moreover, assume that $\mathbf{c}(t)$ is a translational curve with respect to $f(x,y)$ on $R$. Let us first partition $R$ into $n\times m$ subrectangles $R_{ij} = [x_{i},x_{i+1}] \times [y_{j},y_{j+1}]$ of equal width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$ and length $\Delta y^1= \Delta y_j^1 = y_{j+1}-y_j\ll(d-c)$.
 Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_j^1)\in R$ (the lower left vertice of $R_{ij}$) at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects the 
 $xy$-plane to the $xy$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects $f(x,y)$. Note, the domain of $T$ is $R$. Moreover, let us denote the range 
-of $T$ with $S$. As the paartition of $R$ can be made arbitrarily fine, $T:R\rightarrow S$ actually maps every point $(x_i^1,y_j^1)\in R$ to a point $(x_i^2,y_j^2)\in S$. In general, the transformation $T$ is defined as follows:
+of $T$ with $S$. As the partition of $R$ can be made arbitrarily fine, $T:R\rightarrow S$ actually maps every point $(x_i^1,y_j^1)\in R$ to a point $(x_i^2,y_j^2)\in S$. In general, the transformation $T$ is defined as follows:
 \begin{equation}
 x_i^2 = h(x_i^1,y_j^1)~\textrm{and}~y_j^2 = s(x_i^1,y_j^1).
 \end{equation}
@@ -345,10 +335,10 @@ x_i^2 = h(x_i^1,y_j^1)~\textrm{and}~y_j^2 = s(x_i^1,y_j^1).
 
 \noindent
 Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$.  Let us further assume that $f(x,y) > 0$ for all $(x,y)\in S$. Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and 
-$S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aforementioned connections by employing appropriate surfaces. 
-As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
+$S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aforementioned connections by employing appropriate surfaces. Note that 
+$\mathcal{S}$ can be decomposed into an infinite number of non-uniform rectangular infinitesimals. As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
 Moreover, the domain $R$ and the range $S$ of the transformation function $T$ which is associated with the solid $\mathcal{S}$ is depicted in Figure~\ref{fig:prismatoid_regions}.  
-Let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
+In general, let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
 \begin{equation}
 \label{eq:cav_sum_2d}
 V_{\mathcal{S}} \approx \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
@@ -367,14 +357,15 @@ of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{prismatoid_solid.pdf}
-\caption{xx}
+\caption{The solid $\mathcal{S}$ which is bounded by the planes $f(x,y)=-x-y+8$, $2x$, $2(x-4)$, $y$, $y-4$ and the $xy$-plane. The figure also depicts the partition 
+points $(x_i^1,y_i^1)\in\mathcal{R}$ and $(x_i^1,y_i^1)\in\mathcal{R}$ which is used in the double Cavalieri sum (see Equation~\eqref{eq:cav_2d}).}
 \label{fig:prismatoid_solid}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{prismatoid_regions.pdf}
-\caption{xx}
+\caption{The transformation function $T$ which is associated with the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid}.}
 \label{fig:prismatoid_regions}
 \end{figure}
 
@@ -425,16 +416,18 @@ also depicted and labelled in Figure~\ref{fig:prismatoid_solid}.\\
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.75\textwidth]{prismatoid.pdf}
-\caption{xx}
-\label{fig:prismatoid}
+\includegraphics[width=0.5\textwidth]{prismatoid_real.jpg}
+\caption{A physical not-to-scale model of the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid}.}
+\label{fig:prismatoid_real}
 \end{figure}
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{prismatoid_real.jpg}
-\caption{xx}
-\label{fig:prismatoid_real}
+\includegraphics[width=0.75\textwidth]{prismatoid.pdf}
+\caption{The solid depicted in Figure~\ref{fig:prismatoid_solid} is a prismatoid. We can, therefore, calculate its volume with the prismatoid volume equation: $V_{\mathcal{S}}$. If the 
+areas of the two parallel faces are A1 and A3, the cross-sectional area of the intersection of the prismatoid with a plane midway between the two parallel faces is A2, 
+and the height (the distance between the two parallel faces) is h, then the volume of the prismatoid is given by  }
+\label{fig:prismatoid}
 \end{figure}
 
 \noindent
