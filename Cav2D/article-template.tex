@@ -113,7 +113,7 @@ due to Cavalieri's principle in $\mathbb{R}^3$. The infinitesimals associated wi
 \noindent
 Figure~\ref{fig:cav_principle} depicts a classic rectangular prism or column (left solid) as well as a \emph{non-uniform rectangular prism or column} (right solid). The volumes of the two solids in Figure~\ref{fig:cav_principle} are equal due 
 to Cavalieri's principle. Note that in this article we use the non-standardized phrase non-unifor rectangular prism or column to refer to a solid that has rectangular 
-basis and lateral edges that are either oblique lines or non-linear curves. Moreover, the four lateral edges of the aformentioned solid also need to be translations of one another. In this paper, we will also take the liberty to refer to a non-linear rectangular prism whose base's
+basis and lateral edges that are either oblique lines or non-linear curves. Moreover, the four lateral edges of the aformentioned solid also need to be translations of one another. In this paper, we will also take the liberty to refer to a non-uniform rectangular prism whose base's
 lenght and widht both tend to zero as a \emph{non-uniform rectangular infinitesimal}. \\
 
 \noindent
@@ -122,8 +122,7 @@ The area of a non-rectangular integration strip is computed via Cavalieri’s pr
 Cavalieri integral. We also show that if a solid can be decomposed into an infinite number of non-uniform rectangular infinitesimals then its volume can be computed 
 by the double Cavalieri integral. Whether the double Cavalieri integral will prove to be an equally useful visualization tool will be investigated as part of a future endeavor.
 Moreover, the examples we provide at the end of the paper are presented in such a way that they will deepen undergraduate Calculus students' understanding into the 
-process of integration. As this paper is mainly meant to be read by undergraduate students as well as the layman who is interested in the theory of integration we will 
-try to steer clear from using too many formal definitions and proofs and rather convey our ideas via worked out examples.\\ 
+process of integration. Furhtermore, we will try to steer clear from using too many formal definitions and proofs and rather convey our ideas via worked out examples, as this paper is mainly meant to be read by undergraduate students as well as the layman who is interested in the theory of integration.\\ 
 
 \noindent
 We start the paper by defining the single and double Cavalieri integral. We end our paper with two worked out examples.
@@ -293,7 +292,7 @@ In \cite{ackermann12}, the Cavalieri integral is denoted via $\int_{a(y)}^{b(y)}
 
 \section{Double Cavalieri Integral}
 In this section we define the double Cavalieri integral and we show that it can be used to calculate the volume of solids that can be decomposed into an infinite 
-number of non-linear regtangular infinitesimals.\\
+number of non-uniform regtangular infinitesimals.\\
 
 \noindent
 Without the loss of generality, consider the continuous surface $f(x,y)$, the continuous curve $\mathbf{c}(t)=\left <c_x(t),c_y(t), c_z(t) \right >$ and the region $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
@@ -316,7 +315,7 @@ x_i^2 = h(x_i^1,y_j^1)~\textrm{and}~y_j^2 = s(x_i^1,y_j^1).
 
 
 %We will now show 
-%that we can approximate $V_{\mathcal{S}}$ by summing together the volume of $n$ non-linear prisms that cicumscribe $\mathcal{S}$ and that as $n\rightarrow \infty$ 
+%that we can approximate $V_{\mathcal{S}}$ by summing together the volume of $n$ non-uniform prisms that cicumscribe $\mathcal{S}$ and that as $n\rightarrow \infty$ 
 %the aformentioned sum approaches $V_{\mathcal{S}}$. 
 %Without any loss of generality, assume that $f(x,y)\geq0$. Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$. 
 %Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and $S_f$ via translations of $\mathbf{c}(t)$ along 
@@ -347,7 +346,7 @@ Let us verify that this is indeed the case. If we closely inspect Equation~\ref{
 \begin{itemize}
 \item $\Delta x_i^1$ and $\Delta y_j^1$ represent the width and the length of subrectangle $R_{ij}$.
 \item The product $\Delta A = \Delta x_i^1\times \Delta y_j^1$ represents the area of subrectangle $R_{ij}$.
-\item $f(x_i^2,y_j^2)$ represents the height of a non-linear rectangular column or prism $\mathcal{K}_{ij}$ whose base is $R_{ij}$. Furthermore, the lateral edges of this column are all translations 
+\item $f(x_i^2,y_j^2)$ represents the height of a non-uniform rectangular column or prism $\mathcal{K}_{ij}$ whose base is $R_{ij}$. Furthermore, the lateral edges of this column are all translations 
 of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel plane to the $xy$-plane and $\mathcal{K}_{ij}$ is a rectangle with the same dimensions as $R_{ij}$. 
 \item The product $f(x_i^2,y_j^2)\times \Delta A$ represents the volume of $\mathcal{K}_{ij}$ (due to Cavalieri's principle).
 \item The double Cavalieri sum $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta A$, therefore, approximates $V_{\mathcal{S}}$. 
@@ -530,7 +529,7 @@ $R = [0,1]\times [0,1]$ (if viewed from the front) and that the curve of interse
 
 
 \noindent
-Since $\mathcal{S}$ can be decomposed into an infinite number of non-linear rectangular infinitesimals we can compute its volume using:
+Since $\mathcal{S}$ can be decomposed into an infinite number of non-uniform rectangular infinitesimals we can compute its volume using:
 \begin{equation}
 \label{eq:cav_ex2}
 V_{\mathcal{S}} = \iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy,
