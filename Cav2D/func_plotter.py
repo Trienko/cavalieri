@@ -1450,7 +1450,12 @@ def volume_of_prismatoid():
     d = d3(V1,V2)
   
     A2a = area_trap(a,b,c,d) 
-    
+
+    print("h = ",h)
+    print("A1 = ",A1)
+    print("A2a = ",A2a)
+    print("A3 = ",A3)    
+
     Va = (1.0/6.0)*h*(A1+4*A2a+A3)
     print("Va = ",Va)
 

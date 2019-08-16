@@ -427,7 +427,7 @@ also depicted and labelled in Figure~\ref{fig:prismatoid_solid}.\\
 \caption{Another depiction of the solid $\mathcal{S}$ found in Figure~\ref{fig:prismatoid_solid} which highlights the fact that $\mathcal{S}$ is a prismatoid. We can, therefore, calculate its volume with the prismatoid volume equation: $V_{\mathcal{S}}= \frac{h}{6}(A_1+4A_2+A_3)$.
 Note, the area of the two basis of $\mathcal{S}$ are denoted by $A1$ and $A3$, the cross-sectional area of the intersection of $\mathcal{S}$ with a plane midway between the two basis is denoted via $A2$, 
 and the height of $\mathcal{S}$ is denoted by $h$. Moreover, also note that the surfaces associated with $A1$, $A2$ and $A3$ are depicted in the above figure using shaded sheets. For $\mathcal{S}$ 
-$A1=$, $A2=$, $A3 = $ and $h=$. The volume of $\mathcal{S}$ is, therefore, $25.6$.}
+$A1=10.7331$, $A2= 7.1554$, $A3 = 3.5777$ and $h = 3.5777$. The volume of $\mathcal{S}$ is, therefore, $25.6$.}
 \label{fig:prismatoid}
 \end{figure}
 
@@ -514,6 +514,21 @@ Let $\mathcal{S}$ be the solid which is bounded by the planes $f(x,y)=\sqrt{-x^2
 in Figure~\ref{fig:sphere_solid}. Also note the following: the base of $\mathcal{S}$ is the region 
 $R = [0,1]\times [0,1]$ (if viewed from the front) and that the curve of intersection between $\sqrt{x}$ and $\sqrt{y}$ is $\mathbf{c}(t) = \left < t,t,\sqrt{t}\right >$. \\
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{sphere_solid.pdf}
+\caption{The solid $\mathcal{S}$ which is bounded by the planes $f(x,y)=\sqrt{-x^2-y^2+4}$, $\sqrt{x}$, $\sqrt{x-1}$, $\sqrt{y}$, $\sqrt{y-1}$ and the $xy$-plane.}
+\label{fig:sphere_solid}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{sphere_regions.pdf}
+\caption{The transformation $T$ associated with the solid $\mathcal{S}$ depicted in Figure~\ref{fig:sphere_solid}.}
+\label{fig:sphere_regions}
+\end{figure}
+
+
 \noindent
 Since $\mathcal{S}$ can be decomposed into an infinite number of non-linear rectangular infinitesimals we can compute its volume using:
 \begin{equation}
@@ -541,6 +556,14 @@ As mentioned earlier, we can use $t(x_i^1,y_j^1)$ to find expressions for $h$ an
 We can verify that $V_{\mathcal{S}}=0.864043$ is indeed correct via a more traditional route. We first need to project $\mathcal{S}$ onto the $xy$ plane (see Figure~\ref{fig:sphere_xy}). We can then subdivide this projection into multiple regions (see Table~\ref{tab:table1}). Doing so actually results in $\mathcal{S}$ being decomposed into multiple solids. We can then 
 compute the volume of the aforementioned solids. These computed volumes can then be added together to find the total volume of $\mathcal{S}$. The calculation details 
 of this approach is presented in Table~\ref{tab:table1}. Table~\ref{tab:table1} verifies that the volume of $\mathcal{S}$ is indeed $0.864043$.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{sphere_xy.pdf}
+\caption{The $xy$-projection of the solid $\mathcal{S}$ depicted in Figure~\ref{fig:sphere_solid} onto the $xy$-plane.}
+\label{fig:sphere_xy}
+\end{figure}
+
 
 \begin{table}
 
@@ -579,35 +602,6 @@ $r_2(x) = \sqrt{-x^2-x+4}$, $r_3(x) = \sqrt{-x^2-(x-1)+4}$ and $r_4(x) = \frac{1
 \end{center}
 
 \end{table}
-
-
-
-
- 
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.75\textwidth]{sphere_solid.pdf}
-\caption{The solid $\mathcal{S}$ which is bounded by the planes $f(x,y)=\sqrt{-x^2-y^2+4}$, $\sqrt{x}$, $\sqrt{x-1}$, $\sqrt{y}$, $\sqrt{y-1}$ and the $xy$-plane.}
-\label{fig:sphere_solid}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.75\textwidth]{sphere_regions.pdf}
-\caption{The transformation $T$ associated with the solid $\mathcal{S}$ depicted in Figure~\ref{fig:sphere_solid}.}
-\label{fig:sphere_regions}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.75\textwidth]{sphere_xy.pdf}
-\caption{The $xy$-projection of the solid $\mathcal{S}$ depicted in Figure~\ref{fig:sphere_solid} onto the $xy$-plane.}
-\label{fig:sphere_xy}
-\end{figure}
-
-
-
 
 %in In turns out that $h$ can be constructed 
 %as the reader progresses through the paper. As will become apparent later on in this paper defining your Cavalieri integral in terms of $\mathbf{c}(t)$ instead of 
