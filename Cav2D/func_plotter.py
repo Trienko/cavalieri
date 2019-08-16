@@ -602,16 +602,17 @@ def plot_paper_figure(xx,yy,xx2,yy2,zz2,K=8):
     Ce[1] = (yy[0,0]+yy2[0,0])/2.0
     Ce[2] = zz2[0,0]/2.0
     
-    ax.text(-1.1, 0, 0, r"$(x_i^1,y_i^1)$", "y")
+    ax.text(-1.1, 0, 0, r"$(x_i^1,y_j^1)$", "y")
 
-    ax.text(xx2[0,0]-1.3, yy2[0,0]-0.3, 0, r"$(x_i^2,y_i^2)$", "y")
+    ax.text(xx2[0,0]-1.3, yy2[0,0]-0.3, 0, r"$(x_i^2,y_j^2)$", "y")
 
-    ax.text(xx2[0,0]-1.6, yy2[0,0], zz2[0,0], r"$f(x_i^2,y_i^2)$", "x")
+    ax.text(xx2[0,0]-1.6, yy2[0,0], zz2[0,0], r"$f(x_i^2,y_j^2)$", "x")
 
     ax.text(0, -0.6, 0, r"$\Delta x_i^1$", "x")
-    ax.text(0.4, 0.3, 0, r"$\Delta y_i^1$", "y")
+    ax.text(0.4, 0.3, 0, r"$\Delta y_j^1$", "y")
 
     ax.text(Ce[0],Ce[1],Ce[2],r"$\mathbf{c}(t)$","x")
+    ax.text(Ce[0]/2,Ce[1]/2,Ce[2]/2,r"$\mathcal{K}_{ij}$","x")
 
     ax.text(2, 2, 0, r"$R$", "x")
     ax.text(2.9, 3.2, 0, r"$S$", "x")
@@ -1252,9 +1253,9 @@ def plot_volume2(xx,yy,xx2,yy2,t):
     #plt.axis('equal')
     plt.fill(x, y,"b",alpha=0.2,edgecolor='black', linewidth=3)
 
-    plt.annotate('$R-(x_i^1,y_i^1)$', xy=(0.5, 0.5), xytext=(0.4, 0.4))
+    plt.annotate('$R-(x_i^1,y_j^1)$', xy=(0.5, 0.5), xytext=(0.4, 0.4))
     plt.scatter(0.5,0.5,color="b",s=30, marker="o",alpha=0.8)
-    plt.annotate('$S-(x_i^2,y_i^2)$', xy=(1.3, 1.3), xytext=(1.18, 1.35))
+    plt.annotate('$S-(x_i^2,y_j^2)$', xy=(1.3, 1.3), xytext=(1.18, 1.35))
     plt.scatter(1.25,1.3,color="r",s=30, marker="o",alpha=0.8)
     plt.annotate('$T$', xy=(0.8, 0.9), xytext=(0.9, 1))
     plt.arrow(0.55, 0.55, 0.64, 0.68,width=0.001,head_width=0.025)  
@@ -1524,9 +1525,9 @@ if __name__ == "__main__":
    #plt.axis('equal')
    plt.fill(x, y,"b",x2,y2,"r",alpha=0.2,edgecolor='black', linewidth=3)
 
-   plt.annotate('$R-(x_i^1,y_i^1)$', xy=(2, 2), xytext=(1.7, 1.65))
+   plt.annotate('$R-(x_i^1,y_j^1)$', xy=(2, 2), xytext=(1.7, 1.65))
    plt.scatter(2,2,color="b",s=30, marker="o",alpha=0.8)
-   plt.annotate('$S-(x_i^2,y_i^2)$', xy=(3, 3.6), xytext=(2.6, 3.8))
+   plt.annotate('$S-(x_i^2,y_j^2)$', xy=(3, 3.6), xytext=(2.6, 3.8))
    plt.scatter(3,3.6,color="r",s=30, marker="o",alpha=0.8)
    plt.annotate('$T$', xy=(2.5, 2.8), xytext=(2.5, 2.9))
    
