@@ -58,7 +58,7 @@
 
 \begin{document}
 
-\title{Computing volume via non-linear rectangular infinitesimals}
+\title{Computing volume via non-uniform rectangular infinitesimals}
 %\author{Woodrow Wilson and Herbert Hoover} %%leave blank in initial submission to allow for double blind reviewing
 %\author{ }
 
@@ -73,21 +73,22 @@
 %\end{biog}
 %This is not to say that there  This is partly, because there is no simplistic geometric interpretation for fractional calculus.  
 \noindent
-Bonaventura Cavalieri was a mathematician who lived in the 17th century. He made numerous contributions to the fields of optics, astronomy and geometry. 
-Cavalieri was a student of Galileo. He served as a professor of mathematics at the university of Bologna from 1629 until his death in 1647. 
-Galileo held Cavalieri in high esteem. Galileo made the following remark in a reference letter he wrote on Cavalieri's behalf: ``\emph{few, perhaps none, from 
+Bonaventura Cavalieri was a mathematician who lived in the 17th century. He made numerous contributions to the fields of optics, astronomy and geometry.
+He served as a professor of mathematics at the university of Bologna from 1629 until his death in 1647. 
+Cavalieri was a student of Galileo. Galileo held Cavalieri in high esteem. Galileo made the following remark in a reference letter he wrote on Cavalieri's behalf: ``\emph{few, perhaps none, from 
 Archimedes onwards, have investigated so deeply and have entered so far into the science of geometry}''. In 1935, a moon crater, Cavalerius, was officially named after Cavalieri to commemorate his achievements and to honor his memory (see Figure~\ref{fig:crater}) \cite{?}. 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.4\textwidth]{crater.jpg}
-\caption{The moon crater Cavalerius. In 1935, this crater was officially named after Cavalieri.}
+\caption{The moon crater Cavalerius, which is named after Bonaventura Cavalieri.}
 \label{fig:crater}
 \end{figure}
 Cavalieri's most notable achievement was the publication of his 
 treatise, \emph{Geometria indivisibilibus}, in which he describes the precalculus method of indivisibles. The method of indivisibles can be attributed to the ancient Greeks,
-in this case Democritus and Archimedes. The method is used to compute the area and the volume of complex planar figures and solids, respectively.
-It works by finding a planar figure or a solid, whose area or volume can easily be computed, which is Cavalieri congruent to a planar figure or solid whose 
-area or volume is unknown. Two planar figures or solids that are Cavalieri congruent have equal area or volume. Two planar figures or solids are Cavalieri congruent if they can be decomposed into the same set of parallel ``indivisibles''. An indivisible of 
+in this case Democritus and Archimedes. The method is used to compute the area and the volume of complex planar figures and solids, respectively.\\
+
+\noindent
+Two planar figures or solids are Cavalieri congruent if they can be decomposed into the same set of parallel ``indivisibles''. An indivisible of 
 a planar figure is any cord of the planar figure. An indivisible of a solid is any planar section of a solid. Two indivisibles are equal if they are of the same length or area.
 It is Cavalieri's principle that assures us that two planar figures or solids that are composed of the same set of indivisibles have equal area or volume. Cavalieri's principle 
 in $\mathbb{R}^3$ is stated below without proof:
@@ -97,62 +98,66 @@ If two solids are included between a pair of parallel planes, and if the areas o
 the two sections cut by them on any plane parallel to the including planes are always
 equal, then the volumes of the two solids are equal.
 \end{theorem}
+\noindent
+The method of indivisibles works by finding a planar figure or a solid, whose area or volume can easily be computed, which is Cavalieri congruent to a planar figure or solid whose 
+area or volume is difficult to compute. 
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.5\textwidth]{cav_principle.pdf}
-\caption{Illustration of Cavalier's principle in $\mathbb{R}^3$. The volume of the left rectangular prism is equal to the volume of the right non-linear reectangular prism 
+\caption{Illustration of Cavalier's principle in $\mathbb{R}^3$. The volume of the left rectangular prism is equal to the volume of the right non-uniform reectangular prism 
 due to Cavalieri's principle in $\mathbb{R}^3$.}
 \label{fig:cav_principle}
 \end{figure}
 
 \noindent
-Figure~\ref{fig:cav_principle} depicts a classic rectangular prism or column as well as a \emph{non-linear rectangular prism or column}. The volumes of the two solids in Fig~\ref{fig:cav_principle} are equal due 
-to Cavalieri's principle. Note that in this article we use the non-standardized phrase non-linear rectangular prism or column to refer to a solid that has rectangular 
-basis and lateral edges that are non-linear curves. Moreover, the four lateral edges of this solid also need to be translations of one another. In this paper, we will also take the liberty to refer to a non-linear rectangular prism whose base's
-lenght and widht both tend to zero as a non-linear rectangular infinitesimal. \\
+Figure~\ref{fig:cav_principle} depicts a classic rectangular prism or column (left solid) as well as a \emph{non-uniform rectangular prism or column} (right solid). The volumes of the two solids in Figure~\ref{fig:cav_principle} are equal due 
+to Cavalieri's principle. Note that in this article we use the non-standardized phrase non-unifor rectangular prism or column to refer to a solid that has rectangular 
+basis and lateral edges that are either oblique lines or non-linear curves. Moreover, the four lateral edges of the aformentioned solid also need to be translations of one another. In this paper, we will also take the liberty to refer to a non-linear rectangular prism whose base's
+lenght and widht both tend to zero as a non-uniform rectangular infinitesimal. \\
 
 \noindent
-Ackermann et al. utilized the idea of using non-rectangular integration strips to perform integration in $\mathbb{R}^2$ and in doing so developed the Cavalieri integral. 
-The area of a non-rectangular integration strip is computed via Cavalieri’s principle in $\mathbb{R}^2$. The Cavalieri integral has proven to be very useful as a visualization tool. In this paper we extend the Cavalieri integral into $\mathbb{R}^3$, i.e. we use Cavalieri's principle in $\mathbb{R}^3$ to define the double 
-Cavalieri integral. We also show that if a solid can be decomposed into an infinite number of non-linear rectangular infinitesimals then its volume can be computed 
+Ackermann et al. utilized the idea of using non-rectangular integration strips to perform integration in $\mathbb{R}^2$ and in doing so developed the Cavalieri integral \cite{ackermann12}. 
+The area of a non-rectangular integration strip is computed via Cavalieri’s principle. The Cavalieri integral has proven to be very useful: it can be used to visualize the Riemann-Stieltjes integral \cite{grobler19}. In this paper, we extend the Cavalieri integral into $\mathbb{R}^3$, i.e. we use Cavalieri's principle in $\mathbb{R}^3$ to define the double 
+Cavalieri integral. We also show that if a solid can be decomposed into an infinite number of non-uniform rectangular infinitesimals then its volume can be computed 
 by the double Cavalieri integral. Whether the double Cavalieri integral will prove to be an equally useful visualization tool will be investigated as part of a future endeavor.
-The examples we provide at the end of the paper can also be used by an undergraduate Calculus lecturer to improve their students' understanding into the process of integration.   
+Moreover, the examples we provide at the end of the paper are presented in such a way that they will deepen undergraduate Calculus students' understanding into the 
+process of integration. As this paper is mainly meant to be read by undergraduate students as well as the layman who is interested in the theory of integration we will 
+try to steer clear from using too many formal definitions and proofs and rather convey our ideas via worked out examples.\\ 
 
-
-and show that we can determine the volume of solids that . 
- 
+\noindent
+We start the paper by defining the single and double Cavalieri integral. We end our paper with two worked out examples.
 
 \section{Cavalieri Integral}
-The single Cavalieri integral was originally defined in \cite{ackermann12} without having to resort to vector calculus. In this section we will redefine the Cavalieri integral using vector calculus notation. As the reader will undoubtedly realize, if we define the single Cavalieri integral using vector calculus then it becomes trivial to
+The single Cavalieri integral was originally defined by Ackermann et al. without having to resort to vector calculus \cite{ackermann12}. In this section, however, we will define the Cavalieri integral using vector calculus notation. As the reader will undoubtedly realize, if we define the single Cavalieri integral using vector calculus then it becomes trivial to
 extend its definition into $\mathbb{R}^3$.\\
 
 %In this section we define the Cavalieri integral \cite{ackermann12}. 
 
 \noindent
-Consider the curve $f(x)$, the curve $\mathbf{c}(t)=\left <c_x(t),c_y(t) \right >$ and the interval $[a,b]$.
+Consider the continuous real-valued function $f(x)$, the continuous curve $\mathbf{c}(t)=\left <c_x(t),c_y(t) \right >$ and the interval $[a,b]$.
 
 \begin{definition}[Translational curve in $\mathbb{R}^2$]
 If a curve $\mathbf{c}(t)$ in $\mathbb{R}^2$ intersects the $x$ axis at the origin and $\mathbf{c}(t) + \left < e,0 \right >$ intersects 
-the curve $f(x)$ at a single point for all $e\in [a,b]$ then $\mathbf{c}(t)$ is a translational curve 
+the function $f(x)$ at a single point for all $e\in [a,b]$ then $\mathbf{c}(t)$ is a translational curve 
 with respect to $f(x)$ on $[a,b]$. 
 \end{definition}
 
 \noindent
 Moreover, assume that $\mathbf{c}(t)$ is a translational curve with respect to $f(x)$ on $[a,b]$. Let us first partition $[a,b]$ into $n$ subintervals $[x_{i},x_{i+1}]$ of equal 
 width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$. Furthermore, let the transformation function $h$ map the $x$--coordinate $x_i^1\in [a,b]$ at which $\mathbf{c}(t) + \left <x_i^1,0 \right >$ intersects the 
-$x$-axis to the $x$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,0 \right >$ intersects $f(x,y)$. Note, the domain of $h$ is $[a,b]$. Let $a'$ denote the $x$-coordinate 
-at which $\mathbf{c}(t) + \left <a,0 \right >$ intersects $f(x,y)$ and let $b'$ denote the $x$-coordinate 
-at which $\mathbf{c}(t) + \left <b,0 \right >$ intersects $f(x,y)$.  Note, the range 
+$x$-axis to the $x$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,0 \right >$ intersects $f(x)$. Note, the domain of $h$ is $[a,b]$. Let $a'$ denote the $x$-coordinate 
+at which $\mathbf{c}(t) + \left <a,0 \right >$ intersects $f(x)$ and let $b'$ denote the $x$-coordinate 
+at which $\mathbf{c}(t) + \left <b,0 \right >$ intersects $f(x)$.  Note, the range 
 of $h$ is $[a',b']$. As the partition of $[a,b]$ can be made arbitrarily fine, $h:[a,b]\rightarrow [a',b']$ actually maps every point $x_i^1\in [a,b]$ to a point $x_i^2\in [a',b']$. \\
 
 \noindent
-Let $R$ denote the region which is bounded by $f(x,y)$, $\mathbf{c}(t)+\left <a,0\right >$, $\mathbf{c}(t)+\left <b,0\right >$ and the $x$-axis. 
-As an example, the region $R$ depicted in Figure~\ref{fig:caval2} is obtained if we set $f(x) = x$, $\mathbf{c}(t) = \left<-\frac{1}{2} t,\frac{1}{2} t\right>$, $a = 1$ and $b = 4$.
-Let $A_R$ denote the area of $R$. We can approximate $A_R$ with:
+Let $R$ denote the region which is bounded by $f(x)$, $\mathbf{c}(t)+\left <a,0\right >$, $\mathbf{c}(t)+\left <b,0\right >$ and the $x$-axis. 
+As an example, the region $R$ depicted in Figure~\ref{fig:caval2} is obtained if we set $f(x) = x$, $\mathbf{c}(t) = \frac{1}{2}\left<- t, t\right>$, $a = 1$ and $b = 4$.
+In general, let $A_R$ denote the area of $R$. We can approximate $A_R$ with:
 \begin{equation}
  \label{eq:caval1}
- A_R \approx \sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1,
+ A_R \approx \sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
  \end{equation}
 Let us verify that this is indeed the case. If we closely inspect Equation~\ref{eq:caval1} and Figure~\ref{fig:caval2} we notice the following:
  \begin{itemize}
@@ -166,7 +171,7 @@ Let us verify that this is indeed the case. If we closely inspect Equation~\ref{
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{fig13.eps}
-\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The figure also depicts the partition points $x_i^1$ and $x_i^2$ as used in the Cavalieri sum (see Eq.~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The parametric representation of $a(y)$ is $\mathbf{c}(t) = \frac{1}{2} \left <-t,t \right >$. The figure also depicts the partition points $x_i^1$ and $x_i^2$ as used in the Cavalieri sum (see Eq.~\eqref{eq:caval1}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
 \label{fig:caval2}
 \end{figure}
 
@@ -201,14 +206,25 @@ The only thing that now remains is to find an expression for $h$. Note that, for
 \end{equation}
 
 \noindent
-Note, the Cavalieri integral is denoted in \cite{ackermann12} via:
+The area of the region $R$ depicted in Figure~\ref{fig:caval2} can, therefore, be computed as follows:
+\begin{equation}
+\int \limits_{\mathcal{C}} f(x)~dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75.  
+\end{equation}
+The expression for $h$ was found by employing Equation~\eqref{eq:pat_rel_1d}, Equation~\eqref{eq:t_func_1d} and Equation~\eqref{eq:h_func_1d}. Let us now verify that 
+this result is correct by using a more conventional approach:
+\begin{equation}
+\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
+\end{equation}
+
+\noindent
+In \cite{ackermann12}, the Cavalieri integral is denoted via:
 \begin{equation}
 \label{eq:cav_1d}
 \int_{a(y)}^{b(y)} f(x)~dx = \lim_{n \rightarrow \infty}  \sum_{i=0}^{n-1} f(x_i^2) \Delta x_i^1,
 \end{equation}
 where $a(y)$ denotes the functional representation of $\mathbf{c}(t) + \left <a,0 \right >$ and $b(y) = a(y)+(b-a)$.
 
-
+  
 
 
 
