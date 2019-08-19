@@ -58,7 +58,7 @@
 
 \begin{document}
 
-\title{Computing volume via non-uniform rectangular infinitesimals}
+\title{Computing volume via oblique or irregularly shaped rectangular infinitesimals}
 %\author{Woodrow Wilson and Herbert Hoover} %%leave blank in initial submission to allow for double blind reviewing
 %\author{ }
 
@@ -74,29 +74,29 @@
 %This is not to say that there  This is partly, because there is no simplistic geometric interpretation for fractional calculus.  
 \noindent
 Bonaventura Cavalieri was a mathematician who lived in the 17th century. He made numerous contributions to the fields of optics, astronomy and geometry.
-He served as a professor of mathematics at the university of Bologna from 1629 until his death in 1647. 
+He served as a professor of mathematics at the university of Bologna from 1629 until his death in 1647 \cite{andersen1985,eves1991,jullien2015}. 
 Cavalieri was a student of Galileo. Galileo held Cavalieri in high esteem. Galileo made the following remark in a reference letter he wrote on Cavalieri's behalf: ``\emph{few, perhaps none, from 
-Archimedes onwards, have investigated so deeply and have entered so far into the science of geometry}''. In 1935, a moon crater, Cavalerius, was officially named after Cavalieri to commemorate his achievements and to honor his memory (see Figure~\ref{fig:crater}) \cite{?}. 
+Archimedes onwards, have investigated so deeply and have entered so far into the science of geometry}'' \cite{gonzalez2018}. In 1935, a moon crater, Cavalerius, was officially named after Cavalieri to commemorate his achievements and to honor his memory (see Figure~\ref{fig:crater}) \cite{blagg1935}. 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.4\textwidth]{crater.jpg}
-\caption{The moon crater Cavalerius, which is named after Bonaventura Cavalieri.}
+\caption{The moon crater Cavalerius, which is named after Bonaventura Cavalieri. James Stuby / Wikimedia Commons / Public Domain.}
 \label{fig:crater}
 \end{figure}
 Cavalieri's most notable achievement was the publication of his 
 treatise, \emph{Geometria indivisibilibus}, in which he describes the precalculus method of indivisibles. The method of indivisibles can be attributed to the ancient Greeks,
-in this case Democritus and Archimedes. The method is used to compute the area and the volume of complex planar figures and solids, respectively.\\
+in this case Democritus and Archimedes \cite{eves1991}. The method is used to compute the area and the volume of complex planar figures and solids, respectively.\\
 
 \noindent
 Two planar figures or solids are Cavalieri congruent if they can be decomposed into the same set of parallel ``indivisibles''. An indivisible of 
 a planar figure is any cord of the planar figure. An indivisible of a solid is any planar section of a solid. Two indivisibles are equal if they are of the same length or area.
-It is Cavalieri's principle that assures us that two planar figures or solids that are composed of the same set of indivisibles have equal area or volume. Cavalieri's principle 
+It is Cavalieri's principle that assures us that two planar figures or solids that are composed of the same set of indivisibles have equal area or volume \cite{andersen1985,eves1991,jullien2015,malik1984,wildberger2002,william1917,young1985}. Cavalieri's principle 
 in $\mathbb{R}^3$ is stated below without proof:
 
 \begin{theorem}[Cavalieri's principle in $\mathbb{R}^3$]
 If two solids are included between a pair of parallel planes, and if the areas of
 the two sections cut by them on any plane parallel to the including planes are always
-equal, then the volumes of the two solids are equal.
+equal, then the volumes of the two solids are equal (see Figure~\ref{fig:cav_principle}).
 \end{theorem}
 \noindent
 The method of indivisibles works by finding a planar figure or a solid, whose area or volume can easily be computed, which is Cavalieri congruent to a planar figure or solid whose 
@@ -105,30 +105,30 @@ area or volume is difficult to compute.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.5\textwidth]{cav_principle.pdf}
-\caption{Illustration of Cavalier's principle in $\mathbb{R}^3$. The volume of the left rectangular prism is equal to the volume of the right non-uniform reectangular prism 
-due to Cavalieri's principle in $\mathbb{R}^3$. The infinitesimals associated with the two solids are also depicted.}
+\caption{Illustration of Cavalier's principle in $\mathbb{R}^3$. The volume of the left rectangular prism is equal to the volume of the right irregularly shaped rectangular prism 
+due to Cavalieri's principle in $\mathbb{R}^3$. The infinitesimals associated with these two solids are also depicted.}
 \label{fig:cav_principle}
 \end{figure}
 
 \noindent
-Figure~\ref{fig:cav_principle} depicts a classic rectangular prism or column (left solid) as well as a \emph{non-uniform rectangular prism or column} (right solid). The volumes of the two solids in Figure~\ref{fig:cav_principle} are equal due 
-to Cavalieri's principle. Note that in this article we use the non-standardized phrase non-unifor rectangular prism or column to refer to a solid that has rectangular 
-basis and lateral edges that are either oblique lines or non-linear curves. Moreover, the four lateral edges of the aformentioned solid also need to be translations of one another. In this paper, we will also take the liberty to refer to a non-uniform rectangular prism whose base's
-lenght and widht both tend to zero as a \emph{non-uniform rectangular infinitesimal}. \\
+Figure~\ref{fig:cav_principle} depicts a classic rectangular prism or column (left solid) as well as an \emph{irregular rectangular prism or column} (right solid). The volumes of the two solids in Figure~\ref{fig:cav_principle} are equal due 
+to Cavalieri's principle. Note that in this article we use the non-standardized phrase irregular rectangular prism or column to refer to a solid that has rectangular 
+basis and lateral edges that are non-linear curves. Moreover, the four lateral edges of the aformentioned solid also need to be translations of one another. In this paper, we will also take the liberty to refer to an irregular rectangular prism whose base's
+lenght and widht both tend to zero as an \emph{irregular rectangular infinitesimal}. \\
 
 \noindent
 Ackermann et al. utilized the idea of using non-rectangular integration strips to perform integration in $\mathbb{R}^2$ and in doing so developed the Cavalieri integral \cite{ackermann12}. 
 The area of a non-rectangular integration strip is computed via Cavalieri’s principle. The Cavalieri integral has proven to be very useful: it can be used to visualize the Riemann-Stieltjes integral \cite{grobler19}. In this paper, we extend the Cavalieri integral into $\mathbb{R}^3$, i.e. we use Cavalieri's principle in $\mathbb{R}^3$ to define the double 
-Cavalieri integral. We also show that if a solid can be decomposed into an infinite number of non-uniform rectangular infinitesimals then its volume can be computed 
+Cavalieri integral. We also show that if a solid can be decomposed into an infinite number of irregularly shaped rectangular infinitesimals then its volume can be computed 
 by the double Cavalieri integral. Whether the double Cavalieri integral will prove to be an equally useful visualization tool will be investigated as part of a future endeavor.
 Moreover, the examples we provide at the end of the paper are presented in such a way that they will deepen undergraduate Calculus students' understanding into the 
-process of integration. Furhtermore, we will try to steer clear from using too many formal definitions and proofs and rather convey our ideas via worked out examples, as this paper is mainly meant to be read by undergraduate students as well as the layman who is interested in the theory of integration.\\ 
+process of integration. Furhtermore, as this paper is mainly meant to be read by undergraduate students as well as the layman who is interested in the theory of integration, we will as far as possible try to steer clear from using too many formal definitions and proofs and rather convey our ideas via worked out examples.\\ 
 
 \noindent
 We start the paper by defining the single and double Cavalieri integral. We end our paper with two worked out examples.
 
 \section{Cavalieri Integral}
-The single Cavalieri integral was originally defined by Ackermann et al. without having to resort to vector calculus \cite{ackermann12}. In this section, however, we will define the Cavalieri integral using vector calculus notation. As the reader will undoubtedly realize, if we define the single Cavalieri integral using vector calculus then it becomes trivial to
+The single Cavalieri integral was originally defined by Ackermann et al. without having to resort to vector calculus \cite{ackermann12,stewart1999}. In this section, however, we will define the Cavalieri integral using vector calculus notation. As the reader will undoubtedly realize, if we define the single Cavalieri integral using vector calculus then it becomes trivial to
 extend its definition into $\mathbb{R}^3$.\\
 
 %In this section we define the Cavalieri integral \cite{ackermann12}. 
@@ -292,7 +292,7 @@ In \cite{ackermann12}, the Cavalieri integral is denoted via $\int_{a(y)}^{b(y)}
 
 \section{Double Cavalieri Integral}
 In this section we define the double Cavalieri integral and we show that it can be used to calculate the volume of solids that can be decomposed into an infinite 
-number of non-uniform regtangular infinitesimals.\\
+number of irregularly shaped regtangular infinitesimals.\\
 
 \noindent
 Without the loss of generality, consider the continuous surface $f(x,y)$, the continuous curve $\mathbf{c}(t)=\left <c_x(t),c_y(t), c_z(t) \right >$ and the region $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
@@ -335,7 +335,7 @@ x_i^2 = h(x_i^1,y_j^1)~\textrm{and}~y_j^2 = s(x_i^1,y_j^1).
 \noindent
 Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$.  Let us further assume that $f(x,y) > 0$ for all $(x,y)\in S$. Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and 
 $S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aforementioned connections by employing appropriate surfaces. Note that 
-$\mathcal{S}$ can be decomposed into an infinite number of non-uniform rectangular infinitesimals. As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
+$\mathcal{S}$ can be decomposed into an infinite number of irregularly shaped rectangular infinitesimals. As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
 Moreover, the domain $R$ and the range $S$ of the transformation function $T$ which is associated with the solid $\mathcal{S}$ is depicted in Figure~\ref{fig:prismatoid_regions}.  
 In general, let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
 \begin{equation}
@@ -346,7 +346,7 @@ Let us verify that this is indeed the case. If we closely inspect Equation~\ref{
 \begin{itemize}
 \item $\Delta x_i^1$ and $\Delta y_j^1$ represent the width and the length of subrectangle $R_{ij}$.
 \item The product $\Delta A = \Delta x_i^1\times \Delta y_j^1$ represents the area of subrectangle $R_{ij}$.
-\item $f(x_i^2,y_j^2)$ represents the height of a non-uniform rectangular column or prism $\mathcal{K}_{ij}$ whose base is $R_{ij}$. Furthermore, the lateral edges of this column are all translations 
+\item $f(x_i^2,y_j^2)$ represents the height of an irregular rectangular column or prism $\mathcal{K}_{ij}$ (or in the case of Figure~\ref{fig:prismatoid_solid} and oblique rectangular prism) whose base is $R_{ij}$. Furthermore, the lateral edges of this column are all translations 
 of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel plane to the $xy$-plane and $\mathcal{K}_{ij}$ is a rectangle with the same dimensions as $R_{ij}$. 
 \item The product $f(x_i^2,y_j^2)\times \Delta A$ represents the volume of $\mathcal{K}_{ij}$ (due to Cavalieri's principle).
 \item The double Cavalieri sum $\sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta A$, therefore, approximates $V_{\mathcal{S}}$. 
@@ -409,7 +409,7 @@ y_j^2 = s(x_i^1,y_j^1) = y_j^1 + c_y\circ t(x_i^1,y_j^1).
 \section{Prismatoid}
 Let $\mathcal{S}$ be the solid which is bounded by the planes $f(x,y)=-x-y+8$, $2x$, $2(x-4)$, $y$, $y-4$ and the $xy$-plane. Solid $\mathcal{S}$ is depicted 
 in Figure~\ref{fig:prismatoid_solid}, Figure~\ref{fig:prismatoid} and Figure~\ref{fig:prismatoid_real}. Solid $\mathcal{S}$ is a prismatoid, since all of its 
-vertices lie in two parallel planes. Furthermore, all of its lateral faces are trapezoids or triangles (if viewed from the top). Also note the following: the base of $\mathcal{S}$ is the region 
+vertices lie in two parallel planes. Furthermore, all of its lateral faces are trapezoids or triangles (if viewed from the top) \cite{bradley1979}. Also note the following: the base of $\mathcal{S}$ is the region 
  $R = [0,4]\times [0,4]$ (if viewed from the front) and that the line of intersection between $2x$ and $y$ is $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$. The region $R$ and the line $\mathbf{c}(t)$ are
 also depicted and labelled in Figure~\ref{fig:prismatoid_solid}.\\
 
@@ -425,7 +425,7 @@ also depicted and labelled in Figure~\ref{fig:prismatoid_solid}.\\
 \includegraphics[width=0.75\textwidth]{prismatoid.pdf}
 \caption{Another depiction of the solid $\mathcal{S}$ found in Figure~\ref{fig:prismatoid_solid} which highlights the fact that $\mathcal{S}$ is a prismatoid. We can, therefore, calculate its volume with the prismatoid volume equation: $V_{\mathcal{S}}= \frac{h}{6}(A_1+4A_2+A_3)$.
 Note, the area of the two basis of $\mathcal{S}$ are denoted by $A1$ and $A3$, the cross-sectional area of the intersection of $\mathcal{S}$ with a plane midway between the two basis is denoted via $A2$, 
-and the height of $\mathcal{S}$ is denoted by $h$. Moreover, also note that the surfaces associated with $A1$, $A2$ and $A3$ are depicted in the above figure using shaded sheets. For $\mathcal{S}$ 
+and the height of $\mathcal{S}$ is denoted by $h$. Moreover, also note that the surfaces associated with $A1$, $A2$ and $A3$ are depicted in the above figure using shaded sheets. For $\mathcal{S}$, 
 $A1=10.7331$, $A2= 7.1554$, $A3 = 3.5777$ and $h = 3.5777$. The volume of $\mathcal{S}$ is, therefore, $25.6$.}
 \label{fig:prismatoid}
 \end{figure}
@@ -439,7 +439,7 @@ V_{\mathcal{S}} = \iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h
 with $\mathcal{C}=\{\mathbf{c}(t),R\}$. We can, however, only evaluate the above integral if the transformation $T$ is known (see Figure~\ref{fig:prismatoid_regions}). We can find $T$ using Equation~\eqref{eq:h_2d} and 
 Equation~\eqref{eq:s_2d}. To evaluate Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} we first need to express $t$ in terms of $x_i^1$ and $y_j^1$. If we substitute $f(x,y)$ and $\mathbf{c}(t)$ into Equation~\eqref{eq:c_z} and then solve for $t$ we obtain:
 \begin{equation}
-t(x_i^1,y_j^1) = \frac{x_i^1}{5} + \frac{y_j^1}{5} + \frac{8}{5}. 
+t(x_i^1,y_j^1) = \frac{1}{5}x_i^1 + \frac{1}{5}y_j^1 + \frac{8}{5}. 
 \end{equation}
 Substituting $t(x_i^1,y_j^1)$ into Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} results in:
 \begin{equation}
@@ -458,8 +458,8 @@ V_{\mathcal{S}}=\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^4\int_0^4 f(h(
 \end{eqnarray}
 
 \noindent
-We can easily verify that the $V_{\mathcal{S}} = 25.6$ is in fact correct, since $\mathcal{S}$ is a prismatoid. According to the prismatoid volume 
-equation $V_{\mathcal{S}}=25.6$. The details of this computation is described in the caption of Figure~\ref{fig:prismatoid}. This then validates Equation~\ref{eq:final_int_prismatoid}.
+We can easily verify that the $V_{\mathcal{S}} = 25.6$ is in fact correct, since $\mathcal{S}$ is a prismatoid. Indeed, according to the prismatoid volume 
+equation,  $V_{\mathcal{S}}=25.6$. The details of this computation is described in the caption of Figure~\ref{fig:prismatoid}.
 
 % Let $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ be the line of intersection between the planes $2x$ and $y$. Furthermore, note that the line 
 % $\mathbf{c}(t)$ passes through the origin. The line $\mathbf{c}(t)$ is depicted and labelled in Figure~\ref{fig:prismatoid_solid}. Let 
@@ -529,7 +529,7 @@ $R = [0,1]\times [0,1]$ (if viewed from the front) and that the curve of interse
 
 
 \noindent
-Since $\mathcal{S}$ can be decomposed into an infinite number of non-uniform rectangular infinitesimals we can compute its volume using:
+Since $\mathcal{S}$ can be decomposed into an infinite number of irregularly shaped rectangular infinitesimals we can compute its volume using:
 \begin{equation}
 \label{eq:cav_ex2}
 V_{\mathcal{S}} = \iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy,
@@ -566,7 +566,7 @@ of this approach is presented in Table~\ref{tab:table1}. Table~\ref{tab:table1} 
 
 \begin{table}
 
-\caption{Computing the volume of the solid $\mathcal{S}$ depicted in Figure~\ref{fig:sphere_solid} using a more traditional approach. The region $R_k$ is bounded by $x=a$, $x=b$, $g_1(x)$ and $g_2(x)$. Moreover, $c_1 \approx 1.1861407$, $c_2 \approx 1.6861407$, $c_3 \approx 0.6861407$ and $c_4 \approx 1.3507811$. $r_1(x) = \frac{1}{2}[\sqrt{17-4x^2}-1]$,
+\caption{Computing the volume of the solid $\mathcal{S}$ depicted in Figure~\ref{fig:sphere_solid} using a more traditional approach. The region $R_k$ is bounded by $x=a$, $x=b$, $g_1(x)$ and $g_2(x)$ (see Figure~\ref{fig:sphere_xy}). Moreover, $c_1 \approx 1.1861407$, $c_2 \approx 1.6861407$, $c_3 \approx 0.6861407$ and $c_4 \approx 1.3507811$. $r_1(x) = \frac{1}{2}[\sqrt{17-4x^2}-1]$,
 $r_2(x) = \sqrt{-x^2-x+4}$, $r_3(x) = \sqrt{-x^2-(x-1)+4}$ and $r_4(x) = \frac{1}{2}[\sqrt{21-4x^2}-1]$. If we sum the last column we obtain the volume of $\mathcal{S}$ which is $0.864043$.} 
 \label{tab:table1}
 \begin{center}
@@ -683,8 +683,8 @@ $r_2(x) = \sqrt{-x^2-x+4}$, $r_3(x) = \sqrt{-x^2-(x-1)+4}$ and $r_4(x) = \frac{1
 \begin{abstract}
 In this paper we extended the Cavalieri integral into three dimensional euclidean space, i.e. we defined the double Cavalieri integral. 
 We also showed that this integral can be used to compute the volume of solids that can be decomposed into an infinite number of 
-non-uniform rectangular infinitesimals. We end the paper with two fully worked out examples. In the first example we compute the 
-volume of a prismatoid using the double Cavalieri integral. In the second example we compute the volume of a complex solid which is housed within a sphere using the double Cavalieri integral.
+irrgularly shaped rectangular infinitesimals. We end the paper with two fully worked out examples. In the first example we compute the 
+volume of a prismatoid using the double Cavalieri integral. In the second example we compute the volume of a complex irregular shaped solid which is housed within a sphere using the double Cavalieri integral.
 \end{abstract}
 
 \begin{thebibliography}{1}
@@ -692,56 +692,38 @@ volume of a prismatoid using the double Cavalieri integral. In the second exampl
 \bibitem{ackermann12} Ackermann,~E.~R, Grobler,~T.~L., Kleynhans,~W., Olivier,~J.~C., Salmon,~B.~P, van Zyl,~A.~J. (2012). Cavalieri
 Integration. \textit{Quaest. Math.} 35(3): 265–296.
 
-\bibitem{adda97} Adda,~F.~B. (1997). Geometric interpretation of the fractional derivative. \textit{J. of Fract. Calc.}, 11: 21--52.
+\bibitem{andersen1985}
+K.~Andersen. (1985). Cavalieri's Method of Indivisibles. \emph{Arch. Hist. Exact Sci.} 31(4): 291--367.
 
-\bibitem{bartle76} Bartle,~R.~G. (1976). \textit{The Elements of Real Analysis.} New York: Wiley.
+\bibitem{blagg1935}
+M.~A Blagg, A. Blagg and K. M{\"u}ller. (1935). \emph{Named Lunar Formations}. Percy Lund, Humphries and Co. Ltd.
 
-%Physical
-\bibitem{cioc16} Cioc, R. (2016). Physical and geometrical interpretation of Gr\"{u}nwald-Letnikov differintegrals: Measurement of path and acceleration. \textit{Fract. Calc. Appl. Anal.} 19(1): 161--172.
+\bibitem{bradley1979}
+A.~D.~Bradley. (1979). Prismatoid, Prismoid, Generalized Prismoid. \emph{Amer. Math. Monthly.} 86(6): 486--490.
 
-\bibitem{davis59} Davis,~P.~J. (1959). Leonhard Euler's Integral: A Historical Profile of the Gamma Function. \textit{Amer. Math. Monthly}. 66(10): 849--869
+\bibitem{eves1991}
+H.~Eves. (1991). Two Surprising Theorems on Cavalieri Congruence. \emph{College Math. J.} 22(2): 118--124.
 
-\bibitem{euler1738} Euler,~L. (1738). De progressionibus transcendentibus seu quarum termini generales algebraice dari nequeunt. \textit{Commentarii academiae scientiarum Petropolitanae}. 36--57.
-
-\bibitem{gomez14} Gomez-Aguilara,~J.~F., Razo-Hernandez,~R., Granados-Lieberman, D.~ A (2014). Physical interpretation of fractional
-calculus in observable terms: analysis of the fractional time constant and the transitory response. \textit{Revista Mexicana de Fisica.} 60: 32--38
+\bibitem{gonzalez2018} D.~L.~Gonz{\'a}lez, D.~L.~Rabiti, J.~H.~E~Cartwright. 2018. Bonaventura Cavalieri and Bologna. \emph{Math. Intelligencer}. 40(2): 21--29.
 
 \bibitem{grobler19} Grobler,~T.~L. (2019). Visualization of the Riemann-Stieltjes integral. \textit{Coll. Math. J.} 50(3): 198--209.
 
-\bibitem{laurent1884} Laurent,~H. (1884). Sur le calcul des d\'{e}riv\'{e}es \`{a} indices quelconques. \textit{Nouv Annales de Mathem\'{e}matiques.} 3(3):240--252. 
+\bibitem{jullien2015} V.~Jullien (Ed.). (2015). \emph{Seventeenth-Century Indivisibles Revisited}. Boston: Birkh{\"a}user.
 
-\bibitem{liouville1832} Liouville,~J. (1832). M\'{e}moire sur l\textquotesingle integration de l\textquotesingle \'{e}quation $(mx^2+nx+p)\frac{d^2y}{dx^2}+(qx+r)\frac{dy}{dx}+sy$ \`{a} l\textquotesingle aide des diff\'{e}rentielles \`{a} indices 
-que\textquotesingle conques. \textit{Journal d l\textquotesingle Ecole Polytechnique.} 13(21): 163--186. 
+\bibitem{malik1984}
+H.~A~Malik. (1984). A Note on Cavalieri Integration, \emph{Math. Mag.} 57(3): 154--156.
 
-\bibitem{machado03} Machado,~J.~T. (2003). A probabilistic interpretation of the fractional-order differentiation. \textit{Fract. Calc. Appl. Anal.} 6(1): 73--80.
+\bibitem{stewart1999}
+J. Stewart. (1999) \emph{Calculus, Early Transcendentals}. Brooks/Cole Publish Company. 
 
-\bibitem{machado14} Machado,~J.~T., Galhano,~A.~M., Trujillo,~J.~J. (2014). On development of fractional calculus during the last fifty years. \textit{Scientometrics}. 98(1): 577-582.
+\bibitem{wildberger2002}
+W.~N.~Wildeberger. (2002). A New Proof of Cavalieri's Quadrature Formula. \emph{Amer. Math. Monthly.} 109(9): 843--845.
 
-\bibitem{machado17} Machado,~J.~T., Kiryakova,~V. (2017). The chronicles of fractional calculus. \textit{Fract. Calc. Appl. Anal.} 20(2): 307--336.
+\bibitem{william1917}
+E.~G.~William. (1917). Cavalieri's Theorem in his own Words, \emph{Amer. Math. Monthly.} 95(10): 447--451.
 
-\bibitem{munkhammar05} Munkhammar,~J. (2005). Fractional calculus and the Taylor-Riemann series. \textit{Rose-Hulman Undergrad. Math. J.}, 6(1): 6.
-
-%physical
-\bibitem{nigmatullin92} Nigmatullin,~R.~R (1992). A fractional integral and its physical interpretation. \textit{Theor. and Math. Phys.} 90(3): 242--251.
-
-\bibitem{podlubny02} Podlubny,~I. (2002). Geometric and Physical Interpretation of Fractional Integration and Fractional Differentiation, \textit{Fract. Calc. Appl. Anal.} 5(4): 367--386.
-
-\bibitem{riemann1876} Riemann,~B.~G.~F (1876). Gesammelte Werke.
-
-\bibitem{ross77} Ross,~B. (1977). The development of fractional calculus 1695--1900. \textit{Hist. Math.} 4(1): 75--89.
-
-\bibitem{ross06} Ross,~B. (Ed.). (2006). \textit{Fractional calculus and its applications: proceedings of the international conference held at the University of New Haven, June 1974}, Vol. 457, Springer.
- 
-\bibitem{rutman95} Rutman,~R.S. (1995). On physical interpretations of fractional integration and differentiation. \textit{Theor. and Math. Phys.} 105(3):1509--1519
-
- %Probability
-\bibitem{stanislavsky04} Stanislavsky,~A.~A. (2004).  Probability interpretation of the integral of fractional order, \textit{Theor. and Math. Phys.} 138(3): 418--431.
-
-%Geometric
-\bibitem{tarasov16} Tarasov,~V.~E. (2016). Geometric interpretation of fractional-order derivative. \textit{Fract. Calc. Appl. Anal.} 19(5): 1200--1221.
-
-%Economic
-\bibitem{tarasova17} Tarasova,~V.~V., Tarasov,~V.~E. (2017). Economic Interpretation of Fractional Derivatives. \textit{Prog. in Fract. Diff. and Appl.} 3(1):1--7. 
+\bibitem{young1985}
+L. Lay-Young, S. Kangshen. (1985). The Chinese Concept of Cavalieri's Principle and Its Application, \emph{Hist. Math.}, 12: 219--228.
 
 \end{thebibliography}
 \vfill\eject
