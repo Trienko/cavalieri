@@ -335,7 +335,7 @@ x_i^2 = h(x_i^1,y_j^1)~\textrm{and}~y_j^2 = s(x_i^1,y_j^1).\nonumber
 \noindent
 Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$.  Let us further assume that $f(x,y) > 0$ for all $(x,y)\in S$. Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and 
 $S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aforementioned connections by employing appropriate surfaces. Note that 
-$\mathcal{S}$ can be decomposed into an infinite number of irregularly shaped rectangular infinitesimals. As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
+$\mathcal{S}$ can be decomposed into an infinite number of irregularly shaped rectangular infinitesimals. As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = \left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
 Moreover, the domain $R$ and the range $S$ of the transformation function $T$ which is associated with the solid $\mathcal{S}$ is depicted in Figure~\ref{fig:prismatoid_regions}.  
 In general, let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
 \begin{equation}
@@ -410,7 +410,7 @@ y_j^2 = s(x_i^1,y_j^1) = y_j^1 + c_y\circ t(x_i^1,y_j^1).
 Let $\mathcal{S}$ be the solid which is bounded by the planes $f(x,y)=-x-y+8$, $2x$, $2(x-4)$, $y$, $y-4$ and the $xy$-plane. Solid $\mathcal{S}$ is depicted 
 in Figure~\ref{fig:prismatoid_solid}, Figure~\ref{fig:prismatoid} and Figure~\ref{fig:prismatoid_real}. Solid $\mathcal{S}$ is a prismatoid, since all of its 
 vertices lie in two parallel planes. Furthermore, all of its lateral faces are trapezoids or triangles (if viewed from the top) \cite{bradley1979}. Also note the following: the base of $\mathcal{S}$ is the region 
- $R = [0,4]\times [0,4]$ (if viewed from the front) and that the line of intersection between $2x$ and $y$ is $\mathbf{c}(t) = -\left<\frac{1}{2}t,t,t\right>$. The region $R$ and the line $\mathbf{c}(t)$ are
+ $R = [0,4]\times [0,4]$ (if viewed from the front) and that the line of intersection between $2x$ and $y$ is $\mathbf{c}(t) = \left<\frac{1}{2}t,t,t\right>$. The region $R$ and the line $\mathbf{c}(t)$ are
 also depicted and labelled in Figure~\ref{fig:prismatoid_solid}.\\
 
 \begin{figure}[htb]
@@ -439,7 +439,7 @@ V_{\mathcal{S}} = \iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h
 with $\mathcal{C}=\{\mathbf{c}(t),R\}$. We can, however, only evaluate the above integral if the transformation $T$ is known (see Figure~\ref{fig:prismatoid_regions}). We can find $T$ using Equation~\eqref{eq:h_2d} and 
 Equation~\eqref{eq:s_2d}. To evaluate Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} we first need to express $t$ in terms of $x_i^1$ and $y_j^1$. If we substitute $f(x,y)$ and $\mathbf{c}(t)$ into Equation~\eqref{eq:c_z} and then solve for $t$ we obtain:
 \begin{equation}
-t(x_i^1,y_j^1) = \frac{1}{5}x_i^1 + \frac{1}{5}y_j^1 + \frac{8}{5}. \nonumber
+t(x_i^1,y_j^1) = -\frac{2}{5}x_i^1 - \frac{2}{5}y_j^1 + \frac{16}{5}. \nonumber
 \end{equation}
 Substituting $t(x_i^1,y_j^1)$ into Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} results in:
 \begin{equation}
@@ -447,13 +447,13 @@ x_{i}^2 = h(x_{i}^1,y_{j}^1) = \frac{4}{5} x_{i}^1 - \frac{1}{5} y_{j}^1 + \frac
 \end{equation}
 and
 \begin{equation}
-y_{j}^2 = s(x_{i}^1,y_{j}^1) = \frac{3}{5} x_{i}^1 - \frac{2}{5} y_{j}^1 + \frac{16}{5}.  \nonumber
+y_{j}^2 = s(x_{i}^1,y_{j}^1) = -\frac{2}{5} x_{i}^1 + \frac{3}{5} y_{j}^1 + \frac{16}{5}.  \nonumber
 \end{equation}
 We can now evaluate Equation~\eqref{eq:cav_ex1}:
 \begin{eqnarray}
 \label{eq:final_int_prismatoid}
 V_{\mathcal{S}}=\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^4\int_0^4 f(h(x,y),s(x,y))~dydx\nonumber\\
-&=& \int_0^4 \int_0^4 -\frac{7}{5}x + \frac{3}{5} y + \frac{16}{5}~dydx\nonumber\\
+&=& \int_0^4 \int_0^4 -\frac{2}{5}x - \frac{2}{5} y + \frac{16}{5}~dydx\nonumber\\
 &=& 25.6.\nonumber
 \end{eqnarray}
 
@@ -538,7 +538,7 @@ with $\mathcal{C}=\{\mathbf{c}(t),R\}$. We, however, first need to calculate $T$
 Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d}. Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} in turn requires $t(x_i^1,y_j^2)$, which can be obtained via Equation~\eqref{eq:c_z}.
 If we substite $f(x,y)$ and $\mathbf{c}(t)$ into Equation~\eqref{eq:c_z} and then solve for $t$ we obtain:
 \begin{equation}
-t = \frac{1}{4}[-2 x_{i}^1 - 2 y_{j}^1  -  1 + K(x_{i}^1,y_{j}^1)],\nonumber
+t(x_{i}^1,y_{j}^1) = \frac{1}{4}[-2 x_{i}^1 - 2 y_{j}^1  -  1 + K(x_{i}^1,y_{j}^1)],\nonumber
 \end{equation}
 where
 \begin{equation}
