@@ -128,7 +128,7 @@ process of integration. Furhtermore, as this paper is mainly meant to be read by
 We start the paper by defining the single and double Cavalieri integral. We end our paper with two worked out examples.
 
 \section{Cavalieri Integral}
-The single Cavalieri integral was originally defined by Ackermann et al. without having to resort to vector calculus \cite{ackermann12,stewart1999}. In this section, however, we will define the Cavalieri integral using vector calculus notation. As the reader will undoubtedly realize, if we define the single Cavalieri integral using vector calculus then it becomes trivial to
+The single Cavalieri integral was originally defined by Ackermann et al. without having to resort to vector calculus \cite{ackermann12}. In this section, however, we will define the Cavalieri integral using vector calculus notation \cite{stewart1999}. As the reader will undoubtedly realize, if we define the single Cavalieri integral using vector calculus then it becomes trivial to
 extend its definition into $\mathbb{R}^3$.\\
 
 %In this section we define the Cavalieri integral \cite{ackermann12}. 
@@ -139,7 +139,7 @@ Consider the continuous real-valued function $f(x)$, the continuous curve $\math
 \begin{definition}[Translational curve in $\mathbb{R}^2$]
 If a curve $\mathbf{c}(t)$ in $\mathbb{R}^2$ intersects the $x$ axis at the origin and $\mathbf{c}(t) + \left < e,0 \right >$ intersects 
 the function $f(x)$ at a single point for all $e\in [a,b]$ then $\mathbf{c}(t)$ is a translational curve 
-with respect to $f(x)$ on $[a,b]$. 
+with respect to $f(x)$ on $[a,b]$ \cite{ackermann12}. 
 \end{definition}
 
 \noindent
@@ -184,7 +184,7 @@ The aforementioned limit is known as the Cavalieri integral and in this paper we
 with $\mathcal{C} = \{\mathbf{c}(t),[a,b]\}$. Equation~\eqref{eq:cav_1d} is difficult to evaluate in its current form. Luckily, the Cavalieri integral 
 can be converted into an equivalent Riemann integral using the transformation $h$:
  \begin{equation}
- \int \limits_{\mathcal{C}} f(x)\, dx = \int_{a}^{b} f\circ h(x)~dx. 
+ \int \limits_{\mathcal{C}} f(x)\, dx = \int_{a}^{b} f\circ h(x)~dx. \nonumber
 \end{equation}
 
 \noindent
@@ -198,25 +198,25 @@ The only thing that now remains is to find an expression for $h$. Note that, for
  \label{eq:t_func_1d}
  c_y(t) = f(x_i^1 + c_x(t)).
  \end{equation}
- We can now solve for $t$ in Equation~\eqref{eq:t_func_1d} in terms of $x_i^1$. If we substitute the solution $t(x_i)$ so obtained into Equation~\ref{eq:pat_rel_1d} we obtain 
+ We can now solve for $t$ in Equation~\eqref{eq:t_func_1d} in terms of $x_i^1$. If we substitute the solution $t(x_i)$ so obtained into Equation~\eqref{eq:pat_rel_1d} we obtain 
 \begin{equation}
 \label{eq:h_func_1d}
  x_i^2 = h(x_i^1) = x_i^1 + c_x\circ t(x_i^1).
 \end{equation}
 
 \noindent
-The area of the region $R$ depicted in Figure~\ref{fig:caval2} can, therefore, be computed as follows:
+Let us now compute the area of the region $R$ depicted in Figure~\ref{fig:caval2} using the Cavalieri integral:
 \begin{equation}
-\int \limits_{\mathcal{C}} f(x)~dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75.  
+\int \limits_{\mathcal{C}} f(x)~dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75. \nonumber 
 \end{equation}
 The expression for $h$ was found by employing Equation~\eqref{eq:pat_rel_1d}, Equation~\eqref{eq:t_func_1d} and Equation~\eqref{eq:h_func_1d}. Let us now verify that 
 this result is correct by using a more conventional approach:
 \begin{equation}
-\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
+\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. \nonumber
 \end{equation}
 
 \noindent
-In \cite{ackermann12}, the Cavalieri integral is denoted via $\int_{a(y)}^{b(y)} f(x)~dx$, where $a(y)$ denotes the functional representation of $\mathbf{c}(t) + \left <a,0 \right >$ and $b(y) = a(y)+(b-a)$ 
+In \cite{ackermann12}, the Cavalieri integral is denoted via $\int_{a(y)}^{b(y)} f(x)~dx$, where $a(y)$ denotes the functional representation of $\mathbf{c}(t) + \left <a,0 \right >$ and $b(y) = a(y)+(b-a)$. 
 
 %Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is shown in Fig.~\ref{fig:caval2}.\\
 %\begin{figure}[htb]
@@ -291,7 +291,7 @@ In \cite{ackermann12}, the Cavalieri integral is denoted via $\int_{a(y)}^{b(y)}
 % $t(x_i^1) = x_i^1$. If we now substitute our solution $t(x_i^1)$ into Eq we obtain, as required, $h(x_i^1) = \frac{1}{2}x_i^2$. This result, therefore, validates Eq ??.
 
 \section{Double Cavalieri Integral}
-In this section we define the double Cavalieri integral and we show that it can be used to calculate the volume of solids that can be decomposed into an infinite 
+In this section we extend the definition of the Cavalieri integral into $\mathbb{R}^3$, i.e. we define the double Cavalieri integral. We also show that it can be used to calculate the volume of solids that can be decomposed into an infinite 
 number of irregularly shaped regtangular infinitesimals.\\
 
 \noindent
@@ -309,7 +309,7 @@ Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_j^1)\
 $xy$-plane to the $xy$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects $f(x,y)$. Note, the domain of $T$ is $R$. Moreover, let us denote the range 
 of $T$ with $S$. As the partition of $R$ can be made arbitrarily fine, $T:R\rightarrow S$ actually maps every point $(x_i^1,y_j^1)\in R$ to a point $(x_i^2,y_j^2)\in S$. In general, the transformation $T$ is defined as follows:
 \begin{equation}
-x_i^2 = h(x_i^1,y_j^1)~\textrm{and}~y_j^2 = s(x_i^1,y_j^1).
+x_i^2 = h(x_i^1,y_j^1)~\textrm{and}~y_j^2 = s(x_i^1,y_j^1).\nonumber
 \end{equation}
 
 
@@ -342,7 +342,7 @@ In general, let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can app
 \label{eq:cav_sum_2d}
 V_{\mathcal{S}} \approx \sum_{i=0}^{n-1} \sum_{j=0}^{m-1} f(x_i^2,y_j^2) \Delta x_i^1 \Delta y_j^1.
 \end{equation}
-Let us verify that this is indeed the case. If we closely inspect Equation~\ref{eq:cav_sum_2d} and Figure~\ref{fig:prismatoid_solid} we notice the following:
+Let us verify that this is indeed the case. If we closely inspect Equation~\eqref{eq:cav_sum_2d} and Figure~\ref{fig:prismatoid_solid} we notice the following:
 \begin{itemize}
 \item $\Delta x_i^1$ and $\Delta y_j^1$ represent the width and the length of subrectangle $R_{ij}$.
 \item The product $\Delta A = \Delta x_i^1\times \Delta y_j^1$ represents the area of subrectangle $R_{ij}$.
@@ -357,7 +357,7 @@ of $\mathbf{c}(t)$ along the $xy$-plane. The cross-section between any parallel 
 \centering
 \includegraphics[width=0.75\textwidth]{prismatoid_solid.pdf}
 \caption{The solid $\mathcal{S}$ which is bounded by the planes $f(x,y)=-x-y+8$, $2x$, $2(x-4)$, $y$, $y-4$ and the $xy$-plane. The figure also depicts the partition 
-points $(x_i^1,y_i^1)\in\mathcal{R}$ and $(x_i^1,y_i^1)\in\mathcal{R}$ which is used in the double Cavalieri sum (see Equation~\eqref{eq:cav_2d}).}
+points $(x_i^1,y_j^1)\in\mathcal{R}$ and $(x_i^2,y_j^2)\in\mathcal{S}$ which is used in the double Cavalieri sum (see Equation~\eqref{eq:cav_sum_2d}).}
 \label{fig:prismatoid_solid}
 \end{figure}
 
@@ -379,9 +379,9 @@ with $\mathcal{C} = \{\mathbf{c}(t),R\}$. As is the case for the single Cavalier
 Cavalieri integral can be converted into an equivalent double Riemann integral using the transformation $T$:
 
 \begin{eqnarray}
-\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(x_i^2,y_j^2) \Delta x_i^1\Delta y_j^1\\
-&=&  \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(h(x_i^1,y_j^1),s(x_i^1,y_j^1)) \Delta x_i^1\Delta y_j^1\\
-&=& \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy.
+\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(x_i^2,y_j^2) \Delta x_i^1\Delta y_j^1\nonumber\\
+&=&  \lim_{n,m\rightarrow \infty} \sum_{j=1}^n\sum_{i=1}^n f(h(x_i^1,y_j^1),s(x_i^1,y_j^1)) \Delta x_i^1\Delta y_j^1\nonumber\\
+&=& \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy.\nonumber
 \end{eqnarray}
 
 \noindent
@@ -395,7 +395,7 @@ The above equation can be re-expressed as:
 \label{eq:c_z}
 c_z(t) = f(x_i^1 + c_x(t),y_j^1 + c_y(t)). 
 \end{equation}
-We can now solve for $t$ in terms of $x_i^1$ and $y_j^1$. If we substitute this solution into Equation~\ref{eq:vector_2} we obtain:
+We can now solve for $t$ in terms of $x_i^1$ and $y_j^1$. If we substitute this solution into Equation~\eqref{eq:vector_2} we obtain:
 \begin{equation}
 \label{eq:h_2d}
 x_i^2 = h(x_i^1,y_j^1) = x_i^1 + c_x\circ t(x_i^1,y_j^1) 
@@ -415,7 +415,7 @@ also depicted and labelled in Figure~\ref{fig:prismatoid_solid}.\\
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{prismatoid_real.jpg}
+\includegraphics[width=0.4\textwidth]{prismatoid_real.jpg}
 \caption{A physical not-to-scale model of the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid}.}
 \label{fig:prismatoid_real}
 \end{figure}
@@ -439,22 +439,22 @@ V_{\mathcal{S}} = \iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h
 with $\mathcal{C}=\{\mathbf{c}(t),R\}$. We can, however, only evaluate the above integral if the transformation $T$ is known (see Figure~\ref{fig:prismatoid_regions}). We can find $T$ using Equation~\eqref{eq:h_2d} and 
 Equation~\eqref{eq:s_2d}. To evaluate Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} we first need to express $t$ in terms of $x_i^1$ and $y_j^1$. If we substitute $f(x,y)$ and $\mathbf{c}(t)$ into Equation~\eqref{eq:c_z} and then solve for $t$ we obtain:
 \begin{equation}
-t(x_i^1,y_j^1) = \frac{1}{5}x_i^1 + \frac{1}{5}y_j^1 + \frac{8}{5}. 
+t(x_i^1,y_j^1) = \frac{1}{5}x_i^1 + \frac{1}{5}y_j^1 + \frac{8}{5}. \nonumber
 \end{equation}
 Substituting $t(x_i^1,y_j^1)$ into Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} results in:
 \begin{equation}
-x_{i}^2 = h(x_{i}^1,y_{j}^1) = \frac{4}{5} x_{i}^1 - \frac{1}{5} y_{j}^1 + \frac{8}{5}  
+x_{i}^2 = h(x_{i}^1,y_{j}^1) = \frac{4}{5} x_{i}^1 - \frac{1}{5} y_{j}^1 + \frac{8}{5}  \nonumber
 \end{equation}
 and
 \begin{equation}
-y_{j}^2 = r(x_{i}^1,y_{j}^1) = \frac{3}{5} x_{i}^1 - \frac{2}{5} y_{j}^1 + \frac{16}{5}.  
+y_{j}^2 = s(x_{i}^1,y_{j}^1) = \frac{3}{5} x_{i}^1 - \frac{2}{5} y_{j}^1 + \frac{16}{5}.  \nonumber
 \end{equation}
 We can now evaluate Equation~\eqref{eq:cav_ex1}:
 \begin{eqnarray}
 \label{eq:final_int_prismatoid}
-V_{\mathcal{S}}=\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^4\int_0^4 f(h(x,y),r(x,y))~dydx\\
-&=& \int_0^4 \int_0^4 -\frac{7}{5}x + \frac{3}{5} y + \frac{16}{5}~dydx\\
-&=& 25.6
+V_{\mathcal{S}}=\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^4\int_0^4 f(h(x,y),s(x,y))~dydx\nonumber\\
+&=& \int_0^4 \int_0^4 -\frac{7}{5}x + \frac{3}{5} y + \frac{16}{5}~dydx\nonumber\\
+&=& 25.6.\nonumber
 \end{eqnarray}
 
 \noindent
@@ -534,21 +534,21 @@ Since $\mathcal{S}$ can be decomposed into an infinite number of irregularly sha
 \label{eq:cav_ex2}
 V_{\mathcal{S}} = \iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy,
 \end{equation}
-with $\mathcal{C}=\{\mathbf{c}(t),R\}$. We, however, first need to calculate $T$ if we wish to evaluate Equation~\ref{eq:cav_ex2} (see Figure~\ref{fig:sphere_regions}). We can determine $T$ via 
+with $\mathcal{C}=\{\mathbf{c}(t),R\}$. We, however, first need to calculate $T$ if we wish to evaluate Equation~\eqref{eq:cav_ex2} (see Figure~\ref{fig:sphere_regions}). We can determine $T$ via 
 Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d}. Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} in turn requires $t(x_i^1,y_j^2)$, which can be obtained via Equation~\eqref{eq:c_z}.
 If we substite $f(x,y)$ and $\mathbf{c}(t)$ into Equation~\eqref{eq:c_z} and then solve for $t$ we obtain:
 \begin{equation}
-t = \frac{1}{4}[-2 x_{i}^1 - 2 y_{j}^1  -  1 + K(x_{i}^1,y_{j}^1)],
+t = \frac{1}{4}[-2 x_{i}^1 - 2 y_{j}^1  -  1 + K(x_{i}^1,y_{j}^1)],\nonumber
 \end{equation}
 where
 \begin{equation}
-K(x_{i}^1,y_{j}^1) = \sqrt{-4(x_{i}^1)^2+4x_{i}^1+8x_{i}^1y_{j}^1-4(y_{j}^1)^2+4y_{j}^1 + 33}. 
+K(x_{i}^1,y_{j}^1) = \sqrt{-4(x_{i}^1)^2+4x_{i}^1+8x_{i}^1y_{j}^1-4(y_{j}^1)^2+4y_{j}^1 + 33}.\nonumber
 \end{equation}
 As mentioned earlier, we can use $t(x_i^1,y_j^1)$ to find expressions for $h$ and $s$. The expressions of $h$ and $s$ so obtained can then be used to evaluate Equation~\eqref{eq:cav_ex2}:  
 \begin{eqnarray}
-\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^1\int_0^1 f(h(x,y),r(x,y))~dydx\\
-&=& \int_0^1 \int_0^1 \sqrt{-(x+t(x,y))^2 - (y+t(x,y))^2 + 4} ~dydx\\
-&=& 0.864043
+\iint\limits_{\!\mathcal{C}} f(x,y) dA &=& \int_0^1\int_0^1 f(h(x,y),s(x,y))~dydx\nonumber\\
+&=& \int_0^1 \int_0^1 \sqrt{-(x+t(x,y))^2 - (y+t(x,y))^2 + 4} ~dydx\nonumber\\
+&=& 0.864043.\nonumber
 \end{eqnarray}
 
 \noindent
