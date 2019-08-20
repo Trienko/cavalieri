@@ -58,7 +58,7 @@
 
 \begin{document}
 
-\title{Computing volume via oblique or irregularly shaped rectangular infinitesimals}
+\title{Computing volume via irregularly shaped rectangular prisms}
 %\author{Woodrow Wilson and Herbert Hoover} %%leave blank in initial submission to allow for double blind reviewing
 %\author{ }
 
@@ -113,8 +113,8 @@ due to Cavalieri's principle in $\mathbb{R}^3$. The infinitesimals associated wi
 \noindent
 Figure~\ref{fig:cav_principle} depicts a classic rectangular prism or column (left solid) as well as an \emph{irregular rectangular prism or column} (right solid). The volumes of the two solids in Figure~\ref{fig:cav_principle} are equal due 
 to Cavalieri's principle. Note that in this article we use the non-standardized phrase irregular rectangular prism or column to refer to a solid that has rectangular 
-basis and lateral edges that are non-linear curves. Moreover, the four lateral edges of the aformentioned solid also need to be translations of one another. In this paper, we will also take the liberty to refer to an irregular rectangular prism whose base's
-lenght and widht both tend to zero as an \emph{irregular rectangular infinitesimal}. \\
+basis and lateral edges that are non-linear curves. Moreover, the four lateral edges of the aforementioned solid also need to be translations of one another. In this paper, we will also take the liberty to refer to an irregular rectangular prism whose base's
+length and width both tend to zero as an \emph{irregular rectangular infinitesimal}. \\
 
 \noindent
 Ackermann et al. utilized the idea of using non-rectangular integration strips to perform integration in $\mathbb{R}^2$ and in doing so developed the Cavalieri integral \cite{ackermann12}. 
@@ -122,7 +122,7 @@ The area of a non-rectangular integration strip is computed via Cavalieri’s pr
 Cavalieri integral. We also show that if a solid can be decomposed into an infinite number of irregularly shaped rectangular infinitesimals then its volume can be computed 
 by the double Cavalieri integral. Whether the double Cavalieri integral will prove to be an equally useful visualization tool will be investigated as part of a future endeavor.
 Moreover, the examples we provide at the end of the paper are presented in such a way that they will deepen undergraduate Calculus students' understanding into the 
-process of integration. Furhtermore, as this paper is mainly meant to be read by undergraduate students as well as the layman who is interested in the theory of integration, we will as far as possible try to steer clear from using too many formal definitions and proofs and rather convey our ideas via worked out examples.\\ 
+process of integration. Furthermore, as this paper is mainly meant to be read by undergraduate students as well as the layman who is interested in the theory of integration, we will as far as possible try to steer clear from using too many formal definitions and proofs and rather convey our ideas via worked out examples.\\ 
 
 \noindent
 We start the paper by defining the single and double Cavalieri integral. We end our paper with two worked out examples.
@@ -292,7 +292,7 @@ In \cite{ackermann12}, the Cavalieri integral is denoted via $\int_{a(y)}^{b(y)}
 
 \section{Double Cavalieri Integral}
 In this section we extend the definition of the Cavalieri integral into $\mathbb{R}^3$, i.e. we define the double Cavalieri integral. We also show that it can be used to calculate the volume of solids that can be decomposed into an infinite 
-number of irregularly shaped regtangular infinitesimals.\\
+number of irregularly shaped rectangular infinitesimals.\\
 
 \noindent
 Without the loss of generality, consider the continuous surface $f(x,y)$, the continuous curve $\mathbf{c}(t)=\left <c_x(t),c_y(t), c_z(t) \right >$ and the region $R = [a,b]\times [c,d] = \{(x,y)\in \mathbb{R}^2|a \leq x \leq b, c \leq y \leq d\}$.
@@ -305,7 +305,7 @@ with respect to $f(x,y)$ on $R$.
 
 \noindent
 Moreover, assume that $\mathbf{c}(t)$ is a translational curve with respect to $f(x,y)$ on $R$. Let us first partition $R$ into $n\times m$ subrectangles $R_{ij} = [x_{i},x_{i+1}] \times [y_{j},y_{j+1}]$ of equal width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$ and length $\Delta y^1= \Delta y_j^1 = y_{j+1}-y_j\ll(d-c)$.
-Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_j^1)\in R$ (the lower left vertice of $R_{ij}$) at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects the 
+Furthermore, let the transformation $T$ map the $xy$--coordinate $(x_i^1,y_j^1)\in R$ (the lower left vertex of $R_{ij}$) at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects the 
 $xy$-plane to the $xy$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,y_j^1,0 \right >$ intersects $f(x,y)$. Note, the domain of $T$ is $R$. Moreover, let us denote the range 
 of $T$ with $S$. As the partition of $R$ can be made arbitrarily fine, $T:R\rightarrow S$ actually maps every point $(x_i^1,y_j^1)\in R$ to a point $(x_i^2,y_j^2)\in S$. In general, the transformation $T$ is defined as follows:
 \begin{equation}
@@ -509,14 +509,14 @@ equation,  $V_{\mathcal{S}}=25.6$. The details of this computation is described 
 % \end{figure}
 
 \section{Another example}
-Let $\mathcal{S}$ be the solid which is bounded by the planes $f(x,y)=\sqrt{-x^2-y^2+4}$, $\sqrt{x}$, $\sqrt{x-1}$, $\sqrt{y}$, $\sqrt{y-1}$ and the $xy$-plane. Solid $\mathcal{S}$ is depicted 
+Let $\mathcal{S}$ be the solid which is bounded by the surfaces $f(x,y)=\sqrt{-x^2-y^2+4}$, $\sqrt{x}$, $\sqrt{x-1}$, $\sqrt{y}$, $\sqrt{y-1}$ and the $xy$-plane. Solid $\mathcal{S}$ is depicted 
 in Figure~\ref{fig:sphere_solid}. Also note the following: the base of $\mathcal{S}$ is the region 
 $R = [0,1]\times [0,1]$ (if viewed from the front) and that the curve of intersection between $\sqrt{x}$ and $\sqrt{y}$ is $\mathbf{c}(t) = \left < t,t,\sqrt{t}\right >$. \\
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{sphere_solid.pdf}
-\caption{The solid $\mathcal{S}$ which is bounded by the planes $f(x,y)=\sqrt{-x^2-y^2+4}$, $\sqrt{x}$, $\sqrt{x-1}$, $\sqrt{y}$, $\sqrt{y-1}$ and the $xy$-plane.}
+\caption{The solid $\mathcal{S}$ which is bounded by the surfaces $f(x,y)=\sqrt{-x^2-y^2+4}$, $\sqrt{x}$, $\sqrt{x-1}$, $\sqrt{y}$, $\sqrt{y-1}$ and the $xy$-plane.}
 \label{fig:sphere_solid}
 \end{figure}
 
@@ -683,7 +683,7 @@ $r_2(x) = \sqrt{-x^2-x+4}$, $r_3(x) = \sqrt{-x^2-(x-1)+4}$ and $r_4(x) = \frac{1
 \begin{abstract}
 In this paper we extended the Cavalieri integral into three dimensional euclidean space, i.e. we defined the double Cavalieri integral. 
 We also showed that this integral can be used to compute the volume of solids that can be decomposed into an infinite number of 
-irrgularly shaped rectangular infinitesimals. We end the paper with two fully worked out examples. In the first example we compute the 
+irregularly shaped rectangular infinitesimals. We end the paper with two fully worked out examples. In the first example we compute the 
 volume of a prismatoid using the double Cavalieri integral. In the second example we compute the volume of a complex irregular shaped solid which is housed within a sphere using the double Cavalieri integral.
 \end{abstract}
 
