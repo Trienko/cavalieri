@@ -90,7 +90,7 @@ in this case Democritus and Archimedes \cite{eves1991}. The method is used to co
 \noindent
 Two planar figures or solids are Cavalieri congruent if they can be decomposed into the same set of parallel ``indivisibles''. An indivisible of 
 a planar figure is any cord of the planar figure. An indivisible of a solid is any planar section of a solid. Two indivisibles are equal if they are of the same length or area.
-It is Cavalieri's principle that assures us that two planar figures or solids that are composed of the same set of indivisibles have equal area or volume \cite{andersen1985,eves1991,jullien2015,malik1984,wildberger2002,william1917,young1985}. Cavalieri's principle 
+Cavalieri's principle assures us that two planar figures or solids that are composed of the same set of indivisibles have equal area or volume \cite{andersen1985,eves1991,jullien2015,malik1984,wildberger2002,william1917,young1985}. Cavalieri's principle 
 in $\mathbb{R}^3$ is stated below without proof:
 
 \begin{theorem}[Cavalieri's principle in $\mathbb{R}^3$]
@@ -148,7 +148,7 @@ width $\Delta x^1 = \Delta x_i^1 = x_{i+1}-x_i\ll (b-a)$. Furthermore, let the t
 $x$-axis to the $x$--coordinate at which $\mathbf{c}(t) + \left <x_i^1,0 \right >$ intersects $f(x)$. Note, the domain of $h$ is $[a,b]$. Let $a'$ denote the $x$-coordinate 
 at which $\mathbf{c}(t) + \left <a,0 \right >$ intersects $f(x)$ and let $b'$ denote the $x$-coordinate 
 at which $\mathbf{c}(t) + \left <b,0 \right >$ intersects $f(x)$.  Note, the range 
-of $h$ is $[a',b']$. As the partition of $[a,b]$ can be made arbitrarily fine, $h:[a,b]\rightarrow [a',b']$ actually maps every point $x_i^1\in [a,b]$ to a point $x_i^2\in [a',b']$. \\
+of $h$ is $[a',b']$ (assuming $h$ is monotone increaing). As the partition of $[a,b]$ can be made arbitrarily fine, $h:[a,b]\rightarrow [a',b']$ actually maps every point $x_i^1\in [a,b]$ to a point $x_i^2\in [a',b']$. \\
 
 \noindent
 Let $R$ denote the region which is bounded by $f(x)$, $\mathbf{c}(t)+\left <a,0\right >$, $\mathbf{c}(t)+\left <b,0\right >$ and the $x$-axis. 
@@ -170,7 +170,7 @@ Let us verify that this is indeed the case. If we closely inspect Equation~\ref{
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{fig13.eps}
-\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The parametric representation of $a(y)$ is $\mathbf{c}(t) = \frac{1}{2} \left <-t,t \right >$. The figure also depicts the partition points $x_i^1$ and $x_i^2$ as used in the Cavalieri sum (see Equation~\eqref{eq:caval1}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. The parametric representation of $a(y)$ is $\mathbf{c}(t) = \frac{1}{2} \left <-t,t \right >+\left<a,0\right>$. The figure also depicts the partition points $x_i^1$ and $x_i^2$ as used in the Cavalieri sum (see Equation~\eqref{eq:caval1}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
 \label{fig:caval2}
 \end{figure}
 
@@ -198,7 +198,7 @@ The only thing that now remains is to find an expression for $h$. Note that, for
  \label{eq:t_func_1d}
  c_y(t) = f(x_i^1 + c_x(t)).
  \end{equation}
- We can now solve for $t$ in Equation~\eqref{eq:t_func_1d} in terms of $x_i^1$. If we substitute the solution $t(x_i)$ so obtained into Equation~\eqref{eq:pat_rel_1d} we obtain 
+ We can now solve for $t$ in Equation~\eqref{eq:t_func_1d} in terms of $x_i^1$. If we substitute the solution $t(x_i^1)$ so obtained into Equation~\eqref{eq:pat_rel_1d} we obtain 
 \begin{equation}
 \label{eq:h_func_1d}
  x_i^2 = h(x_i^1) = x_i^1 + c_x\circ t(x_i^1).
@@ -335,7 +335,7 @@ x_i^2 = h(x_i^1,y_j^1)~\textrm{and}~y_j^2 = s(x_i^1,y_j^1).\nonumber
 \noindent
 Also, let $S_f = \{(x,y,z)\in\mathbb{R}^3|(x,y)\in S ~ \textrm{and} ~ z=f(x,y)\}$.  Let us further assume that $f(x,y) > 0$ for all $(x,y)\in S$. Let $\mathcal{S}$ denote the solid which is obtained by connecting the vertices of $R$ and 
 $S_f$ via translations of $\mathbf{c}(t)$ along the $xy$ plane and then closing the resulting open faces that form due to the aforementioned connections by employing appropriate surfaces. Note that 
-$\mathcal{S}$ can be decomposed into an infinite number of irregularly shaped rectangular infinitesimals. As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = \left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
+$\mathcal{S}$ so formed can per definition be decomposed into an infinite number of irregularly shaped rectangular infinitesimals. As an example, the solid $\mathcal{S}$ depicted in Figure~\ref{fig:prismatoid_solid} is obtained if we set $f(x,y) = -x - y + 8$, $\mathbf{c}(t) = \left<\frac{1}{2}t,t,t\right>$ and $R = \{(x,y)\in\mathbb{R}^2|0 \geq x \geq 4, 0 \geq x \geq 4\} \nonumber$.
 Moreover, the domain $R$ and the range $S$ of the transformation function $T$ which is associated with the solid $\mathcal{S}$ is depicted in Figure~\ref{fig:prismatoid_regions}.  
 In general, let $V_{\mathcal{S}}$ denote the volume of $\mathcal{S}$. We can approximate $V_{\mathcal{S}}$ with:
 \begin{equation}
@@ -535,7 +535,7 @@ Since $\mathcal{S}$ can be decomposed into an infinite number of irregularly sha
 V_{\mathcal{S}} = \iint\limits_{\!\mathcal{C}} f(x,y) dA =  \int_a^b\int_c^d f(h(x,y),s(x,y))~dx~dy,
 \end{equation}
 with $\mathcal{C}=\{\mathbf{c}(t),R\}$. We, however, first need to calculate $T$ if we wish to evaluate Equation~\eqref{eq:cav_ex2} (see Figure~\ref{fig:sphere_regions}). We can determine $T$ via 
-Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d}. Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} in turn requires $t(x_i^1,y_j^2)$, which can be obtained via Equation~\eqref{eq:c_z}.
+Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d}. Equation~\eqref{eq:h_2d} and Equation~\eqref{eq:s_2d} in turn requires $t(x_i^1,y_j^1)$, which can be obtained via Equation~\eqref{eq:c_z}.
 If we substite $f(x,y)$ and $\mathbf{c}(t)$ into Equation~\eqref{eq:c_z} and then solve for $t$ we obtain:
 \begin{equation}
 t(x_{i}^1,y_{j}^1) = \frac{1}{4}[-2 x_{i}^1 - 2 y_{j}^1  -  1 + K(x_{i}^1,y_{j}^1)],\nonumber
