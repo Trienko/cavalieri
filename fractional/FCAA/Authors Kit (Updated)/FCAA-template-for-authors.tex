@@ -35,7 +35,7 @@
  %%% TITLE: texts in [.] is abbreviated (1st line) title for running heads
  %%% Author(s): put in brackets [.] the short author's name
 
- \title[VISUALIZATION OF THE FRACTIONAL INTEGRAL \dots]{VISUALIZATION OF THE RIEMANN-LIOUVILLE FRACTIONAL INTEGRAL \\ [3pt] IN ``FCAA'' JOURNAL}
+ \title[VISUALIZATION OF FRACTIONAL INTEGRALS]{VISUALIZATION OF THE RIEMANN-LIOUVILLE FRACTIONAL INTEGRAL \\ [3pt] IN ``FCAA'' JOURNAL}
  \author[\normalsize V. Kiryakova, S. Author]{\normalsize Virginia Kiryakova $^1$, Second Author $^2$}
 
  %%% obligatory give the full and abbreviated authors' names %%%
@@ -168,10 +168,15 @@ The figures should be input in the LaTeX file as eps-files, as below:
 \label{sec:cav_integral}
 
 Ackerman et al. used the notion of non-rectangular integration strips to define the so called Cavalieri integral. The area of a non-rectangular 
-integration strip is calculated using Cavalieri's principle. The formal definition of the Cavalieri integral is given in Definition~\ref{def:cav_integral}.
+integration strip is calculated using Cavalieri's principle. Cavalieri's principle is stated below without proof:
+\begin{theorem}
+Suppose two regions in a plane are included between two parallel lines in that plane. If every line parallel to these
+two lines intersects both regions in line segments of equal length, then the two regions have equal areas. NEED CITATION
+\end{theorem}
+The definition of the Cavalieri integral is presented in Definition~\ref{def:cav_integral}.
 It is, however, our experience that Definition~\ref{def:cav_integral} is hard to assimilate if it is encounterd by a reader for the first time. We, therefore, encourage 
-readers who are not familiar with the Cavalieri integral to rather first read Section~\ref{??} instead. The reader should only refer back to the definitions 
-presented in this sections when things in Section~\ref{??} become unclear. Moreover, the definitions presented below were taken from [?]. Furthermore, none of the theorems in this section are proved, the proofs can be found in [].
+readers who are not familiar with the Cavalieri integral to rather first read Section~\ref{??} instead. The reader who is not familiar with the Cavalieri integral should only refer back to the definitions 
+presented in this section when things in Section~\ref{??} become unclear. Moreover, the definitions presented below were taken from [?]. Furthermore, none of the theorems in this section are proved, the proofs can be found in [].
 
 \begin{definition}\label{def:trans}
 A continuous real--valued function $a(y)$ is called a translational function with respect to a continuous real--valued function $f(x)$ on the interval $[a,b]$ if 
@@ -203,6 +208,7 @@ The mapping $g(x)$ is a strictly monotone continious function. The function $g(x
 \end{theorem}
 
 \begin{theorem}
+\label{t:inv}
 The function $g(x)$ is equal to $h^{-1}(x)$.
 \end{theorem}
 
@@ -240,11 +246,82 @@ partitions $\mathcal{P}_1$ of $[a,b]$, then $I$ is called the Cavalieri integral
 Note that the superscripts of the $x$-coordinates in the above definitions indicate to which partition, either $\mathcal{P}_1$ or $\mathcal{P}_2$, the $x$-coordinate in question belongs.
 
 \begin{theorem}
+\label{t:conv}
 The following Cavalieri, Riemann, and Riemann--Stieltjes integrals are equivalent
 \begin{equation}
 \int_{a(y)}^{b(y)} f(x) dx = \int_a^b f\circ h(x) dx = \int_{a'}^{b'} f(x)dg(x). 
 \end{equation}
 \end{theorem}
+
+\section{Cavalieri Integral: Clarifying Example}
+\label{sec:cav_integral_example}
+The example which we present below was taken from \cite{?}. Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is depicted in Fig.~\ref{fig:caval2}.\\
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=0.3\textwidth]{fig12}
+%\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+%\label{fig:ex1}
+%\end{figure}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{fig13.pdf}
+\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. In the case of $R$: $a=1$, $b=4$, $a'=\frac{1}{2}$ and $b'=2$. The figure also depicts the partition points $x_i^2$ as used in the Cavalieri sum (see Equation~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+\label{fig:caval2}
+\end{figure}
+
+%\noindent
+%The area of $R$ can be determined as follows if we employ the classical notion of integration:
+%\begin{equation}
+%\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
+%\end{equation}
+
+The area of $R$ can be approximated by summing together the area of rectangular integrations strips that inscribe $R$. There, however, exist a more 
+straightforward way in which we can approximate the area of $R$: we can sum together the area of non-rectangular integration strips inscribing $R$. This alternative approach 
+will only succeed it the sides of the aforementioned integration strips are all tranlsations of the function $a(y)$. 
+
+Let us express this idea more formally. Let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$.
+We are now able to construct the following lower Cavalieri sum (Equation~\ref{eq:c_low}):
+\begin{equation}
+\label{eq:cav_sum}
+\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
+\end{equation}
+The partition points $(x_i^2)_{i=0}^{n}$ are depicted in Fig.~\ref{fig:caval2}. Cavalieri's principle tells us that the area of integration strip $i$ is equal to $f(x_i^2)\Delta x_i^1$. Equation.~\eqref{eq:cav_sum}, therefore, approximates the area of $R$. In the limit Eq.~\eqref{eq:cav_sum} approaches 
+the Cavalieri integral (Definition~\ref{def:cav_integral}):
+\begin{equation}
+\label{eq:caval1}
+\int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
+\end{equation}
+It is, however, quite hard to evaluate the above integral directly. Fortunately, it is easy to convert a Cavalieri integral into an equivalent Riemann or Riemann-Stieltjes 
+integral by using the functions $h$ and $g$ (Theorem~\ref{t:conv}). Expressed mathematically:
+\begin{equation}
+\label{eq:main_cav}
+\int_{a(y)}^{b(y)}f(x)\,dx =\int_a^b f \circ h (x)\, dx = \int_{a'}^{b'} f(x) dg(x).
+\end{equation}
+We can calculate $g$ as follows (Definition~\ref{def:g}):
+\begin{equation}
+g(x) = x - a\circ f(x) + a.
+\end{equation}
+Moreover, $h=g^{-1}$ (Theorem~\ref{t:inv}). We can now evaluate the Cavalieri integral by using its equivalent Riemann or Rieman-Stieltjes integral.
+If we use its Riemann equivalent we obtain:
+\begin{equation}
+\int_{a(y)}^{b(y)}f(x)\, dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75.  
+\end{equation}
+If we use its Riemann-Stieltjes equivalent we obtain:
+\begin{equation}
+\int_{a(y)}^{b(y)}f(x)\, dx = \int_{a'}^{b'} f \, dg(x) = \int_{\frac{1}{2}}^2x\, d2x = 3.75.  
+\end{equation}
+
+\noindent
+Conversely, if $g$ is known (and not $a(y)$) and $g(a') = a$ then we can calculate $a(y)$ using the following \cite{grobler19}:
+\begin{equation}
+\label{eq:a_y}
+a(y) = f^{-1}(y) - g\circ f^{-1}(y) + g(a'). 
+\end{equation}
+Eq.~\eqref{eq:a_y} allows us to transform a Riemann-Stieltjes integral into an equivalent Cavalieri integral. 
+Furthermore, this transformation enables us to assign a geometric interpretation to a Riemann-Stieltjes integral. The interpretation being:
+it represents the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals; all of them being translations of $a(y)$. Note,
+$b(y) = a(y) + (b-a)$.
+
  
  
  
