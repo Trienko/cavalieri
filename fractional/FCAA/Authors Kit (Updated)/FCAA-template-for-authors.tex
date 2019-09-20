@@ -167,14 +167,19 @@ The figures should be input in the LaTeX file as eps-files, as below:
 \section{Cavalieri Integral}
 \label{sec:cav_integral}
 
- \begin{definition}\label{Def3}
-Text of Definition~\ref{Def3}.
- \end{definition}
+Ackerman et al. used the notion of non-rectangular integration strips to define the so called Cavalieri integral. The area of a non-rectangular 
+integration strip is calculated using Cavalieri's principle. The formal definition of the Cavalieri integral is given in Definition~\ref{def:cav_integral}.
+It is, however, our experience that Definition~\ref{def:cav_integral} is hard to assimilate if it is encounterd by a reader for the first time. We, therefore, encourage 
+readers who are not familiar with the Cavalieri integral to rather first read Section~\ref{??} instead. The reader should only refer back to the definitions 
+presented in this sections when things in Section~\ref{??} become unclear. Moreover, the definitions presented below were taken from [?]. Furthermore, none of the theorems in this sections are proved, the proofs are contained in [].
 
 \begin{definition}\label{def:trans}
 A continuous real--valued function $a(y)$ is called a translational function with respect to a continuous real--valued function $f(x)$ on the interval $[a,b]$ if 
 $\{x\in\mathbb{R}|a\circ f(x) + z = x\}$ is a singleton, for every $z\in[0,b-a]$ and $a(0) = a$.
 \end{definition}
+
+Let $a(y)$ be a translational function with respect to a real--valued function $f(x)$ on the interval $[a,b]$. Moreover, $b(y) = a(y) + (b-a)$. Furthermore, the functions $a(y)$ and $b(y)$ intersect $f(x)$ at $a'$ and $b'$ respectively.
+These assertions are assumed to be true throughout the paper and will not be repeated again.
 
 \begin{definition}\label{def:h}
 The mapping $h : [a, b] \rightarrow [a',b']$, which maps $x_i^1 \in [a, b]$ to $x_i^2 \in [a',b']$, is defined as
@@ -193,8 +198,15 @@ The mapping $g:[a', b'] \rightarrow [a, b]$, which maps $x_i^2 \in [a' , b']$ to
 is defined as $g(x_i^2) = x_i^2 - a \circ f (x_i^2) + a$.
 \end{definition}
 
-\noindent
-Note that $g = h^{-1}$ per definition. Moreover $g$ is guaranteed to exist, since $h$ is bijective. 
+\begin{theorem}
+The mapping $g(x)$ is a strictly monotone continious function. The function $g(x)$ is, therefore, invertable.
+\end{theorem}
+
+\begin{theorem}
+The function $g(x)$ is equal to $h^{-1}(x)$.
+\end{theorem}
+
+The function $g(x)$ is known as the inverse transformation function.
 
 \begin{definition}\label{def:cav_integral}
 Define a partition $\mathcal{P}_1$ of $[a,b]$ to be a set of points $x_0^1, x_1^1,\cdots,x_n^1$, 
@@ -210,12 +222,12 @@ can be assumed that $h$ is strictly increasing, without any loss of generality. 
 $M_k = \sup \{f (x), h(x_{i-1}^1) = x_{i-1}^2 \leq x \leq x_i^2 = h(x_i^1)\}$, $m_k = \inf \{f (x), h(x_{i-1}^1) = x_{i-1}^2 \leq x \leq x_i^2 = h(x_i^1)\}$, and set 
 \begin{equation}
 \label{eq:c_up}
-\mathcal{C}_U(\mathcal{P}_1,f,h) = \sum_{k=1}^n M_k \Delta x_k, 
+\mathcal{C}_U(\mathcal{P}_1,f,h) = \sum_{k=1}^n M_k \Delta x_k^1, 
 \end{equation}
 and
 \begin{equation}
 \label{eq:c_low}
-\mathcal{C}_L(\mathcal{P}_1,f,h) = \sum_{k=1}^n m_k \Delta x_k. 
+\mathcal{C}_L(\mathcal{P}_1,f,h) = \sum_{k=1}^n m_k \Delta x_k^1. 
 \end{equation}
 The sums in Eq.~\eqref{eq:c_up} and Eq.~\eqref{eq:c_low} are respectively called the the upper and lower Cavalieri sums.
 If there is a unique number $I$ that satisfies the inequality $\mathcal{C}_L(\mathcal{P}_1,f,h)\leq I \leq \mathcal{C}_U(\mathcal{P}_1,f,h)$ for all 
