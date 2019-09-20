@@ -420,15 +420,90 @@ def plot_frac_int2():
     ax.yaxis.set_major_locator(MaxNLocator(integer=True))    
     plt.show()
 
+def g(tau,alpha=0.8,t = 0):
+    g = (1/math.gamma(alpha+1))*(t**alpha+(tau-t)**alpha)
+    return g
+
+def test_a_y(y,alpha=0.8,t = 0,add_constant=True):
+    if add_constant:
+       a = y+10 - (1.0/math.gamma(alpha+1))*(t**(alpha)+(y+10-t)**alpha) + (t**alpha)/(math.gamma(alpha+1))
+    else:
+       a = y - (1.0/math.gamma(alpha+1))*(t**(alpha)+(y-t)**alpha)
+    return a
+
+def test_g(tau,alpha=0.8,t=5):
+    g = (1/math.gamma(1+alpha))*(t**(alpha)+(tau-t)**alpha)
+    return g
+
+def test_a(y,alpha=0.8,t=5):
+    y = y - (1/math.gamma(1+alpha))*(t**alpha+(y-t)**alpha) + (1/math.gamma(alpha+1))*t**(alpha)
+    return y
+
+
 
 if __name__ == "__main__":
-   plot_frac_int1()
-   plot_frac_int2()
+   #TEST NEW IDEA
+
+   y = np.linspace(5,10,100)
+   a = test_a(y)
+
+   a0 = test_g(5)
+   print(a0)
+
+   b0 = test_g(7)
+   print(b0)
+
+   b1 = test_g(6)
+   print(b0)
+
+   C = b0-a0
+   C2 = b1-a0
+
+   plt.plot(a,y)
+   plt.plot(a+C,y)
+   plt.plot(a+C2,y)
+   x = np.linspace(4,10,100)
+   plt.plot(x,x)
+
+   plt.axvline(x=a0)
+   plt.axvline(x=b0)
+
+   plt.show()   
+
+
+   '''
+   y = np.linspace(-20,5,100)
+
+   a = test_a_y(y)
+
+   a_0 = test_a_y(0)
+   print(a_0)
+
+   g_5 =g(0)
+   print(g_5)
+
+   C = a_0-g_5
+   print(C)
+
+   b = g(10)+C
+   print(b)
+
+   x = np.linspace(-10,10,100)
+   f = x-10
+   plt.plot(a,y)
+   plt.plot(a+b-a_0,y)
+   
+   plt.plot(x,f)
+   plt.show()
+   '''
+
+   #plot_frac_int1()
+   #plot_frac_int2()
    #plot_y_test()
    #plot_inversepar()
    #plt_gh_functions()
-   plot_b_functions()
-   plot_b_functions(f_inv = f2_inv, f=f2)
+   #plot_b_functions()
+   #plot_b_functions(f_inv = f2_inv, f=f2)
    #scaling() 
    #plot_g_scaling()
    #plot_g(1.5,10,1000)
