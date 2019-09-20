@@ -436,40 +436,69 @@ def test_g(tau,alpha=0.8,t=5):
     return g
 
 def test_a(y,alpha=0.8,t=5):
-    y = y - (1/math.gamma(1+alpha))*(t**alpha+(y-t)**alpha) + (1/math.gamma(alpha+1))*t**(alpha)
+    y = y+10 - (1/math.gamma(1+alpha))*(t**alpha+(y+10-t)**alpha) + (1/math.gamma(alpha+1))*t**(alpha)
     return y
+
+def plot_b_functions(t_vector=np.array([0,2,4,6,8]),alpha_vector=np.array([0.2,0.4,0.6,0.8]),y_points=50000):
+    #plt.grid('on')
+    fig,ax = plt.subplots(1,len(alpha_vector),sharex='all', sharey='all')
+    #plt.grid('on')
+
+    v = np.linspace(0,1.5,len(t_vector))
+
+    for i in range(len(alpha_vector)):
+        x = np.linspace(0,t_vector[-1]+2,y_points)
+        
+        ax[i].plot(x,x-10,"k") 
+        if i == 0:
+           ax[i].set_xlabel(r"$\tau$")
+           ax[i].set_ylabel(r"$y$")
+        ax[i].set_title(r"$\alpha = $"+str(alpha_vector[i]))
+        for k in range(len(t_vector)):
+            y = np.linspace(0,t_vector[k]-10,y_points)
+            #g0 = test_g(t_vector[k],alpha_vector[i],t_vector[k])
+            a = test_a(y,alpha_vector[i],t_vector[k])
+            #b_p = h_func(b,alpha_vector[i],t_vector[-1])
+            #y2 = np.linspace(0,f(b_p),y_points)
+            col = [v[k]/2,v[k]/2,v[k]/2]    
+        
+            ax[i].plot(a,y,color=col) 
+            #if i == len(alpha_vector)-1:
+            #   ax[i].plot(a_func(y2,alpha_vector[i],t_vector[-1],f_inv)+b,y2,color=col,ls="--") 
+            #ax[i].set_xlim([0,t_vector[-1]+0.6])
+            ax[i].set_ylim([t_vector[0]-10,0]) 
+              
+    plt.show()  
 
 
 
 if __name__ == "__main__":
    #TEST NEW IDEA
 
-   y = np.linspace(5,10,100)
+   plot_b_functions()
+
+   '''
+   y = np.linspace(-5,0,100)
    a = test_a(y)
 
    a0 = test_g(5)
    print(a0)
 
-   b0 = test_g(7)
-   print(b0)
-
-   b1 = test_g(6)
+   b0 = test_g(10)
    print(b0)
 
    C = b0-a0
-   C2 = b1-a0
-
+   
    plt.plot(a,y)
    plt.plot(a+C,y)
-   plt.plot(a+C2,y)
    x = np.linspace(4,10,100)
-   plt.plot(x,x)
+   plt.plot(x,x-10)
 
-   plt.axvline(x=a0)
-   plt.axvline(x=b0)
+   #plt.axvline(x=a0)
+   #plt.axvline(x=b0)
 
    plt.show()   
-
+   '''
 
    '''
    y = np.linspace(-20,5,100)
