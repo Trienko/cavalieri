@@ -252,6 +252,15 @@ The following Cavalieri, Riemann, and Riemann--Stieltjes integrals are equivalen
 \int_{a(y)}^{b(y)} f(x) dx = \int_a^b f\circ h(x) dx = \int_{a'}^{b'} f(x)dg(x). 
 \end{equation}
 \end{theorem}
+\begin{theorem}
+Let $\widetilde{g}(x)$ and $f(x)$ be known (continious) invertable real-valued functions. Moreover, let $a'\in \mathbb{R}$ and $b'\in \mathbb{R}$.  If $f^{-1}(0) - \widetilde{g}\circ f^{-1}(0) + g(a')$ exists then there exists a unique 
+$C\in\mathbb{R}$ such that 
+\begin{equation}
+\int_{a'}^{b'} f(x)~dg(x) = \int_{a(y)}^{b(y)} f(x)~dx, 
+\end{equation}
+where $g(x) = \widetilde{g}(x) + C$ and $a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$.
+\end{theorem}
+
 
 \section{Cavalieri Integral: Clarifying Example}
 \label{sec:cav_integral_example}
@@ -275,8 +284,8 @@ The example which we present below was taken from \cite{?}. Let the region $R$ b
 %\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
 %\end{equation}
 
-The area of $R$ can be approximated by summing together the area of rectangular integrations strips that inscribe $R$. There, however, exist a more 
-straightforward way in which we can approximate the area of $R$: we can sum together the area of non-rectangular integration strips inscribing $R$. This alternative approach 
+It seems much more straightforward to approximate the area of $R$ via non-overlapping non-rectangular integration strips that toghether inscribe $R$ than having to 
+rectangular integration strips. This alternative approach 
 will only succeed it the sides of the aforementioned integration strips are all tranlsations of the function $a(y)$. 
 
 Let us express this idea more formally. Let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$.
