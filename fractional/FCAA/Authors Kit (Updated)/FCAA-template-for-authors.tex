@@ -264,11 +264,14 @@ geometric meaning.
 
 To clarify the above theorem, consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$. We can now compute the following:
 \begin{itemize}
- \item $a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$.
- \item $a = a(0)$.
- \item $C = a - \widetilde{g}(a')$.
- \item $g(x) = \widetilde{g}(x) + C$.
- \item $b = g(b')$ and $b(y) = a(y) + (b-a)$.
+ \item Compute $a(y)$ using: 
+\begin{equation}
+a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a'). 
+\end{equation}
+ \item Compute $a = a(0)$.
+ \item Compute $C = a - \widetilde{g}(a')$.
+ \item Compute $g(x) = \widetilde{g}(x) + C$.
+ \item Compute $b = g(b')$ and $b(y) = a(y) + (b-a)$.
 \end{itemize}
 The integrals $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a'}^{b'} f(x)\,dg(x)$ are equivalent (we obtain the same result when they are evaluated). Moreover, the integrals $\int_{a'}^{b'} f(x)\,d\,g(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ have the exact same geometric meaning. Note, however, that
 $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ do not have the exact same geometric meaning.
@@ -334,29 +337,26 @@ or
 \begin{equation}
 \int_{a(y)}^{b(y)}f(x)\, dx = \int_{a'}^{b'} f \, dg(x) = \int_{\frac{1}{2}}^2x\, d2x = 3.75.  
 \end{equation}
-Note, that for the example presented in this section $h(x) = \frac{1}{2}x$ and $g(x) = 2x$. 
+Note, that in the above two equations: $h(x) = \frac{1}{2}x$ and $g(x) = 2x$. 
 
 We can easily verify that the above is correct by using a more traditional route:
 \begin{equation}
 \int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
 \end{equation}
 
-\noindent
-Conversely, if $g$ is known (and not $a(y)$) and $g(a') = a$ then we can calculate $a(y)$ using the following \cite{grobler19}:
+Conversely, consider the following Riemann-Stieltjes integral:
 \begin{equation}
-\label{eq:a_y}
-a(y) = f^{-1}(y) - g\circ f^{-1}(y) + g(a'). 
+\int_{a'}^{b'} \,d\,\widetilde{g}(x) = \int_{\frac{1}{2}}^2 x\,d2x.
 \end{equation}
-Eq.~\eqref{eq:a_y} allows us to transform a Riemann-Stieltjes integral into an equivalent Cavalieri integral. 
-Furthermore, this transformation enables us to assign a geometric interpretation to a Riemann-Stieltjes integral. The interpretation being:
-it represents the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals; all of them being translations of $a(y)$. Note,
-$b(y) = a(y) + (b-a)$.
-
- 
- 
- 
- 
- 
+We can convert this Riemann-Stieltjes integral into a Cavalieri integral via the following conversion steps (see Theorem~\ref{??} and the last paragraph of Section~\ref{??}):
+\begin{itemize}
+ \item $a(y) = f^{-1}(y) - \widetilde{g}\circ f^{-1}(y)+ \widetilde{g}(a') = 1-y$.
+ \item $a(0) = 1$.
+ \item $C = a - \widetilde{g}(a') = 0$.
+ \item $g(x) = \widetilde{g}(x) + C = 2x$.
+ \item $b = g(b') = 4$ and $b(y) = a(y) + (b-a) = 4-y$.
+\end{itemize}
+The integrals $\int_{\frac{1}{2}}^{2} x\,d2x$  and $\int_{1-y}^{4-y} x\,dx$ have the exact same geometric meaning, since $C=0$. 
  
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
