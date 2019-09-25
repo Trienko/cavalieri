@@ -191,20 +191,13 @@ The mapping $h : [a, b] \rightarrow [a',b']$, which maps $x_i^1 \in [a, b]$ to $
 $h(x_i^1) =$ $\{x_i^2 \in [a' ,b'] | a\circ f(x_i^2) + [x_i^1 - a] = x_i^2$ , $a = a(0)\}$
 \end{definition}
 
-\begin{theorem}
-The mapping $h(x)$ is a strictly monotone continious function. The function $h(x)$ is, therefore, invertable.
-\end{theorem}
-
-\noindent
-The function $h(x)$ is known as the transformation function. 
-
 \begin{definition}\label{def:g}
 The mapping $g:[a', b'] \rightarrow [a, b]$, which maps $x_i^2 \in [a' , b']$ to $x_i^1\in [a, b]$,
 is defined as $g(x_i^2) = x_i^2 - a \circ f (x_i^2) + a$.
 \end{definition}
 
 \begin{theorem}
-The mapping $g(x)$ is a strictly monotone continious function. The function $g(x)$ is, therefore, invertable.
+The mapping $h(x)$ is a strictly monotone continuous function. The function $h(x)$ is, therefore, invertable.
 \end{theorem}
 
 \begin{theorem}
@@ -212,7 +205,8 @@ The mapping $g(x)$ is a strictly monotone continious function. The function $g(x
 The function $g(x)$ is equal to $h^{-1}(x)$.
 \end{theorem}
 
-The function $g(x)$ is known as the inverse transformation function.
+\noindent
+The functions $h(x)$ and $g(x)$ are known as the transformation function and the inverse transformation function, respectively. 
 
 \begin{definition}\label{def:cav_integral}
 Define a partition $\mathcal{P}_1$ of $[a,b]$ to be a set of points $x_0^1, x_1^1,\cdots,x_n^1$, 
@@ -247,19 +241,42 @@ Note that the superscripts of the $x$-coordinates in the above definitions indic
 
 \begin{theorem}
 \label{t:conv}
-The following Cavalieri, Riemann, and Riemann--Stieltjes integrals are equivalent
+The following Cavalieri, Riemann, and Riemann--Stieltjes integrals are equivalent:
 \begin{equation}
-\int_{a(y)}^{b(y)} f(x) dx = \int_a^b f\circ h(x) dx = \int_{a'}^{b'} f(x)dg(x). 
+\int_{a(y)}^{b(y)} f(x)\,dx = \int_a^b f\circ h(x)\,dx = \int_{a'}^{b'} f(x)\,dg(x),
 \end{equation}
+with $g(x) = x-a\circ f(x) + a$ and $h(x) = g^{-1}(x)$.
 \end{theorem}
+
+Theorem~\ref{t:conv} tells us how to convert a Cavalieri integral into an equivalent Riemann or Riemann-Stieltjes integral. It, however, tells us nothing about the reverse 
+procedure, if we are given a Riemann-Stieltjes integral how do we convert it into a Cavalieri integral. The theorem below stipulates the conditions that are required to perform the latter conversion.
+
 \begin{theorem}
-Let $\widetilde{g}(x)$ and $f(x)$ be known (continious) invertable real-valued functions. Moreover, let $a'\in \mathbb{R}$ and $b'\in \mathbb{R}$.  If $f^{-1}(0) - \widetilde{g}\circ f^{-1}(0) + g(a')$ exists then there exists a unique 
+\label{t:reverse}
+Let $\widetilde{g}(x)$ and $f(x)$ be known (continuous) invertable real-valued functions. Moreover, let $a'\in \mathbb{R}$ and $b'\in \mathbb{R}$.  If $f^{-1}(0) - \widetilde{g}\circ f^{-1}(0) + \widetilde{g}(a')$ exists then there exists a unique 
 $C\in\mathbb{R}$ such that 
 \begin{equation}
-\int_{a'}^{b'} f(x)~dg(x) = \int_{a(y)}^{b(y)} f(x)~dx, 
+\int_{a'}^{b'} f(x)\,dg(x)~\textrm{and}~\int_{a(y)}^{b(y)} f(x)\,dx, 
 \end{equation}
-where $g(x) = \widetilde{g}(x) + C$ and $a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$.
+where $g(x) = \widetilde{g}(x) + C$ and $a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$, have the exact same 
+geometric meaning.
 \end{theorem}
+
+To clarify the above theorem, consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$. We can now compute the following:
+\begin{itemize}
+ \item $a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$.
+ \item $a = a(0)$.
+ \item $C = a - \widetilde{g}(a')$.
+ \item $g(x) = \widetilde{g}(x) + C$.
+ \item $b = g(b')$ and $b(y) = a(y) + (b-a)$.
+\end{itemize}
+The integrals $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a'}^{b'} f(x)\,dg(x)$ are equivalent (we obtain the same result when they are evaluated). Moreover, the integrals $\int_{a'}^{b'} f(x)\,d\,g(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ have the exact same geometric meaning. Note, however, that
+$\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ do not have the exact same geometric meaning.
+
+
+%To clarify the above theorem, the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ can be converted into an equivalent Cavalieri integral $\int_{a(y)}^{b(y)}f(x)~dx$ (we obtain the same value when we evaluate the aforementioned integrals). The Cavalieri 
+%integral so obtained does however not have the same geometric meaning as $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$. Fortunately, the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) \,d\,\widetilde{g}(x)$ 
+%can be converted into an equivalent Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,dg(x)$. Note that $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x) = \int_{a'}^{b'} f(x)\,dg(x)$, by Theorem~\ref{??}. In contrast to the original Riemann-Stieltjes integral, the Riemann-Stieltjes integral so obtained has the exact same geometric meaning as $\int_{a(y)}^{b(y)} f(x)\,dx$.
 
 
 \section{Cavalieri Integral: Clarifying Example}
@@ -284,8 +301,7 @@ The example which we present below was taken from \cite{?}. Let the region $R$ b
 %\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
 %\end{equation}
 
-It seems much more straightforward to approximate the area of $R$ via non-overlapping non-rectangular integration strips that toghether inscribe $R$ than having to 
-rectangular integration strips. This alternative approach 
+We can approximate the area of $R$ by using rectangular integration strips. It, however, seems much more straightforward to approximate the area of $R$ via non-overlapping non-rectangular integration strips that toghether inscribe $R$. This alternative approach 
 will only succeed it the sides of the aforementioned integration strips are all tranlsations of the function $a(y)$. 
 
 Let us express this idea more formally. Let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$.
@@ -304,20 +320,25 @@ It is, however, quite hard to evaluate the above integral directly. Fortunately,
 integral by using the functions $h$ and $g$ (Theorem~\ref{t:conv}). Expressed mathematically:
 \begin{equation}
 \label{eq:main_cav}
-\int_{a(y)}^{b(y)}f(x)\,dx =\int_a^b f \circ h (x)\, dx = \int_{a'}^{b'} f(x) dg(x).
+\int_{a(y)}^{b(y)}f(x)\,dx =\int_a^b f \circ h (x)\, dx = \int_{a'}^{b'} f(x) dg(x),
 \end{equation}
 We can calculate $g$ as follows (Definition~\ref{def:g}):
 \begin{equation}
 g(x) = x - a\circ f(x) + a.
 \end{equation}
-Moreover, $h=g^{-1}$ (Theorem~\ref{t:inv}). We can now evaluate the Cavalieri integral by using its equivalent Riemann or Rieman-Stieltjes integral.
-If we use its Riemann equivalent we obtain:
+Moreover, $h=g^{-1}$ (Theorem~\ref{t:inv}). We can now evaluate the Cavalieri using one of two ways:
 \begin{equation}
-\int_{a(y)}^{b(y)}f(x)\, dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75.  
+\int_{a(y)}^{b(y)}f(x)\, dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75,  
 \end{equation}
-If we use its Riemann-Stieltjes equivalent we obtain:
+or
 \begin{equation}
 \int_{a(y)}^{b(y)}f(x)\, dx = \int_{a'}^{b'} f \, dg(x) = \int_{\frac{1}{2}}^2x\, d2x = 3.75.  
+\end{equation}
+Note, that for the example presented in this section $h(x) = \frac{1}{2}x$ and $g(x) = 2x$. 
+
+We can easily verify that the above is correct by using a more traditional route:
+\begin{equation}
+\int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
 \end{equation}
 
 \noindent
