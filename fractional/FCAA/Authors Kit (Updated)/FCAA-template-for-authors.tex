@@ -357,7 +357,44 @@ We can convert this Riemann-Stieltjes integral into a Cavalieri integral via the
  \item $b = g(b') = 4$ and $b(y) = a(y) + (b-a) = 4-y$.
 \end{itemize}
 The integrals $\int_{\frac{1}{2}}^{2} x\,d2x$  and $\int_{1-y}^{4-y} x\,dx$ have the exact same geometric meaning, since $C=0$. 
- 
+
+\section{Left-sided Riemann-Liouville Fractional Integral}
+In this section we review the definition of the left-sided Riemann-Liouville fractional integral of order $\alpha$ (based at $a'$) \cite{laurent1884}. Please note that in this paper from this point going forward our variable of integration will be $\tau$ instead of $x$. It is our opinion that this notational change improves the readability of the paper. Let
+\begin{equation}
+_{a'}I_t\, f(t) := \int_{a'}^t f(\tau)~d\tau.
+\end{equation}
+If we apply the above operator in a repetitive manner to $f$ we obtain the $n$th antiderivative of $f$ based at $a'$:
+\begin{equation}
+\label{eq:n_anti}
+_{a'}I_t^n\,f(t) = \int_{a'}^t\int_{a'}^{\tau_1}\cdots \int_0^{\tau_{n-1}}f(\tau_n)~d\tau_n\cdots d\tau_2 d\tau_1.
+\end{equation}
+Applying Cauchy's repetitive integration formula to Eq.~\eqref{eq:n_anti} results in:
+\begin{equation}
+\label{eq:cauchy}
+_{a'}I_t^n\,f(t) = \frac{1}{(n-1)!}\int_0^t (t-\tau)^{n-1}f(\tau)~d\tau.
+\end{equation}
+As an example if $f(t)=t$, $n=2$ and $a'=0$ then Eq.~\eqref{eq:cauchy} reduces to:
+\begin{equation}
+_{0}I_t^2\,f(t) = \int_0^t (t-\tau)\tau~d\tau = \frac{\tau^2 t}{2} - \frac{\tau^3}{3} \Bigg |_0^t = \frac{t^3}{3!}.
+\end{equation}
+The definition in Eq.~\eqref{eq:cauchy} can now be extended to an arbitrary fractional order by replacing $(n-1)!$ with the Gamma function (see Fig.~\ref{fig:gamma}):
+\begin{equation}
+\label{eq:frac_integral}
+_{a'}I_t^{\alpha}f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^t (t-\tau)^{\alpha-1}f(\tau)~d\tau.
+\end{equation}
+Eq.~\eqref{eq:frac_integral} is known as the left-sided Riemann-Liouville fractional integral of order $\alpha$. As an example if $f(t)=t$, $\alpha=\frac{1}{2}$ and $a'=0$ then 
+Eq.~\eqref{eq:frac_integral} reduces to:
+\begin{equation}
+_0 I_t^{\frac{1}{2}}\,f(t) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^t \frac{\tau}{\sqrt{t-\tau}} d\tau = \frac{1}{\sqrt{\pi}}\left [ -\frac{2}{3}\sqrt{t-\tau}(2t+\tau)\right] \Bigg |_0^t=\frac{4}{3\sqrt{\pi}}t^{\frac{3}{2}}. 
+\end{equation}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{gamma.pdf}
+\caption{A plot of $\Gamma(x) = \int_0^{\infty} t^{x-1} e^{-t}\,dt$ for $x\in(-5,5)$. $\Gamma(x)$ is not defined for the negative integers. Moreover, it is a natural extension of the factorial function to the real numbers \cite{euler1738}.}
+\label{fig:gamma}
+\end{figure}
+
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Acknowledgements}
