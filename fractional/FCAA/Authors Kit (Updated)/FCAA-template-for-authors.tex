@@ -359,10 +359,11 @@ We can convert this Riemann-Stieltjes integral into a Cavalieri integral via the
 The integrals $\int_{\frac{1}{2}}^{2} x\,d2x$  and $\int_{1-y}^{4-y} x\,dx$ have the exact same geometric meaning, since $C=0$. 
 
 \section{Left-sided Riemann-Liouville Fractional Integral}
-In this section we review the definition of the left-sided Riemann-Liouville fractional integral of order $\alpha$ (based at $a'$) \cite{laurent1884}. Please note that in this paper from this point going forward our variable of integration will be $\tau$ instead of $x$. It is our opinion that this notational change improves the readability of the paper. Let
+In this section we review the definition of the left-sided Riemann-Liouville fractional integral of order $\alpha$ (based at $a'$) \cite{laurent1884}. Let
 \begin{equation}
 _{a'}I_t\, f(t) := \int_{a'}^t f(\tau)~d\tau.
 \end{equation}
+Please note that in this paper from this point going forward our variable of integration will be $\tau$ instead of $x$. It is of our opinion that this notational change improves the readability of the paper (if $\tau$ is our variable of integration then it makes sense to choose $t$ to denote our upper integration limit in Eq.~\ref{??}). 
 If we apply the above operator in a repetitive manner to $f$ we obtain the $n$th antiderivative of $f$ based at $a'$:
 \begin{equation}
 \label{eq:n_anti}
@@ -394,6 +395,121 @@ _0 I_t^{\frac{1}{2}}\,f(t) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^t \frac{\tau}{
 \caption{A plot of $\Gamma(x) = \int_0^{\infty} t^{x-1} e^{-t}\,dt$ for $x\in(-5,5)$. $\Gamma(x)$ is not defined for the negative integers. Moreover, it is a natural extension of the factorial function to the real numbers \cite{euler1738}.}
 \label{fig:gamma}
 \end{figure}
+
+\section{Geometric Interpretation of the Left-sided Riemann-Liouville Fractional Integral}
+
+\subsection{Converting into a Riemann-Stieltjes integral}
+Podlubny showed that the Left-sided Riemann-Liouville fractional integral can be rewritten as a Riemann-Stieltjes integral \cite{podlubny02}:
+\begin{theorem}
+The following integrals are equivalent
+\begin{equation}
+_{a'}I_t^{\alpha}\,f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau = \int_{a'}^{t} f(\tau)~dg_t^{\alpha}(\tau), 
+\end{equation}
+with 
+\begin{equation}
+\label{eq:g_rl}
+g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Note that 
+\begin{equation}
+\label{eq:diff}
+\frac{dg_t^{\alpha}(\tau)}{d\tau} = \frac{\alpha(t-\tau)^{\alpha-1}}{\Gamma(\alpha+1)} =\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}. 
+\end{equation}
+Furthermore,
+\begin{equation}
+\label{eq:inter_step}
+\int_{a'}^{t} f(\tau)\,dg_t^{\alpha}(\tau) = \int_{a'}^{t} f(\tau) \frac{dg_t^{\alpha}(\tau)}{d\tau}\,dg_t^{\alpha}(\tau). 
+\end{equation}
+The desired result is obtained by substituting Equation~\eqref{eq:diff} into Equation~\eqref{eq:inter_step}.  
+\end{proof}
+
+
+
+In this section we present a novel geometric interpretation of the Riemann-Liouville fractional integral. 
+Recall that the Riemann-Liouville fractional integral of order $\alpha$ is defined as:
+\begin{equation}
+\label{eq:RL_frac_int}
+\frac{1}{\Gamma(\alpha)}\int_{0}^{t}f(\tau)(t-\tau)^{\alpha-1}~d\tau
+\end{equation}
+
+\noindent
+Podlubny showed that the above fractional integral can be rewritten as a Riemann-Stieltjes integral \cite{podlubny02}:
+\begin{equation}
+\label{eq:rs}
+\int_0^{t} f(\tau)~dg_t(\tau),
+\end{equation}
+with 
+\begin{equation}
+\label{eq:g_rl}
+g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
+\end{equation}
+
+\noindent
+Note that $g_t^{\alpha}(\tau)$ is always invertible, since $\frac{d g_t^{\alpha}}{d \tau} = \frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}>0$ for $\tau\in[0,t]$. The inverse 
+of $g_t^{\alpha}(\tau)$ is equal to:
+\begin{equation}
+h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)\tau}
+\end{equation}
+
+\noindent
+Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ are presented in Table~\ref{tab:gandh} for $\alpha\in\mathsf{A}$. 
+The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
+
+\begin{table}[h!]
+ \centering
+ \caption{The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$.}
+ \label{tab:gandh}
+ \begin{tabular}{|c || c | c|} 
+ \hline
+ $\alpha$ & $g_{10}^{\alpha}(\tau)$ & $h_{10}^{\alpha}(\tau)$ \\ [0.5ex] 
+ \hline\hline
+ $0$ & 0 & $y=0$ \\ 
+ $0.2$ & $[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-\tau}\right)$ & $10 - \left ( \sqrt[5]{10} -  \Gamma\left (\frac{6}{5} \right ) \tau \right )^5$  \\
+ $0.4$ & $[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-\tau)^2}\right)$ & $10 - \sqrt{\left ( \sqrt[5]{10} -  \Gamma\left (\frac{7}{5} \right ) \tau \right )^5}$ \\
+ $0.6$ & $[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-\tau)^3}\right)$ & $10 - \sqrt[3]{\left ( \sqrt[5]{10} -  \Gamma\left (\frac{8}{5} \right ) \tau \right )^5}$ \\
+ $0.8$ & $[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-\tau)^4}\right)$ & $10 - \sqrt[4]{\left ( \sqrt[5]{10} -  \Gamma\left (\frac{9}{5} \right ) \tau \right )^5}$ \\ [1ex] 
+ $1$ & $\tau$ & $\tau$ \\ [1ex] 
+ \hline
+ \end{tabular}
+ \end{table}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.75\textwidth]{gh.pdf}
+\caption{This figure depicts the curves of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The curves associated with $g$ are plotted using 
+solid lines, while the curves plotted with dashed lines are associated with $h$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is that is associated with it.
+}
+\label{fig:gandh}
+\end{figure}
+
+\noindent
+Furthermore, Grobler showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral \cite{ackermann12,grobler19} (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper if more details are required). If we apply Grobler's conversion method to Eq.~\eqref{eq:rs} we obtain:
+\begin{equation}
+\label{eq:cav}
+\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau, 
+\end{equation}
+with
+\begin{equation}
+\label{eq:cav_a}
+a_t^{\alpha}(y) = f^{-1}(y) - \frac{t^{\alpha}-(t-f^{-1}(y))^{\alpha}}{\Gamma(\alpha+1)}.
+\end{equation}
+Eq.~\eqref{eq:cav_a} is obtained by substituting Eq.~\eqref{eq:g_rl} into Eq.~\eqref{eq:a_y}. Note, $b_t^{\alpha}(y) = a_t^{\alpha}(y) + \frac{t^{\alpha}}{\Gamma(\alpha+1)}$. 
+
+\noindent
+We can now assign a geometric interpretation to Eq.~\eqref{eq:cav}, since it is a Cavalieri integral (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper). The fractional integral in Eq.~\eqref{eq:RL_frac_int} can, therefore, be interpreted as the area obtained 
+by summing together the area of an infinite number of infinitesimally small non-rectangular integration strips whose shape is determined by $\alpha$ and $t$. If $\alpha$ is equal to one, however, then the integral reduces to a normal Riemann integral as the integration strips become rectangular for this particular choice of $\alpha$ (its shape becomes independent of $t$).\\
+
+\noindent
+Interestingly, Eq.~\eqref{eq:main_cav} implies that we can use $h_t^{\alpha}(\tau)$ to convert Eq.~\eqref{eq:cav} into the following Riemann integral:
+\begin{equation}
+\label{eq:option2}
+\int_0^{\frac{t^{\alpha}}{\Gamma(\alpha+1)}} f\circ h_{\alpha}^t (\tau) d\tau.  
+\end{equation}
+We can, therefore, evaluate Eq.~\eqref{eq:cav} in one of two ways: we can either evaluate Eq.~\eqref{eq:rs} or we can evaluate Eq.~\eqref{eq:option2}.
+
 
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
