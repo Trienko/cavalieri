@@ -17,87 +17,108 @@ def g_x(x,z):
 def g_x_2(x,z,t=5,a=0.5):
     return (t**(a)-(t-x)**(a))/math.gamma(a+1)
 
+import matplotlib 
+#plt.locator_params(nbins=4)
+
 fig = plt.figure()
+matplotlib.rcParams.update({'font.size': 10})
 
-x_max = 5.0
+counter = 1
+
+alpha = np.array([0.3,0.6,0.9])
+t_v = np.array([3,6,9])
 d = 0.01
-y_max = g_x_2(x_max,0)
-z_max = f_x(x_max,0)
 
-#PLOT SURFACES
+for i in range(3):
+   for j in range(3):
+	ax = fig.add_subplot(3,3,counter, projection='3d')	
+        x_max = t_v[j]
+        y_max = g_x_2(x_max,0,t=t_v[j],a=alpha[i])
+        z_max = f_x(x_max,0)
 
-#PLOT g_x
-ax = fig.add_subplot(111, projection='3d')
-x = np.arange(0, x_max, d)
-z = np.arange(0, z_max, d)
-X, Z = np.meshgrid(x, z)
-ys = np.array([g_x_2(x,z) for x,z in zip(np.ravel(X), np.ravel(Z))])
-Y = ys.reshape(X.shape)
-ax.plot_surface(X, Y, Z,color="blue",alpha=0.2,linewidth=0)
+        #PLOT SURFACES
 
-#PLOT f_x
-x = np.arange(0, x_max, d)
-y = np.arange(0, y_max, d)
-X, Y = np.meshgrid(x, y)
-zs = np.array([f_x(x,y) for x,y in zip(np.ravel(X), np.ravel(Y))])
-Z = zs.reshape(X.shape)
-ax.plot_surface(X, Y, Z,color="black",alpha=0.2,linewidth=0)
+        #PLOT g_x
+        x = np.arange(0, x_max, d)
+        z = np.arange(0, z_max, d)
+        X, Z = np.meshgrid(x, z)
+        ys = np.array([g_x_2(x,z,t=t_v[j],a=alpha[i]) for x,z in zip(np.ravel(X), np.ravel(Z))])
+        Y = ys.reshape(X.shape)
+        ax.plot_surface(X, Y, Z,color="blue",alpha=0.2,linewidth=0)
+
+        #PLOT f_x
+        x = np.arange(0, x_max, d)
+        y = np.arange(0, y_max, d)
+        X, Y = np.meshgrid(x, y)
+        zs = np.array([f_x(x,y) for x,y in zip(np.ravel(X), np.ravel(Y))])
+        Z = zs.reshape(X.shape)
+        ax.plot_surface(X, Y, Z,color="cyan",alpha=0.2,linewidth=0)
 
 
-#PLOT CURVES
-x = np.arange(0, x_max, d)
+        #PLOT CURVES
+        x = np.arange(0, x_max, d)
 
-#PLOT PROJECTION
-ax.plot(np.zeros(x.shape),g_x_2(x,0),f_x(x,0),color="black")
-#print(np.zeros(x.shape))
-#print(g_x_2(x,0))
-#print(f_x(x,0))
-#PLOT INTERSECTION
-ax.plot(x,g_x_2(x,0),f_x(x,0),color="black",linestyle='dashed',linewidth=1.5)
-#print(x)
-#print(g_x_2(x,0))
-#print(f_x(x,0))
+        #PLOT PROJECTION
+        ax.plot(np.zeros(x.shape),g_x_2(x,0,t=t_v[j],a=alpha[i]),f_x(x,0),color="black")
+        #PLOT INTERSECTION
+        ax.plot(x,g_x_2(x,0,t=t_v[j],a=alpha[i]),f_x(x,0),color="black",linestyle='dashed',linewidth=1.5)
 
-xs = np.zeros(x.shape)
-xs = np.append(xs,np.array([0]))
-ys =  g_x_2(x,0)
-ys = np.append(ys,np.array([ys[-1]]))
-zs = f_x(x,0)
-zs = np.append(zs,np.array([0]))
+        xs = np.zeros(x.shape)
+        xs = np.append(xs,np.array([0]))
+        ys =  g_x_2(x,0,t=t_v[j],a=alpha[i])
+        ys = np.append(ys,np.array([ys[-1]]))
+        zs = f_x(x,0)
+        zs = np.append(zs,np.array([0]))
 
-#print(xs)
-#print(ys)
-#print(zs)
 
-#ys[-1] = 0
-#zs[-1] = 0
+        def cc(arg):
+        	return colorConverter.to_rgba(arg, alpha=0.2)
 
-#xs = np.array([0,0,0,0])
-#ys = np.array([0,0,1,1])
-#zs = np.array([0,1,1,0])
+	
+        #ADD SHADOW
+        verts = [list(zip(xs, ys, zs))]
+	#print(verts)
+	poly = Poly3DCollection(verts,facecolor=cc('r'))
+	poly.set_alpha(0.2)
+	ax.add_collection3d(poly)
+	#plt.show()
 
-def cc(arg):
-    return colorConverter.to_rgba(arg, alpha=0.2)
+	xs = x
+	xs = np.append(xs,xs[::-1])
+	ys =  g_x_2(x,0,t=t_v[j],a=alpha[i])
+	ys = np.append(ys,ys[::-1])
+	zs = f_x(x,0)
+	zs = np.append(zs,np.zeros(x.shape))
+	
+        #ADD FENCE
+        verts = [list(zip(xs, ys, zs))]
+	#print(verts)
+	poly = Poly3DCollection(verts,facecolor=cc('g'),alpha=0.5)
+	#poly.set_alpha(0.2)
+	ax.add_collection3d(poly)
 
-verts = [list(zip(xs, ys, zs))]
-#print(verts)
-poly = Poly3DCollection(verts,facecolor=cc('r'))
-poly.set_alpha(0.2)
-ax.add_collection3d(poly)
-#plt.show()
+	
+	#matplotlib.rc('xtick', labelsize=20) 
+	#matplotlib.rc('ytick', labelsize=20) 
+	#matplotlib.rc('xlabel', labelsize=20)
+	#matplotlib.rc('ylabel', labelsize=20)
+	#matplotlib.rc('zlabel', labelsize=20)
+        tick_spacing = 1
+        import matplotlib.ticker as ticker
 
-xs = x
-xs = np.append(xs,xs[::-1])
-ys =  g_x_2(x,0)
-ys = np.append(ys,ys[::-1])
-zs = f_x(x,0)
-zs = np.append(zs,np.zeros(x.shape))
-verts = [list(zip(xs, ys, zs))]
-#print(verts)
-poly = Poly3DCollection(verts,facecolor=cc('g'),alpha=0.5)
-#poly.set_alpha(0.2)
-ax.add_collection3d(poly)
+        ax.xaxis.set_major_locator(ticker.MultipleLocator(tick_spacing+1))
+        ax.yaxis.set_major_locator(ticker.MultipleLocator(tick_spacing))
+	ax.zaxis.set_major_locator(ticker.MultipleLocator(tick_spacing))
+	
+        ax.set_xlabel(r'$\tau$')
+	ax.set_ylabel(r'$g_t^{\alpha}(\tau)$')
+	ax.set_zlabel(r'$f(\tau)$')
+        
 
+	ax.view_init(30,220)
+        counter = counter + 1 
+plt.tight_layout()
+plt.show()
 
 
 #xs=x
