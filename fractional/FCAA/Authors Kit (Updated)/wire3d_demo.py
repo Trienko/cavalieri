@@ -27,13 +27,16 @@ counter = 1
 
 alpha = np.array([0.3,0.6,0.9])
 t_v = np.array([3,6,9])
-d = 0.01
+d = 0.1
 
 for i in range(3):
    for j in range(3):
 	ax = fig.add_subplot(3,3,counter, projection='3d')	
         x_max = t_v[j]
         y_max = g_x_2(x_max,0,t=t_v[j],a=alpha[i])
+        print(counter)
+        print(x_max)
+        print(y_max)
         z_max = f_x(x_max,0)
 
         #PLOT SURFACES
@@ -48,7 +51,7 @@ for i in range(3):
 
         #PLOT f_x
         x = np.arange(0, x_max, d)
-        y = np.arange(0, y_max, d)
+        y = np.linspace(0, ys[-1], 100)
         X, Y = np.meshgrid(x, y)
         zs = np.array([f_x(x,y) for x,y in zip(np.ravel(X), np.ravel(Y))])
         Z = zs.reshape(X.shape)
