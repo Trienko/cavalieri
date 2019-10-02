@@ -5,7 +5,7 @@
 %%% Put the files "fcaa.cls", "fcaa-var.cls" and "fcaa_style.tex" in same directory you prepare the paper
 
   %\documentclass[twoside,reqno,11pt]{fcaa}  %%% or in case of problems, use as below: %
-   \documentclass[twoside,reqno,11pt]{fcaa-var} %
+  \documentclass[twoside,reqno,11pt]{fcaa-var} %
 
  \input fcaa_style
 
@@ -291,12 +291,12 @@ The example which we present below was taken from \cite{?}. Let the region $R$ b
 %\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
 %\label{fig:ex1}
 %\end{figure}
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.75\textwidth]{fig13.pdf}
-\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. In the case of $R$: $a=1$, $b=4$, $a'=\frac{1}{2}$ and $b'=2$. The figure also depicts the partition points $x_i^2$ as used in the Cavalieri sum (see Equation~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
-\label{fig:caval2}
-\end{figure}
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=0.75\textwidth]{fig13.pdf}
+%\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. In the case of $R$: $a=1$, $b=4$, $a'=\frac{1}{2}$ and $b'=2$. The figure also depicts the partition points $x_i^2$ as used in the Cavalieri sum (see Equation~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+%\label{fig:caval2}
+%\end{figure}
 
 %\noindent
 %The area of $R$ can be determined as follows if we employ the classical notion of integration:
@@ -367,12 +367,12 @@ Please note that in this paper from this point going forward our variable of int
 If we apply the above operator in a repetitive manner to $f$ we obtain the $n$th antiderivative of $f$ based at $a'$:
 \begin{equation}
 \label{eq:n_anti}
-_{a'}I_t^n\,f(t) = \int_{a'}^t\int_{a'}^{\tau_1}\cdots \int_0^{\tau_{n-1}}f(\tau_n)~d\tau_n\cdots d\tau_2 d\tau_1.
+_{a'}I_t^n\,f(t) = \int_{a'}^t\int_{a'}^{\tau_1}\cdots \int_{a'}^{\tau_{n-1}}f(\tau_n)~d\tau_n\cdots d\tau_2 d\tau_1.
 \end{equation}
 Applying Cauchy's repetitive integration formula to Eq.~\eqref{eq:n_anti} results in:
 \begin{equation}
 \label{eq:cauchy}
-_{a'}I_t^n\,f(t) = \frac{1}{(n-1)!}\int_0^t (t-\tau)^{n-1}f(\tau)~d\tau.
+_{a'}I_t^n\,f(t) = \frac{1}{(n-1)!}\int_{a'}^t (t-\tau)^{n-1}f(\tau)~d\tau.
 \end{equation}
 As an example if $f(t)=t$, $n=2$ and $a'=0$ then Eq.~\eqref{eq:cauchy} reduces to:
 \begin{equation}
@@ -480,10 +480,20 @@ The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
 \centering
 \includegraphics[width=0.75\textwidth]{gh.pdf}
 \caption{This figure depicts the curves of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The curves associated with $g$ are plotted using 
+solid lines, while the curves plotted wit h dashed lines are associated with $h$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is that is associated with it.
+}
+\label{fig:gandh}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=1.0\textwidth]{vis_old.pdf}
+\caption{This figure depicts the curves of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The curves associated with $g$ are plotted using 
 solid lines, while the curves plotted with dashed lines are associated with $h$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is that is associated with it.
 }
 \label{fig:gandh}
 \end{figure}
+
 
 \noindent
 Furthermore, Grobler showed that it is trivial to convert a Riemann-Stieltjes integral into a Cavalieri integral \cite{ackermann12,grobler19} (see Fig.~\ref{fig:caval2} and the Cavalieri section of this paper if more details are required). If we apply Grobler's conversion method to Eq.~\eqref{eq:rs} we obtain:
