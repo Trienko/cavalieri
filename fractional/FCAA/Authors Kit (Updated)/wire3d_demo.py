@@ -21,7 +21,7 @@ import matplotlib
 #plt.locator_params(nbins=4)
 
 fig = plt.figure()
-matplotlib.rcParams.update({'font.size': 10})
+matplotlib.rcParams.update({'font.size': 22})
 
 counter = 1
 
@@ -105,19 +105,33 @@ for i in range(3):
 	#matplotlib.rc('zlabel', labelsize=20)
         tick_spacing = 1
         import matplotlib.ticker as ticker
+        ax.view_init(30,200)
 
-        ax.xaxis.set_major_locator(ticker.MultipleLocator(tick_spacing+1))
+
+        if counter == 2:
+           ax.set_xlabel(r'$\tau$',labelpad=10)
+	   ax.set_ylabel(r'$g_t^{\alpha}(\tau)$',labelpad=18)
+	   ax.set_zlabel(r'$f(\tau)$')
+
+        if counter <=3:
+           ax.set_title(r"$t = $"+str(t_v[counter-1]))
+
+        if counter == 1 or counter ==4 or counter == 7:
+           ax.set_zlabel(r'$\alpha =$'+str(alpha[i]))
+
+
+        if j == 2: 
+           ax.xaxis.set_major_locator(ticker.MultipleLocator(tick_spacing+2))
+        else:
+           ax.xaxis.set_major_locator(ticker.MultipleLocator(tick_spacing+1))
         ax.yaxis.set_major_locator(ticker.MultipleLocator(tick_spacing))
 	ax.zaxis.set_major_locator(ticker.MultipleLocator(tick_spacing))
 	
-        ax.set_xlabel(r'$\tau$')
-	ax.set_ylabel(r'$g_t^{\alpha}(\tau)$')
-	ax.set_zlabel(r'$f(\tau)$')
         
 
-	ax.view_init(30,220)
+	ax.view_init(30,200)
         counter = counter + 1 
-plt.tight_layout()
+#plt.tight_layout(h_pad=0.5,w_pad=0.5,pad=0.5)
 plt.show()
 
 
