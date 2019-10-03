@@ -421,38 +421,20 @@ Note that
 Furthermore,
 \begin{equation}
 \label{eq:inter_step}
-\int_{a'}^{t} f(\tau)\,dg_t^{\alpha}(\tau) = \int_{a'}^{t} f(\tau) \frac{dg_t^{\alpha}(\tau)}{d\tau}\,dg_t^{\alpha}(\tau). 
+\int_{a'}^{t} f(\tau)\,dg_t^{\alpha}(\tau) = \int_{a'}^{t} f(\tau) \frac{dg_t^{\alpha}(\tau)}{d\tau}\,d\tau. 
 \end{equation}
 The desired result is obtained by substituting Equation~\eqref{eq:diff} into Equation~\eqref{eq:inter_step}.  
 \end{proof}
 
-
-
-In this section we present a novel geometric interpretation of the Riemann-Liouville fractional integral. 
-Recall that the Riemann-Liouville fractional integral of order $\alpha$ is defined as:
+\begin{theorem}
+If $\tau\in(-\infty,t]$ then $g_t^{\alpha}(\tau)$ is an invertable function. Its inverse is:
 \begin{equation}
-\label{eq:RL_frac_int}
-\frac{1}{\Gamma(\alpha)}\int_{0}^{t}f(\tau)(t-\tau)^{\alpha-1}~d\tau
+h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)\tau}.
 \end{equation}
-
-\noindent
-Podlubny showed that the above fractional integral can be rewritten as a Riemann-Stieltjes integral \cite{podlubny02}:
-\begin{equation}
-\label{eq:rs}
-\int_0^{t} f(\tau)~dg_t(\tau),
-\end{equation}
-with 
-\begin{equation}
-\label{eq:g_rl}
-g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
-\end{equation}
-
-\noindent
-Note that $g_t^{\alpha}(\tau)$ is always invertible, since $\frac{d g_t^{\alpha}}{d \tau} = \frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}>0$ for $\tau\in[0,t]$. The inverse 
-of $g_t^{\alpha}(\tau)$ is equal to:
-\begin{equation}
-h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)\tau}
-\end{equation}
+\end{theorem}
+\begin{proof}
+The function $g_t^{\alpha}$ is invertable, since $\frac{d g_t^{\alpha}}{d\tau}=\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)} > 0$ if $\tau\in(-\infty,t]$. The inverse now follows trivially.  
+\end{proof}
 
 \noindent
 Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ are presented in Table~\ref{tab:gandh} for $\alpha\in\mathsf{A}$. 
@@ -460,7 +442,7 @@ The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
 
 \begin{table}[h!]
  \centering
- \caption{The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$.}
+ \caption{The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The expressions in this table are depicted in Fig~\ref{fig:gandh}.}
  \label{tab:gandh}
  \begin{tabular}{|c || c | c|} 
  \hline
@@ -468,9 +450,9 @@ The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
  \hline\hline
  $0$ & 0 & $y=0$ \\ 
  $0.2$ & $[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-\tau}\right)$ & $10 - \left ( \sqrt[5]{10} -  \Gamma\left (\frac{6}{5} \right ) \tau \right )^5$  \\
- $0.4$ & $[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-\tau)^2}\right)$ & $10 - \sqrt{\left ( \sqrt[5]{10} -  \Gamma\left (\frac{7}{5} \right ) \tau \right )^5}$ \\
- $0.6$ & $[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-\tau)^3}\right)$ & $10 - \sqrt[3]{\left ( \sqrt[5]{10} -  \Gamma\left (\frac{8}{5} \right ) \tau \right )^5}$ \\
- $0.8$ & $[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-\tau)^4}\right)$ & $10 - \sqrt[4]{\left ( \sqrt[5]{10} -  \Gamma\left (\frac{9}{5} \right ) \tau \right )^5}$ \\ [1ex] 
+ $0.4$ & $[\Gamma\left (\frac{7}{5} \right )]^{-1}\left(\sqrt[5]{10^2}-\sqrt[5]{(10-\tau)^2}\right)$ & $10 - \sqrt{\left ( \sqrt[5]{10^2} -  \Gamma\left (\frac{7}{5} \right ) \tau \right )^5}$ \\
+ $0.6$ & $[\Gamma\left (\frac{8}{5} \right )]^{-1}\left(\sqrt[5]{10^3}-\sqrt[5]{(10-\tau)^3}\right)$ & $10 - \sqrt[3]{\left ( \sqrt[5]{10^3} -  \Gamma\left (\frac{8}{5} \right ) \tau \right )^5}$ \\
+ $0.8$ & $[\Gamma\left (\frac{9}{5} \right )]^{-1}\left(\sqrt[5]{10^4}-\sqrt[5]{(10-\tau)^4}\right)$ & $10 - \sqrt[4]{\left ( \sqrt[5]{10^4} -  \Gamma\left (\frac{9}{5} \right ) \tau \right )^5}$ \\ [1ex] 
  $1$ & $\tau$ & $\tau$ \\ [1ex] 
  \hline
  \end{tabular}
