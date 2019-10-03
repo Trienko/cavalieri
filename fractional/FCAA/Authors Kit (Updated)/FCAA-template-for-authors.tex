@@ -248,18 +248,22 @@ The following Cavalieri, Riemann, and Riemann--Stieltjes integrals are equivalen
 with $g(x) = x-a\circ f(x) + a$ and $h(x) = g^{-1}(x)$.
 \end{theorem}
 
+\begin{definition}
+The Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,dg(x)$ and the Cavalieri integral $\int_{a(y)}^{b(y)}f(x)\,dx$ are said to be geometrically equivalent if the same result is obtained when they are evaluated and $g(a')=a(0)=a$. 
+\end{definition}
+
 Theorem~\ref{t:conv} tells us how to convert a Cavalieri integral into an equivalent Riemann or Riemann-Stieltjes integral. It, however, tells us nothing about the reverse 
 procedure, if we are given a Riemann-Stieltjes integral how do we convert it into a Cavalieri integral. The theorem below stipulates the conditions that are required to perform the latter conversion.
 
 \begin{theorem}
 \label{t:reverse}
-Let $\widetilde{g}(x)$ and $f(x)$ be known (continuous) invertable real-valued functions. Moreover, let $a'\in \mathbb{R}$ and $b'\in \mathbb{R}$.  If $f^{-1}(0) - \widetilde{g}\circ f^{-1}(0) + \widetilde{g}(a')$ exists then there exists a unique 
+Let $\widetilde{g}(x)$ and $f(x)$ be known (continuous) invertable real-valued functions.
+The function $\widetilde{g}(x)$ should also be differentiable. Moreover, let $a'\in \mathbb{R}$ and $b'\in \mathbb{R}$.  If $a(y)=f^{-1}(y) - \widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$ and $a(0)$ exists then there exists a unique 
 $C\in\mathbb{R}$ such that 
 \begin{equation}
 \int_{a'}^{b'} f(x)\,dg(x)~\textrm{and}~\int_{a(y)}^{b(y)} f(x)\,dx, 
 \end{equation}
-where $g(x) = \widetilde{g}(x) + C$ and $a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$, have the exact same 
-geometric meaning.
+where $g(x) = \widetilde{g}(x) + C$, are geometrically equivalent.
 \end{theorem}
 
 To clarify the above theorem, consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$. We can now compute the following:
@@ -273,8 +277,8 @@ a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a').
  \item Compute $g(x) = \widetilde{g}(x) + C$.
  \item Compute $b = g(b')$ and $b(y) = a(y) + (b-a)$.
 \end{itemize}
-The integrals $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a'}^{b'} f(x)\,dg(x)$ are equivalent (we obtain the same result when they are evaluated). Moreover, the integrals $\int_{a'}^{b'} f(x)\,d\,g(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ have the exact same geometric meaning. Note, however, that
-$\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ do not have the exact same geometric meaning.
+Note that $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)=\int_{a'}^{b'} f(x)\,dg(x)$ due to Theorem xx. Moreover, Moreover, the integrals $\int_{a'}^{b'} f(x)\,d\,g(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ are geometrically equivalent. Note, however, that
+$\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ are not geometrically equivalent.
 
 
 %To clarify the above theorem, the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ can be converted into an equivalent Cavalieri integral $\int_{a(y)}^{b(y)}f(x)~dx$ (we obtain the same value when we evaluate the aforementioned integrals). The Cavalieri 
@@ -427,13 +431,13 @@ The desired result is obtained by substituting Equation~\eqref{eq:diff} into Equ
 \end{proof}
 
 \begin{theorem}
-If $\tau\in(-\infty,t]$ then $g_t^{\alpha}(\tau)$ is an invertable function. Its inverse is:
+The function $g_t^{\alpha}(\tau)$ is invertable. Its inverse is:
 \begin{equation}
 h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)\tau}.
 \end{equation}
 \end{theorem}
 \begin{proof}
-The function $g_t^{\alpha}$ is invertable, since $\frac{d g_t^{\alpha}}{d\tau}=\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)} > 0$ if $\tau\in(-\infty,t]$. The inverse now follows trivially.  
+The function $g_t^{\alpha}$ is invertable, since $\frac{d g_t^{\alpha}}{d\tau}=\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)} > 0$ for $\tau\in(-\infty,t]$. The inverse now follows trivially.  
 \end{proof}
 
 \noindent
@@ -466,6 +470,18 @@ solid lines, while the curves plotted wit h dashed lines are associated with $h$
 }
 \label{fig:gandh}
 \end{figure}
+
+\section{Existing Geometric Interpretation}
+
+\section{Converting into a Cavalieri integral}
+
+\begin{theorem}
+Let $a(y)_{t}^{\alpha} = f^{-1}(y) - \widetilde{g}_t^{\alpha}\circ f^{-1}(y) + \widetilde(g)_t^{\alpha}(a')$. If $a(y)_t^{\alpha}$ and $a(0)$ exists then  
+the following integrals are equivalent:
+
+\end{theorem}
+
+
 
 \begin{figure}[htb]
 \centering
