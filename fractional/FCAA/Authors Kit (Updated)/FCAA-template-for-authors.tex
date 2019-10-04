@@ -164,6 +164,40 @@ The figures should be input in the LaTeX file as eps-files, as below:
  We kindly ask the authors to take care that no texts fonts need to be embedded, by saving first the text as curves.
  Just in case, along with the obligatory eps-files, please send us also some alternative figures' files in  pdf-, jpg-, etc. format.
 
+\section{Riemann-Stieltjes integral}
+Let $f$ and $g$ denote real-valued functions defined on a closed interval $[a',b']$ of the real line. We shall suppose that both $f$ and $g$ are bounded on $[a',b']$. These assertions are assumed to be true throughout the paper and will not be repeated again.
+
+\begin{definition}
+Define a partition $\mathcal{P}$ of $[a',b']$ to be a set of points $x_0, x_1,\cdots,x_n$, 
+where $a' = x_0 \leq x_1 \leq \cdots \leq x_n = b'$. For each partition 
+$\mathcal{P}$ of $[a',b']$ write $\Delta g_k = g(x_k)-g(x_{k-1})$. Let 
+$M_k = \sup\{f(x),x_{k-1}\leq x \leq x_{k}\}$, $m_k = \inf\{f(x),x_{k-1}\leq x \leq x_{k}\}$, and set 
+\begin{equation}
+\label{ref:S_up}
+\mathcal{S}_U(\mathcal{P},f,g) = \sum_{k=1}^n M_k \Delta g_k, 
+\end{equation}
+and
+\begin{equation}
+\label{ref:S_low}
+\mathcal{S}_L(\mathcal{P},f,g) = \sum_{k=1}^n m_k \Delta g_k. 
+\end{equation}
+The sums in Eq.~\eqref{ref:S_up} and Eq.~\eqref{ref:S_low} are respectively called the the upper and lower Riemann-Stieltjes sums.
+If there is a unique number $I$ that satisfies the inequality $\mathcal{S}_L(\mathcal{P},f,g)\leq I \leq \mathcal{S}_U(\mathcal{P},f,g)$ for all 
+partitions $P$ of $[a',b']$, then $f$ is Riemann integrable with respect to $g$ on $[a',b']$. Moreover, $I$ is called the Riemann-Stieltjes integral of $f$ from $a'$ to $b'$ and is denoted by
+\begin{equation}
+\int_{a'}^{b'} f(x) dg(x). 
+\end{equation}
+\end{definition}
+
+\begin{theorem}
+If the derivative $g'$ exists and is continuous on $[a',b']$ and if $f$ is integrable with respect to $g$ on $[a',b']$, then the following 
+Riemann and Riemann-Stieltjes integrals are equivalent
+\begin{equation}
+\int_{a'}^{b'} f(x) dg(x) = \int_{a'}^{b'} f(x)g'(x)dx.
+\end{equation}
+\end{theorem}
+ 
+ 
 \section{Cavalieri Integral}
 \label{sec:cav_integral}
 
@@ -248,25 +282,28 @@ The following Cavalieri, Riemann, and Riemann--Stieltjes integrals are equivalen
 with $g(x) = x-a\circ f(x) + a$ and $h(x) = g^{-1}(x)$.
 \end{theorem}
 
-\begin{definition}
-The Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,dg(x)$ and the Cavalieri integral $\int_{a(y)}^{b(y)}f(x)\,dx$ are said to be geometrically equivalent if the same result is obtained when they are evaluated and $g(a')=a(0)=a$. 
-\end{definition}
-
 Theorem~\ref{t:conv} tells us how to convert a Cavalieri integral into an equivalent Riemann or Riemann-Stieltjes integral. It, however, tells us nothing about the reverse 
 procedure, if we are given a Riemann-Stieltjes integral how do we convert it into a Cavalieri integral. The theorem below stipulates the conditions that are required to perform the latter conversion.
 
+\begin{definition}
+The Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,dg(x)$ and the Cavalieri integral $\int_{a(y)}^{b(y)}f(x)\,dx$ are said to be geometrically equivalent if the same result is obtained when they are evaluated, $g(a')=a(0)=a$ and $g(b')=b(0)=b$. 
+\end{definition}
+
+Please note that the integrals in the above definition refer to two randomly 
+chosen integrals and not integrals that were obtained via Theorem~\ref{t:conv}. Integrals
+obtained using Theorem~\ref{t:conv} are geometrically equivalent by definition.
+We used the same notation in the above definitiion as that used in Theorem~\ref{t:conv} as we believe that this improves the readability and the interpretability of later definitions and theorems.
+
 \begin{theorem}
 \label{t:reverse}
-Let $\widetilde{g}(x)$ and $f(x)$ be known (continuous) invertable real-valued functions.
-The function $\widetilde{g}(x)$ should also be differentiable. Moreover, let $a'\in \mathbb{R}$ and $b'\in \mathbb{R}$.  If $a(y)=f^{-1}(y) - \widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$ and $a(0)$ exists then there exists a unique 
-$C\in\mathbb{R}$ such that 
+Let $\widetilde{g}(x)$ be a known continuous, differentiable and invertable real-valued function on $[a',b']\subset\mathbb{R}$. Let $f(x)$ be a continious real-valued function.  If $a(y)=f^{-1}(y) - \widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$ and $a(0)$ exists then there exists a unique $C\in\mathbb{R}$ such that 
 \begin{equation}
 \int_{a'}^{b'} f(x)\,dg(x)~\textrm{and}~\int_{a(y)}^{b(y)} f(x)\,dx, 
 \end{equation}
 where $g(x) = \widetilde{g}(x) + C$, are geometrically equivalent.
 \end{theorem}
 
-To clarify the above theorem, consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$. We can now compute the following:
+To clarify the above theorem, consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$. The Cavalieri-Stieltjes integral pair associated with this Stieltjes integral can only be determined if $C$ is known to us. Luckily, this can be easily obtained using the the following steps (taken from \cite{??}):
 \begin{itemize}
  \item Compute $a(y)$ using: 
 \begin{equation}
@@ -277,8 +314,12 @@ a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a').
  \item Compute $g(x) = \widetilde{g}(x) + C$.
  \item Compute $b = g(b')$ and $b(y) = a(y) + (b-a)$.
 \end{itemize}
-Note that $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)=\int_{a'}^{b'} f(x)\,dg(x)$ due to Theorem xx. Moreover, Moreover, the integrals $\int_{a'}^{b'} f(x)\,d\,g(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ are geometrically equivalent. Note, however, that
+Note that $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)=\int_{a'}^{b'} f(x)\,dg(x)$ due to Theorem xx. Moreover, the integrals $\int_{a'}^{b'} f(x)\,d\,g(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ are geometrically equivalent. Note, however, that
 $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ are not geometrically equivalent.
+
+The theorems and definitions presented in this section impose much greater restrictions on $g(x)$ and $f(x)$ than that mentioned in the begining of Section. The functions 
+$g(x)$, $\widetilde{g}(x)$ and $f(x)$ now also need to be differentiable and invertable. Moreover, the function $a(y)$ also needs to be differentiable and $a(0)$ needs to exist.
+These assertions are deemed to be true for the remainder of the paper and as such are not repeated again. As will become clear later on, these restrictions limit the number of fractional integrals for which the geometric framework we propose in this paper can produce meaningful results. This, however, does not diminish the importance of the proposed framework, since, for the integrals for which it does produce meaningful results, it will lead to new and novel insights.
 
 
 %To clarify the above theorem, the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ can be converted into an equivalent Cavalieri integral $\int_{a(y)}^{b(y)}f(x)~dx$ (we obtain the same value when we evaluate the aforementioned integrals). The Cavalieri 
@@ -405,14 +446,14 @@ _0 I_t^{\frac{1}{2}}\,f(t) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^t \frac{\tau}{
 \subsection{Converting into a Riemann-Stieltjes integral}
 Podlubny showed that the Left-sided Riemann-Liouville fractional integral can be rewritten as a Riemann-Stieltjes integral \cite{podlubny02}:
 \begin{theorem}
-The following integrals are equivalent
+Let $C\in\mathbb{R}$. The following integrals are equivalent
 \begin{equation}
 _{a'}I_t^{\alpha}\,f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau = \int_{a'}^{t} f(\tau)~dg_t^{\alpha}(\tau), 
 \end{equation}
 with 
 \begin{equation}
 \label{eq:g_rl}
-g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
+g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)} + C. 
 \end{equation}
 \end{theorem}
 
@@ -433,7 +474,7 @@ The desired result is obtained by substituting Equation~\eqref{eq:diff} into Equ
 \begin{theorem}
 The function $g_t^{\alpha}(\tau)$ is invertable. Its inverse is:
 \begin{equation}
-h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)\tau}.
+h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)(\tau-C)}.
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -472,25 +513,41 @@ solid lines, while the curves plotted wit h dashed lines are associated with $h$
 \end{figure}
 
 \section{Existing Geometric Interpretation}
+Podlubny suggested to build a ``fence'' in $(\tau,g_t^{\alpha},f)$-space. The base of the aforementioned fence is geiven by the curve $(\tau,g_t^{\alpha}(\tau),0)$, while its height is determined by $(\tau,g_t^{\alpha}(\tau),f(\tau))$. The 
+``shadow'' of this fence, i.e. the area under the curve which is obtained by 
+projecting this fence onto the $gf$- plane corresonds to the value which is obtained when Eq is evaluated. As an example, the visualization of  
+\begin{equation}
+xxx 
+\end{equation}
+using the fence-idea suggested by Podlubny is presented in Fig...
 
-\section{Converting into a Cavalieri integral}
 
-\begin{theorem}
-Let $a(y)_{t}^{\alpha} = f^{-1}(y) - \widetilde{g}_t^{\alpha}\circ f^{-1}(y) + \widetilde(g)_t^{\alpha}(a')$. If $a(y)_t^{\alpha}$ and $a(0)$ exists then  
-the following integrals are equivalent:
-
-\end{theorem}
-
+%geometric idea is depicted in Fig for $f(t)=\sqrt{t}$, $\alpha\in\{0.3,0.6,0.9\}$ and $\t\in\{3,6,9\}$. 
 
 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=1.0\textwidth]{vis_old.pdf}
-\caption{This figure depicts the curves of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The curves associated with $g$ are plotted using 
-solid lines, while the curves plotted with dashed lines are associated with $h$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is that is associated with it.
+\caption{This figure depicts the visualization of Eq using the geometric framework proposed by Podlubny.  The fence itstelf is depicted in green. The areas depicted in red (the shadow of the fence) correspond to the value obtained if Eq. is evaluated.  The surface which is obtained 
+by extending the curve $f(\tau)$ and $g_t^{\alpha}(\tau)$ along the $g$ and $f$ direction 
+is depicted in cyan and blue respectively. The curve that determines the height of the fence 
 }
 \label{fig:gandh}
 \end{figure}
+
+
+\section{Converting into a Cavalieri integral}
+
+\begin{theorem}
+Let $\widetilde{g}_t^{\alpha}=\frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}$ and $a(y)_{t}^{\alpha} = f^{-1}(y) - \widetilde{g}_t^{\alpha}\circ f^{-1}(y) + \widetilde{g}_t^{\alpha}(a')$. If $a(y)_t^{\alpha}$ and $a(0)$ exists then  
+there exists a $C\in \mathbb{R}$ such that the following integrals are geometrically equivalent:
+\begin{equation}
+\int_{a'}^{b'} f(x)\,dg_t^{\alpha}(x)~\textrm{and}~\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(x)\,dx. 
+\end{equation}
+\end{theorem}
+
+
+
 
 
 \noindent
