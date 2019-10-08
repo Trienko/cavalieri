@@ -445,8 +445,7 @@ _0 I_t^{\frac{1}{2}}\,f(t) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^t \frac{\tau}{
 
 \subsection{Converting into a Riemann-Stieltjes integral}
 Podlubny showed that the Left-sided Riemann-Liouville fractional integral can be rewritten as a Riemann-Stieltjes integral \cite{podlubny02}:
-\begin{theorem}
-Let $C\in\mathbb{R}$. The following integrals are equivalent
+
 \begin{equation}
 _{a'}I_t^{\alpha}\,f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau = \int_{a'}^{t} f(\tau)~dg_t^{\alpha}(\tau), 
 \end{equation}
@@ -455,31 +454,40 @@ with
 \label{eq:g_rl}
 g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)} + C. 
 \end{equation}
-\end{theorem}
-
-\begin{proof}
-Note that 
-\begin{equation}
-\label{eq:diff}
-\frac{dg_t^{\alpha}(\tau)}{d\tau} = \frac{\alpha(t-\tau)^{\alpha-1}}{\Gamma(\alpha+1)} =\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}. 
-\end{equation}
-Furthermore,
-\begin{equation}
-\label{eq:inter_step}
-\int_{a'}^{t} f(\tau)\,dg_t^{\alpha}(\tau) = \int_{a'}^{t} f(\tau) \frac{dg_t^{\alpha}(\tau)}{d\tau}\,d\tau. 
-\end{equation}
-The desired result is obtained by substituting Equation~\eqref{eq:diff} into Equation~\eqref{eq:inter_step}.  
-\end{proof}
-
-\begin{theorem}
-The function $g_t^{\alpha}(\tau)$ is invertable. Its inverse is:
+and $C\in\mathbb{R}$. Moreover, the function $g_t^{\alpha}(\tau)$ is invertable. Its inverse is:
 \begin{equation}
 h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)(\tau-C)}.
 \end{equation}
-\end{theorem}
-\begin{proof}
-The function $g_t^{\alpha}$ is invertable, since $\frac{d g_t^{\alpha}}{d\tau}=\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)} > 0$ for $\tau\in(-\infty,t]$. The inverse now follows trivially.  
-\end{proof}
+
+The function $g_t^{\alpha}$ is invertable, since $\frac{d g_t^{\alpha}}{d\tau}=\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)} > 0$ for $\tau\in(-\infty,t]$.
+
+%\begin{theorem}
+%Let $C\in\mathbb{R}$. The following integrals are equivalent
+%\end{theorem}
+
+%\begin{proof}
+%Note that 
+%\begin{equation}
+%\label{eq:diff}
+%\frac{dg_t^{\alpha}(\tau)}{d\tau} = \frac{\alpha(t-\tau)^{\alpha-1}}{\Gamma(\alpha+1)} =%\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)}. 
+%\end{equation}
+%Furthermore,
+%\begin{equation}
+%\label{eq:inter_step}
+%\int_{a'}^{t} f(\tau)\,dg_t^{\alpha}(\tau) = \int_{a'}^{t} f(\tau) \frac{dg_t^{\alpha}%(\tau)}{d\tau}\,d\tau. 
+%\end{equation}
+%The desired result is obtained by substituting Equation~\eqref{eq:diff} into Equation~\eqref{eq:inter_step}.  
+%\end{proof}
+
+%\begin{theorem}
+%The function $g_t^{\alpha}(\tau)$ is invertable. Its inverse is:
+%\begin{equation}
+%h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)(\tau-C)}.
+%\end{equation}
+%\end{theorem}
+%\begin{proof}
+% The inverse now follows trivially.  
+%\end{proof}
 
 \noindent
 Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ are presented in Table~\ref{tab:gandh} for $\alpha\in\mathsf{A}$. 
@@ -512,15 +520,11 @@ solid lines, while the curves plotted wit h dashed lines are associated with $h$
 \label{fig:gandh}
 \end{figure}
 
-\section{Existing Geometric Interpretation}
-Podlubny suggested to build a ``fence'' in $(\tau,g_t^{\alpha},f)$-space. The base of the aforementioned fence is geiven by the curve $(\tau,g_t^{\alpha}(\tau),0)$, while its height is determined by $(\tau,g_t^{\alpha}(\tau),f(\tau))$. The 
+\section{Podlubny's Geometric Interpretation}
+Podlubny's interpretation of fractional integrals requires the addition of an extra dimension. Consider the axis $\tau$, $g_t^{\alpha}$ and $f(\tau)$. Podlubny suggests that we build a ``fence'' in $(\tau,g_t^{\alpha},f)$-space. The base of the aforementioned fence is geiven by the curve $(\tau,g_t^{\alpha}(\tau),0)$, while its height is determined by $(\tau,g_t^{\alpha}(\tau),f(\tau))$. The 
 ``shadow'' of this fence, i.e. the area under the curve which is obtained by 
-projecting this fence onto the $gf$- plane corresonds to the value which is obtained when Eq is evaluated. As an example, the visualization of  
-\begin{equation}
-xxx 
-\end{equation}
-using the fence-idea suggested by Podlubny is presented in Fig...
-
+projecting this fence onto the $gf$- plane corresonds to the value which is obtained when Eq is evaluated. As an example, the geometric interpretation so obtained for 
+the integrand $f(t)=\sqrt{t}$ is depicted in Figure~\ref{}.
 
 %geometric idea is depicted in Fig for $f(t)=\sqrt{t}$, $\alpha\in\{0.3,0.6,0.9\}$ and $\t\in\{3,6,9\}$. 
 
@@ -528,9 +532,9 @@ using the fence-idea suggested by Podlubny is presented in Fig...
 \begin{figure}[htb]
 \centering
 \includegraphics[width=1.0\textwidth]{vis_old.pdf}
-\caption{This figure depicts the visualization of Eq using the geometric framework proposed by Podlubny.  The fence itstelf is depicted in green. The areas depicted in red (the shadow of the fence) correspond to the value obtained if Eq. is evaluated.  The surface which is obtained 
-by extending the curve $f(\tau)$ and $g_t^{\alpha}(\tau)$ along the $g$ and $f$ direction 
-is depicted in cyan and blue respectively. The curve that determines the height of the fence 
+\caption{This figure depicts the visualization of $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ using the geometric framework proposed by Podlubny.
+As is indicated in the figure, the rows of the subfigure-grid are obtained by varying $\alpha$, while the columns of the subfigure-grid are obtained by varying $t$. The fence itstelf is depicted in green. The areas depicted in red (the shadow of the fence) correspond to the value obtained when $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ is evaluated.  The surface which is obtained by extending the curve $f(\tau)$ and $g_t^{\alpha}(\tau)$ along the $g$ and $f$ direction is depicted in cyan and blue, respectively. The intersection between the blue and cyan 
+surfaces represents the curve that determines the height of the aforementioned fence (depicted as a dashed curve).   
 }
 \label{fig:gandh}
 \end{figure}
