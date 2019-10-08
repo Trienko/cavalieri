@@ -283,43 +283,79 @@ with $g(x) = x-a\circ f(x) + a$ and $h(x) = g^{-1}(x)$.
 \end{theorem}
 
 Theorem~\ref{t:conv} tells us how to convert a Cavalieri integral into an equivalent Riemann or Riemann-Stieltjes integral. It, however, tells us nothing about the reverse 
-procedure, if we are given a Riemann-Stieltjes integral how do we convert it into a Cavalieri integral. The theorem below stipulates the conditions that are required to perform the latter conversion.
+procedure, if we are given a Riemann-Stieltjes integral how do we convert it into a Cavalieri integral? As will become clear in the next few paragraphs, this reverse 
+conversion is non-trivial.
 
-\begin{definition}
-The Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,dg(x)$ and the Cavalieri integral $\int_{a(y)}^{b(y)}f(x)\,dx$ are said to be geometrically equivalent if the same result is obtained when they are evaluated, $g(a')=a(0)=a$ and $g(b')=b(0)=b$. 
-\end{definition}
-
-Please note that the integrals in the above definition refer to two randomly 
-chosen integrals and not integrals that were obtained via Theorem~\ref{t:conv}. Integrals
-obtained using Theorem~\ref{t:conv} are geometrically equivalent by definition.
-We used the same notation in the above definitiion as that used in Theorem~\ref{t:conv} as we believe that this improves the readability and the interpretability of later definitions and theorems.
-
-\begin{theorem}
-\label{t:reverse}
-Let $\widetilde{g}(x)$ be a known continuous, differentiable and invertable real-valued function on $[a',b']\subset\mathbb{R}$. Let $f(x)$ be a continious real-valued function.  If $a(y)=f^{-1}(y) - \widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$ and $a(0)$ exists then there exists a unique $C\in\mathbb{R}$ such that 
+Consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,\widetilde{g}(x)$. Moreover, recall that 
 \begin{equation}
-\int_{a'}^{b'} f(x)\,dg(x)~\textrm{and}~\int_{a(y)}^{b(y)} f(x)\,dx, 
+\label{eq:g_def2}
+g(x) = x - a\circ f(x) + a.
 \end{equation}
-where $g(x) = \widetilde{g}(x) + C$, are geometrically equivalent.
-\end{theorem}
-
-To clarify the above theorem, consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$. The Cavalieri-Stieltjes integral pair associated with this Stieltjes integral can only be determined if $C$ is known to us. Luckily, this can be easily obtained using the the following steps (taken from \cite{??}):
-\begin{itemize}
- \item Compute $a(y)$ using: 
+Furthermore, a consequence of Theorem xx is that:
+\begin{equation}
+\int_{a'}^{b'} f(x)\,dg(x) = \int_{a'}^{b'}f(x)\,\widetilde{g}(x), 
+\end{equation}
+with $g(x) = \widetilde{g}(x) + C$ and $C\in\mathbb{R}$. It, therefore, seems impossible to compute $a(y)$ given $\widetilde{g}(x)$ as $C$ and $a$ are unknown to us a priori. However, 
+\begin{equation}
+\label{eq:implies}
+g(a') = \widetilde{g}(a') + C \implies C = a - \widetilde{g}(a'). 
+\end{equation}
+Substituting Equation~\eqref{eq:implies} into Equation~\eqref{eq:g_def2} eliminates
+both $a$ and $C$ from it. If we now solve for $a(y)$ we obtain:
 \begin{equation}
 a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a'). 
 \end{equation}
- \item Compute $a = a(0)$.
- \item Compute $C = a - \widetilde{g}(a')$.
- \item Compute $g(x) = \widetilde{g}(x) + C$.
- \item Compute $b = g(b')$ and $b(y) = a(y) + (b-a)$.
+We can now compute the following:
+\begin{itemize}
+\item Compute $a = a(0)$.
+\item Compute $C = a - \widetilde{g}(a')$.
+\item Compute $g(x) = \widetilde{g}(x) + C$.
+\item Compute $h(x) = g^{-1}(x)$.
+\item Compute $b = g(b')$ and $b(y) = a(y) + (b-a)$.
 \end{itemize}
-Note that $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)=\int_{a'}^{b'} f(x)\,dg(x)$ due to Theorem xx. Moreover, the integrals $\int_{a'}^{b'} f(x)\,d\,g(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ are geometrically equivalent. Note, however, that
-$\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ are not geometrically equivalent.
 
-The theorems and definitions presented in this section impose much greater restrictions on $g(x)$ and $f(x)$ than that mentioned in the begining of Section. The functions 
-$g(x)$, $\widetilde{g}(x)$ and $f(x)$ now also need to be differentiable and invertable. Moreover, the function $a(y)$ also needs to be differentiable and $a(0)$ needs to exist.
-These assertions are deemed to be true for the remainder of the paper and as such are not repeated again. As will become clear later on, these restrictions limit the number of fractional integrals for which the geometric framework we propose in this paper can produce meaningful results. This, however, does not diminish the importance of the proposed framework, since, for the integrals for which it does produce meaningful results, it will lead to new and novel insights.
+
+
+
+
+
+
+
+% \begin{definition}
+% The Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,dg(x)$ and the Cavalieri integral $\int_{a(y)}^{b(y)}f(x)\,dx$ are said to be geometrically equivalent if the same result is obtained when they are evaluated, $g(a')=a(0)=a$ and $g(b')=b(0)=b$. 
+% \end{definition}
+% 
+% Please note that the integrals in the above definition refer to two randomly 
+% chosen integrals and not integrals that were obtained via Theorem~\ref{t:conv}. Integrals
+% obtained using Theorem~\ref{t:conv} are geometrically equivalent by definition.
+% We used the same notation in the above definitiion as that used in Theorem~\ref{t:conv} as we believe that this improves the readability and the interpretability of later definitions and theorems.
+% 
+% \begin{theorem}
+% \label{t:reverse}
+% Let $\widetilde{g}(x)$ be a known continuous, differentiable and invertable real-valued function on $[a',b']\subset\mathbb{R}$. Let $f(x)$ be a continious real-valued function.  If $a(y)=f^{-1}(y) - \widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a')$ and $a(0)$ exists then there exists a unique $C\in\mathbb{R}$ such that 
+% \begin{equation}
+% \int_{a'}^{b'} f(x)\,dg(x)~\textrm{and}~\int_{a(y)}^{b(y)} f(x)\,dx, 
+% \end{equation}
+% where $g(x) = \widetilde{g}(x) + C$, are geometrically equivalent.
+% \end{theorem}
+% 
+% To clarify the above theorem, consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$. The Cavalieri-Stieltjes integral pair associated with this Stieltjes integral can only be determined if $C$ is known to us. Luckily, this can be easily obtained using the the following steps (taken from \cite{??}):
+% \begin{itemize}
+%  \item Compute $a(y)$ using: 
+% \begin{equation}
+% a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a'). 
+% \end{equation}
+%  \item Compute $a = a(0)$.
+%  \item Compute $C = a - \widetilde{g}(a')$.
+%  \item Compute $g(x) = \widetilde{g}(x) + C$.
+%  \item Compute $b = g(b')$ and $b(y) = a(y) + (b-a)$.
+% \end{itemize}
+% Note that $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)=\int_{a'}^{b'} f(x)\,dg(x)$ due to Theorem xx. Moreover, the integrals $\int_{a'}^{b'} f(x)\,d\,g(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ are geometrically equivalent. Note, however, that
+% $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ and $\int_{a(y)}^{b(y)}f(x)~dx$ are not geometrically equivalent.
+% 
+% The theorems and definitions presented in this section impose much greater restrictions on $g(x)$ and $f(x)$ than that mentioned in the begining of Section. The functions 
+% $g(x)$, $\widetilde{g}(x)$ and $f(x)$ now also need to be differentiable and invertable. Moreover, the function $a(y)$ also needs to be differentiable and $a(0)$ needs to exist.
+% These assertions are deemed to be true for the remainder of the paper and as such are not repeated again. As will become clear later on, these restrictions limit the number of fractional integrals for which the geometric framework we propose in this paper can produce meaningful results. This, however, does not diminish the importance of the proposed framework, since, for the integrals for which it does produce meaningful results, it will lead to new and novel insights.
 
 
 %To clarify the above theorem, the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,d\,\widetilde{g}(x)$ can be converted into an equivalent Cavalieri integral $\int_{a(y)}^{b(y)}f(x)~dx$ (we obtain the same value when we evaluate the aforementioned integrals). The Cavalieri 
@@ -515,7 +551,7 @@ The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
 \centering
 \includegraphics[width=0.75\textwidth]{gh.pdf}
 \caption{This figure depicts the curves of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The curves associated with $g$ are plotted using 
-solid lines, while the curves plotted wit h dashed lines are associated with $h$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is that is associated with it.
+solid lines, while the curves plotted using dashed lines are associated with $h$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is that is associated with it.
 }
 \label{fig:gandh}
 \end{figure}
@@ -541,6 +577,8 @@ surfaces represents the curve that determines the height of the aforementioned f
 
 
 \section{Converting into a Cavalieri integral}
+We can convert th
+
 
 \begin{theorem}
 Let $\widetilde{g}_t^{\alpha}=\frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}$ and $a(y)_{t}^{\alpha} = f^{-1}(y) - \widetilde{g}_t^{\alpha}\circ f^{-1}(y) + \widetilde{g}_t^{\alpha}(a')$. If $a(y)_t^{\alpha}$ and $a(0)$ exists then  
