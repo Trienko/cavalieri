@@ -579,7 +579,29 @@ surfaces represents the curve that determines the height of the aforementioned f
 
 
 \section{Converting into a Cavalieri integral}
-It now follows from Section~\ref{} and Section~\ref{} that A direct consequence of Section and Section is that there exists a $C\in\mathbb{R}$ such that 
+Let $\widetilde{g}_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}$. Since, 
+\begin{equation}
+_{a'}I_t^{\alpha}\,f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau = \int_{a'}^{t} f(\tau)~dg_t^{\alpha}(\tau), 
+\end{equation}
+is a Riemann-Stieltjes integral we can convert it into a Cavalieri integral via the 
+following steps (see Section~\ref{}):
+\begin{itemize}
+ \item $a_t^{\alpha}(y) = f^{-1}(y) - \widetilde{g}_t^{\alpha}\circ f^{-1}(y)+ \widetilde{g}_t^{\alpha}(a')$.
+ \item $a = a_t^{\alpha}(0)$.
+ \item $C = a - \widetilde{g}_t^{\alpha}(a')$.
+ \item $g_t^{\alpha} = \widetilde{g}_t^{\alpha} + C$.
+ \item $b = g_t^{\alpha}(\tau)(b')$ and $b_t^{\alpha}(y) = a_t^{\alpha}(y) + (b-a)$.
+\end{itemize}
+It now follows that:
+\begin{equation}
+_{a'}I_t^{\alpha}\,f(t) =  \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau= \int_{a'}^{t} f(\tau)~dg_t^{\alpha}(\tau) = \int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)\,d\tau.
+\end{equation}
+
+Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(t)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the 
+area of $R_t^{\alpha}$. When we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. Moreover, $R_t^{\alpha}$ can be decomposed into an infinite number of infinitesimals, each one of them being a translation of $a_t^{\alpha}(y)$. The shape of the aforementioned infenitesimals are non-static, since their shape depend on the value of $t$ and $\alpha$. Stated differently, we can approximate $A_{t}^{\alpha}$ via a Cavalieri sum, the shape of the integration strips used within this sum will be determined by $a_t^{\alpha}(y)$. In the limit this sum will approach $_{a'}I_t^{\alpha}\,f(t)$. The shape of the aforementioned integration strips are also non-static. Their shape is determined by the value of $t$ and $\alpha$. These assertions are all direct consequences of Eq ??.
+
+
+
 
 
 \begin{theorem}
