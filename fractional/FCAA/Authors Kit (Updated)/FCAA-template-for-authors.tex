@@ -286,7 +286,7 @@ Theorem~\ref{t:conv} tells us how to convert a Cavalieri integral into an equiva
 procedure, if we are given a Riemann-Stieltjes integral how do we convert it into a Cavalieri integral? As will become clear in the next few paragraphs, this reverse 
 conversion is non-trivial.
 
-Consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,\widetilde{g}(x)$. Moreover, recall that 
+Consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,\widetilde{g}(x)$. Assume that $\widetilde{g}(x)$ is a differentiable and invertable real-valued function on $[a',b']$. Moreover, recall that 
 \begin{equation}
 \label{eq:g_def2}
 g(x) = x - a\circ f(x) + a.
@@ -314,14 +314,10 @@ We can now compute the following:
 \item Compute $b = g(b')$ and $b(y) = a(y) + (b-a)$.
 \end{itemize}
 
-The above derivation implies that not every Riemann-Stieltjes integral can be converted into a Cavalieri integral. It, however, does tell us that a given Riemann-Stieltjes integral can be converted into another equivalent Riemann-Stieltjes interal that in turn can be converted into a Cavalieri integral. The steps that are required to perform the aformentioned conversions are described in the previous paragraph.  
+The above derivation implies that not every Riemann-Stieltjes integral can be converted into a Cavalieri integral. It, however, does tell us that a given Riemann-Stieltjes integral can be converted into another equivalent Riemann-Stieltjes integral. This newly obtained integral can then be converted into a Cavalieri integral. We explain this in more detail in Section~\ref{}. 
 
-
-
-
-
-
-
+The theorems and definitions presented in this section impose much greater restrictions on $g(x)$ and $f(x)$ than that mentioned in the begining of Section. The functions 
+$g(x)$, and $f(x)$ now also need to be differentiable and invertable. Moreover, $a(0)$ must exist. These assertions are deemed to be true for the remainder of the paper and as such are not repeated again. As will become clear later on, these restrictions limit the number of fractional integrals for which the geometric framework we propose in this paper can produce meaningful results. This, however, does not diminish the importance of the proposed framework, since, for the integrals for which the framework does produce meaningful results, we gain valuable and novel insights.
 
 % \begin{definition}
 % The Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,dg(x)$ and the Cavalieri integral $\int_{a(y)}^{b(y)}f(x)\,dx$ are said to be geometrically equivalent if the same result is obtained when they are evaluated, $g(a')=a(0)=a$ and $g(b')=b(0)=b$. 
@@ -427,11 +423,15 @@ We can easily verify that the above is correct by using a more traditional route
 \int_0^2x\, dx+\int_2^44-x\, dx- \int_0^{\frac{1}{2}}x\, dx-\int_{\frac{1}{2}}^11-x\, dx = 3.75. 
 \end{equation}
 
-Conversely, consider the following Riemann-Stieltjes integral:
+Recall from Section, that not every Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,\widetilde{g}(x)$ can directly be converted into a Cavalieri integral. We usually first need to convert it into an equivalent 
+Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,g(x)$. The equivalent integral can then be converted into a Cavalieri integral. The former conversion is achieved by computing the scalar $C\in\mathbb{R}$. Once, $C$ is known the latter conversion follows trivially (see Section).
+
+As an example, consider the following Riemann-Stieltjes integral:
 \begin{equation}
 \int_{a'}^{b'} \,d\,\widetilde{g}(x) = \int_{\frac{1}{2}}^2 x\,d2x.
 \end{equation}
-We can convert this Riemann-Stieltjes integral into a Cavalieri integral via the following conversion steps (see Theorem~\ref{??} and the last paragraph of Section~\ref{??}):
+
+We can now compute the following (see Section~\ref{}):
 \begin{itemize}
  \item $a(y) = f^{-1}(y) - \widetilde{g}\circ f^{-1}(y)+ \widetilde{g}(a') = 1-y$.
  \item $a(0) = 1$.
@@ -439,7 +439,7 @@ We can convert this Riemann-Stieltjes integral into a Cavalieri integral via the
  \item $g(x) = \widetilde{g}(x) + C = 2x$.
  \item $b = g(b') = 4$ and $b(y) = a(y) + (b-a) = 4-y$.
 \end{itemize}
-The integrals $\int_{\frac{1}{2}}^{2} x\,d2x$  and $\int_{1-y}^{4-y} x\,dx$ have the exact same geometric meaning, since $C=0$. 
+The integrals $\int_{\frac{1}{2}}^{2} x\,d2x$  and $\int_{1-y}^{4-y} x\,dx$ are geometrically equivalent, since $C=0$. 
 
 \section{Left-sided Riemann-Liouville Fractional Integral}
 In this section we review the definition of the left-sided Riemann-Liouville fractional integral of order $\alpha$ (based at $a'$) \cite{laurent1884}. Let
@@ -579,7 +579,7 @@ surfaces represents the curve that determines the height of the aforementioned f
 
 
 \section{Converting into a Cavalieri integral}
-We can convert th
+It now follows from Section~\ref{} and Section~\ref{} that A direct consequence of Section and Section is that there exists a $C\in\mathbb{R}$ such that 
 
 
 \begin{theorem}
