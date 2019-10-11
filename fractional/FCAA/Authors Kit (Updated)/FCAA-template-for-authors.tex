@@ -601,6 +601,17 @@ _{a'}I_t^{\alpha}\,f(t) =  \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha
 The assertions below all follow from Eq ??. Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(t)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the 
 area of $R_t^{\alpha}$. When we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. Moreover, $R_t^{\alpha}$ can be decomposed into an infinite number of infinitesimals, each one of them being a translation of $a_t^{\alpha}(y)$. The shape of the aforementioned infenitesimals are non-static, since their shape depend on the value of $t$ and $\alpha$. Stated differently, we can approximate $A_{t}^{\alpha}$ via a Cavalieri sum, the shape of the integration strips used within this sum will be determined by $a_t^{\alpha}(y)$. In the limit this sum will approach $_{a'}I_t^{\alpha}\,f(t)$. The shape of the aforementioned integration strips are also non-static. Their shape is determined by the value of $t$ and $\alpha$. 
 
+\section{Evaluating}
+\noindent
+Interestingly, Eq.~\eqref{eq:main_cav} implies that we can use $h_t^{\alpha}(\tau)$ to convert Eq.~\eqref{eq:cav} into the following Riemann integral:
+\begin{equation}
+\label{eq:option2}
+\int_0^{\frac{t^{\alpha}}{\Gamma(\alpha+1)}} f\circ h_{\alpha}^t (\tau) d\tau.  
+\end{equation}
+We can, therefore, evaluate Eq.~\eqref{eq:cav} in one of two ways: we can either evaluate Eq.~\eqref{eq:rs} or we can evaluate Eq.~\eqref{eq:option2}.
+
+
+
 \section{Examples}
 Consider the following fractional integral:
 \begin{equation}
