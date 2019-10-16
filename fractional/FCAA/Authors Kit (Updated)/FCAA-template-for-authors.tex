@@ -286,15 +286,20 @@ with $g(x) = x-a\circ f(x) + a$ and $h(x) = g^{-1}(x)$.
 Theorem~\ref{t:conv} tells us how to convert a Cavalieri integral into an equivalent Riemann or Riemann-Stieltjes integral. It, however, tells us nothing about the reverse 
 procedure, if we are given a Riemann-Stieltjes integral how do we convert it into a Cavalieri integral? 
 
-Consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,\widetilde{g}(x)$. Assume that $\widetilde{g}(x)$ is a differentiable and invertable real-valued function on $[a',b']$. Moreover, recall that 
+Consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,\widetilde{g}(x)$. Assume that $\widetilde{g}(x)$ is a differentiable and invertable real-valued function on $[a',b']$. Assume that the real-valued constants $C$ and $a$ are unknown. Assume further that $C$ is chosen so that the following expression is true:
+\begin{equation}
+g(x) := \widetilde{g}(x)+C, 
+\end{equation}
+where  
 \begin{equation}
 \label{eq:g_def2}
 g(x) = x - a\circ f(x) + a.
 \end{equation}
-Let $g(x) = \widetilde{g}(x) + C$. Assume that the real-valued constants $C$ and $a$ are unknown. Furthermore, note that (see Theorem xx):
+Assume that the real-valued constant $a$ is unknown Furthermore, note that (see Theorem xx):
 \begin{equation}
 \int_{a'}^{b'} f(x)\,dg(x) = \int_{a'}^{b'}f(x)\,\widetilde{g}(x), 
 \end{equation}
+with $g(x) = \widetilde{g}(x)+C$. 
 At first, it seems impossible to compute $a(y)$ given $\widetilde{g}(x)$ as $C$ and $a$ are unknown a priori. However, 
 \begin{equation}
 \label{eq:implies}
