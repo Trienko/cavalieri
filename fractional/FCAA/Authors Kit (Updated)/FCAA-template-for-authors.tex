@@ -486,19 +486,19 @@ _0 I_t^{\frac{1}{2}}\,f(t) = \frac{1}{\Gamma(\frac{1}{2})} \int_0^t \frac{\tau}{
 Podlubny showed that the Left-sided Riemann-Liouville fractional integral can be rewritten as a Riemann-Stieltjes integral \cite{podlubny02}:
 
 \begin{equation}
-_{a'}I_t^{\alpha}\,f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau = \int_{a'}^{t} f(\tau)~dg_t^{\alpha}(\tau), 
+_{a'}I_t^{\alpha}\,f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau = \int_{a'}^{t} f(\tau)~d\,\widetilde{g}_t^{\alpha}(\tau), 
 \end{equation}
 with 
 \begin{equation}
 \label{eq:g_rl}
-g_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)} + C. 
+\widetilde{g}_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
 \end{equation}
-and $C\in\mathbb{R}$. Moreover, the function $g_t^{\alpha}(\tau)$ is invertable. Its inverse is:
+Moreover, the function $\widetilde{g}_t^{\alpha}(\tau)$ is invertable. Its inverse is:
 \begin{equation}
-h_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)(\tau-C)}.
+\widetilde{h}_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)(\tau)}.
 \end{equation}
 
-The function $g_t^{\alpha}$ is invertable, since $\frac{d g_t^{\alpha}}{d\tau}=\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)} > 0$ for $\tau\in(-\infty,t]$.
+The function $\widetilde{g}_t^{\alpha}$ is invertable, since $\frac{d \widetilde{g}_t^{\alpha}}{d\tau}=\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)} > 0$ for $\tau\in(-\infty,t]$.
 
 %\begin{theorem}
 %Let $C\in\mathbb{R}$. The following integrals are equivalent
@@ -529,16 +529,16 @@ The function $g_t^{\alpha}$ is invertable, since $\frac{d g_t^{\alpha}}{d\tau}=\
 %\end{proof}
 
 \noindent
-Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ are presented in Table~\ref{tab:gandh} for $\alpha\in\mathsf{A}$. 
-The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
+Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The analytic expressions of $\widetilde{g}_{10}^{\alpha}(\tau)$ and $\widetilde{h}_{10}^{\alpha}(\tau)$ are presented in Table~\ref{tab:gandh} for $\alpha\in\mathsf{A}$. The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
 
 \begin{table}[h!]
  \centering
- \caption{The analytic expressions of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The expressions in this table are depicted in Fig~\ref{fig:gandh}.}
+ \caption{The analytic expressions of $\widetilde{g}_{10}^{\alpha}(\tau)$ and $\widetilde{h}_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The expressions in this table are depicted in Fig~\ref{fig:gandh}.}
  \label{tab:gandh}
  \begin{tabular}{|c || c | c|} 
- \hline
- $\alpha$ & $g_{10}^{\alpha}(\tau)$ & $h_{10}^{\alpha}(\tau)$ \\ [0.5ex] 
+ \hline 
+ \rule{0pt}{3ex}
+ $\alpha$ &  $\widetilde{g}_{10}^{\alpha}(\tau)$ & $\widetilde{h}_{10}^{\alpha}(\tau)$ \\
  \hline\hline
  $0$ & 0 & $y=0$ \\ 
  $0.2$ & $[\Gamma\left (\frac{6}{5} \right )]^{-1}\left(\sqrt[5]{10}-\sqrt[5]{10-\tau}\right)$ & $10 - \left ( \sqrt[5]{10} -  \Gamma\left (\frac{6}{5} \right ) \tau \right )^5$  \\
@@ -553,17 +553,12 @@ The expressions in Table~\ref{tab:gandh} are depicted in Fig~\ref{fig:gandh}.
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{gh.pdf}
-\caption{This figure depicts the curves of $g_{10}^{\alpha}(\tau)$ and $h_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The curves associated with $g$ are plotted using 
-solid lines, while the curves plotted using dashed lines are associated with $h$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is that is associated with it.
-}
+\caption{This figure depicts the curves of $\widetilde{g}_{10}^{\alpha}(\tau)$ and $\widetilde{h}_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}$. The curves associated with $\widetilde{g}$ are plotted using solid lines, while the curves plotted using dashed lines are associated with $\widetilde{h}$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is that is associated with it.}
 \label{fig:gandh}
 \end{figure}
 
 \section{Podlubny's Geometric Interpretation}
-Podlubny's interpretation of fractional integrals requires the addition of an extra dimension. Consider the axis $\tau$, $g_t^{\alpha}$ and $f(\tau)$. Podlubny suggests that we build a ``fence'' in $(\tau,g_t^{\alpha},f)$-space. The base of the aforementioned fence is geiven by the curve $(\tau,g_t^{\alpha}(\tau),0)$, while its height is determined by $(\tau,g_t^{\alpha}(\tau),f(\tau))$. The 
-``shadow'' of this fence, i.e. the area under the curve which is obtained by 
-projecting this fence onto the $gf$- plane corresonds to the value which is obtained when Eq is evaluated. As an example, the geometric interpretation so obtained for 
-the integrand $f(t)=\sqrt{t}$ is depicted in Figure~\ref{}.
+Podlubny's interpretation of fractional integrals requires the addition of an extra dimension. Consider the axis $\tau$, $\widetilde{g}_t^{\alpha}$ and $f(\tau)$. Podlubny suggests that we build a ``fence'' in $(\tau,\widetilde{g}_t^{\alpha},f)$-space. The base of the aforementioned fence is geiven by the curve $(\tau,\widetilde{g}_t^{\alpha}(\tau),0)$, while its height is determined by $(\tau,\widetilde{g}_t^{\alpha}(\tau),f(\tau))$. The ``shadow'' of this fence, i.e. the area under the curve which is obtained by projecting this fence onto the $\widetilde{g}f$-plane corresonds to the value which is obtained when Eq is evaluated. As an example, the geometric interpretation so obtained for the integrand $f(t)=\sqrt{t}$ is depicted in Figure~\ref{}.
 
 %geometric idea is depicted in Fig for $f(t)=\sqrt{t}$, $\alpha\in\{0.3,0.6,0.9\}$ and $\t\in\{3,6,9\}$. 
 
@@ -580,37 +575,39 @@ surfaces represents the curve that determines the height of the aforementioned f
 
 
 \section{Converting into a Cavalieri integral}
-Let $\widetilde{g}_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}$. Since, 
+Recall that,
 \begin{equation}
-_{a'}I_t^{\alpha}\,f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau = \int_{a'}^{t} f(\tau)~dg_t^{\alpha}(\tau), 
+_{a'}I_t^{\alpha}\,f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau = \int_{a'}^{t} f(\tau)~d\,\widetilde{g}_t^{\alpha}(\tau). 
 \end{equation}
-is a Riemann-Stieltjes integral we can convert it into a Cavalieri integral via the 
-following steps (see Section~\ref{}):
+Furthermore, we also have that (see Theorem~\ref{}):
+\begin{equation}
+\int_{a'}^{t} f(\tau)~d\,g_t^{\alpha}(\tau) = \int_{a'}^{t} f(\tau)~d\,\widetilde{g}_t^{\alpha}(\tau),  
+\end{equation}
+with $g_t^{\alpha}(\tau) = \widetilde{g}_t^{\alpha}(\tau) + C$ and $C\in\mathbb{R}$. 
+Recall, when we want to convert a Riemann-Stieltjes integral into a Cavalieri integral we normally first need to convert the Riemann-Stieltjes integral into an equivalent 
+Riemann-Stieltjes integral by computing the constant $C$. This latter integral can then be converted into a Cavalieri integral. The detail steps that are needed to perform this conversion in the case of Eq is presented below (see Section~\ref{}):
 \begin{itemize}
  \item $a_t^{\alpha}(y) = f^{-1}(y) - \widetilde{g}_t^{\alpha}\circ f^{-1}(y)+ \widetilde{g}_t^{\alpha}(a')$.
  \item $a = a_t^{\alpha}(0)$.
  \item $C = a - \widetilde{g}_t^{\alpha}(a')$.
  \item $g_t^{\alpha} = \widetilde{g}_t^{\alpha} + C$.
- \item $b = g_t^{\alpha}(\tau)(b')$ and $b_t^{\alpha}(y) = a_t^{\alpha}(y) + (b-a)$.
+ \item $b = g_t^{\alpha}(b')$ and $b_t^{\alpha}(y) = a_t^{\alpha}(y) + (b-a)$.
 \end{itemize}
 It now follows that:
 \begin{equation}
 _{a'}I_t^{\alpha}\,f(t) =  \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-1}f(\tau)~d\tau= \int_{a'}^{t} f(\tau)~dg_t^{\alpha}(\tau) = \int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)\,d\tau.
 \end{equation}
 
-The assertions below all follow from Eq ??. Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(t)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the 
-area of $R_t^{\alpha}$. When we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. Moreover, $R_t^{\alpha}$ can be decomposed into an infinite number of infinitesimals, each one of them being a translation of $a_t^{\alpha}(y)$. The shape of the aforementioned infenitesimals are non-static, since their shape depend on the value of $t$ and $\alpha$. Stated differently, we can approximate $A_{t}^{\alpha}$ via a Cavalieri sum, the shape of the integration strips used within this sum will be determined by $a_t^{\alpha}(y)$. In the limit this sum will approach $_{a'}I_t^{\alpha}\,f(t)$. The shape of the aforementioned integration strips are also non-static. Their shape is determined by the value of $t$ and $\alpha$. 
+The assertions given below all follow from Eq ??. Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(t)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_t^{\alpha}$. When we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. Moreover, $R_t^{\alpha}$ can be decomposed into an infinite number of infinitesimals, each one of them being a translation of $a_t^{\alpha}(y)$. The shape of the aforementioned infenitesimals are non-static, since their shape depend on the value of $t$ and $\alpha$. Stated differently, we can approximate $A_{t}^{\alpha}$ via a Cavalieri sum, the shape of the integration strips used within this sum will be determined by $a_t^{\alpha}(y)$. In the limit this sum will approach $_{a'}I_t^{\alpha}\,f(t)$. The shape of the aforementioned integration strips are also non-static. Their shape is determined by the value of $t$ and $\alpha$. 
 
 \section{Evaluating}
 \noindent
-Interestingly, Eq.~\eqref{eq:main_cav} implies that we can use $h_t^{\alpha}(\tau)$ to convert Eq.~\eqref{eq:cav} into the following Riemann integral:
+Let $h_t^{\alpha}(\tau)$ be equal to the inverse of $g_t^{\alpha}(\tau)$. Interestingly, Eq.~\eqref{eq:main_cav} implies that we can use $h_t^{\alpha}(\tau)$ to convert Eq.~\eqref{eq:cav} into the following Riemann integral:
 \begin{equation}
 \label{eq:option2}
-\int_0^{\frac{t^{\alpha}}{\Gamma(\alpha+1)}} f\circ h_{\alpha}^t (\tau) d\tau.  
+\int_{g_t^{\alpha}(a')}^{\frac{t^{\alpha}}{\Gamma(\alpha+1)}+C} f\circ h_{\alpha}^t (\tau) d\tau.  
 \end{equation}
 We can, therefore, evaluate Eq.~\eqref{eq:cav} in one of two ways: we can either evaluate Eq.~\eqref{eq:rs} or we can evaluate Eq.~\eqref{eq:option2}.
-
-
 
 \section{Examples}
 Consider the following fractional integral:
@@ -621,8 +618,11 @@ _0I_t^{\alpha} f(t) = \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-
 The function $f(t) = t$ is depicted in Fig.~\ref{fig:geo1}. Let us first convert 
 the above integral into a Riemann-Stieltjes integral (see Section~\ref{??}):
 \begin{equation}
-_0I_t^{\alpha} f(t)=\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~dg_t^{\alpha}(\tau). 
+_0I_t^{\alpha} f(t)=\frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \int_0^t f(\tau)~d\,\widetilde{g}_t^{\alpha}(\tau). 
 \end{equation}
+
+
+
 We can now convert the above Riemann-Stieltjes integral into a Cavalieri integral (see Section~\ref{??}):
 \begin{equation}
 \label{eq:ex1}
