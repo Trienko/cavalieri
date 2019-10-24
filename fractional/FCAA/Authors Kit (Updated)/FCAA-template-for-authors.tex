@@ -175,17 +175,15 @@ a number of papers that attempt to rectify this. There now exist probabilistic i
 interpretations \cite{tarasova17} of fractional order integrals and differentials.\\
 
 \noindent
-In this article we specifically focus on the geometric interpretation of fractional integrals. To be more specific, we present a novel geometric interpretation of the left-sided Riemann-Liouville fractional integral based at $a'$ \cite{laurent1884}.
-As we mentioned earlier, Riemann and Liouville played an important role in the development of fractional calculus. Their work was crucial in defining what is now known as 
-the Riemann-Liouville fractional integral \cite{laurent1884}. At this point in time the reader should be made aware of the fact that there exists many other accepted fractional integral definitions in the literature.
-We, however, deem these definitions to be beyond the scope of the current article and as such we do not discuss them any further in this work. Furthermore, the geometric interpretation 
-we present here is an extension of the geometric interpretation presented by Podlubny \cite{podlubny02}. Podlubny showed that a Riemann-Liouville fractional integral 
-can be converted into a Riemann-Stieltjes integral. Moreover, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area which is obtained by summing together 
-the area of an infinite number of non-rectangular infinitesimals, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,grobler19}. Combining these two ideas results in the following geometric 
-interpretation: the Riemann-Liouville fractional integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by the order of integration $\alpha$ and the integration limit $t$.\\
+In this article we specifically focus on the geometric interpretation of fractional integrals. To be more specific, we present a novel geometric interpretation of the left-sided Riemann-Liouville fractional integral based at $a'$ \cite{laurent1884} by extending the geometric framework proposed by Podlubny \cite{podlubny02}.
+%As we mentioned earlier, Riemann and Liouville played an important role in the development of fractional calculus. Their work was crucial in defining what is now known as 
+%the Riemann-Liouville fractional integral \cite{laurent1884}. At this point in time the reader should be made aware of the fact that there exists many other accepted fractional integral definitions in the literature.
+%We, however, deem these definitions to be beyond the scope of the current article and as such we do not discuss them any further in this work. 
+%The geometric interpretation that we present in this paper here is an extension of the geometric interpretation presented by Podlubny  
+Podlubny showed that a Riemann-Liouville fractional integral can be converted into a Riemann-Stieltjes integral. The Riemann-Stieltjes integral so obtained can then be visualized using Bullock's geometric framework. Moreover, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,grobler19}. Combining these two ideas results in the following geometric interpretation: the Riemann-Liouville fractional integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by the order of integration $\alpha$ and the integration limit $t$.\\
 
 \noindent
-We start the paper by reviewing the definition of the Riemann-Stieltjes integral, the Cavalieri integral and the left-sided Riemann-Liouville fractional integral. We then present Podlubny's original geometric framework, followed by our novel geometric framework. We end the paper with two examples and a conclusion.
+We start the paper by reviewing the definition of the Riemann-Stieltjes integral, the Cavalieri integral and the left-sided Riemann-Liouville fractional integral. We then present Podlubny's original geometric framework, followed by our extension thereof. We end the paper with two examples and a conclusion.
 
 \section{Riemann-Stieltjes integral}
 \label{sec:rs}
@@ -652,7 +650,8 @@ _{a'}I_t^{\alpha}\,f(t) =  \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha
 \end{equation}
 
 \noindent
-Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(t)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_t^{\alpha}$. Equation~\ref{eq:rl_to_c} implies that when we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. In other words, when we evaluate equation~\ref{eq:rl_to_c} we are actually summing together the area of an infinite number of non-rectangular infinitesimals inscribing $R_t^{\alpha}$. The aforementioned infinitesimals are, however, non-static, since their shape is a function of $\alpha$ and $t$.\\
+Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(t)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_t^{\alpha}$. Equation~\ref{eq:rl_to_c} implies that when we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. In other words, when we evaluate equation~\ref{eq:rl_to_c} we are actually summing together the area of an infinite number of non-rectangular infinitesimals inscribing $R_t^{\alpha}$. The aforementioned infinitesimals are, however, non-static, since they need to be translations of $a(y)_t^{\alpha}$. The shape of these infitesimals are thus dependend on $\alpha$ and $t$. In summary, we can obtain a novel geometric interpretation of 
+$_{a'}I_t^{\alpha}\,f(t)$ by first converting it into a Cavalieri integral. We will take the liberty in this paper to refer to the depiction of the aformentioned Cavalieri integral as the non-static non-rectangular sum-based geometric interpretation of $_{a'}I_t^{\alpha}\,f(t)$.\\
 
 %Stated differently, we can approximate $_{a'}I_t^{\alpha}\,f(t)$ via a Cavalieri sum, the shape of the integration strips used within this sum will be determined by $a_t^{\alpha}(y)$. In the limit this sum approaches $_{a'}I_t^{\alpha}\,f(t)$. The value $_{a'}I_t^{\alpha}\,f(t)$ so obtained is equal to the area of $R_t^{\alpha}$. $R_t^{\alpha}$ can, therefore, be decomposed into an infinite number of infinitesimals, each one of them being a translation of $a_t^{\alpha}(y)$. The shape of the aforementioned infenitesimals are non-static, since their shape depend on the value of $t$ and $\alpha$.
 
@@ -676,7 +675,7 @@ The function $f(t) = t$ is depicted in Figure~\ref{fig:geo1}. We can now convert
 _0I_t^{\alpha} f(t) = \int_0^t f(\tau)~d\,\widetilde{g}_t^{\alpha}(\tau)=\int_0^t f(\tau)~d\,g_t^{\alpha}(\tau):=\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau,
 \end{equation}
 with $a_t^{\alpha}(y) = y - \frac{t^{\alpha}-(t-y)^{\alpha}}{\Gamma(\alpha+1)}$, $b_t^{\alpha}(y) = a_t^{\alpha}(y) + \frac{t^{\alpha}}{\Gamma(\alpha+1)}$ and $C=0$.
-Note, that for this example $a'=a=0$.\\ 
+Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based geometric interpretation associated with equation~\ref{eq:ex1} is depicted in Figure~\ref{fig:geo1} (see Section~\ref{sec:rl_to_cav}). We elaborate on this below.\\  
 
 \begin{figure}[htb]
 \centering
@@ -722,7 +721,7 @@ Let $\mathsf{T}=\{2,4,6,8,10\}$ and $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. More
 right-most edge of $R_{t}^{\alpha}$. The region $R_{t}^{\alpha}$ is not bounded by $a_{t}^{\alpha}(y)$, since $a'=a=0$. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_{t}^{\alpha}$ and let $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}=\{R_t^{\alpha}|t\in\mathsf{T},~\alpha\in\mathsf{A}\}$. The regions in the set $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}$ are depicted in Figure~\ref{fig:geo1}. The regions that are depicted in each of the panels of Figure~\ref{fig:geo1} were generated by varying $t$, whilst keeping the value of $\alpha$ fixed. The title of each panel indicates which $\alpha$-value was used to generate the regions depicted in each panel. The only difference between the regions located in each panel is their right edges. The right edges of the regions in each panel are depicted using varying shades of gray. The lighter the shade with which an edge is depicted, the larger the $t$-value is that is associated with it.\\
 
 \noindent
-We can interpret equation~\eqref{eq:ex1} as the value which is obtained when we sum together the area of an infinite number of non-rectangular infinitesimals inscribing $R_{t}^{\alpha}$. The value so obtained is $A_{t}^{\alpha}$. Note that, the infinitesimals that are used in the aformentioned sum are translations of $R_{t}^{\alpha}$'s right edge. The following observations can now be made by inspecting Figure~\ref{fig:geo1}: 
+We can interpret equation~\eqref{eq:ex1} as the value which is obtained when we sum together the area of an infinite number of non-rectangular infinitesimals inscribing $R_{t}^{\alpha}$. The value so obtained is $A_{t}^{\alpha}$ (see Section~\ref{sec:rl_to_cav}). Note that, the infinitesimals that are used in the aformentioned sum are translations of $R_{t}^{\alpha}$'s right edge. The following observations can now be made by inspecting Figure~\ref{fig:geo1}: 
 \begin{description}
  \item[Effect of $\alpha$] the gray-tinted solid curves depicted in the different panels of Figure~\ref{fig:geo1} are not equal to one another, i.e. $b_{t}^{\alpha_1}(y)\neq b_{t}^{\alpha_2}(y)$ when $\alpha_1\neq\alpha_2$. 
  \item[Effect of $t$] Note that the dashed grey-tinted curves in the right-most panel of Figure~\ref{fig:geo1} are translations of $b_{10}^{\sfrac{4}{5}}(y)$. The dashed gray-tinted curves and the solid gray-tinted curves in the right-most panel are not equal to one another. The gray-tinted solid curves depicted in each of the panels of Figure~\ref{fig:geo1} are, therefore, not translations of one another. 
@@ -764,7 +763,7 @@ sizes are ignored). The curves in Figure~\ref{fig:geo1} associated with the infi
 \end{figure}
 
 \noindent
-If we evaluate the integral in equation~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ (using either equation~\eqref{eq:rl_to_rs} or equation~\eqref{eq:rl_to_r}) we obtain the curves depicted in in Figure~\ref{fig:eval1}. The area of the regions depicted in Figure~\ref{fig:geo1} are also plotted in Figure~\ref{fig:eval1} using circular markers. As expected, the circular markers in Figure~\ref{fig:eval1} that correspond to the areas of the regions in Figure~\ref{fig:eval1} associated with a particular choice of $\alpha$ (i.e. regions depicted in a particular panel of Figure~\ref{fig:geo1}) fall on the curve in Figure~\ref{fig:eval1}; associated with the same choice of $\alpha$. Moreover, note that we have adopted the same coloring scheme in Figure~\ref{fig:geo1} and Figure~\ref{fig:eval1}. Using the same coloring scheme in both figures makes it clear which of the area values in Figure~\ref{fig:eval1} can be associated with which regions in Figure~\ref{fig:geo1}.\\
+If we evaluate the integral in equation~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ (using either equation~\eqref{eq:rl_to_rs} or equation~\eqref{eq:rl_to_r}) we obtain the curves depicted in in Figure~\ref{fig:eval1}. The area of the regions depicted in Figure~\ref{fig:geo1} are also plotted in Figure~\ref{fig:eval1} using circular markers. As expected, the circular markers in Figure~\ref{fig:eval1} that correspond to the areas of the regions in Figure~\ref{fig:eval1} associated with a particular choice of $\alpha$ (i.e. regions depicted in a particular panel of Figure~\ref{fig:geo1}) fall on the curve in Figure~\ref{fig:eval1}; associated with the same choice of $\alpha$. Moreover, note that we have adopted the same coloring scheme in Figure~\ref{fig:geo1} and Figure~\ref{fig:eval1}. Using the same coloring scheme in both figures makes it clear which of the area values in Figure~\ref{fig:eval1} can be associated with which regions in Figure~\ref{fig:geo1}. The validity of the geometric interpretation depicted in Figure~\ref{fig:geo1} is, therefore, corroborated by Figure~\ref{fig:eval1}. \\
 %To summarize, Figure~\ref{fig:geo1}, therefore, depicts a non-static non-rectangular infinitesimal-based geometric interpretation of equation~\eqref{eq:ex1}. Moreover, Figure~\ref{fig:eval1} corroborates this geometric interpretation.\\
 
 \noindent
@@ -779,7 +778,7 @@ We can now convert the above fractional integral into a Cavalieri integral (see 
 _0I_t^{\alpha} f(t) = \int_0^t f(\tau)~d\,\widetilde{g}_t^{\alpha}(\tau)=\int_0^t f(\tau)~d\,g_t^{\alpha}(\tau)=\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau,
 \end{equation}
 with $a_t^{\alpha}(y) = y^2 - \frac{t^{\alpha}-(t-y^2)^{\alpha}}{\Gamma(\alpha+1)}$, $b_t^{\alpha}(y) = a_t^{\alpha}(y) + \frac{t^{\alpha}}{\Gamma(\alpha+1)}$ and $C=0$.
-Note, that for this example $a'=a=0$. The visualization of equation~\eqref{eq:ex2_cav} is depicted in Figure~\ref{fig:geo2}. If we evaluate the integral in equation~\eqref{eq:ex2} for all $\alpha\in \mathsf{A}$ we obtain the curves depicted in Figure~\ref{fig:eval2}. The validity of the geometric interpretation depicted in Figure~\ref{fig:geo2} is corroborated by Figure~\ref{fig:eval2}. 
+Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based geometric interpretation associated with equation~\ref{eq:ex2_cav} is depicted in Figure~\ref{fig:geo2} (see Section~\ref{sec:rl_to_cav}).
 
 \begin{figure}[htb]
 \centering
@@ -788,17 +787,23 @@ Note, that for this example $a'=a=0$. The visualization of equation~\eqref{eq:ex
 \label{fig:geo2}
 \end{figure}
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=0.75\textwidth]{func_eval2.pdf}
-\caption{Depicts the curves which are obtained by evaluating equation~\eqref{eq:ex2} for all $\alpha\in \mathsf{A}$ using either equation~\eqref{eq:rs} or equation~\eqref{eq:option2}.}
-\label{fig:eval2}
-\end{figure}
+\section{Conclusion}
+In this paper we presented a novel geometric interpretation of the left-sided 
+Riemann-Liouville fractional integral. It can be interpreted as the value which is 
+obtained by summing toghether the area of an infinite number of non-static non-rectangular infinitesimals. The shape of the infinitesimals used within the aforementioned sum depend on the order and the upper integration limit of the fractional integral under consideration.
+
+
+%\begin{figure}[htb]
+%\centering
+%\includegraphics[width=0.75\textwidth]{func_eval2.pdf}
+%\caption{Depicts the curves which are obtained by evaluating equation~\eqref{eq:ex2} %for all $\alpha\in \mathsf{A}$ using either equation~\eqref{eq:rs} or equation~\eqref{eq:option2}.}
+%\label{fig:eval2}
+%\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Acknowledgements}
+%\section*{Acknowledgements}
 
- The author thanks his institution for the support, under Grant No ...
+% The author thanks his institution for the support, under Grant No ...
 
 %%%%%%%%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% arranged in ALPHABETIC ORDER of Authors' Families
