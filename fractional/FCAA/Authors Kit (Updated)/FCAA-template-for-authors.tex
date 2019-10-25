@@ -57,12 +57,11 @@ in nature to the geometric interpretation of the Riemann integral.
 
  \medskip
 
-{\it MSC 2010\/}: 26A33
-                  %Secondary 33E12, 34A08, 34K37, 35R11, 60G22, ...
+{\it MSC 2010\/}: 26A33 and 26A42.%, 34A08, 34K37, 35R11, 60G22, ...
 
  \smallskip
 
-{\it Key Words and Phrases}: geometric interpretation, fractional calculus, left-sided Riemann-Liouville integral, cavalieri integral.
+{\it Key Words and Phrases}: fractional calculus, Cavalieri integral, geometric interpretation, left-sided Riemann-Liouville fractional integral and Riemann-Stieltjes integral.
 
 
 \end{abstract}
@@ -174,7 +173,7 @@ a number of papers that attempt to rectify this. There now exist probabilistic i
 interpretations \cite{tarasova17} of fractional order integrals and differentials.\\
 
 \noindent
-In this article we specifically focus on the geometric interpretation of fractional integrals. To be more specific, we present a novel geometric interpretation of the left-sided Riemann-Liouville fractional integral based at $a'$ \cite{laurent1884}. We accomplish this by extending the geometric framework proposed by Podlubny \cite{podlubny02}.
+In this article we specifically focus on the geometric interpretation of fractional integrals. To be more specific, we present a novel geometric interpretation of the left-sided Riemann-Liouville fractional integral $_{a'}I_t^{\alpha} f(t)$ based at $a'$ (see Section~\ref{sec:ls}) \cite{laurent1884}. We accomplish this by extending the geometric framework proposed by Podlubny \cite{podlubny02}.
 %As we mentioned earlier, Riemann and Liouville played an important role in the development of fractional calculus. Their work was crucial in defining what is now known as 
 %the Riemann-Liouville fractional integral \cite{laurent1884}. At this point in time the reader should be made aware of the fact that there exists many other accepted fractional integral definitions in the literature.
 %We, however, deem these definitions to be beyond the scope of the current article and as such we do not discuss them any further in this work. 
@@ -269,7 +268,7 @@ The mapping $h(x)$ is a strictly monotone continuous function. The function $h(x
 
 \begin{theorem}
 \label{t:inv}
-The function $g(x)$ is equal to $h^{-1}(x)$.
+The mapping $g(x)$ is a strictly monotone continuous function and it is equal to $h^{-1}(x)$.
 \end{theorem}
 
 \noindent
@@ -331,7 +330,7 @@ Theorem~\ref{t:conv} tells us how to convert a Cavalieri integral into an equiva
 Consider the Riemann-Stieltjes integral $\int_{a'}^{b'} f(x)\,\widetilde{g}(x)$. Assume that $\widetilde{g}(x)$ is a differentiable and invertable real-valued function on $[a',b']$. How do we go about converting $\int_{a'}^{b'} f(x)\,\widetilde{g}(x)$ into a Cavalieri integral?\\ 
 
 \noindent
-Note that for all $K\in\mathbb{R}$ (see equation~\ref{eq:rs_identity}):
+Note that for all $K\in\mathbb{R}$ (see equation~\eqref{eq:rs_identity}):
 \begin{equation}
 \int_{a'}^{b'} f(x)\,d[\widetilde{g}(x)+K] = \int_{a'}^{b'}f(x)\,\widetilde{g}(x). 
 \end{equation}
@@ -348,7 +347,7 @@ At first it seems impossible to compute $a(y)$ (perform the required conversion)
 \label{eq:implies}
 g(a') = \widetilde{g}(a') + C \implies C = a - \widetilde{g}(a'). 
 \end{equation}
-Substituting Equation~\eqref{eq:implies} into Equation~\eqref{eq:g_definition} eliminates both $a$ and $C$ from it. If we then solve for $a(y)$ we obtain:
+Substituting equation~\eqref{eq:implies} into equation~\eqref{eq:g_definition} eliminates both $a$ and $C$ from it. If we then solve for $a(y)$ we obtain:
 \begin{equation}
 a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a'). 
 \end{equation}
@@ -357,7 +356,6 @@ We can now compute the following:
 \item Compute $a = a(0)$.
 \item Compute $C = a - \widetilde{g}(a')$.
 \item Compute $g(x) = \widetilde{g}(x) + C$.
-\item Compute $h(x) = g^{-1}(x)$.
 \item Compute $b = g(b')$ and $b(y) = a(y) + (b-a)$.
 \end{itemize}
 It now follows that: 
@@ -366,7 +364,7 @@ It now follows that:
 \end{equation}\
 
 \noindent
-The above derivation implies that that not every Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,\widetilde{g}(x)$ can directly be converted into a Cavalieri integral. We normally need to first convert it into an equivalent Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,g(x)$. The Riemann-Stieltjes integral so obtained can then be converted into a Cavalieri integral. The former conversion is achieved by computing the real-valued constant $C$. Once, $C$ is known the latter conversion follows trivially. The above steps should be clearer to the reader once they have worked through the example presented in Section~\ref{sec:cav_integral_example}.\\
+The above derivation was taken from \cite{grobler19} and implies that that not every Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,\widetilde{g}(x)$ can be converted into a Cavalieri integral. We normally need to first convert it into an equivalent Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,g(x)$. The Riemann-Stieltjes integral so obtained can then be converted into a Cavalieri integral. The former conversion is achieved by computing the real-valued constant $C$. Once $C$ is known the latter conversion follows trivially. The above steps should be clearer to the reader once they have worked through the example presented in Section~\ref{sec:cav_integral_example}.\\
 
 %not every Riemann-Stieltjes integral can be converted into a Cavalieri integral. It, however, does tell us that every Riemann-Stieltjes integral can be converted into an equivalent Riemann-Stieltjes integral, which in turn, can be converted into a Cavalieri integral. The latter Riemann-Stieltjes integral is obtained by computing the constant $C$. The above steps should be clearer to the reader once they have worked through the example in Section~\ref{}. 
 
@@ -420,12 +418,12 @@ The theorems and definitions presented in this section impose much greater restr
 \section{Cavalieri Integral: Clarifying Example}
 \label{sec:cav_integral_example}
 \noindent
-The example which we present below was taken from \cite{ackermann12,grobler19}. Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is depicted in Figure~\ref{fig:caval2}.\\
+The example which we present below was taken from \cite{ackermann12,grobler19}. Let the region $R$ be bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$ and $b(y)=4-y$. This region is depicted in Figure~\ref{fig:caval2}. Note that in the case of $R$: $a=1$, $b=4$, $a'=\frac{1}{2}$ and $b'=2$.\\
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.75\textwidth]{fig13.pdf}
-\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. In the case of $R$: $a=1$, $b=4$, $a'=\frac{1}{2}$ and $b'=2$. The figure also depicts the partition points $x_i^2$ as used in the Cavalieri sum (see Equation~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+\includegraphics[width=0.8\textwidth]{fig13.pdf}
+\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. In the case of $R$: $a=1$, $b=4$, $a'=\frac{1}{2}$ and $b'=2$. The figure also depicts the partition points $x_i^2$ as used in the Cavalieri sum (see equation~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
 \label{fig:caval2}
 \end{figure}
 
@@ -439,24 +437,24 @@ The example which we present below was taken from \cite{ackermann12,grobler19}. 
 We can approximate the area of $R$ by using rectangular integration strips. It, however, seems much more straightforward to approximate the area of $R$ via non-overlapping non-rectangular integration strips that inscribe $R$. This can only be accomplished if the sides of the aforementioned integration strips are tranlsations of the function $a(y)$.\\
 
 \noindent
-Let us express this idea more formally. Let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$. We are now able to construct the following lower Cavalieri sum (see Equation~\ref{eq:c_low}):
+Let us express this idea more formally. Let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$. Consider the following lower Cavalieri sum (see equation~\ref{eq:c_low}):
 \begin{equation}
 \label{eq:cav_sum}
 \sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
 \end{equation}
-The partition points $(x_i^2)_{i=0}^{n}$ are depicted in Figure~\ref{fig:caval2}. Cavalieri's principle tells us that the area of integration strip $i$ is equal to $f(x_i^2)\Delta x_i^1$. Equation~\eqref{eq:cav_sum}, therefore, approximates the area of $R$. In the limit equation~\eqref{eq:cav_sum} approaches 
+The partition points $(x_i^1)_{i=0}^{n}$ and $(x_i^2)_{i=0}^{n}$ are depicted in Figure~\ref{fig:caval2}. Cavalieri's principle tells us that the area of integration strip $i$ is equal to $f(x_i^2)\Delta x_i^1$. Equation~\eqref{eq:cav_sum}, therefore, approximates the area of $R$. In the limit equation~\eqref{eq:cav_sum} approaches 
 the Cavalieri integral (see Definition~\ref{def:cav_integral}):
 \begin{equation}
 \label{eq:caval1}
 \int_{a(y)}^{b(y)}f(x)\, dx = \lim_{n\to \infty}\sum_{i=0}^{n-1} f(x_i^2)\Delta x_i^1.
 \end{equation}
 If we evaluate the above integral we obtain the area of $R$. It is, however, quite hard to evaluate the above integral in its present form. Fortunately, it is easy to convert a Cavalieri integral into an equivalent Riemann or Riemann-Stieltjes 
-integral by using the functions $h$ and $g$ (see equation~\ref{eq:g_def} and equation~\ref{eq:h_def}). Expressed mathematically (see Theorem~\ref{t:conv}):
+integral by using the functions $h$ and $g$ (see equation~\eqref{eq:g_def} and equation~\eqref{eq:h_def}). Expressed mathematically (see Theorem~\ref{t:conv}):
 \begin{equation}
 \label{eq:main_cav}
 \int_{a(y)}^{b(y)}f(x)\,dx =\int_a^b f \circ h (x)\, dx = \int_{a'}^{b'} f(x) dg(x),
 \end{equation}
-We can, therefore, evaluate equation~\ref{eq:main_cav} in one of two ways:
+We can, therefore, evaluate equation~\eqref{eq:main_cav} in one of two ways:
 \begin{equation}
 \int_{a(y)}^{b(y)}f(x)\, dx = \int_a^b f \circ h (x)\, dx = \dfrac{1}{2}\int_1^4x\, dx = 3.75,  
 \end{equation}
@@ -494,12 +492,13 @@ It now follows that:
 with $a(y) = 1-y$, $b(y) = 4-y$ and $C=-1$.
 
 \section{Left-sided Riemann-Liouville Fractional Integral}
+\label{sec:ls}
 \noindent
-For the sake of completeness, let us review the definition of the left-sided Riemann-Liouville fractional integral of order $\alpha$ (based at $a'$) \cite{laurent1884}. Let
+For the sake of completeness, let us review the definition of the left-sided Riemann-Liouville fractional integral of order $\alpha$ based at $a'$ \cite{laurent1884}. Let
 \begin{equation}
 _{a'}I_t\, f(t) := \int_{a'}^t f(\tau)~d\tau.
 \end{equation}
-Please note that in this paper from this point onwards our variable of integration will be $\tau$ instead of $x$. It is of our opinion that this notational change improves the readability of the paper (if $\tau$ is our variable of integration then it makes sense to choose $t$ as our upper integration limit).\\
+Please note that from this point onwards our variable of integration will be $\tau$ instead of $x$. It is of our opinion that this notational change improves the readability of the paper (if $\tau$ is our variable of integration then it makes sense to choose $t$ as our upper integration limit).\\
 
 \noindent
 If we apply the above operator in a repetitive manner to $f$ we obtain the $n$th antiderivative of $f$ based at $a'$:
@@ -516,12 +515,12 @@ _{a'}I_t^n\,f(t) = \frac{1}{(n-1)!}\int_{a'}^t (t-\tau)^{n-1}f(\tau)~d\tau.
 % \begin{equation}
 % _{0}I_t^2\,f(t) = \int_0^t (t-\tau)\tau~d\tau = \frac{\tau^2 t}{2} - \frac{\tau^3}{3} \Bigg |_0^t = \frac{t^3}{3!}.
 % \end{equation}
-The definition in equation~\eqref{eq:cauchy} can now be extended to an arbitrary fractional order by replacing $(n-1)!$ with the Gamma function $\Gamma(s)$:
+The definition in equation~\eqref{eq:cauchy} can now be extended to an arbitrary fractional order by replacing $(n-1)!$ with the Gamma function $\Gamma(\alpha)$:
 \begin{equation}
 \label{eq:frac_integral}
 _{a'}I_t^{\alpha}f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^t (t-\tau)^{\alpha-1}f(\tau)~d\tau.
 \end{equation}
-Recall that $\Gamma(s) := \int_0^{\infty} t^{s-1} e^{-t}\,dt$. Equation~\eqref{eq:frac_integral} is known as the left-sided Riemann-Liouville fractional integral of order $\alpha$. 
+Recall that $\Gamma(\alpha) := \int_0^{\infty} k^{\alpha-1} e^{-k}\,dk$. Equation~\eqref{eq:frac_integral} is known as the left-sided Riemann-Liouville fractional integral of order $\alpha$. 
 % As an example if $f(t)=t$, $\alpha=\frac{1}{2}$ and $a'=0$ then 
 % equation~\eqref{eq:frac_integral} reduces to:
 % \begin{equation}
@@ -623,8 +622,7 @@ Podlubny also showed that we can assign a geometric meaning to the fractional in
 \centering
 \includegraphics[width=1.0\textwidth]{vis_old.pdf}
 \caption{This figure depicts the visualization of $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ using the geometric framework proposed by Podlubny.
-As is indicated in the figure, the graphs contained in each row of the subfigure-grid are obtained by varying $\alpha$, while the graphs contained in each column of the subfigure-grid are obtained by varying $t$. The fence itstelf is depicted in green. The areas depicted in red (the shadow of the fence) correspond to the value obtained when $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ is evaluated.  The surface which is obtained by extending the curve $f(\tau)$ and $\widetilde{g}_t^{\alpha}(\tau)$ along the $\widetilde{g}$ and $f$ direction is depicted in cyan and blue, respectively. The intersection between the blue and cyan 
-surfaces represents the curve that determines the height of the aforementioned fence (and is depicted as a dashed curve).   
+As is indicated in the figure, the graphs contained in each row of the subfigure-grid are obtained by varying $\alpha$, while the graphs contained in each column of the subfigure-grid are obtained by varying $t$. The fence in each subfigure is depicted in green. The areas depicted in red (the shadow of the fence) correspond to the value obtained when $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ is evaluated.  The surface which is obtained by extending the curve $f(\tau)$ and $\widetilde{g}_t^{\alpha}(\tau)$ along the $\widetilde{g}$ and $f$ direction is depicted in cyan and blue, respectively (in each subfigure). The intersection between the blue and cyan surfaces in each subfigure represents the curve that determines the height of the fence in each subfigure (it is depicted as a dashed curve).   
 }
 \label{fig:vis_old}
 \end{figure}
@@ -658,13 +656,13 @@ _{a'}I_t^{\alpha}\,f(t) =  \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha
 \end{equation}
 
 \noindent
-Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(t)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_t^{\alpha}$. Equation~\ref{eq:rl_to_c} implies that when we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. In other words, when we evaluate equation~\ref{eq:rl_to_c} we are actually summing together the area of an infinite number of non-rectangular infinitesimals inscribing $R_t^{\alpha}$. The aforementioned infinitesimals are, however, non-static, since they need to be translations of $a(y)_t^{\alpha}$. The shape of these infitesimals are thus dependend on $\alpha$ and $t$. In summary, we can obtain a novel geometric interpretation of 
+Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(\tau)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_t^{\alpha}$. Equation~\ref{eq:rl_to_c} implies that when we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. In other words, when we evaluate equation~\eqref{eq:rl_to_c} we are actually summing together the area of an infinite number of non-rectangular infinitesimals inscribing $R_t^{\alpha}$. The aforementioned infinitesimals are, however, non-static, since they need to be translations of $a_t^{\alpha}(y)$. The shape of these infitesimals are thus dependend on $\alpha$ and $t$. In summary, we can obtain a novel geometric interpretation of 
 $_{a'}I_t^{\alpha}\,f(t)$ by first converting it into a Cavalieri integral. We will take the liberty in this paper to refer to the depiction of the aformentioned Cavalieri integral as the non-static non-rectangular sum-based geometric interpretation of $_{a'}I_t^{\alpha}\,f(t)$.\\
 
 %Stated differently, we can approximate $_{a'}I_t^{\alpha}\,f(t)$ via a Cavalieri sum, the shape of the integration strips used within this sum will be determined by $a_t^{\alpha}(y)$. In the limit this sum approaches $_{a'}I_t^{\alpha}\,f(t)$. The value $_{a'}I_t^{\alpha}\,f(t)$ so obtained is equal to the area of $R_t^{\alpha}$. $R_t^{\alpha}$ can, therefore, be decomposed into an infinite number of infinitesimals, each one of them being a translation of $a_t^{\alpha}(y)$. The shape of the aforementioned infenitesimals are non-static, since their shape depend on the value of $t$ and $\alpha$.
 
 \noindent
-Let $h_t^{\alpha}(\tau)$ be equal to the inverse of $g_t^{\alpha}(\tau)$ (see equation~\ref{eq:h}). Interestingly, Theorem~\ref{t:conv} implies that we can use $h_t^{\alpha}(\tau)$ to convert equation~\eqref{eq:rl_to_c} into the following Riemann integral:
+Let $h_t^{\alpha}(\tau)$ be equal to the inverse of $g_t^{\alpha}(\tau)$ (see equation~\eqref{eq:h}). Interestingly, Theorem~\ref{t:conv} implies that we can use $h_t^{\alpha}(\tau)$ to convert equation~\eqref{eq:rl_to_c} into the following Riemann integral:
 \begin{equation}
 \label{eq:rl_to_r}
 \int_{g_t^{\alpha}(a')}^{g_t^{\alpha}(t)} f\circ h_{\alpha}^t (\tau) d\tau.  
@@ -677,13 +675,13 @@ Consider the following fractional integral:
 \label{eq:ex1_raw}
 _0I_t^{\alpha} f(t) = \frac{1}{\Gamma(\alpha)}\int_0^t f(\tau) (t-\tau)^{\alpha-1}~d\tau = \frac{1}{\Gamma(\alpha)}\int_0^t \tau(t-\tau)^{\alpha-1}~d\tau. 
 \end{equation}
-The function $f(t) = t$ is depicted in Figure~\ref{fig:geo1}. We can now convert the above fractional integral into a Cavalieri integral (see Section~\ref{sec:rl_to_cav}):
+We can now convert the above fractional integral into a Cavalieri integral (see Section~\ref{sec:rl_to_cav}):
 \begin{equation}
 \label{eq:ex1}
 _0I_t^{\alpha} f(t) = \int_0^t f(\tau)~d\,\widetilde{g}_t^{\alpha}(\tau)=\int_0^t f(\tau)~d\,g_t^{\alpha}(\tau):=\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau,
 \end{equation}
 with $a_t^{\alpha}(y) = y - \frac{t^{\alpha}-(t-y)^{\alpha}}{\Gamma(\alpha+1)}$, $b_t^{\alpha}(y) = a_t^{\alpha}(y) + \frac{t^{\alpha}}{\Gamma(\alpha+1)}$ and $C=0$.
-Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based geometric interpretation associated with equation~\ref{eq:ex1} is depicted in Figure~\ref{fig:geo1} (see Section~\ref{sec:rl_to_cav}). We elaborate further below.\\  
+Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based geometric interpretation associated with equation~\eqref{eq:ex1} is depicted in Figure~\ref{fig:geo1} (see Section~\ref{sec:rl_to_cav}). We elaborate further below.\\  
 
 \begin{figure}[htb]
 \centering
@@ -725,7 +723,7 @@ Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based g
 %of an infinite number of non-rectangular infinitesimals; all of them being translations of $b_{10}^{\sfrac{4}{5}}(y)$.
 
 \noindent
-Let $\mathsf{T}=\{2,4,6,8,10\}$ and $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. Moreover, Let $R_{t}^{\alpha}$ denote the region which is bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{t}^{\alpha}(y)$. Note that $b_{t}^{\alpha}(y)$ forms the 
+Let $\mathsf{T}=\{2,4,6,8,10\}$ and $\mathsf{A} = \{0.2,0.4,0.6,0.8\}$. Moreover, let $R_{t}^{\alpha}$ denote the region which is bounded by the $\tau$-axis, the function $f(\tau)$ and the function $b_{t}^{\alpha}(y)$. Note that $b_{t}^{\alpha}(y)$ forms the 
 right-most edge of $R_{t}^{\alpha}$. The region $R_{t}^{\alpha}$ is not bounded by $a_{t}^{\alpha}(y)$, since $a'=a=0$. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_{t}^{\alpha}$ and let $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}=\{R_t^{\alpha}|t\in\mathsf{T},~\alpha\in\mathsf{A}\}$. The regions in the set $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}$ are depicted in Figure~\ref{fig:geo1}. The regions that are depicted in each of the panels of Figure~\ref{fig:geo1} were generated by varying $t$, whilst keeping the value of $\alpha$ fixed. The title of each panel indicates which $\alpha$-value was used to generate the regions depicted in each panel. The only difference between the regions located in each panel is their right edges. The right edges of the regions in each panel are depicted using varying shades of gray. The lighter the shade with which an edge is depicted, the larger the $t$-value is that is associated with it.\\
 
 \noindent
@@ -734,8 +732,8 @@ We can interpret equation~\eqref{eq:ex1} as the value which is obtained when we 
  \item[Effect of $\alpha$] the gray-tinted solid curves depicted in the different panels of Figure~\ref{fig:geo1} are not equal to one another, i.e. $b_{t}^{\alpha_1}(y)\neq b_{t}^{\alpha_2}(y)$ when $\alpha_1\neq\alpha_2$. 
  \item[Effect of $t$] Note that the dashed grey-tinted curves in the right-most panel of Figure~\ref{fig:geo1} are translations of $b_{10}^{\sfrac{4}{5}}(y)$. The dashed gray-tinted curves and the solid gray-tinted curves in the right-most panel are not equal to one another. The gray-tinted solid curves depicted in each of the panels of Figure~\ref{fig:geo1} are, therefore, not translations of one another. 
 \end{description}
-The following can thus be concluded: the value of both $\alpha$ and $t$ alters the shape of the aforementioned infinitesimals. Interestingly, their shape is more affected by $\alpha$ than by $t$. The curves in Figure~\ref{fig:geo1} that are associated with the infinitesimals obtained by varying $t$, whilst keeping the value of $\alpha$ fixed are very similar in nature and there exists a high degree of correlation between the aforementioned curves (if their 
-sizes are ignored). The curves in Figure~\ref{fig:geo1} associated with the infinitesimals obtained by varying $\alpha$, whilst keeping the value of $t$ fixed are quite different from one another (the aforementioned curves are only weakly correlated).\\  
+The following can thus be concluded: the value of both $\alpha$ and $t$ alters the shape of the aforementioned infinitesimals. Interestingly, their shape is more affected by $\alpha$ than by $t$. The curves in Figure~\ref{fig:geo1} that are associated with the infinitesimals obtained by varying $t$, whilst keeping the value of $\alpha$ fixed are very similar in nature (if their 
+sizes are ignored). The curves in Figure~\ref{fig:geo1} associated with the infinitesimals obtained by varying $\alpha$, whilst keeping the value of $t$ fixed are quite different from one another.\\  
 
 %In the case of $\alpha$: the gray-tinted solid curves depicted in each panel are not equal to one-another. Similarly, in the case of $t$: the dashed gray curves and the solid gray-tinted curves in the right-most panel are not equal to one-another, i.e.$\mathsf{B}_T^{\alpha}\neq\mathcal{B}_T^{\alpha}$.
 
@@ -766,12 +764,12 @@ sizes are ignored). The curves in Figure~\ref{fig:geo1} associated with the infi
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.75\textwidth]{func_eval1.pdf}
-\caption{Depicts the curves which are obtained by evaluating equation~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ using either equation~\eqref{eq:rl_to_rs} or equation~\eqref{eq:rl_to_r}.}
+\caption{Depicts the curves which are obtained by evaluating equation~\eqref{eq:ex1_raw} for all $\alpha\in \mathsf{A}$ using either equation~\eqref{eq:rl_to_rs} or equation~\eqref{eq:rl_to_r}.}
 \label{fig:eval1}
 \end{figure}
 
 \noindent
-If we evaluate the integral in equation~\eqref{eq:ex1} for all $\alpha\in \mathsf{A}$ (using either equation~\eqref{eq:rl_to_rs} or equation~\eqref{eq:rl_to_r}) we obtain the curves depicted in Figure~\ref{fig:eval1}. The area of the regions depicted in Figure~\ref{fig:geo1} are also plotted in Figure~\ref{fig:eval1} using circular markers. As expected, the circular markers in Figure~\ref{fig:eval1} that correspond to the areas of the regions in Figure~\ref{fig:eval1} associated with a particular choice of $\alpha$ (i.e. regions depicted in a particular panel of Figure~\ref{fig:geo1}) fall on the curve in Figure~\ref{fig:eval1}; associated with the same choice of $\alpha$. Moreover, note that we have adopted the same coloring scheme in Figure~\ref{fig:geo1} and Figure~\ref{fig:eval1}. Using the same coloring scheme in both figures makes it clear which of the area values in Figure~\ref{fig:eval1} can be associated with which regions in Figure~\ref{fig:geo1}. Figure~\ref{fig:eval1}, therefore validates the geometric interpretation depicted in Figure~\ref{fig:geo1}. \\
+If we evaluate the integral in equation~\eqref{eq:ex1_raw} for all $\alpha\in \mathsf{A}$ (using either equation~\eqref{eq:rl_to_rs} or equation~\eqref{eq:rl_to_r}) we obtain the curves depicted in Figure~\ref{fig:eval1}. The area of the regions depicted in Figure~\ref{fig:geo1} are also plotted in Figure~\ref{fig:eval1} using circular markers. As expected, the circular markers in Figure~\ref{fig:eval1} that correspond to the areas of the regions in Figure~\ref{fig:eval1} associated with a particular choice of $\alpha$ (i.e. regions depicted in a particular panel of Figure~\ref{fig:geo1}) fall on the curve in Figure~\ref{fig:eval1}; associated with the same choice of $\alpha$. Moreover, note that we have adopted the same coloring scheme in Figure~\ref{fig:geo1} and Figure~\ref{fig:eval1}. Using the same coloring scheme in both figures makes it clear which of the area values in Figure~\ref{fig:eval1} can be associated with which regions in Figure~\ref{fig:geo1}. Figure~\ref{fig:eval1}, therefore validates the geometric interpretation depicted in Figure~\ref{fig:geo1}. \\
 %To summarize, Figure~\ref{fig:geo1}, therefore, depicts a non-static non-rectangular infinitesimal-based geometric interpretation of equation~\eqref{eq:ex1}. Moreover, Figure~\ref{fig:eval1} corroborates this geometric interpretation.\\
 
 \noindent
@@ -786,7 +784,7 @@ We can now convert the above fractional integral into a Cavalieri integral (see 
 _0I_t^{\alpha} f(t) = \int_0^t f(\tau)~d\,\widetilde{g}_t^{\alpha}(\tau)=\int_0^t f(\tau)~d\,g_t^{\alpha}(\tau)=\int_{a_t^{\alpha}(y)}^{b_t^{\alpha}(y)} f(\tau)~d\tau,
 \end{equation}
 with $a_t^{\alpha}(y) = y^2 - \frac{t^{\alpha}-(t-y^2)^{\alpha}}{\Gamma(\alpha+1)}$, $b_t^{\alpha}(y) = a_t^{\alpha}(y) + \frac{t^{\alpha}}{\Gamma(\alpha+1)}$ and $C=0$.
-Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based geometric interpretation associated with equation~\ref{eq:ex2_cav} is depicted in Figure~\ref{fig:geo2} (see Section~\ref{sec:rl_to_cav}).
+Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based geometric interpretation associated with equation~\eqref{eq:ex2_cav} is depicted in Figure~\ref{fig:geo2} (see Section~\ref{sec:rl_to_cav}).
 
 \begin{figure}[htb]
 \centering
@@ -799,7 +797,7 @@ Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based g
 \noindent
 In this paper we presented a novel geometric interpretation of the left-sided 
 Riemann-Liouville fractional integral. It can be interpreted as the value which is 
-obtained by summing toghether the area of an infinite number of non-static non-rectangular infinitesimals. The shape of the infinitesimals used within the aforementioned sum depend on the order and the upper integration limit of the fractional integral under consideration.
+obtained by summing toghether the area of an infinite number of non-static non-rectangular infinitesimals. The shape of the infinitesimals used within the aforementioned sum depend on the order of integration and the upper integration limit of the fractional integral under consideration.
 
 
 %\begin{figure}[htb]
