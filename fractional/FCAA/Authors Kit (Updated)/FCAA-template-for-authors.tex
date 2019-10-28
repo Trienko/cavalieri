@@ -262,7 +262,7 @@ is defined as $g(x_i^2) = x_i^2 - a \circ f (x_i^2) + a$.
 \end{definition}
 
 \begin{theorem}
-The mapping $h(x)$ is a strictly monotone continuous function. The function $h(x)$ is, therefore, invertable.
+The mapping $h(x)$ is a strictly monotone continuous function. The function $h(x)$ is, therefore, invertible.
 \end{theorem}
 
 \begin{theorem}
@@ -368,7 +368,7 @@ The above derivation was taken from \cite{grobler19} and implies that not every 
 %not every Riemann-Stieltjes integral can be converted into a Cavalieri integral. It, however, does tell us that every Riemann-Stieltjes integral can be converted into an equivalent Riemann-Stieltjes integral, which in turn, can be converted into a Cavalieri integral. The latter Riemann-Stieltjes integral is obtained by computing the constant $C$. The above steps should be clearer to the reader once they have worked through the example in Section~\ref{}. 
 
 \noindent
-The theorems and definitions presented in this section impose much greater restrictions on $g(x)$ and $f(x)$ than that mentioned in the begining of Section~\ref{sec:rs}. The functions $g(x)$ and $f(x)$ now also need to be differentiable and invertable. Moreover, $a(0)$ must exist. These additional restrictions on $f(x)$ and $g(x)$ are assumed to be true for the remainder of the paper and as such are not repeated again. As will become apparent later, these additional restictions reduce the number of fractional integrals we can visualize with the framework we propose in Section~\ref{sec:rl_to_cav}. However, this fact does not diminish the importance of the proposed framework as it allows us to gain deeper insight into the process of fractional integration.
+The theorems and definitions presented in this section impose much greater restrictions on $g(x)$ and $f(x)$ than that mentioned in the beginning of Section~\ref{sec:rs}. The functions $g(x)$ and $f(x)$ now also need to be differentiable and invertible. Moreover, $a(0)$ must exist. These additional restrictions on $f(x)$ and $g(x)$ are assumed to be true for the remainder of the paper and as such are not repeated again. As will become apparent later, these additional restrictions reduce the number of fractional integrals we can visualize with the framework we propose in Section~\ref{sec:rl_to_cav}. However, this fact does not diminish the importance of the proposed framework as it allows us to gain deeper insight into the process of fractional integration.
 
 %As will become clear later on, these restrictions limit the number of fractional integrals for which the geometric framework we propose later on can produce meaningful results. Generally speaking, however, it does improve our understanding of fractional integration. 
 
@@ -433,7 +433,7 @@ The example which we present below was taken from \cite{ackermann12,grobler19}. 
 %\end{equation}
 
 \noindent
-We can approximate the area of $R$ by using rectangular integration strips. It, however, seems much more straightforward to approximate the area of $R$ via non-overlapping non-rectangular integration strips that inscribe $R$. This can only be accomplished if the sides of the aforementioned integration strips are tranlsations of the function $a(y)$.\\
+We can approximate the area of $R$ by using rectangular integration strips. It, however, seems much more straightforward to approximate the area of $R$ via non-overlapping non-rectangular integration strips that inscribe $R$. This can only be accomplished if the sides of the aforementioned integration strips are translations of the function $a(y)$.\\
 
 \noindent
 Let us express this idea more formally. Let $(x_i^1)_{i=0}^{n}$ denote a partition on the $x$-axis, such that $a = x_0^1 < x_1^1 < \cdots < x_n^1 = b$, and $\Delta x_i^1 = x_{i+1}^1 - x_i^1$. Consider the following lower Cavalieri sum (see equation~\ref{eq:c_low}):
@@ -547,12 +547,12 @@ with
 \label{eq:g_rl}
 \widetilde{g}_t^{\alpha}(\tau) = \frac{\left \{t^{\alpha} - (t-\tau)^{\alpha} \right \}}{\Gamma(\alpha+1)}. 
 \end{equation}
-Moreover, the function $\widetilde{g}_t^{\alpha}(\tau)$ is invertable. Its inverse is:
+Moreover, the function $\widetilde{g}_t^{\alpha}(\tau)$ is invertible. Its inverse is:
 \begin{equation}
 \label{eq:h}
 \widetilde{h}_t^{\alpha}(\tau) = t - \sqrt[\alpha]{t^{\alpha} - \Gamma(\alpha+1)\tau}.
 \end{equation}
-The function $\widetilde{g}_t^{\alpha}$ is invertable, since $\frac{d \widetilde{g}_t^{\alpha}}{d\tau}=\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)} > 0$ for $\tau\in(-\infty,t]$. Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The functions $\widetilde{g}_{10}^{\alpha}(\tau)$ and $\widetilde{h}_{10}^{\alpha}(\tau)$ are depicted in Figure~\ref{fig:gandh} for $\alpha\in\mathsf{A}$.\\
+The function $\widetilde{g}_t^{\alpha}$ is invertible, since $\frac{d \widetilde{g}_t^{\alpha}}{d\tau}=\frac{(t-\tau)^{\alpha-1}}{\Gamma(\alpha)} > 0$ for $\tau\in(-\infty,t]$. Let $\mathsf{A} = \{0,0.2,0.4,0.6,0.8,1\}$. The functions $\widetilde{g}_{10}^{\alpha}(\tau)$ and $\widetilde{h}_{10}^{\alpha}(\tau)$ are depicted in Figure~\ref{fig:gandh} for $\alpha\in\mathsf{A}$.\\
 
 
 %\begin{theorem}
@@ -612,7 +612,7 @@ The function $\widetilde{g}_t^{\alpha}$ is invertable, since $\frac{d \widetilde
 
 %\subsection{Podlubny's Geometric Interpretation}
 \noindent
-Podlubny also showed that we can assign a geometric meaning to the fractional integral in equation~\eqref{eq:rl_to_rs} by visualizing the equivalent Riemann-Stieltjes integral contained within the same equation \cite{bullock88,podlubny02}. Consider the axis $\tau$, $\widetilde{g}_t^{\alpha}$ and $f(\tau)$. Podlubny suggests that we build a ``fence'' in $(\tau,\widetilde{g}_t^{\alpha},f)$-space. The base of the aforementioned fence is given by the curve $(\tau,\widetilde{g}_t^{\alpha}(\tau),0)$, while its height is determined by $(\tau,\widetilde{g}_t^{\alpha}(\tau),f(\tau))$. The ``shadow'' of this fence, i.e. the area under the curve which is obtained by projecting this fence onto the $\widetilde{g}f$-plane corresonds to the value which is obtained when equation~\eqref{eq:rl_to_rs} is evaluated. As an example, the geometric interpretation so obtained for the integrand $f(t)=\sqrt{t}$ is depicted in Figure~\ref{fig:vis_old}.
+Podlubny also showed that we can assign a geometric meaning to the fractional integral in equation~\eqref{eq:rl_to_rs} by visualizing the equivalent Riemann-Stieltjes integral contained within the same equation \cite{bullock88,podlubny02}. Consider the axis $\tau$, $\widetilde{g}_t^{\alpha}$ and $f(\tau)$. Podlubny suggests that we build a ``fence'' in $(\tau,\widetilde{g}_t^{\alpha},f)$-space. The base of the aforementioned fence is given by the curve $(\tau,\widetilde{g}_t^{\alpha}(\tau),0)$, while its height is determined by $(\tau,\widetilde{g}_t^{\alpha}(\tau),f(\tau))$. The ``shadow'' of this fence, i.e. the area under the curve which is obtained by projecting this fence onto the $\widetilde{g}f$-plane corresponds to the value which is obtained when equation~\eqref{eq:rl_to_rs} is evaluated. As an example, the geometric interpretation so obtained for the integrand $f(t)=\sqrt{t}$ is depicted in Figure~\ref{fig:vis_old}.
 
 %geometric idea is depicted in Fig for $f(t)=\sqrt{t}$, $\alpha\in\{0.3,0.6,0.9\}$ and $\t\in\{3,6,9\}$. 
 
@@ -621,7 +621,7 @@ Podlubny also showed that we can assign a geometric meaning to the fractional in
 \centering
 \includegraphics[width=1.0\textwidth]{vis_old.pdf}
 \caption{This figure depicts the visualization of $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ using the geometric framework proposed by Podlubny.
-As is indicated in the figure, the graphs contained in each row of the subfigure-grid are obtained by varying $\alpha$, while the graphs contained in each column of the subfigure-grid are obtained by varying $t$. The fence in each subfigure is depicted in green. The areas depicted in red (the shadow of the fence) correspond to the value obtained when $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ is evaluated.  The surface which is obtained by extending the curve $f(\tau)$ and $\widetilde{g}_t^{\alpha}(\tau)$ along the $\widetilde{g}$ and $f$ direction is depicted in cyan and blue, respectively (in each subfigure). The intersection between the blue and cyan surfaces in each subfigure represents the curve that determines the height of the fence in each subfigure (it is depicted as a dashed curve).   
+As is indicated in the figure, the graphs contained in each row of the subfigure-grid are obtained by varying $\alpha$, while the graphs contained in each column of the subfigure-grid are obtained by varying $t$. The fence in each subfigure is depicted in green. The areas depicted in red (the shadows of the fences) correspond to the value obtained when $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ is evaluated.  The surface which is obtained by extending the curve $f(\tau)$ and $\widetilde{g}_t^{\alpha}(\tau)$ along the $\widetilde{g}$ and $f$ direction is depicted in cyan and blue, respectively (in each subfigure). The intersection between the blue and cyan surfaces in each subfigure represents the curve that determines the height of the fence in each subfigure (it is depicted as a dashed curve).   
 }
 \label{fig:vis_old}
 \end{figure}
@@ -655,8 +655,8 @@ _{a'}I_t^{\alpha}\,f(t) =  \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha
 \end{equation}
 
 \noindent
-Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(\tau)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_t^{\alpha}$. Equation~\eqref{eq:rl_to_c} implies that when we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. In other words, when we evaluate equation~\eqref{eq:rl_to_c} we are actually summing together the area of an infinite number of non-rectangular infinitesimals inscribing $R_t^{\alpha}$. The aforementioned infinitesimals are, however, non-static, since they need to be translations of $a_t^{\alpha}(y)$. The shape of these infitesimals are thus dependend on $\alpha$ and $t$. In summary, we can obtain a novel geometric interpretation of 
-$_{a'}I_t^{\alpha}\,f(t)$ by first converting it into a Cavalieri integral. We will take the liberty in this paper to refer to the depiction of the aformentioned Cavalieri integral as the non-static non-rectangular sum-based geometric interpretation of $_{a'}I_t^{\alpha}\,f(t)$.\\
+Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(\tau)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_t^{\alpha}$. Equation~\eqref{eq:rl_to_c} implies that when we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. In other words, when we evaluate equation~\eqref{eq:rl_to_c} we are actually summing together the area of an infinite number of non-rectangular infinitesimals inscribing $R_t^{\alpha}$. The aforementioned infinitesimals are, however, non-static, since they need to be translations of $a_t^{\alpha}(y)$. The shape of these infinitesimals are thus dependent on $\alpha$ and $t$. In summary, we can obtain a novel geometric interpretation of 
+$_{a'}I_t^{\alpha}\,f(t)$ by first converting it into a Cavalieri integral. We will take the liberty in this paper to refer to the depiction of the aforementioned Cavalieri integral as the non-static non-rectangular sum-based geometric interpretation of $_{a'}I_t^{\alpha}\,f(t)$.\\
 
 %Stated differently, we can approximate $_{a'}I_t^{\alpha}\,f(t)$ via a Cavalieri sum, the shape of the integration strips used within this sum will be determined by $a_t^{\alpha}(y)$. In the limit this sum approaches $_{a'}I_t^{\alpha}\,f(t)$. The value $_{a'}I_t^{\alpha}\,f(t)$ so obtained is equal to the area of $R_t^{\alpha}$. $R_t^{\alpha}$ can, therefore, be decomposed into an infinite number of infinitesimals, each one of them being a translation of $a_t^{\alpha}(y)$. The shape of the aforementioned infenitesimals are non-static, since their shape depend on the value of $t$ and $\alpha$.
 
@@ -727,7 +727,7 @@ Let $\mathsf{T}=\{2,4,6,8,10\}$ and $\mathsf{A} = \{0.2,0.4,0.6,0.8\}$. Moreover
 right-most edge of $R_{t}^{\alpha}$. The region $R_{t}^{\alpha}$ is not bounded by $a_{t}^{\alpha}(y)$, since $a'=a=0$. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_{t}^{\alpha}$ and let $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}=\{R_t^{\alpha}|t\in\mathsf{T},~\alpha\in\mathsf{A}\}$. The regions in the set $\mathsf{R}_{\mathsf{T}}^{\mathsf{A}}$ are depicted in Figure~\ref{fig:geo1}. The regions that are depicted in each of the panels of Figure~\ref{fig:geo1} were generated by varying $t$, whilst keeping the value of $\alpha$ fixed. The title of each panel indicates which $\alpha$-value was used to generate the regions depicted in each panel. The only difference between the regions located in each panel is their right edges. The right edges of the regions in each panel are depicted using varying shades of gray. The lighter the shade with which an edge is depicted, the larger the $t$-value is that is associated with it.\\
 
 \noindent
-We can interpret equation~\eqref{eq:ex1} as the value which is obtained when we sum together the area of an infinite number of non-rectangular infinitesimals inscribing $R_{t}^{\alpha}$. The value so obtained is $A_{t}^{\alpha}$ (see Section~\ref{sec:rl_to_cav}). Note that, the infinitesimals that are used in the aformentioned sum are translations of $R_{t}^{\alpha}$'s right edge. The following observations can now be made by inspecting Figure~\ref{fig:geo1}: 
+We can interpret equation~\eqref{eq:ex1} as the value which is obtained when we sum together the area of an infinite number of non-rectangular infinitesimals inscribing $R_{t}^{\alpha}$. The value so obtained is $A_{t}^{\alpha}$ (see Section~\ref{sec:rl_to_cav}). Note that, the infinitesimals that are used in the aforementioned sum are translations of $R_{t}^{\alpha}$'s right edge. The following observations can now be made by inspecting Figure~\ref{fig:geo1}: 
 \begin{description}
  \item[Effect of $\alpha$] the gray-tinted solid curves depicted in the different panels of Figure~\ref{fig:geo1} are not equal to one another, i.e. $b_{t}^{\alpha_1}(y)\neq b_{t}^{\alpha_2}(y)$ when $\alpha_1\neq\alpha_2$. 
  \item[Effect of $t$] Note that the dashed grey-tinted curves in the right-most panel of Figure~\ref{fig:geo1} are translations of $b_{10}^{\sfrac{4}{5}}(y)$. The dashed gray-tinted curves and the solid gray-tinted curves in the right-most panel are not equal to one another. The gray-tinted solid curves depicted in each of the panels of Figure~\ref{fig:geo1} are, therefore, not translations of one another. 
@@ -797,7 +797,7 @@ Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based g
 \noindent
 In this paper we presented a novel geometric interpretation of the left-sided 
 Riemann-Liouville fractional integral. It can be interpreted as the value which is 
-obtained by summing toghether the area of an infinite number of non-static non-rectangular infinitesimals. The shape of the infinitesimals used within the aforementioned sum depend on the order of integration and the upper integration limit of the fractional integral being evaluated.
+obtained by summing together the area of an infinite number of non-static non-rectangular infinitesimals. The shape of the infinitesimals used within the aforementioned sum depend on the order of integration and the upper integration limit of the fractional integral being evaluated.
 
 
 %\begin{figure}[htb]
