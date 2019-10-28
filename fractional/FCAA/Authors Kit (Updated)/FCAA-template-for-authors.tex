@@ -52,8 +52,7 @@
  \bigskip \medskip
 
 %%%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%
- \begin{abstract}In this paper we present a novel geometric interpretation of the left-sided Riemann-Liouville fractional integral. We found that a Riemann-Liouville integral can be thought of as the area obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by the integral's order of integration and its upper integration limit. This geometric interpretation is quite useful from a pedagogical perspective as it is very similar
-in nature to the geometric interpretation of the Riemann integral. 
+ \begin{abstract}In this paper we present a novel geometric interpretation of the left-sided Riemann-Liouville fractional integral. We found that a Riemann-Liouville fractional integral can be thought of as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals. The shape of the aforementioned infinitesimals depend on the order of integration and the upper integration limit of the fractional integral that is being evaluated. This geometric interpretation is quite useful, pedagogically speaking, as it is very similar in nature to the geometric interpretation of the Riemann integral. 
 
  \medskip
 
@@ -166,7 +165,7 @@ in nature to the geometric interpretation of the Riemann integral.
 
 \noindent
 The mathematical discipline in which we study the extension of derivatives and integrals to non-integer orders is known as fractional calculus. Euler, Liouville and Riemann laid most 
-of the theoretical groundwork, which was needed to develop the field of fractional calculus \cite{laurent1884}. Fractional calculus has now developed into a mature discipline \cite{machado17}. 
+of the theoretical groundwork, which was needed to develop the field of fractional calculus \cite{laurent1884}. Fractional calculus is now a mature discipline \cite{machado17}. 
 However, there is one aspect of the discipline which only started to develop fairly recently: its physical and geometric interpretability. At the first international conference on fractional calculus in
 New Haven (USA) (which took place in 1974) it was pointed out that literature lacked an acceptable geometric and physical interpretation of fractional calculus \cite{ross06}. Subsequently, the last few decades have seen 
 a number of papers that attempt to rectify this. There now exist probabilistic interpretations \cite{machado03,stanislavsky04}, geometric interpretations \cite{adda97,garcia2019,podlubny02,tarasov16}, physical interpretations \cite{rutman95, nigmatullin92} and economic 
@@ -178,7 +177,8 @@ In this article we specifically focus on the geometric interpretation of fractio
 %the Riemann-Liouville fractional integral \cite{laurent1884}. At this point in time the reader should be made aware of the fact that there exists many other accepted fractional integral definitions in the literature.
 %We, however, deem these definitions to be beyond the scope of the current article and as such we do not discuss them any further in this work. 
 %The geometric interpretation that we present in this paper here is an extension of the geometric interpretation presented by Podlubny  
-Podlubny showed that a Riemann-Liouville fractional integral can be converted into a Riemann-Stieltjes integral. The Riemann-Stieltjes integral so obtained can then be visualized using Bullock's geometric framework \cite{bullock88}. Moreover, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,grobler19}. Combining these two ideas results in the following geometric interpretation: the Riemann-Liouville fractional integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals whose shape is determined by the order of integration $\alpha$ and the integration limit $t$.\\
+Podlubny showed that a Riemann-Liouville fractional integral can be converted into a Riemann-Stieltjes integral. The Riemann-Stieltjes integral so obtained can then be visualized using Bullock's geometric framework \cite{bullock88}. Moreover, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,grobler19}. Combining these two ideas results in the following geometric interpretation: the Riemann-Liouville fractional integral $_{a'}I_t^{\alpha} f(t)$ can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals. The shape
+of the aforementioned infinitesimals is determined by the order of integration $\alpha$ and the integration limit $t$ of the fractional integral under consideration.\\
 
 \noindent
 We start the paper by reviewing the definition of the Riemann-Stieltjes integral, the Cavalieri integral and the left-sided Riemann-Liouville fractional integral. We then present Podlubny's original geometric framework, followed by our extension thereof. We end the paper with two examples and a conclusion.
@@ -191,8 +191,7 @@ Let $f$ and $g$ denote real-valued functions defined on a closed interval $[a',b
 \label{eq:g_int2}
 \int_{a'}^{b'} f(x) dg(x) =  \lim_{n \rightarrow \infty}\sum_{i=0}^{n-1} f(x_i)[g(x_{i+1})-g(x_{i})], 
 \end{equation}
-with $(x_i)_{i=0}^n$ being arbitrary partition points on the $x$-axis. 
-The function $g$ is known as the integrator and if it is monotone increasing then it maps points in the interval $[a',b,]$ to the interval $[a,b]$, with $a = g(a')$ and $b = g(b')$. The integral in equation~\eqref{eq:g_int2} is hard to evaluate in its present form. If $g$ is differentiable, however, then it becomes trivial to 
+with $(x_i)_{i=0}^n$ being arbitrary partition points on the $x$-axis (such that $a' = x_0 \leq x_1 \leq \cdots \leq x_n = b'$). The function $g$ is known as the integrator and if it is monotone increasing then it maps points in the interval $[a',b,]$ to the interval $[a,b]$, with $a = g(a')$ and $b = g(b')$. The integral in equation~\eqref{eq:g_int2} is hard to evaluate in its present form. If $g$ is differentiable, however, then it becomes trivial to 
 evaluate a Riemann-Stieltjes integral due to the following identity:
 \begin{equation}
 \label{eq:rs_identity}
@@ -364,7 +363,7 @@ It now follows that:
 \end{equation}\
 
 \noindent
-The above derivation was taken from \cite{grobler19} and implies that that not every Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,\widetilde{g}(x)$ can be converted into a Cavalieri integral. We normally need to first convert it into an equivalent Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,g(x)$. The Riemann-Stieltjes integral so obtained can then be converted into a Cavalieri integral. The former conversion is achieved by computing the real-valued constant $C$. Once $C$ is known the latter conversion follows trivially. The above steps should be clearer to the reader once they have worked through the example presented in Section~\ref{sec:cav_integral_example}.\\
+The above derivation was taken from \cite{grobler19} and implies that not every Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,\widetilde{g}(x)$ can be converted into a Cavalieri integral. We normally need to first convert it into an equivalent Riemann-Stieltjes integral $\int_{a'}^{b'} f(x) d\,g(x)$. The Riemann-Stieltjes integral so obtained can then be converted into a Cavalieri integral. The former conversion is achieved by computing the real-valued constant $C$. Once $C$ is known the latter conversion follows trivially. The above steps should be clearer to the reader once they have worked through the example presented in Section~\ref{sec:cav_integral_example}.\\
 
 %not every Riemann-Stieltjes integral can be converted into a Cavalieri integral. It, however, does tell us that every Riemann-Stieltjes integral can be converted into an equivalent Riemann-Stieltjes integral, which in turn, can be converted into a Cavalieri integral. The latter Riemann-Stieltjes integral is obtained by computing the constant $C$. The above steps should be clearer to the reader once they have worked through the example in Section~\ref{}. 
 
@@ -423,7 +422,7 @@ The example which we present below was taken from \cite{ackermann12,grobler19}. 
 \begin{figure}[htb]
 \centering
 \includegraphics[width=0.8\textwidth]{fig13.pdf}
-\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. In the case of $R$: $a=1$, $b=4$, $a'=\frac{1}{2}$ and $b'=2$. The figure also depicts the partition points $x_i^2$ as used in the Cavalieri sum (see equation~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
+\caption{Region bounded by the $x$-axis and the lines $f(x)=x$, $a(y)=1-y$, and $b(y)=4-y$. In the case of $R$: $a=1$, $b=4$, $a'=\frac{1}{2}$ and $b'=2$. The figure also depicts the partition points $(x_i^1)_{i=0}^{n}$ and $(x_i^2)_{i=0}^{n}$ as used in the Cavalieri sum (see equation~\eqref{eq:cav_sum}). Reproduced from Quaestiones Mathematicae (2012) 35: 265-296 with permission \copyright~ NISC (Pty) Ltd.}
 \label{fig:caval2}
 \end{figure}
 
@@ -656,7 +655,7 @@ _{a'}I_t^{\alpha}\,f(t) =  \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha
 \end{equation}
 
 \noindent
-Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(\tau)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_t^{\alpha}$. Equation~\ref{eq:rl_to_c} implies that when we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. In other words, when we evaluate equation~\eqref{eq:rl_to_c} we are actually summing together the area of an infinite number of non-rectangular infinitesimals inscribing $R_t^{\alpha}$. The aforementioned infinitesimals are, however, non-static, since they need to be translations of $a_t^{\alpha}(y)$. The shape of these infitesimals are thus dependend on $\alpha$ and $t$. In summary, we can obtain a novel geometric interpretation of 
+Let $R_t^{\alpha}$ denote the region which is bounded by $a_t^{\alpha}(y)$, $b_t^{\alpha}(y)$, $f(\tau)$ and the $\tau$-axis. Moreover, let $A_{t}^{\alpha}$ denote the area of $R_t^{\alpha}$. Equation~\eqref{eq:rl_to_c} implies that when we evaluate $_{a'}I_t^{\alpha}\,f(t)$ we obtain $A_{t}^{\alpha}$. In other words, when we evaluate equation~\eqref{eq:rl_to_c} we are actually summing together the area of an infinite number of non-rectangular infinitesimals inscribing $R_t^{\alpha}$. The aforementioned infinitesimals are, however, non-static, since they need to be translations of $a_t^{\alpha}(y)$. The shape of these infitesimals are thus dependend on $\alpha$ and $t$. In summary, we can obtain a novel geometric interpretation of 
 $_{a'}I_t^{\alpha}\,f(t)$ by first converting it into a Cavalieri integral. We will take the liberty in this paper to refer to the depiction of the aformentioned Cavalieri integral as the non-static non-rectangular sum-based geometric interpretation of $_{a'}I_t^{\alpha}\,f(t)$.\\
 
 %Stated differently, we can approximate $_{a'}I_t^{\alpha}\,f(t)$ via a Cavalieri sum, the shape of the integration strips used within this sum will be determined by $a_t^{\alpha}(y)$. In the limit this sum approaches $_{a'}I_t^{\alpha}\,f(t)$. The value $_{a'}I_t^{\alpha}\,f(t)$ so obtained is equal to the area of $R_t^{\alpha}$. $R_t^{\alpha}$ can, therefore, be decomposed into an infinite number of infinitesimals, each one of them being a translation of $a_t^{\alpha}(y)$. The shape of the aforementioned infenitesimals are non-static, since their shape depend on the value of $t$ and $\alpha$.
@@ -667,9 +666,10 @@ Let $h_t^{\alpha}(\tau)$ be equal to the inverse of $g_t^{\alpha}(\tau)$ (see eq
 \label{eq:rl_to_r}
 \int_{g_t^{\alpha}(a')}^{g_t^{\alpha}(t)} f\circ h_{\alpha}^t (\tau) d\tau.  
 \end{equation}
-We can, therefore, evaluate equation~\eqref{eq:frac_integral} in one of two ways: we can either evaluate equation~\eqref{eq:rl_to_rs} or we can evaluate equation~\eqref{eq:rl_to_r}.
+We can, therefore, evaluate equation~\eqref{eq:frac_integral} in one of two ways: we can either evaluate equation~\eqref{eq:rl_to_rs} or we can evaluate equation~\eqref{eq:rl_to_r}.\\
 
-\subsection{Examples}
+%\subsection{Examples}
+\noindent
 Consider the following fractional integral:
 \begin{equation}
 \label{eq:ex1_raw}
@@ -797,7 +797,7 @@ Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based g
 \noindent
 In this paper we presented a novel geometric interpretation of the left-sided 
 Riemann-Liouville fractional integral. It can be interpreted as the value which is 
-obtained by summing toghether the area of an infinite number of non-static non-rectangular infinitesimals. The shape of the infinitesimals used within the aforementioned sum depend on the order of integration and the upper integration limit of the fractional integral under consideration.
+obtained by summing toghether the area of an infinite number of non-static non-rectangular infinitesimals. The shape of the infinitesimals used within the aforementioned sum depend on the order of integration and the upper integration limit of the fractional integral being evaluated.
 
 
 %\begin{figure}[htb]
