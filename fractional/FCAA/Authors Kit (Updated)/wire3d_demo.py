@@ -113,7 +113,7 @@ for i in range(3):
 
         if counter == 2:
            ax.set_xlabel(r'$\tau$',labelpad=10)
-	   ax.set_ylabel(r'$g_t^{\alpha}(\tau)$',labelpad=18)
+	   ax.set_ylabel(r'$\widetilde{g}_t^{\alpha}(\tau)$',labelpad=18)
 	   ax.set_zlabel(r'$f(\tau)$')
 
         if counter <=3:
