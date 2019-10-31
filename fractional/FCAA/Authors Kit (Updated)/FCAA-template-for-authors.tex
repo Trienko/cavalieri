@@ -165,19 +165,18 @@
 
 \noindent
 The mathematical discipline in which we study the extension of derivatives and integrals to non-integer orders is known as fractional calculus. Euler, Liouville and Riemann laid most 
-of the theoretical groundwork, which was needed to develop the field of fractional calculus \cite{laurent1884}. Fractional calculus is now a mature discipline \cite{machado17}. 
-However, there is one aspect of the discipline which only started to develop fairly recently: its physical and geometric interpretability. At the first international conference on fractional calculus in
+of the theoretical groundwork, which was needed to develop the field of fractional calculus \cite{laurent1884}. Fractional calculus is over 300 years old \cite{machado17}. Interestingly, there is one aspect of the discipline which only started to develop fairly recently: its physical and geometric interpretability. At the first international conference on fractional calculus in
 New Haven (USA) (which took place in 1974) it was pointed out that literature lacked an acceptable geometric and physical interpretation of fractional calculus \cite{ross06}. Subsequently, the last few decades have seen 
 a number of papers that attempt to rectify this. There now exist probabilistic interpretations \cite{machado03,stanislavsky04}, geometric interpretations \cite{adda97,garcia2019,podlubny02,tarasov16}, physical interpretations \cite{rutman95, nigmatullin92} and economic 
 interpretations \cite{tarasova17} of fractional order integrals and differentials.\\
 
 \noindent
-In this article we specifically focus on the geometric interpretation of fractional integrals. To be more specific, we present a novel geometric interpretation of the left-sided Riemann-Liouville fractional integral based at $a'$ (see Section~\ref{sec:ls}) \cite{laurent1884}. We accomplish this by extending the geometric framework proposed by Podlubny \cite{podlubny02}.
+In this article we specifically focus on the geometric interpretation of fractional integrals. To be more specific, we present a novel geometric interpretation of the left-sided Riemann-Liouville fractional integral \cite{laurent1884}. We accomplish this by extending the geometric framework proposed by Podlubny \cite{podlubny02}.
 %As we mentioned earlier, Riemann and Liouville played an important role in the development of fractional calculus. Their work was crucial in defining what is now known as 
 %the Riemann-Liouville fractional integral \cite{laurent1884}. At this point in time the reader should be made aware of the fact that there exists many other accepted fractional integral definitions in the literature.
 %We, however, deem these definitions to be beyond the scope of the current article and as such we do not discuss them any further in this work. 
 %The geometric interpretation that we present in this paper here is an extension of the geometric interpretation presented by Podlubny  
-Podlubny showed that a Riemann-Liouville fractional integral can be converted into a Riemann-Stieltjes integral. The Riemann-Stieltjes integral so obtained can then be visualized using Bullock's geometric framework \cite{bullock88}. Moreover, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,grobler19}. Combining these two ideas results in the following geometric interpretation: the Riemann-Liouville fractional integral $_{a'}I_t^{\alpha} f(t)$ (see Section~\ref{sec:ls}) can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals. The shape
+Podlubny showed that a Riemann-Liouville fractional integral can be converted into a Riemann-Stieltjes integral. The Riemann-Stieltjes integral so obtained can then be visualized using Bullock's geometric framework \cite{bullock88}. Moreover, Grobler showed that a Riemann-Stieltjes integral can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals, i.e. a Riemann-Stieltjes integral can be converted into a Cavalieri integral \cite{ackermann12,grobler19}. Combining these two ideas results in the following geometric interpretation: the Riemann-Liouville fractional integral $_{a'}I_t^{\alpha} f(t)$  based at $a'$ (see Section~\ref{sec:ls}) can be interpreted as the area which is obtained by summing together the area of an infinite number of non-rectangular infinitesimals. The shape
 of the aforementioned infinitesimals is determined by the order of integration $\alpha$ and the integration limit $t$ of the fractional integral being evaluated.\\
 
 \noindent
@@ -279,7 +278,7 @@ h(x) = g^{-1}(x)
 and
 \begin{equation}
 \label{eq:g_def}
-g(x) = x - a\circ f(x) + a 
+g(x) = x - a\circ f(x) + a. 
 \end{equation}
 
 \begin{definition}\label{def:cav_integral}
@@ -353,8 +352,7 @@ a(y) = f^{-1}(y)-\widetilde{g}\circ f^{-1}(y) + \widetilde{g}(a').
 \end{equation}
 We can now compute the following:
 \begin{itemize}
-\item Compute $a = a(0)$.
-\item Compute $C = a - \widetilde{g}(a')$.
+\item Compute $a = a(0)$ and $C = a - \widetilde{g}(a')$.
 \item Compute $g(x) = \widetilde{g}(x) + C$.
 \item Compute $b = g(b')$ and $b(y) = a(y) + (b-a)$.
 \end{itemize}
@@ -452,7 +450,7 @@ If we evaluate the above integral we obtain the area of $R$. It is, however, qui
 integral by using the functions $h$ and $g$ (see equation~\eqref{eq:g_def} and equation~\eqref{eq:h_def}). Expressed mathematically (see Theorem~\ref{t:conv}):
 \begin{equation}
 \label{eq:main_cav}
-\int_{a(y)}^{b(y)}f(x)\,dx =\int_a^b f \circ h (x)\, dx = \int_{a'}^{b'} f(x) dg(x),
+\int_{a(y)}^{b(y)}f(x)\,dx =\int_a^b f \circ h (x)\, dx = \int_{a'}^{b'} f(x) dg(x).
 \end{equation}
 We can, therefore, evaluate equation~\eqref{eq:main_cav} in one of two ways:
 \begin{equation}
@@ -516,7 +514,7 @@ The definition in equation~\eqref{eq:cauchy} can now be extended to an arbitrary
 \label{eq:frac_integral}
 _{a'}I_t^{\alpha}f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^t (t-\tau)^{\alpha-1}f(\tau)~d\tau.
 \end{equation}
-Recall that $\Gamma(\alpha) := \int_0^{\infty} k^{\alpha-1} e^{-k}\,dk$. Equation~\eqref{eq:frac_integral} is known as the left-sided Riemann-Liouville fractional integral of order $\alpha$. 
+Recall that $\Gamma(\alpha) := \int_0^{\infty} k^{\alpha-1} e^{-k}\,dk$. Equation~\eqref{eq:frac_integral} is known as the left-sided Riemann-Liouville fractional integral of order $\alpha$ based at $a'$. 
 % As an example if $f(t)=t$, $\alpha=\frac{1}{2}$ and $a'=0$ then 
 % equation~\eqref{eq:frac_integral} reduces to:
 % \begin{equation}
@@ -600,7 +598,7 @@ The function $\widetilde{g}_t^{\alpha}$ is invertible, since $\frac{d \widetilde
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.7\textwidth]{gh.pdf}
+\includegraphics[width=0.75\textwidth]{gh.pdf}
 \caption{This figure depicts the curves of $\widetilde{g}_{10}^{\alpha}(\tau)$ and $\widetilde{h}_{10}^{\alpha}(\tau)$ for $\alpha\in\mathsf{A}\cup\{0,1\}$. The curves associated with $\widetilde{g}$ are plotted using solid lines, while the curves plotted using dashed lines are associated with $\widetilde{h}$. The lighter the shade with which a curve is depicted, the larger the $\alpha$-value is that is associated with it.}
 \label{fig:gandh}
 \end{figure}
@@ -614,7 +612,7 @@ Podlubny also showed that we can assign a geometric meaning to the fractional in
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.9\textwidth]{vis_old.pdf}
+\includegraphics[width=1.0\textwidth]{vis_old.pdf}
 \caption{This figure depicts the visualization of $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ using the geometric framework proposed by Podlubny.
 As is indicated in the figure, the graphs contained in each row of the subfigure-grid are obtained by varying $\alpha$, while the graphs contained in each column of the subfigure-grid are obtained by varying $t$. The fence in each subfigure is depicted in green. The areas depicted in red (the shadows of the fences) correspond to the value obtained when $\frac{1}{\Gamma(\alpha)}\int_{0}^{t}(t-\tau)^{\alpha-1}\sqrt{\tau}~d\tau$ is evaluated.  The surface which is obtained by extending the curve $f(\tau)$ and $\widetilde{g}_t^{\alpha}(\tau)$ along the $\widetilde{g}$ and $f$ direction is depicted in cyan and blue, respectively (in each subfigure). The intersection between the blue and cyan surfaces in each subfigure represents the curve that determines the height of the fence in each subfigure (it is depicted as a dashed curve).   
 }
@@ -638,8 +636,7 @@ _{a'}I_t^{\alpha}\,f(t) = \frac{1}{\Gamma(\alpha)}\int_{a'}^{t}(t-\tau)^{\alpha-
 Let us first compute the following (see Section~\ref{sec:cav_integral}):
 \begin{itemize}
  \item $a_t^{\alpha}(y) = f^{-1}(y) - \widetilde{g}_t^{\alpha}\circ f^{-1}(y)+ \widetilde{g}_t^{\alpha}(a')$.
- \item $a = a_t^{\alpha}(0)$.
- \item $C = a - \widetilde{g}_t^{\alpha}(a')$.
+ \item $a = a_t^{\alpha}(0)$ and $C = a - \widetilde{g}_t^{\alpha}(a')$.
  \item $g_t^{\alpha}(\tau) = \widetilde{g}_t^{\alpha}(\tau) + C$.
  \item $b = g_t^{\alpha}(t)$ and $b_t^{\alpha}(y) = a_t^{\alpha}(y) + (b-a)$.
 \end{itemize}
@@ -680,7 +677,7 @@ Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based g
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.7\textwidth]{geo_int1.pdf}
+\includegraphics[width=0.75\textwidth]{geo_int1.pdf}
 \caption{The non-static non-rectangular sum-based geometric interpretation of equation~\eqref{eq:ex1_raw}.}
 \label{fig:geo1}
 \end{figure}
@@ -758,7 +755,7 @@ sizes are ignored). The curves in Figure~\ref{fig:geo1} associated with the infi
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.7\textwidth]{func_eval1.pdf}
+\includegraphics[width=0.75\textwidth]{func_eval1.pdf}
 \caption{Depicts the curves which are obtained by evaluating equation~\eqref{eq:ex1_raw} for all $\alpha\in \mathsf{A}$ using either equation~\eqref{eq:rl_to_rs} or equation~\eqref{eq:rl_to_r}.}
 \label{fig:eval1}
 \end{figure}
@@ -783,7 +780,7 @@ Note, that for this example $a'=a=0$. The non-static non-rectangular sum-based g
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.7\textwidth]{geo_int2.pdf}
+\includegraphics[width=0.75\textwidth]{geo_int2.pdf}
 \caption{The non-static non-rectangular sum-based geometric interpretation of equation~\eqref{eq:ex2}.}
 \label{fig:geo2}
 \end{figure}
